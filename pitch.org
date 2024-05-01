@@ -1,0 +1,33 @@
+{{{header(pitch,
+Richard Westhaver,
+ellis@rwest.io,
+The Big Picture)}}}
+
+* Get Off of My Cloud
+  - industry has moved away from client-side, distributed compute in
+    favor of centralized server-side compute resources behind API
+    gateways.
+  - entire businesses are built on a single Cloud Provider and are
+    fundamentally incapable of moving off that Cloud.
+    - they /think/ in terms of that Provider. The Provider influences
+      all of their decisions.
+  - users control very little compute power
+    - personal computing hardware (consumer-grade) is limited in capability
+      - non-servicable architectures, planned obsolescence, closed firmware
+    - mainstream operating systems don't optimize for resource
+      efficiency - they maximize for the volume of telemetry data they
+      can collect and profit from
+
+* Death of the Programmer
+  - The role of the programmer is changing
+  - programmers are no longer required to understand how computers
+    work to have a successful career
+    - Cloud Providers wrap all low-level details in their own
+      proprietary vocabulary and APIs
+    - To program on the cloud, you need to use the Cloud vocabulary
+      and are discouraged from thinking of computers as they actually
+      exist in the real world
+  - Cloud Providers influence college cirruculums, replacing compute
+    and systems theory with courses designed to teach you how to
+    configure Cloud Services.
+
