@@ -1,8 +1,5 @@
-{{{header(pitch,
-Richard Westhaver,
-ellis@rwest.io,
-The Big Picture)}}}
-
+#+title: the big picture
+#+author: Richard Westhaver <ellis@rwest.io>
 * Get Off of My Cloud
   - industry has moved away from client-side, distributed compute in
     favor of centralized server-side compute resources behind API

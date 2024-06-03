@@ -1,11 +1,59 @@
-{{{header(roadmap,
-Richard Westhaver,
-ellis@rwest.io,
-The Compiler Company Roadmap)}}}
+#+title: roadmap
+#+author: Richard Westhaver <ellis@rwest.io>
+#+description: The Compiler Company Roadmap
+
 * TODO 2024
 SCHEDULED: <2024-01-01 Mon>--[2024-12-31 Tue]
 - State "TODO"       from              [2023-11-05 Sun 21:47]
-* Q1
-* Q2
-* Q3
-* Q4
+** WIP migrate VC off of EC2                                  :opsec:vc:code:
+:LOGBOOK:
+- State "WIP"        from              [2024-05-06 Mon 16:43]
+:END:
+We no longer need to maintain an instance of our forge in AWS now that
+we have enough compute in-house.
+
+vc.compiler.company will be migrate to rurik on a dedicated pod
+(requires ubuntu).
+** WIP Wireguard VPN                                              :net:opsec:
+:LOGBOOK:
+- State "TODO"       from              [2024-05-06 Mon 16:48]
+- State "WIP"        from "TODO"       [2024-05-06 Mon 16:48]
+:END:
+Wireguard is a fast, secure, and easy to configure VPN library. All
+our primary devices have been configured and tested with two available
+endpoints. Our goal is to migrate all existing devices, then make
+appropriate accomodations for Podman containers, and finally KVM.
+** TBD IO                                                              :lisp:
+:LOGBOOK:
+- State "TBD"        from              [2024-05-06 Mon 16:50]
+:END:
+io_uring is the Linux library we have chosen to spend some time
+getting comfortable with and for which we've written incomplete Common
+Lisp bindings - URING. This library will soon be developed in parallel
+to the higher-level IO library - similar to the development of ROCKSDB
+and RDB.
+
+Over the next few months our IO ecosystem will slowly expand. As a
+short-term goal, we will implement simple binary streams backed by
+io_uring.
+** WIP skel
+:LOGBOOK:
+- State "WIP"        from "TBD"        [2024-05-06 Mon 17:06]
+:END:
+The pieces are there, just needs glue.
+
+A usable SKEL system is a top priority for this year. To get there we
+need to give love to many of the underlying core libraries too - most
+of all =cli=.
+
+The two top priorities are VC commands and implementing a functional
+replacement for makefiles as used in the infra project.
+** TODO infra
+:LOGBOOK:
+- State "TODO"       from              [2024-05-06 Mon 17:06]
+:END:
+It is time to move away from makefiles and start integrating our own
+programs into the system bootstrap process. This iteration of the
+infra project will have a few POSIX shell scripts for checking the
+host and grabbing a pre-compiled lisp as well as a compressed
+=infra.core= image.
