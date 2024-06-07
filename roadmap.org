@@ -1,7 +1,7 @@
 #+title: roadmap
 #+author: Richard Westhaver <ellis@rwest.io>
 #+description: The Compiler Company Roadmap
-
+#+setupfile: ../clean.theme
 * TODO 2024
 SCHEDULED: <2024-01-01 Mon>--[2024-12-31 Tue]
 - State "TODO"       from              [2023-11-05 Sun 21:47]

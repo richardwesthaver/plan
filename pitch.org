@@ -1,5 +1,6 @@
 #+title: the big picture
 #+author: Richard Westhaver <ellis@rwest.io>
+#+setupfile: ../clean.theme
 * Get Off of My Cloud
   - industry has moved away from client-side, distributed compute in
     favor of centralized server-side compute resources behind API
