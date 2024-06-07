@@ -1,0 +1,21 @@
+#+title: plan
+#+description: The CC Plan
+#+author: Richard Westhaver
+#+email:richard.westhaver@gmail.com
+#+setupfile: ../clean.theme
+#+export_file_name: index
+:info:
++ version :: 0.1.0
+:end:
+* [[file:pitch.org][pitch]]
+:PROPERTIES:
+:ID:       44b24943-1753-4f7a-8dc3-8263ec2949c9
+:END:
+* [[file:product.org][product]]
+:PROPERTIES:
+:ID:       f37c170b-fdf3-4d52-82a2-6ae268a6db81
+:END:
+* [[file:roadmap.org][roadmap]]
+:PROPERTIES:
+:ID:       0b96cff3-3ff8-4b09-a90a-839724301143
+:END:
