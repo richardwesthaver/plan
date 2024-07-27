@@ -1,0 +1,75 @@
+#+title: core tasks
+#+author: Richard Westhaver
+#+description: core task list
+#+setupfile: ../../clean.theme
+* WIP complete base obj/query package                                  :lisp:
+:PROPERTIES:
+:LOCATION: lisp/lib/obj/query.lisp
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2024-07-09 Tue 22:14]
+:END:
+- object-based protocol for asking questions about data collections
+  using data expressions
+- +lex+, +parse+, +compile+ - all handled in the Q system
+- probably in need of refactor right after
+  - different parts of the protocol will be used by different systems
+    - ~data-source~ will be implemented in ~DAT/CSV~ ~DAT/PARQUET~,
+      ~RDB~, etc
+    - ~query-expression~ and ~query-plan~ will be implemented in
+      ~Q/SQL~ and ~Q/DQL~
+* WIP net/srv                                                          :lisp:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-19 Fri 21:50]
+- State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
+:END:
+* WIP dat/parquet                                                      :lisp:
+:LOGBOOK:
+- State "WIP"        from              [2024-07-19 Fri 21:51]
+:END:
+
+* TBD retire x.lisp                                               :lisp:skel:
+:PROPERTIES:
+:LOCATION: x.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-09 Tue 22:24]
+- State "TBD"        from "TODO"       [2024-07-27 Sat 02:41]
+:END:
+with skel taking on more responsibility we no longer need a dedicated build tool.
+- migrate all functionality to skelfile
+- cleanup readme with installation instructions (with and without =infra=)
+* TODO cli/clap v0.2.0 [1/4]                                           :lisp:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-21 Sun 01:33]
+:END:
+- clap is quite unstable right now and has some obvious bugs which need remedying
+** TODO conditions implementation
+** TODO minimal documentation                                           :doc:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-27 Sat 02:39]
+:END:
+** DONE implement globals =*cli* *opts* *args*= etc
+:LOGBOOK:
+- State "TODO"       from              [2024-07-27 Sat 02:39]
+- State "DONE"       from "TODO"       [2024-07-27 Sat 02:40]
+:END:
+** TODO keyword selectors                                     :lisp:cli:skel:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-27 Sat 02:31]
+:END:
+#+begin_src shell
+  skel :include 0 :components 1 # => <sk-component PRELUDE>
+
+  skel :include emacs :components babel # => <sk-component BABEL>
+#+end_src
+- how to apply operators?
+- pipe results?
++forth+
+* TODO std/tests refactor                                          :lisp:std:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-27 Sat 02:42]
+:END:
+- a bit too large, time to shake it up
+- need separation of concerns (files) for task-pool/threaded tests in
+  particular

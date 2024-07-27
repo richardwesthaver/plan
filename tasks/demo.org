@@ -1,0 +1,10 @@
+#+title: Demo Tasks
+#+author: Richard Westhaver
+#+description: demo task list
+#+setupfile: ../../clean.theme
+* TODO update readme                                                    :doc:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-09 Tue 22:21]
+:END:
+- never really got around to reviewing the demo readme, it's been a
+  while so time to update and bring things back to reality.
