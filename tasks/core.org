@@ -73,3 +73,14 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - a bit too large, time to shake it up
 - need separation of concerns (files) for task-pool/threaded tests in
   particular
+* TODO multipoint-images                                       :lisp:bin:sys:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-28 Sun 21:01]
+:END:
+- multiple entrypoint lisp images
+- create multiple links to core lisp image
+- support multiple low-level methods?
+  - naive implementation is a single entry point with a switch
+    dispatched on arg0.
+  - could also create a thin shim in Rust/Zig and call the appropriate
+    entrypoint after loading the core.

@@ -3,7 +3,8 @@
 #+description: infra task list
 #+setupfile: ../../clean.theme
 
-* WIP autogen.lisp                                                     :lisp:
+* TODO autogen.lisp                                                    :lisp:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-09 Tue 22:23]
+- State "TODO"       from "WIP"        [2024-07-28 Sun 21:20]
 :END:
