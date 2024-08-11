@@ -2,35 +2,50 @@
 #+author: Richard Westhaver
 #+description: core task list
 #+setupfile: ../../clean.theme
-* WIP complete base obj/query package                                  :lisp:
-:PROPERTIES:
-:LOCATION: lisp/lib/obj/query.lisp
-:END:
+#+OPTIONS: num:nil d:t prop:t
+#+filetags: core
+* TODO ffi cleanup [0/8]                                           :lisp:ffi:
 :LOGBOOK:
-- State "WIP"        from              [2024-07-09 Tue 22:14]
+- State "TODO"       from              [2024-08-10 Sat 22:20]
 :END:
-- object-based protocol for asking questions about data collections
-  using data expressions
-- +lex+, +parse+, +compile+ - all handled in the Q system
-- probably in need of refactor right after
-  - different parts of the protocol will be used by different systems
-    - ~data-source~ will be implemented in ~DAT/CSV~ ~DAT/PARQUET~,
-      ~RDB~, etc
-    - ~query-expression~ and ~query-plan~ will be implemented in
-      ~Q/SQL~ and ~Q/DQL~
-* WIP net/srv                                                          :lisp:
+** TODO rocksdb merge-operator callbacks
 :LOGBOOK:
-- State "TODO"       from              [2024-07-19 Fri 21:50]
-- State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
+- State "TODO"       from              [2024-08-10 Sat 22:21]
 :END:
-* WIP dat/parquet                                                      :lisp:
+** TODO gstreamer practical example
 :LOGBOOK:
-- State "WIP"        from              [2024-07-19 Fri 21:51]
+- State "TODO"       from              [2024-08-10 Sat 22:21]
 :END:
-
+** TODO ublk practical example
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:22]
+:END:
+** TODO uring read/write file example
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:22]
+:END:
+** TODO btrfs practical example
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:30]
+:END:
+- [ ] sudo example (filesystem)
+- [ ] non-sudo example?
+** TODO xkb practical example
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:32]
+:END:
+** TODO keyutils practical example
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:33]
+:END:
+** TODO readline 
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:23]
+:END:
 * TBD retire x.lisp                                               :lisp:skel:
 :PROPERTIES:
 :LOCATION: x.lisp
+:Effort:   5h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-09 Tue 22:24]
@@ -39,7 +54,7 @@
 with skel taking on more responsibility we no longer need a dedicated build tool.
 - migrate all functionality to skelfile
 - cleanup readme with installation instructions (with and without =infra=)
-* TODO cli/clap v0.2.0 [1/4]                                           :lisp:
+* TODO cli/clap v0.2.0 [1/5]                                       :lisp:cli:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-21 Sun 01:33]
 :END:
@@ -66,13 +81,10 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
-* TODO std/tests refactor                                          :lisp:std:
+** TODO explain impl
 :LOGBOOK:
-- State "TODO"       from              [2024-07-27 Sat 02:42]
+- State "TODO"       from              [2024-08-03 Sat 01:01]
 :END:
-- a bit too large, time to shake it up
-- need separation of concerns (files) for task-pool/threaded tests in
-  particular
 * TODO multipoint-images                                       :lisp:bin:sys:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-28 Sun 21:01]
@@ -84,3 +96,647 @@ with skel taking on more responsibility we no longer need a dedicated build tool
     dispatched on arg0.
   - could also create a thin shim in Rust/Zig and call the appropriate
     entrypoint after loading the core.
+* TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-01 Thu 12:27]
+:END:
+* TODO Q MVP
+:LOGBOOK:
+- State "TODO"       from              [2024-08-03 Sat 01:03]
+:END:
+** TODO SQL
+:LOGBOOK:
+- State "TODO"       from              [2024-08-03 Sat 01:03]
+- Note taken on [2024-08-04 Sun 21:16] \\
+  pretty close - need to fix some recursion bugs then start messing with query-engines
+:END:
+*** DONE make-sql-data-frame
+:LOGBOOK:
+- State "FIX"        from              [2024-08-05 Mon 21:13]
+- State "DONE"       from "FIX"        [2024-08-07 Wed 21:05]
+:END:
+- finish implementation
+** TODO DQL
+:LOGBOOK:
+- State "TODO"       from              [2024-08-03 Sat 01:03]
+:END:
+- pronounced 'Dee-qwul'
+- the challenge it seems, is building an inference engine that isn't
+  just another half-assed prolog
+- expression and introspection is valued here much more than speed/size
+- allegro and screamer are favorites so far
+*** TODO top-level macros
+:LOGBOOK:
+- State "TODO"       from              [2024-08-08 Thu 22:38]
+:END:
+- -?
+*** TODO conditions
+:LOGBOOK:
+- State "TODO"       from              [2024-08-08 Thu 22:39]
+:END:
+*** TODO basic predicates
+:LOGBOOK:
+- State "TODO"       from              [2024-08-08 Thu 22:39]
+:END:
+#+begin_example
+  =/2   ==/2   abolish/2   and/*   append/3   arg/3   assert/1   asserta/1   assertz/1   atom/1   atomic/1  
+  bagof/3   call/1   consult/1   copy-term/2   erase/1   fail/0   first/1   functor/3   ground/1   if/2   if/3  
+  is/2   last/1   leash/1   length/1   listing/1   member/2   memberp/2 (member without backtracking)   not/1  
+  number/1   or/*   princ/1   read/1   recorda/1   recordz/1   recorded/2   repeat/0   rest/1   retract/1   rev/2 
+   setof/3   true/0   var/1   write/1   
+
+#+end_example
+*** TODO compiler design
+:LOGBOOK:
+- State "TODO"       from              [2024-08-08 Thu 22:39]
+:END:
+*** TODO runtime design
+:LOGBOOK:
+- State "TODO"       from              [2024-08-08 Thu 22:43]
+:END:
+- needs a stack
+- maybe registers
+- plenty of dynamic extent
+- arenas
+- thread-aware
+** TODO q/tests/fuzz [0/2]
+:LOGBOOK:
+- State "TODO"       from              [2024-08-05 Mon 21:11]
+:END:
+- [[https://github.com/andygrove/how-query-engines-work/blob/main/jvm/fuzzer/src/main/kotlin/Fuzzer.kt][kquery]]
+*** TODO sql-fuzzer
+:LOGBOOK:
+- State "TODO"       from              [2024-08-05 Mon 21:11]
+:END:
+- [ ] values
+- [ ] record-batch
+- [ ] expression
+- [ ] plan
+*** TODO dql-fuzzer
+:LOGBOOK:
+- State "TODO"       from              [2024-08-05 Mon 21:12]
+:END:
+** TODO #? reader macro
+:LOGBOOK:
+- State "TODO"       from              [2024-08-08 Thu 22:36]
+:END:
+* RESEARCH OCI projects [0/4]                                :pod:packy:skel:
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-01 Thu 12:35]
+:END:
+** RESEARCH [[https://oras.land/][oras]]
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-01 Thu 12:36]
+:END:
+** RESEARCH skopeo
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-01 Thu 12:36]
+:END:
+** RESEARCH zot
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-01 Thu 12:36]
+:END:
+** RESEARCH [[https://www.sigstore.dev/][sigstore]]
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-01 Thu 12:30]
+:END:
+* HACK defsys
+:LOGBOOK:
+- State "HACK"       from              [2024-08-03 Sat 01:06]
+:END:
+- maybe Norvig was right and we don't need asdf/uiop, maybe not
+- the truth is somewhere in between
+- [ ] defsys macro
+- [ ] use macro
+- [ ] using macro
+- [ ] requires macro
+* DONE migrate to sb-grovel [9/9]                                  :lisp:ffi:
+:LOGBOOK:
+- State "TODO"       from              [2023-11-27 Mon 23:42]
+- State "DONE"       from "TODO"       [2024-02-04 Sun 20:30]
+:END:
+:PROPERTIES:
+:ID: bb365025-e5e7-4407-acba-32e30d1a245a
+:END:
+[[file:lisp/ffi/]]
+** DONE blake3
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: 656c2683-8780-407c-b955-3defc4959595
+:END:
+** DONE bqn
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: b4757746-525b-49e4-b8ac-677375867d8f
+:END:
+** DONE btrfs
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: b3b411fe-6b2d-4338-9e23-83536336a487
+:END:
+** DONE k
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: 8a463084-efa0-4535-8239-b1c4955bde4c
+:END:
+** DONE rocksdb
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: 2d4d70af-228f-424c-8374-9fc8ed5c6f92
+:END:
+** DONE tree-sitter
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: 0cdf3412-cb00-4069-8e1b-b49c736377cf
+:END:
+** DONE uring
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: 45a52407-ccaf-4ea1-99c4-d6f7ba0b2731
+:END:
+** DONE zstd
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:00]
+- State "DONE"       from "TODO"       [2023-12-09 Sat 01:57]
+:END:
+:PROPERTIES:
+:ID: 6ade8dd8-83b1-470d-a0da-a352ce4c2d06
+:END:
+** DONE xkb
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 19:27]
+- State "WIP"        from "TODO"       [2023-12-10 Sun 22:47]
+- State "DONE"       from "WIP"        [2024-02-04 Sun 20:30]
+:END:
+:PROPERTIES:
+:ID: af778a5f-4834-4f0c-ae53-36d35cb98d8c
+:END:
+* TODO parse 0.1 [0/2]                                             :lisp:lib:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2023-12-13 Wed 18:24]
+:END:
+:PROPERTIES:
+:ID: parse
+:ID: 8f54a69e-b256-4efd-98e8-75b4892f12b8
+:END:
+- State "TODO"       from              [2023-11-29 Wed 19:01]
+- lalr.lisp
+- lex.lisp
+- obj api
+** TODO tests
+:LOGBOOK:
+- State "TODO"       from              [2023-12-24 Sun 19:28]
+:END:
+add tests for lexer and LALR. figure out if there are any gaps that we
+need to fill.
+** TODO toml impl
+:LOGBOOK:
+- State "TODO"       from              [2023-12-24 Sun 19:28]
+:END:
+the toml parser on quicklisp is based on esrap, make a comparable one
+using our parser module.
+* TODO organ 0.2 [0/2]                                           :lisp:organ:
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 21:25]
+:END:
+:PROPERTIES:
+:ID: 4e7c55dc-e2fa-458f-ad3b-942b9aa336a4
+:END:
+** TBD organ-export
+:LOGBOOK:
+- State "TBD"        from "TODO"       [2023-11-29 Wed 21:24]
+:END:
+:PROPERTIES:
+:ID: 189584f5-fc22-4129-bd47-5d494a088684
+:END:
+** TODO org-parse
+:LOGBOOK:
+- State "TODO"       from              [2023-11-29 Wed 21:26]
+:END:
+:PROPERTIES:
+:DEPENDENCIES: parse
+:HOOKS: organ-export
+:ID: 63774177-9730-4961-8535-414fac7a6f4f
+:END:
+** TBD parse org-elements as sxp                                        :sxp:
+:LOGBOOK:
+- State "TODO"       from              [2023-09-25 Mon 15:23]
+- State "TBD"        from "TODO"       [2023-12-13 Wed 18:10]
+:END:
+#+name: oe-init
+#+begin_src emacs-lisp :results silent
+  (slime-start)
+#+end_src
+
+#+begin_src lisp :results silent
+  (ql:quickload :organ)
+#+end_src
+
+#+name: oe-form
+#+begin_src emacs-lisp :results output replace
+  (macroexpand-1 (org-element-parse-buffer))
+#+end_src
+
+#+RESULTS: oe-form
+
+#+name: oe-sxp
+#+begin_src lisp :results output :var in=oe-form()
+  (let ((sxp (sxp:make-sxp)))
+    ;; SIMPLE-READER-ERROR #\) when using read
+    (sxp:wrap-from-string! sxp in)
+    (describe sxp))
+#+end_src
+
+#+RESULTS: oe-sxp
+: #<DAT/SXP:SXP {1026EFA513}>
+:   [standard-object]
+: 
+: Slots with :INSTANCE allocation:
+:   AST                            = NIL
+
+* TODO rdb 0.2 [0/6]                                               :lisp:rdb:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2023-12-13 Wed 18:26]
+:END:
+** TODO error handling
+:LOGBOOK:
+- State "TODO"       from              [2023-12-10 Sun 22:57]
+:END:
+- need to unwrap the pointer (* (* t))
+- cast to string,int,bool
+- wrap segfault handlers
+- add restarts for common errors (bad path)
+- add cleanup routines
+** TODO client api
+:LOGBOOK:
+- State "TODO"       from              [2023-12-10 Sun 22:59]
+:END:
+- clients are fully dynamic
+- generated from RDB instances
+- compiles in CF/option/multithread/type info
+- clients implement custom Q language
+** TODO sequence/iterator impl
+:LOGBOOK:
+- State "TODO"       from              [2023-12-10 Sun 23:09]
+:END:
+- use SBCL built-ins to extend the api - wrap the raw FFI iterator
+- define mixins
+** TODO comparator impl
+:LOGBOOK:
+- State "TODO"       from              [2023-12-10 Sun 23:11]
+:END:
+- supply custom comparators to rocksdb from lisp
+** TODO type system
+:LOGBOOK:
+- State "TODO"       from              [2023-12-10 Sun 23:12]
+:END:
+- capture types of: kv, cf
+- specs
+  - kv-spec = (kv-spec val-spec)
+    - must be serialized to/from vec<char>
+  - cf-spec
+    - used as superclass
+    - methods for abstracting CFs
+** TODO set-opt/get-opt
+:LOGBOOK:
+- State "TODO"       from              [2023-12-16 Sat 00:49]
+:END:
+- need better api
+- may just want to use the generic C fn that takes string as input
+- I feel this may be less efficient but haven't benched it (requires additional arg)
+- separate packages are a pain to query symbols with
+
+* TODO vc 0.1 [2/3]                                                      :vc:
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:10]
+:END:
+** TODO vc-mirrors-update replacement
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 01:33]
+:END:
+** DONE git                                                          :vc:git:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-16 Sat 00:55]
+- State "DONE"       from "TODO"       [2024-08-10 Sat 01:34]
+:END:
+** DONE hg                                                            :vc:hg:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-16 Sat 00:56]
+- State "DONE"       from "TODO"       [2024-08-10 Sat 01:34]
+:END:
+
+* TODO dat 0.1                                                     :lisp:dat:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:08]
+:END:
+** WIP dat/parquet                                                     :lisp:
+:PROPERTIES:
+:Effort:   80h
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2024-07-19 Fri 21:51]
+:END:
+
+** TODO dat/csv column selectors                                   :lisp:dat:
+:PROPERTIES:
+:Effort:   8h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-05 Mon 20:53]
+:END:
+- a function which accepts a single arg which is either a number,
+  indicating index-based selection or a list of column names for
+  selection by name.
+
+~(read-csv-line ... :select (lambda (x) x))~
+
+- index-based-selection
+- selection-by-name
+
+* TODO skel 0.2 [1/4]                                             :lisp:skel:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-16 Sat 00:55]
+:END:
+** DONE eval rules from CLI
+:LOGBOOK:
+- State "TODO"       from              [2023-12-16 Sat 00:56]
+- State "DONE"       from "TODO"       [2024-08-05 Mon 21:06]
+:END:
+- need new command or flag for rules
+- evaluate forms instead of looking in skelfile
+** TODO split out skel rules
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:10]
+:END:
+- core/rule.lisp
+** TODO implement task-pool
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:10]
+:END:
+** TODO implement vm
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:11]
+:END:
+- core/vm.lisp
+* TODO std 0.2 [2/8]                                               :lisp:std:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-12 Tue 19:49]
+:END:
+** DONE refactor system definition
+:LOGBOOK:
+- State "TODO"       from              [2023-12-13 Wed 15:17]
+- State "DONE"       from "TODO"       [2023-12-13 Wed 19:38]
+:END:
+- remove package-inferred
+- minimize number of systems
+- use pkg.lisp files
+** TODO cleanup fu
+:LOGBOOK:
+- State "TODO"       from              [2023-12-13 Wed 19:39]
+:END:
+** TODO documentation sweep
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:09]
+:END:
+** TODO CLTL2 impl
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:09]
+:END:
+** TODO more bits
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:09]
+:END:
+** DONE list-package-symbols, etc
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:09]
+- State "DONE"       from "TODO"       [2024-08-07 Wed 21:07]
+:END:
+
+** TODO std/tests refactor
+:LOGBOOK:
+- State "TODO"       from              [2024-07-27 Sat 02:42]
+:END:
+- a bit too large, time to shake it up
+- need separation of concerns (files) for task-pool/threaded tests in
+  particular
+** TODO tasks
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 01:29]
+:END:
+* TODO sxp 0.2 [0/1]                                               :lisp:sxp:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-12 Tue 19:49]
+:END:
+** TODO WRAP-OBJECT                                                    :skel:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-12 Tue 19:49]
+:END:
+- use to replace LOAD-AST for sk-project and friends
+- requires mop
+- take a look at UNWRAP-OBJECT too, may need rewrite for a better API
+* TODO obj 0.1 [2/2]                                               :lisp:obj:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 00:59]
+:END:
+** NOPE uri
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:00]
+- Note taken on [2023-12-20 Wed 18:26] \\
+  the franz impl doesn't play well with SBCL, at least with our
+  hacks. I'm not sure how faithfully I want to follow the RFCs
+  anyhow.. maybe we go for the dead simple approach and focus on MOP
+  for a path and URI protocol.
+:END:
+- mostly just need the tests and to finish porting the Franz implementation
+** DONE db
+:LOGBOOK:
+- State "TODO"       from              [2023-12-20 Wed 18:26]
+- State "DONE"       from "TODO"       [2024-08-05 Mon 21:08]
+- Note taken on [2024-08-05 Mon 21:08] \\
+  XDB2 is no longer used - instead provide a simple abstract API which
+  builds up to high-level systems like RDB
+:END:
+- ported from XDB2
+** WIP complete base obj/query package [2/3]                           :lisp:
+:PROPERTIES:
+:LOCATION: lisp/lib/obj/query.lisp
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2024-07-09 Tue 22:14]
+:END:
+- object-based protocol for asking questions about data collections
+  using data expressions
+- +lex+, +parse+, +compile+ - all handled in the Q system
+- probably in need of refactor right after
+  - different parts of the protocol will be used by different systems
+    - ~data-source~ will be implemented in ~DAT/CSV~ ~DAT/PARQUET~,
+      ~RDB~, etc
+    - ~query-expression~ and ~query-plan~ will be implemented in
+      ~Q/SQL~ and ~Q/DQL~
+*** DONE aggregate physical plan
+:PROPERTIES:
+:Effort:   2h
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2024-08-03 Sat 01:00]
+:END:
+*** DONE Physical Expressions
+:PROPERTIES:
+:Effort:   3h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-02 Fri 15:53]
+- State "TODO"       from              [2024-08-02 Fri 15:53]
+- State "DONE"       from "TODO"       [2024-08-03 Sat 01:00]
+:END:
+*** TODO Basic Testing
+:LOGBOOK:
+- State "TODO"       from              [2024-08-02 Fri 15:55]
+:END:
+
+* TODO net 0.1 [5/8]                                               :lisp:net:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:00]
+:END:
+** TODO fixtures                                                         :rt:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:06]
+:END:
+- implement simple network fixtures which can be used within the body of DEFTEST
+- start with simple sockets - UDP then TCP
+- work up towards HTTP
+** TODO tcp                                                            :core:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+:END:
+** TODO udp                                                            :core:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+:END:
+** DONE crew                                                          :proto:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+- State "DONE"       from "TODO"       [2024-08-10 Sat 01:31]
+:END:
+
+** DONE http                                                          :proto:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+- State "DONE"       from "TODO"       [2024-08-05 Mon 21:07]
+:END:
+** DONE dns                                                           :proto:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+- State "DONE"       from "TODO"       [2024-08-05 Mon 21:07]
+:END:
+
+** DONE tlv                                                           :codec:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+- State "DONE"       from "TODO"       [2024-08-07 Wed 21:08]
+:END:
+
+** DONE osc                                                           :codec:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:03]
+- State "DONE"       from "TODO"       [2024-08-07 Wed 21:08]
+:END:
+** WIP net/srv                                                         :lisp:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-19 Fri 21:50]
+- State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
+:END:
+- needs a solid task-pool impl completed first
+*** RESEARCH Woo/+
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-10 Sat 01:23]
+:END:
+* TODO pwn 0.1 [0/1]                                               :lisp:pwn:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+- Note taken on [2024-02-29 Thu 16:11] \\
+  Should this be a separate application? Lisp exploit development framework
+:END:
+** TODO diz
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+:END:
+* TODO gui 0.1 [0/2]                                               :lisp:gui:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 03:40]
+:END:
+** TODO wayland protocol bindings
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 03:40]
+:END:
+** TBD wayland compositor                                         :rust:lisp:
+:LOGBOOK:
+- State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
+:END:
+:PROPERTIES:
+:ID: e18a90d7-10bc-44d3-8508-56483d29d385
+:END:
+* TODO rt 0.1 [0/2]                                                      :rt:
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:06]
+:END:
+** TODO redirect I/O in tests
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:06]
+:END:
+prevent tests from printing implicitly. redirect stream locally, cache
+it somehow for review.
+** TODO *test-on-def*
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 17:17]
+:END:
+- simple flag to test when file is defined (part of deftest macro)
+* NOPE dot 0.1 [1/1]                                               :lisp:dot:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-20 Wed 18:27]
+:END:
+** NOPE PARSE-SPECIALIZER-USING-CLASS
+:LOGBOOK:
+- State "TODO"       from              [2023-12-20 Wed 18:28]
+:END:
+- experimental SB-MOP generic, may be useful in places where we would
+  typically use =(eql OBJECT)= as a specializer for GRAPH.
+
+* TBD homer 0.1 [1/2]                                            :lisp:homer:
+:LOGBOOK:
+- State "TBD"        from "TODO"       [2023-12-12 Tue 19:53]
+:END:
+** DONE review GNU stow API
+:LOGBOOK:
+- State "TODO"       from              [2023-12-24 Sun 19:32]
+- State "DONE"       from "TODO"       [2024-08-05 Mon 21:06]
+:END:
+[[https://www.gnu.org/software/stow/][homepage]]
+'symlink farm manager'
+rust impl: https://github.com/qboileau/rstow
+
+** TODO consolidate with skel
+:LOGBOOK:
+- State "TODO"       from              [2023-12-24 Sun 19:32]
+:END:

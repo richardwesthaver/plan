@@ -2,6 +2,7 @@
 #+author: Richard Westhaver
 #+description: demo task list
 #+setupfile: ../../clean.theme
+#+filetags: demo
 * TODO update readme                                                    :doc:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-09 Tue 22:21]
@@ -9,3 +10,6 @@
 - never really got around to reviewing the demo readme, it's been a
   while so time to update and bring things back to reality.
 * TODO examples/mdb                                              :example:db:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2024-08-06 Tue 16:54]
+:END:
