@@ -1,4 +1,10 @@
 #+title: product roadmap
 #+setupfile: ../clean.theme
 * NAS-T
+:PROPERTIES:
+:ID:       5ac06d93-1461-422f-9230-98f1a975032c
+:END:
 * OTOM8
+:PROPERTIES:
+:ID:       91571c62-a1ad-4959-9006-f07e95e613a2
+:END:
