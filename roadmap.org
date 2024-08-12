@@ -27,6 +27,8 @@ vc.compiler.company will be migrate to rurik on a dedicated pod
 :LOGBOOK:
 - State "TODO"       from              [2024-05-06 Mon 16:48]
 - State "WIP"        from "TODO"       [2024-05-06 Mon 16:48]
+- Note taken on [2024-08-12 Mon 18:21] \\
+  all that is left is to configure for VM and containers
 :END:
 Wireguard is a fast, secure, and easy to configure VPN library. All
 our primary devices have been configured and tested with two available
@@ -54,6 +56,9 @@ io_uring.
 :END:
 :LOGBOOK:
 - State "WIP"        from "TBD"        [2024-05-06 Mon 17:06]
+- Note taken on [2024-08-12 Mon 18:21] \\
+  makefiles are now replaced by skelfile rules. next step is SKEL-VM for
+  optimize rule execution plans.
 :END:
 The pieces are there, just needs glue.
 
@@ -63,12 +68,13 @@ of all =cli=.
 
 The two top priorities are VC commands and implementing a functional
 replacement for makefiles as used in the infra project.
-** TODO infra
+** DONE infra
 :PROPERTIES:
 :ID:       615dfb29-859c-4ad7-9acf-01ea8aee1174
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-05-06 Mon 17:06]
+- State "DONE"       from "TODO"       [2024-08-12 Mon 18:23]
 :END:
 It is time to move away from makefiles and start integrating our own
 programs into the system bootstrap process. This iteration of the
