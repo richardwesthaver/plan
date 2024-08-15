@@ -4,48 +4,61 @@
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t
 #+filetags: core
-* TODO ffi cleanup [0/8]                                           :lisp:ffi:
+* TODO ffi [0/10]                                                  :lisp:ffi:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 :END:
-** TODO rocksdb merge-operator callbacks
+** WIP rocksdb merge-operator callbacks                             :rocksdb:
+DEADLINE: <2024-08-16 Fri> SCHEDULED: <2024-08-15 Thu>
+:LOGBOOK:
+- State "TODO"       from              [2024-08-10 Sat 22:21]
+- State "WIP"        from "TODO"       [2024-08-14 Wed 21:50]
+:END:
+** WIP rocksdb compactionfilter callbacks                           :rocksdb:
+DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
+:LOGBOOK:
+- State "TODO"       from              [2024-08-14 Wed 21:50]
+- State "WIP"        from "TODO"       [2024-08-14 Wed 21:50]
+:END:
+** WIP rocksdb comparator callbacks                                 :rocksdb:
+DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
+:LOGBOOK:
+- State "WIP"        from              [2024-08-14 Wed 21:51]
+:END:
+** TODO gstreamer practical example                               :gstreamer:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:21]
 :END:
-** TODO gstreamer practical example
-:LOGBOOK:
-- State "TODO"       from              [2024-08-10 Sat 22:21]
-:END:
-** TODO ublk practical example
+** TODO ublk practical example                                         :ublk:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:22]
 :END:
-** TODO uring read/write file example
+** TODO uring read/write file example                                 :uring:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:22]
 :END:
-** TODO btrfs practical example
+** TODO btrfs practical example                                       :btrfs:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:30]
 :END:
 - [ ] sudo example (filesystem)
 - [ ] non-sudo example?
-** TODO xkb practical example
+** TODO xkb practical example                                          :x:kb:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:32]
 :END:
-** TODO keyutils practical example
+** TODO keyutils practical example                                   :crypto:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-** TODO readline 
+** TODO readline                                                        :cli:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:23]
 :END:
 * TBD retire x.lisp                                               :lisp:skel:
 :PROPERTIES:
 :LOCATION: x.lisp
-:Effort:   5h
+:Effort:   5:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-09 Tue 22:24]
@@ -54,7 +67,7 @@
 with skel taking on more responsibility we no longer need a dedicated build tool.
 - migrate all functionality to skelfile
 - cleanup readme with installation instructions (with and without =infra=)
-* TODO cli/clap v0.2.0 [1/5]                                       :lisp:cli:
+* TODO cli/clap v0.2.0 [1/6]                                       :lisp:cli:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-21 Sun 01:33]
 :END:
@@ -81,10 +94,6 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
-** TODO explain impl
-:LOGBOOK:
-- State "TODO"       from              [2024-08-03 Sat 01:01]
-:END:
 * TODO multipoint-images                                       :lisp:bin:sys:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-28 Sun 21:01]
@@ -100,7 +109,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
 :END:
-* TODO Q MVP
+* TODO q 0.1                                                         :lisp:q:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
 :END:
@@ -200,7 +209,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:30]
 :END:
-* HACK defsys
+* HACK defsys                                                      :lisp:std:
 :LOGBOOK:
 - State "HACK"       from              [2024-08-03 Sat 01:06]
 :END:
@@ -291,6 +300,9 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :END:
 :PROPERTIES:
 :ID: af778a5f-4834-4f0c-ae53-36d35cb98d8c
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-13 Tue 22:06]
 :END:
 * TODO parse 0.1 [0/2]                                             :lisp:lib:
 :LOGBOOK:
@@ -427,7 +439,7 @@ using our parser module.
 - I feel this may be less efficient but haven't benched it (requires additional arg)
 - separate packages are a pain to query symbols with
 
-* TODO vc 0.1 [2/3]                                                      :vc:
+* TODO vc 0.1 [2/3]                                                 :lisp:vc:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:10]
 :END:
@@ -452,7 +464,7 @@ using our parser module.
 :END:
 ** WIP dat/parquet                                                     :lisp:
 :PROPERTIES:
-:Effort:   80h
+:Effort:   80:00
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-19 Fri 21:51]
@@ -460,7 +472,7 @@ using our parser module.
 
 ** TODO dat/csv column selectors                                   :lisp:dat:
 :PROPERTIES:
-:Effort:   8h
+:Effort:   8:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 20:53]
@@ -474,6 +486,32 @@ using our parser module.
 - index-based-selection
 - selection-by-name
 
+** TODO sxp 0.2                                                    :lisp:sxp:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-12 Tue 19:49]
+:END:
+*** TODO WRAP-OBJECT                                                   :skel:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-12 Tue 19:49]
+:END:
+- use to replace LOAD-AST for sk-project and friends
+- requires mop
+- take a look at UNWRAP-OBJECT too, may need rewrite for a better API
+**** TODO sxp standard methods
+:LOGBOOK:
+- State "TODO"       from              [2024-08-13 Tue 22:06]
+:END:
+- hash-table
+- classoid
+- vector
+- boolean
+- obj/
+  - color
+  - uri
+* TODO syn 0.1                                                     :lisp:syn:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-13 Tue 22:15]
+:END:
 * TODO skel 0.2 [1/4]                                             :lisp:skel:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:55]
@@ -490,11 +528,12 @@ using our parser module.
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
 - core/rule.lisp
-** TODO implement task-pool
+** TODO implement task-pool                                          :thread:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
 ** TODO implement vm
+DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:11]
 :END:
@@ -544,22 +583,11 @@ using our parser module.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:29]
 :END:
-* TODO sxp 0.2 [0/1]                                               :lisp:sxp:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-12 Tue 19:49]
-:END:
-** TODO WRAP-OBJECT                                                    :skel:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-12 Tue 19:49]
-:END:
-- use to replace LOAD-AST for sk-project and friends
-- requires mop
-- take a look at UNWRAP-OBJECT too, may need rewrite for a better API
 * TODO obj 0.1 [2/2]                                               :lisp:obj:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 :END:
-** NOPE uri
+** NOPE uri                                                             :net:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:00]
 - Note taken on [2023-12-20 Wed 18:26] \\
@@ -569,7 +597,7 @@ using our parser module.
   for a path and URI protocol.
 :END:
 - mostly just need the tests and to finish porting the Franz implementation
-** DONE db
+** DONE db                                                               :db:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-20 Wed 18:26]
 - State "DONE"       from "TODO"       [2024-08-05 Mon 21:08]
@@ -578,7 +606,7 @@ using our parser module.
   builds up to high-level systems like RDB
 :END:
 - ported from XDB2
-** WIP complete base obj/query package [2/3]                           :lisp:
+** WIP complete base obj/query package [2/3]                           :q:db:
 :PROPERTIES:
 :LOCATION: lisp/lib/obj/query.lisp
 :END:
@@ -596,14 +624,14 @@ using our parser module.
       ~Q/SQL~ and ~Q/DQL~
 *** DONE aggregate physical plan
 :PROPERTIES:
-:Effort:   2h
+:Effort:   2:00
 :END:
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2024-08-03 Sat 01:00]
 :END:
 *** DONE Physical Expressions
 :PROPERTIES:
-:Effort:   3h
+:Effort:   3:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:53]
@@ -613,6 +641,15 @@ using our parser module.
 *** TODO Basic Testing
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:55]
+:END:
+
+** TODO explain impl                                                    :doc:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-03 Sat 01:01]
+:END:
+** TODO explore impl                                                    :doc:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
 :END:
 
 * TODO net 0.1 [5/8]                                               :lisp:net:
@@ -697,7 +734,7 @@ using our parser module.
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-* TODO rt 0.1 [0/2]                                                      :rt:
+* TODO rt 0.1 [0/4]                                                 :lisp:rt:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:06]
 :END:
@@ -712,6 +749,10 @@ it somehow for review.
 - State "TODO"       from              [2024-02-29 Thu 17:17]
 :END:
 - simple flag to test when file is defined (part of deftest macro)
+** TODO fixture api
+:LOGBOOK:
+- State "TODO"       from              [2024-08-13 Tue 22:22]
+:END:
 * NOPE dot 0.1 [1/1]                                               :lisp:dot:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-20 Wed 18:27]
@@ -736,7 +777,7 @@ it somehow for review.
 'symlink farm manager'
 rust impl: https://github.com/qboileau/rstow
 
-** TODO consolidate with skel
+** TODO consolidate with skel                                          :skel:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:32]
 :END:
