@@ -1,7 +1,8 @@
 #+title: core tasks
 #+author: Richard Westhaver
 #+description: core task list
-#+setupfile: ../../clean.theme
+#+setupfile: https://cdn.compiler.company/org/clean.theme
+#+infojs_opt: toc:t home:https://compiler.company up:./
 #+OPTIONS: num:nil d:t prop:t
 #+filetags: core
 * TODO ffi [0/10]                                                  :lisp:ffi:
