@@ -2,10 +2,13 @@
 #+author: Richard Westhaver <ellis@rwest.io>
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
-* TODO 2024
-SCHEDULED: <2024-01-01 Mon>--[2024-12-31 Tue]
+* WIP 2024
+SCHEDULED: <2024-01-01 Mon>--<2024-12-31 Tue>
 :PROPERTIES:
 :ID:       bef157e2-ef55-4653-9916-1a329255a920
+:END:
+:LOGBOOK:
+- State "WIP"        from "TODO"       [2024-08-16 Fri 23:03]
 :END:
 - State "TODO"       from              [2023-11-05 Sun 21:47]
 ** WIP migrate VC off of EC2                                  :opsec:vc:code:
@@ -81,3 +84,8 @@ programs into the system bootstrap process. This iteration of the
 infra project will have a few POSIX shell scripts for checking the
 host and grabbing a pre-compiled lisp as well as a compressed
 =infra.core= image.
+* OUTLINE 2025
+SCHEDULED: <2024-01-01 Mon>--<2025-12-31 Wed>
+:LOGBOOK:
+- State "OUTLINE"    from              [2024-08-16 Fri 23:04]
+:END:
