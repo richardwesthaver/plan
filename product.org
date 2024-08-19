@@ -1,10 +1,17 @@
-#+title: product roadmap
+#+title: product roadmaps
 #+setupfile: ../clean.theme
-* NAS-T
+#+filetags: product
+* PRODUCT NAS-T
 :PROPERTIES:
 :ID:       5ac06d93-1461-422f-9230-98f1a975032c
 :END:
-* OTOM8
+:LOGBOOK:
+- State "PRODUCT"    from              [2024-08-18 Sun 02:04]
+:END:
+* PRODUCT OTOM8
 :PROPERTIES:
 :ID:       91571c62-a1ad-4959-9006-f07e95e613a2
+:END:
+:LOGBOOK:
+- State "PRODUCT"    from              [2024-08-18 Sun 02:04]
 :END:

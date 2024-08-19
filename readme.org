@@ -16,7 +16,7 @@
 :PROPERTIES:
 :ID:       0b96cff3-3ff8-4b09-a90a-839724301143
 :END:
-* tasks
+* [[file:tasks/][tasks]]
 :PROPERTIES:
 :ID:       e4324739-52f8-4c01-a9f8-62e41009f62c
 :END:

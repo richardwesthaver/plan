@@ -3,15 +3,34 @@
 #+description: infra task list
 #+setupfile: ../../clean.theme
 #+filetags: infra
+#+ARCHIVE: ../../archive/plan.org::** infra
 * TODO autogen.lisp                                                    :lisp:
+:PROPERTIES:
+:ID:       e0d28d5c-1e13-4208-b56d-a5d0d1efd6b5
+:END:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-09 Tue 22:23]
 - State "TODO"       from "WIP"        [2024-07-28 Sun 21:20]
 :END:
 * DONE dictd
+:PROPERTIES:
+:ID:       9f997bf9-f4dc-469a-93c4-fb02f9a22b86
+:END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-12 Mon 17:55]
 - Note taken on [2024-08-12 Mon 17:55] \\
   basically done - serving on compiler.company:2628 with route through https
 - State "DONE"       from "TODO"       [2024-08-12 Mon 18:02]
 :END:
+* TODO reintegrate pod and box                                           :vc:
+SCHEDULED: <2024-08-18 Sun>
+:PROPERTIES:
+:CREATED:  <2024-08-18 Sun 16:15>
+:ID:       98f2bfed-3d30-44af-a9cd-ff09dca7f335
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-18 Sun 16:14]
+:END:
+- [ ] pod
+- [ ] box
+- [ ] .hgsub

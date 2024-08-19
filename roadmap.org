@@ -2,13 +2,15 @@
 #+author: Richard Westhaver <ellis@rwest.io>
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
-* WIP 2024
+#+filetags: milestone
+* RELEASE 2024
 SCHEDULED: <2024-01-01 Mon>--<2024-12-31 Tue>
 :PROPERTIES:
 :ID:       bef157e2-ef55-4653-9916-1a329255a920
 :END:
 :LOGBOOK:
 - State "WIP"        from "TODO"       [2024-08-16 Fri 23:03]
+- State "RELEASE"    from "WIP"        [2024-08-18 Sun 18:48]
 :END:
 - State "TODO"       from              [2023-11-05 Sun 21:47]
 ** WIP migrate VC off of EC2                                  :opsec:vc:code:
@@ -71,6 +73,16 @@ of all =cli=.
 
 The two top priorities are VC commands and implementing a functional
 replacement for makefiles as used in the infra project.
+** TBD orgdb                                                            :mvp:
+:PROPERTIES:
+:VERSION:  0.1.0
+:ID:       b07a5a1b-93ec-457e-bd50-6b00b9a10352
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2024-08-18 Sun 01:58]
+:END:
+- similar idea to org-roam
+- stored in rocksdb columns
 ** DONE infra
 :PROPERTIES:
 :ID:       615dfb29-859c-4ad7-9acf-01ea8aee1174
@@ -85,7 +97,26 @@ infra project will have a few POSIX shell scripts for checking the
 host and grabbing a pre-compiled lisp as well as a compressed
 =infra.core= image.
 * OUTLINE 2025
-SCHEDULED: <2024-01-01 Mon>--<2025-12-31 Wed>
+SCHEDULED: <2025-01-01 Mon>--<2025-12-31 Wed>
+:PROPERTIES:
+:ID:       93349821-ca20-4c07-a016-fd270c0c3b8d
+:END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-16 Fri 23:04]
+:END:
+** TBD orgdb
+:PROPERTIES:
+:VERSION:  1.0.0
+:ID:       09987fe2-7272-4054-b728-e2c87135a8a1
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2024-08-18 Sun 02:00]
+:END:
+** TBD bbdb
+:PROPERTIES:
+:VERSION:  0.1.0
+:ID:       9426d8b9-fa7b-4515-aa13-54cc45e8358f
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2024-08-18 Sun 02:03]
 :END:
