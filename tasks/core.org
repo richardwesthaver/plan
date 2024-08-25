@@ -15,19 +15,26 @@
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb v0.1.0 [4/7]                                     :rocksdb:
+** PROJECT rocksdb v0.1.0 [6/7]                                     :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
 :END:
-*** TODO writebatch
+*** DONE writebatch
+SCHEDULED: <2024-08-19 Mon 20:00-22:00><2024-08-20 Tue 20:00>
 :PROPERTIES:
 :ID:       22e3eb0a-f3f7-4788-a90c-5ecd2df7db15
+:Effort:   4:00
+:CREATED:  <2024-08-19 Mon 20:05>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:56]
+- State "WIP"        from "TODO"       [2024-08-19 Mon 20:01]
+CLOCK: [2024-08-19 Mon 20:01]--[2024-08-19 Mon 21:03] =>  1:02
+CLOCK: [2024-08-20 Tue 19:41]--[2024-08-20 Tue 20:16] =>  0:35
+- State "DONE"       from "WIP"        [2024-08-20 Tue 20:19]
 :END:
 **** LINK [[file:/usr/local/include/rocksdb/c.h::/* Write batch */]]
 :PROPERTIES:
@@ -70,7 +77,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-14 Wed 21:50]
 - State "WIP"        from "TODO"       [2024-08-14 Wed 21:50]
-CLOCK: [2024-08-18 Sun 18:51]--[2024-08-18 Sun 19:46] =>  0:55
+CLOCK: [2024-08-18 Sun 18:51]--[2024-08-18 Sun 19:46] =>  0:00
 - State "DONE"       from "WIP"        [2024-08-18 Sun 19:47]
 :END:
 
@@ -137,24 +144,36 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:44]
 :END:
-*** TEST define-merge-operator                                        :macro:
+*** DONE define-merge-operator                                        :macro:
+SCHEDULED: <2024-08-21 Wed>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 19:52>
 :ID:       c6643502-8c0c-4e44-9986-d4519f39f01c
+:Effort:   2:00
+:LOCATION: lisp/ffi/rocksdb/tests.lisp
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-18 Sun 19:53]
 - State "TODO"       from "TODO"       [2024-08-18 Sun 22:01]
 - State "TEST"       from "TODO"       [2024-08-18 Sun 22:02]
+CLOCK: [2024-08-21 Wed 20:34]--[2024-08-21 Wed 21:13] =>  0:39
+- State "DONE"       from "TEST"       [2024-08-21 Wed 21:21]
+- Note taken on [2024-08-21 Wed 21:21] \\
+  will need to do actual tests merging key/vals when we implement associative merge API
 :END:
 - define macro which eases the process of making custom merge operators
-#+begin_src lisp :package rocksdb
+#+begin_src lisp :package rocksdb :eval no-export
   (define-merge-operator :incf nil
     :full nil
     :partial nil)
-
   (create-incf-mergeoperator)
 #+end_src
+
+#+RESULTS:
+: #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X75D288000C30 :TYPE (*
+:                                                             (SB-ALIEN:STRUCT
+:                                                              ROCKSDB::ROCKSDB-MERGEOPERATOR-T))>
+
 ** TODO readline                                                        :cli:
 :PROPERTIES:
 :ID:       4aebbb1d-201e-4a74-8e57-537cb96a39d7
@@ -245,6 +264,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 ** TODO minimal documentation                                           :doc:
 :PROPERTIES:
 :ID:       aef56337-8adf-4f69-823f-4380ae0c468b
+:LOCATION: lib/cli.org
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
@@ -272,6 +292,16 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
+** FIXME opt/arg parsing
+:PROPERTIES:
+:ID:       f44f2d22-44d8-438b-b388-546c0bc0c65b
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2024-08-21 Wed 21:23]
+:END:
+- do not need to handle multiple commands
+  - what do we want to do about subcommands?
+- do not need to support 'global' option for commands
 * TODO multipoint-images                                       :lisp:bin:sys:
 :PROPERTIES:
 :ID:       f1d14ea9-fbbe-4043-a54d-d7c8774f16d6
@@ -293,7 +323,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
 :END:
-* PROJECT q 0.1                                                      :lisp:q:
+* PROJECT q 0.1 [0/4]                                                :lisp:q:
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
 :END:
@@ -448,19 +478,6 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:30]
 :END:
-* HACK defsys                                                      :lisp:std:
-:PROPERTIES:
-:ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
-:END:
-:LOGBOOK:
-- State "HACK"       from              [2024-08-03 Sat 01:06]
-:END:
-- maybe Norvig was right and we don't need asdf/uiop, maybe not
-- the truth is somewhere in between
-- [ ] defsys macro
-- [ ] use macro
-- [ ] using macro
-- [ ] requires macro
 * TODO parse 0.1 [0/2]                                             :lisp:lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
@@ -651,9 +668,14 @@ using our parser module.
 ** TODO vc-mirrors-update replacement
 :PROPERTIES:
 :ID:       36c19881-72c6-4cf5-aaba-2b4ced302b97
+:LOCATION: ~/.config/nushell/scripts/vc.nu
+:Effort:   3:00
+:CREATED:  <2024-08-22 Thu 22:15>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:33]
+CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
+- State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
 ** DONE git                                                          :vc:git:
 :PROPERTIES:
@@ -863,6 +885,20 @@ SCHEDULED: <2024-08-23 Fri> DEADLINE: <2024-08-25 Sun>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:29]
 :END:
+** HACK defsys                                                     :lisp:std:
+:PROPERTIES:
+:ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
+:END:
+:LOGBOOK:
+- State "HACK"       from              [2024-08-03 Sat 01:06]
+- Refiled on [2024-08-22 Thu 19:03]
+:END:
+- maybe Norvig was right and we don't need asdf/uiop, maybe not
+- the truth is somewhere in between
+- [ ] defsys macro
+- [ ] use macro
+- [ ] using macro
+- [ ] requires macro
 * PROJECT obj 0.1 [2/5]                                            :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
@@ -1119,7 +1155,7 @@ it somehow for review.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:22]
 :END:
-* PROJECT emacs 0.1                                                   :emacs:
+* PROJECT emacs 0.1 [0/6]                                             :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :END:
@@ -1354,6 +1390,34 @@ it somehow for review.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:44]
 :END:
+** OUTLINE graph                                                        :org:
+:PROPERTIES:
+:ID:       27d6936b-3e2f-4d28-af11-85c8276389db
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2024-08-21 Wed 20:40]
+:END:
+- edges
+  - forward links
+  - back links
+- drawers?
+- properties?
+- export features
+- configuration
+- updating
+- emacs caching
+- KV model
+
+** TODO org-follow-location                                             :org:
+:PROPERTIES:
+:ID:       08257c5a-51f2-40b2-aa1e-58b02d31c68a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-21 Wed 20:37]
+:END:
+- follow LOCATION property of heading at point
+- respect parent LOCATION, buffer local settings, etc
+
 * TBD homer 0.1 [1/2]                                            :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
@@ -1380,3 +1444,22 @@ rust impl: https://github.com/qboileau/rstow
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:32]
 :END:
+* RESEARCH eBPF                                                         :net:
+:PROPERTIES:
+:ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-21 Wed 22:40]
+:END:
+https://docs.kernel.org/bpf/standardization/instruction-set.html#bpf-instruction-set-architecture-isa
+https://mostlynerdless.de/blog/2023/12/31/hello-ebpf-developing-ebpf-apps-in-java-1/
+https://github.com/iovisor/bcc
+* RESEARCH batman-adv
+:PROPERTIES:
+:CREATED:  <2024-08-23 Fri 21:16>
+:ID:       53992507-a3af-43ff-b04b-aa05ccabe2fa
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-08-23 Fri 21:16]
+:END:
+[[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]

@@ -22,15 +22,93 @@
   basically done - serving on compiler.company:2628 with route through https
 - State "DONE"       from "TODO"       [2024-08-12 Mon 18:02]
 :END:
-* TODO reintegrate pod and box                                           :vc:
-SCHEDULED: <2024-08-18 Sun>
+* DONE reintegrate pod and box                                           :vc:
+DEADLINE: <2024-08-23 Fri> SCHEDULED: <2024-08-18 Sun>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 16:15>
 :ID:       98f2bfed-3d30-44af-a9cd-ff09dca7f335
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 16:14]
+- State "DONE"       from "TODO"       [2024-08-20 Tue 19:24]
 :END:
-- [ ] pod
-- [ ] box
-- [ ] .hgsub
+- [X] pod
+- [X] box
+- [X] .hgsub
+* TODO [#A] deploy [0/4]                                               :lisp:
+:PROPERTIES:
+:Effort:   8h
+:ID:       f9b9c56b-90ce-462c-9b50-de88e28b1f15
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-30 Sat 19:20]
+:END:
+- [ ] collect artifacts
+- [ ] pack
+- [ ] send output to =DIST=
+- [ ] Adapt to =skel deploy=
+
+- *assumptions*
+  - host is qualified builder
+  - all dependendencies installed on system (not in stash)
+  - current user has access to DIST
+
+* TODO [#B] publish [0/4]                                        :lisp:emacs:
+:PROPERTIES:
+:ID:       e308e4b8-d5eb-4498-8c74-2535895b02ca
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-06-21 Fri 15:00]
+:END:
+- [ ] load dependencies (htmlize,default.el,babel.org)
+- [ ] load =publish.el=
+- [ ] set =publish-directory=
+- [ ] eval =publish=
+
+* TODO install [0/7]
+:PROPERTIES:
+:ID:       703db83e-758f-45fa-a6d3-13557eaeb162
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-06-21 Fri 15:20]
+:END:
+- [ ] from source or pack?
+- [ ] which features?
+- [ ] set INSTALL_PREFIX
+- [ ] check host target, install pack or clone src
+- [ ] if from source run =build=
+- [ ] if from pack run =unpack=
+- [ ] run install script
+* TBD [#C] demo
+SCHEDULED: <2024-08-01 Thu>
+:PROPERTIES:
+:ID:       15304b4e-c388-45d3-b7b5-a7fbb642e3f9
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-30 Sat 19:22]
+- State "TBD"        from "TODO"       [2024-06-21 Fri 15:04]
+:END:
+The demo will eventually need to be integrated with and deployed by
+=infra=.
+
+* TODO ci
+:PROPERTIES:
+:ID:       c50e8042-dbc2-4bfd-ab85-cef860673351
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-30 Sat 19:22]
+:END:
+- timers
+- triggers
+
+* TODO tree-sitter-pack
+:PROPERTIES:
+:ID:       e9d05b58-9812-4e35-8b6d-417f262a113f
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-01-24 Wed 22:59]
+:END:
+- pull-tree-sitter-langs.sh
+- install-tree-sitter-langs.sh (OG, calls pull)
+- make dist/tree-sitter
+
