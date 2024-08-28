@@ -3,16 +3,12 @@
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
 #+filetags: milestone
-* RELEASE 2024
+* 2024
 SCHEDULED: <2024-01-01 Mon>--<2024-12-31 Tue>
 :PROPERTIES:
 :ID:       bef157e2-ef55-4653-9916-1a329255a920
+:CREATED:  <2024-08-26 Mon 18:47>
 :END:
-:LOGBOOK:
-- State "WIP"        from "TODO"       [2024-08-16 Fri 23:03]
-- State "RELEASE"    from "WIP"        [2024-08-18 Sun 18:48]
-:END:
-- State "TODO"       from              [2023-11-05 Sun 21:47]
 ** WIP migrate VC off of EC2                                  :opsec:vc:code:
 :PROPERTIES:
 :ID:       e71f5fa6-59de-4c80-9cf8-3345f7310105

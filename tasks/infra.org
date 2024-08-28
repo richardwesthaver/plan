@@ -4,6 +4,7 @@
 #+setupfile: ../../clean.theme
 #+filetags: infra
 #+ARCHIVE: ../../archive/plan.org::** infra
+#+category: project
 * TODO autogen.lisp                                                    :lisp:
 :PROPERTIES:
 :ID:       e0d28d5c-1e13-4208-b56d-a5d0d1efd6b5

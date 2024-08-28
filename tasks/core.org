@@ -3,8 +3,7 @@
 #+email: richard.westhaver@gmail.com
 #+description: core task list
 #+setupfile: ../../clean.theme
-#+infojs_opt: toc:t home:https://compiler.company up:./
-#+OPTIONS: num:nil d:t prop:t toc:nil
+#+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** core
 #+filetags: core
 * PROJECT ffi v0.1.0 [1/8]                                         :lisp:ffi:
@@ -36,7 +35,7 @@ CLOCK: [2024-08-19 Mon 20:01]--[2024-08-19 Mon 21:03] =>  1:02
 CLOCK: [2024-08-20 Tue 19:41]--[2024-08-20 Tue 20:16] =>  0:35
 - State "DONE"       from "WIP"        [2024-08-20 Tue 20:19]
 :END:
-**** LINK [[file:/usr/local/include/rocksdb/c.h::/* Write batch */]]
+**** [[file:/usr/local/include/rocksdb/c.h::/* Write batch */]]
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 21:44>
 :ID:       05be05ba-4775-4feb-956f-7e52d31452bc
@@ -174,6 +173,18 @@ CLOCK: [2024-08-21 Wed 20:34]--[2024-08-21 Wed 21:13] =>  0:39
 :                                                             (SB-ALIEN:STRUCT
 :                                                              ROCKSDB::ROCKSDB-MERGEOPERATOR-T))>
 
+*** TODO impl rocksdb/slicetransform callbacks
+DEADLINE: <2024-09-07 Sat>
+:PROPERTIES:
+:CREATED:  <2024-08-19 Mon 16:17>
+:ID:       1aa4a86f-0fa6-46ba-bd42-bc87a3a64245
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-19 Mon 16:17]
+- New deadline from "[2024-08-27 Tue]" on [2024-08-27 Tue 17:30]
+- Refiled on [2024-08-27 Tue 17:31]
+:END:
+[[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp::;;; rocksdb/slicetransform.lisp --- RocksDB SliceTransform][rocksdb/slicetransform.lisp]]
 ** TODO readline                                                        :cli:
 :PROPERTIES:
 :ID:       4aebbb1d-201e-4a74-8e57-537cb96a39d7
@@ -232,7 +243,6 @@ CLOCK: [2024-08-21 Wed 20:34]--[2024-08-21 Wed 21:13] =>  0:39
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-
 * TODO retire x.lisp                                              :lisp:skel:
 SCHEDULED: <2024-08-22 Thu>
 :PROPERTIES:
@@ -802,7 +812,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
 ** TODO implement vm
-SCHEDULED: <2024-08-23 Fri> DEADLINE: <2024-08-25 Sun>
+SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
 :CREATED:  <2024-08-18 Sun 22:03>
@@ -1191,6 +1201,33 @@ it somehow for review.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
 :END:
+*** TODO edges dblock
+:PROPERTIES:
+:CREATED:  <2024-08-27 Tue 18:20>
+:ID:       9c55b120-d65e-4af5-9171-c324e211ed6a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-27 Tue 18:20]
+:END:
+- list of links between other headings
+  - <= links to this item
+  - => links from this item
+  - == siblings
+  - ^= parent
+  - v= child
+- how should it look when exported?
+- EXPORT_EDGES property?
+*** TODO agenda views
+:PROPERTIES:
+:CREATED:  <2024-08-27 Tue 18:23>
+:ID:       4f704120-1553-46bc-ac31-5d65aaf340d3
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-27 Tue 18:23]
+:END:
+- a few defined in ellis.el
+- define some starter ones for inbox.el
+- define views for scrum.el
 ** FIXME compiler warnings
 :PROPERTIES:
 :ID:       dd4cf91d-4b45-4b5f-adee-0e248ebed0e1

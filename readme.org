@@ -4,6 +4,7 @@
 #+email:richard.westhaver@gmail.com
 #+setupfile: ../clean.theme
 #+export_file_name: index
+#+options: toc:nil
 :info:
 + version :: 0.1.0
 :end:

@@ -4,6 +4,7 @@
 #+setupfile: ../../clean.theme
 #+filetags: demo
 #+ARCHIVE: ../../archive/plan.org::** demo
+#+category: project
 * TODO update readme                                                    :doc:
 :PROPERTIES:
 :ID:       42d188a4-4ae8-474b-953e-3b9780cd0def
