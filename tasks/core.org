@@ -5,10 +5,12 @@
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** core
+#+LOCATION: ~/comp/core/
 #+filetags: core
-* PROJECT ffi v0.1.0 [1/8]                                         :lisp:ffi:
+* PROJECT ffi [1/8]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:20]
@@ -246,7 +248,7 @@ DEADLINE: <2024-09-07 Sat>
 * TODO retire x.lisp                                              :lisp:skel:
 SCHEDULED: <2024-08-22 Thu>
 :PROPERTIES:
-:LOCATION: x.lisp
+:LOCATION: ~/comp/core/x.lisp
 :Effort:   4:00
 :ID:       88343a1c-e17b-4cb8-b6d6-f770c482665e
 :END:
@@ -258,9 +260,10 @@ SCHEDULED: <2024-08-22 Thu>
 with skel taking on more responsibility we no longer need a dedicated build tool.
 - migrate all functionality to skelfile
 - cleanup readme with installation instructions (with and without =infra=)
-* PROJECT cli/clap v0.2.0 [1/6]                                    :lisp:cli:
+* PROJECT cli/clap [1/6]                                           :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
+:VERSION: 0.2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-21 Sun 01:33]
@@ -303,8 +306,10 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - pipe results?
 +forth+
 ** FIXME opt/arg parsing
+SCHEDULED: <2024-08-30 Fri 18:00>
 :PROPERTIES:
 :ID:       f44f2d22-44d8-438b-b388-546c0bc0c65b
+:CREATED:  <2024-08-30 Fri 16:10>
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2024-08-21 Wed 21:23]
@@ -312,9 +317,20 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - do not need to handle multiple commands
   - what do we want to do about subcommands?
 - do not need to support 'global' option for commands
+- use cli-parse to test.
+*** TODO clap fixtures                                                 :test:
+:PROPERTIES:
+:CREATED:  <2024-09-01 Sun 21:54>
+:ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-01 Sun 21:54]
+:END:
 * TODO multipoint-images                                       :lisp:bin:sys:
+SCHEDULED: <2024-09-08 Sun>
 :PROPERTIES:
 :ID:       f1d14ea9-fbbe-4043-a54d-d7c8774f16d6
+:CREATED:  <2024-09-01 Sun 21:52>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-28 Sun 21:01]
@@ -333,9 +349,10 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
 :END:
-* PROJECT q 0.1 [0/4]                                                :lisp:q:
+* PROJECT q [0/4]                                                    :lisp:q:
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -488,9 +505,10 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:30]
 :END:
-* TODO parse 0.1 [0/2]                                             :lisp:lib:
+* TODO parse [0/2]                                                 :lisp:lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:24]
@@ -521,9 +539,10 @@ need to fill.
 :END:
 the toml parser on quicklisp is based on esrap, make a comparable one
 using our parser module.
-* PROJECT organ 0.2 [0/2]                                        :lisp:organ:
+* PROJECT organ [0/2]                                            :lisp:organ:
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
+:VERSION: 0.2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-11-29 Wed 21:25]
@@ -593,9 +612,10 @@ using our parser module.
 : Slots with :INSTANCE allocation:
 :   AST                            = NIL
 
-* PROJECT rdb 0.2 [0/6]                                            :lisp:rdb:
+* PROJECT rdb [0/6]                                                :lisp:rdb:
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
+:VERSION: 0.2
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:26]
@@ -667,9 +687,10 @@ using our parser module.
 - I feel this may be less efficient but haven't benched it (requires additional arg)
 - separate packages are a pain to query symbols with
 
-* PROJECT vc 0.1 [2/3]                                              :lisp:vc:
+* PROJECT vc [2/3]                                                  :lisp:vc:
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:10]
@@ -704,9 +725,10 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "DONE"       from "TODO"       [2024-08-10 Sat 01:34]
 :END:
 
-* PROJECT dat 0.1                                                  :lisp:dat:
+* PROJECT dat                                                      :lisp:dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:08]
@@ -769,17 +791,19 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - obj/
   - color
   - uri
-* PROJECT syn 0.1                                                  :lisp:syn:
+* PROJECT syn                                                      :lisp:syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-* PROJECT skel 0.2 [1/4]                                          :lisp:skel:
+* PROJECT skel [1/4]                                              :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
+:VERSION: 0.2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:55]
@@ -811,20 +835,30 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
-** TODO implement vm
-SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
+** NEXT implement vm
+DEADLINE: <2024-09-02 Mon> SCHEDULED: <2024-09-02 Mon 14:00>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
 :CREATED:  <2024-08-18 Sun 22:03>
+:Effort:   8:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:11]
 - New deadline from "[2024-08-18 Sun]" on [2024-08-18 Sun 22:03]
+CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
+- State "WIP"        from "TODO"       [2024-08-28 Wed 21:43]
+- New deadline from "[2024-08-25 Sun]" on [2024-08-28 Wed 21:43]
+- Note taken on [2024-08-30 Fri 21:27] \\
+  not liking our current impl.. rewrite and document
+- State "NEXT"       from "WIP"        [2024-08-31 Sat 12:39]
+- New deadline from "[2024-09-01 Sun]" on [2024-09-01 Sun 21:40]
 :END:
 - core/vm.lisp
-* PROJECT std 0.2 [2/8]                                            :lisp:std:
+
+* PROJECT std [2/8]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
+:VERSION: 0.2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -909,9 +943,10 @@ SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
-* PROJECT obj 0.1 [2/5]                                            :lisp:obj:
+* PROJECT obj [2/5]                                                :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 00:59]
@@ -1000,9 +1035,10 @@ SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
 - State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
 :END:
 
-* PROJECT net 0.1 [5/8]                                            :lisp:net:
+* PROJECT net [5/8]                                                :lisp:net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:00]
@@ -1091,9 +1127,10 @@ SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-10 Sat 01:23]
 :END:
-* PROJECT pwn 0.1 [0/1]                                            :lisp:pwn:
+* PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:04]
@@ -1101,16 +1138,27 @@ SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
   Should this be a separate application? Lisp exploit development framework
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
 :END:
-** TODO diz
+** TODO diz                                                             :asm:
 :PROPERTIES:
 :ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:04]
 :END:
-* PROJECT gui 0.1 [0/2]                                            :lisp:gui:
+- disassembly toolkit
+** TODO sassy                                                           :net:
+:PROPERTIES:
+:CREATED:  <2024-09-02 Mon 16:14>
+:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-02 Mon 16:14]
+:END:
+- SaaS toolkit
+* PROJECT gui [0/2]                                                :lisp:gui:
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 03:40]
@@ -1133,9 +1181,10 @@ SCHEDULED: <2024-08-28 Wed 14:00-18:00> DEADLINE: <2024-08-25 Sun>
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-* PROJECT rt 0.1 [0/4]                                              :lisp:rt:
+* PROJECT rt [1/4]                                             :lisp:rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:06]
@@ -1165,9 +1214,22 @@ it somehow for review.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:22]
 :END:
-* PROJECT emacs 0.1 [0/6]                                             :emacs:
+** DONE temporary files and directories
+SCHEDULED: <2024-08-31 Sat 12:00> DEADLINE: <2024-09-01 Sun>
+:PROPERTIES:
+:CREATED:  <2024-08-28 Wed 21:35>
+:ID:       91ce2763-8f64-4f24-a41e-030c22e047c8
+:Effort:   5:00
+:END:
+:LOGBOOK:
+- Refiled on [2024-08-28 Wed 21:35]
+CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
+- State "DONE"       from "TODO"       [2024-08-31 Sat 22:14]
+:END:
+* PROJECT emacs [1/9]                                                 :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:39]
@@ -1445,19 +1507,90 @@ it somehow for review.
 - emacs caching
 - KV model
 
-** TODO org-follow-location                                             :org:
+** DONE org-follow-location                                             :org:
 :PROPERTIES:
 :ID:       08257c5a-51f2-40b2-aa1e-58b02d31c68a
+:CREATED:  <2024-08-29 Thu 18:23>
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-21 Wed 20:37]
+CLOCK: [2024-08-29 Thu 18:24]--[2024-08-29 Thu 18:51] =>  0:27
+- State "WIP"        from "REFILE"     [2024-08-29 Thu 18:24]
+- State "DONE"       from "WIP"        [2024-08-29 Thu 23:46]
 :END:
 - follow LOCATION property of heading at point
 - respect parent LOCATION, buffer local settings, etc
 
-* TBD homer 0.1 [1/2]                                            :lisp:homer:
+** TODO org-set-location
+SCHEDULED: <2024-08-30 Fri>
+:PROPERTIES:
+:CREATED:  <2024-08-29 Thu 23:46>
+:ID:       6c7c06fc-9220-40c6-8e0e-c7e734e7cd8a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-29 Thu 23:46]
+:END:
+similar to org-set-effort, to be called automatically on capture.
+- should prompt for directory then file - skip file with C-u or with RET
+** TODO org-timeline upgrades [0/3]                                     :org:
+:PROPERTIES:
+:CREATED:  <2024-08-27 Tue 14:19>
+:ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
+:END:
+:LOGBOOK:
+- Refiled on [2024-08-30 Fri 19:03]
+:END:
+[[https://github.com/deopurkar/org-timeline][GitHub - deopurkar/org-timeline: Add graphical view of agenda to agenda buffer]]
+- now lives in lib/org-timeline.el
+- have some upgrades to make
+*** TODO timeline selection update on pointer hover
+:PROPERTIES:
+:CREATED:  <2024-08-27 Tue 14:22>
+:ID:       4b2f89c6-9bf0-46bf-91c5-44afd54860e8
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-27 Tue 14:22]
+:END:
+The update behavior on mouse hover is quite nice - let's enable that
+for keyboard-based navigation too.
+*** TODO org-agenda-follow impl
+:PROPERTIES:
+:CREATED:  <2024-08-27 Tue 14:20>
+:ID:       1b23b7c0-7ad3-4906-8bcb-66cad8831484
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-27 Tue 14:20]
+:END:
+- toggled on with =F=, but doesn't follow timeline blocks
+- should follow block on hover or when cursor is inside a block
+- same applies for timeline selection
+*** TODO align org-timeline properties with ulang                     :ulang:
+:PROPERTIES:
+:CREATED:  <2024-08-27 Tue 14:26>
+:ID:       cb1272df-e155-417d-8fa9-380dac848915
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-27 Tue 14:26]
+:END:
+- there's some timeline-specific properties, let's integrate those
+  with our standard properties
+- TIMELINE_FACE = COLOR?
+- TIMELINE_TEXT = SUMMARY
+- TIMELINE_GROUP = GROUP or CATEGORY
+- TIMELINE_DO_NOT_OVERLAP
+** TODO sk.el project integration                                      :skel:
+:PROPERTIES:
+:CREATED:  <2024-09-03 Tue 22:14>
+:ID:       c9e157da-50e9-4dc3-96fd-bb9bc9175ee5
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-03 Tue 22:14]
+:END:
+* TBD homer [1/2]                                                :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
+:VERSION: 0.1
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-12-12 Tue 19:53]
@@ -1481,6 +1614,19 @@ rust impl: https://github.com/qboileau/rstow
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:32]
 :END:
+* PROJECT bench                                                  :test:bench:
+:PROPERTIES:
+:CREATED:  <2024-08-28 Wed 21:59>
+:ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-08-28 Wed 21:59]
+:END:
+- [[https://github.com/miloyip/nativejson-benchmark][GitHub - miloyip/nativejson-benchmark: C/C++ JSON parser/generator benchmark]]
+- tbd: dat generic benchmarking with fixtures
+- TPC-H
+- taobench
 * RESEARCH eBPF                                                         :net:
 :PROPERTIES:
 :ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de

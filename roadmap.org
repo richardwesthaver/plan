@@ -4,23 +4,29 @@
 #+setupfile: ../clean.theme
 #+filetags: milestone
 * 2024
-SCHEDULED: <2024-01-01 Mon>--<2024-12-31 Tue>
 :PROPERTIES:
 :ID:       bef157e2-ef55-4653-9916-1a329255a920
 :CREATED:  <2024-08-26 Mon 18:47>
 :END:
-** WIP migrate VC off of EC2                                  :opsec:vc:code:
+** DONE migrate VC off of EC2                                 :opsec:vc:code:
 :PROPERTIES:
 :ID:       e71f5fa6-59de-4c80-9cf8-3345f7310105
+:CREATED:  <2024-09-03 Tue 22:13>
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-05-06 Mon 16:43]
+- Note taken on [2024-09-03 Tue 16:52] \\
+  removed dependency on heptapod, running plain ol hgweb behind proxy
+- State "DONE"       from "WIP"        [2024-09-03 Tue 22:13]
+- Note taken on [2024-09-03 Tue 22:13] \\
+  next up: clonebundles,packy,git hosting
 :END:
 We no longer need to maintain an instance of our forge in AWS now that
 we have enough compute in-house.
 
 vc.compiler.company will be migrate to rurik on a dedicated pod
-(requires ubuntu).
++(requires ubuntu)+.
+
 ** WIP Wireguard VPN                                              :net:opsec:
 :PROPERTIES:
 :ID:       867d2bd7-cedc-4695-b98a-57296bae7792
@@ -35,12 +41,15 @@ Wireguard is a fast, secure, and easy to configure VPN library. All
 our primary devices have been configured and tested with two available
 endpoints. Our goal is to migrate all existing devices, then make
 appropriate accomodations for Podman containers, and finally KVM.
-** TBD IO                                                              :lisp:
+** TODO IO                                                             :lisp:
+SCHEDULED: <2024-10-11 Fri>
 :PROPERTIES:
 :ID:       ad563749-b7c1-4d17-8a9d-65361ce8013a
+:CREATED:  <2024-08-28 Wed 21:49>
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2024-05-06 Mon 16:50]
+- State "TODO"       from "TBD"        [2024-08-28 Wed 21:49]
 :END:
 io_uring is the Linux library we have chosen to spend some time
 getting comfortable with and for which we've written incomplete Common
@@ -76,9 +85,12 @@ replacement for makefiles as used in the infra project.
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2024-08-18 Sun 01:58]
+- Note taken on [2024-08-28 Wed 21:49] \\
+  see graph.el, org-graph-init.lisp
 :END:
 - similar idea to org-roam
 - stored in rocksdb columns
+
 ** DONE infra
 :PROPERTIES:
 :ID:       615dfb29-859c-4ad7-9acf-01ea8aee1174
@@ -93,14 +105,13 @@ infra project will have a few POSIX shell scripts for checking the
 host and grabbing a pre-compiled lisp as well as a compressed
 =infra.core= image.
 * OUTLINE 2025
-SCHEDULED: <2025-01-01 Mon>--<2025-12-31 Wed>
 :PROPERTIES:
 :ID:       93349821-ca20-4c07-a016-fd270c0c3b8d
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-16 Fri 23:04]
 :END:
-** TBD orgdb
+** TBD orgdb                                                         :org:db:
 :PROPERTIES:
 :VERSION:  1.0.0
 :ID:       09987fe2-7272-4054-b728-e2c87135a8a1
@@ -108,7 +119,7 @@ SCHEDULED: <2025-01-01 Mon>--<2025-12-31 Wed>
 :LOGBOOK:
 - State "TBD"        from              [2024-08-18 Sun 02:00]
 :END:
-** TBD bbdb
+** TBD bbdb                                                         :mail:db:
 :PROPERTIES:
 :VERSION:  0.1.0
 :ID:       9426d8b9-fa7b-4515-aa13-54cc45e8358f
