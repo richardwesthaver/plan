@@ -19,6 +19,7 @@
 ** PROJECT rocksdb v0.1.0 [6/7]                                     :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
+:LOCATION: ~/comp/core/
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
@@ -56,7 +57,7 @@ CLOCK: [2024-08-20 Tue 19:41]--[2024-08-20 Tue 20:16] =>  0:35
 *** DONE merge-operator callbacks                                   :rocksdb:
 DEADLINE: <2024-08-16 Fri> SCHEDULED: <2024-08-15 Thu>
 :PROPERTIES:
-:LOCATION: lisp/ffi/rocksdb/merge.lisp
+:LOCATION+: lisp/ffi/rocksdb/merge.lisp
 :ID:       2f5af48c-4e9e-4e32-b6b2-a4efa6bade12
 :END:
 :LOGBOOK:
@@ -70,7 +71,7 @@ DEADLINE: <2024-08-16 Fri> SCHEDULED: <2024-08-15 Thu>
 *** DONE compactionfilter callbacks                                 :rocksdb:
 DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
 :PROPERTIES:
-:LOCATION: lisp/ffi/rocksdb/compaction.lisp
+:LOCATION+: lisp/ffi/rocksdb/compaction.lisp
 :ID:       2f3d0b40-0d14-44d4-b489-97a08c9e94ad
 :Effort:   3:00
 :CREATED:  <2024-08-18 Sun 18:52>
@@ -93,7 +94,7 @@ https://github.com/facebook/rocksdb/wiki/Compaction-Filter
 *** DONE comparator callbacks                                       :rocksdb:
 DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
-:LOCATION: lisp/ffi/rocksdb/comparator.lisp
+:LOCATION+: lisp/ffi/rocksdb/comparator.lisp
 :ID:       79d12134-27e1-48ef-9e21-808c74d154c4
 :END:
 :LOGBOOK:
@@ -854,7 +855,9 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - New deadline from "[2024-09-01 Sun]" on [2024-09-01 Sun 21:40]
 :END:
 - core/vm.lisp
-
+- core/vm?
+- how will rules, commands, and components interact?
+- requires collection, build execution plan, execute plan, do stuff with results (cache)
 * PROJECT std [2/8]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
@@ -1226,7 +1229,7 @@ SCHEDULED: <2024-08-31 Sat 12:00> DEADLINE: <2024-09-01 Sun>
 CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 - State "DONE"       from "TODO"       [2024-08-31 Sat 22:14]
 :END:
-* PROJECT emacs [1/9]                                                 :emacs:
+* PROJECT emacs [2/9]                                                 :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION: 0.1
@@ -1522,7 +1525,7 @@ CLOCK: [2024-08-29 Thu 18:24]--[2024-08-29 Thu 18:51] =>  0:27
 - follow LOCATION property of heading at point
 - respect parent LOCATION, buffer local settings, etc
 
-** TODO org-set-location
+** DONE org-set-location
 SCHEDULED: <2024-08-30 Fri>
 :PROPERTIES:
 :CREATED:  <2024-08-29 Thu 23:46>
@@ -1530,9 +1533,13 @@ SCHEDULED: <2024-08-30 Fri>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-29 Thu 23:46]
+- State "DONE"       from "TODO"       [2024-09-08 Sun 12:23]
 :END:
 similar to org-set-effort, to be called automatically on capture.
-- should prompt for directory then file - skip file with C-u or with RET
+- +should prompt for directory then file - skip file with C-u or with RET+
+  - simpler to just prompt for value with completion using
+    =org-read-property-value=
+
 ** TODO org-timeline upgrades [0/3]                                     :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
