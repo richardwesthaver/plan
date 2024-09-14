@@ -16,10 +16,11 @@
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb v0.1.0 [6/7]                                     :rocksdb:
+** PROJECT rocksdb [6/7]                                            :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
-:LOCATION: ~/comp/core/
+:LOCATION+: lisp/ffi/rocksdb
+:VERSION: 0.1.0
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
@@ -71,7 +72,7 @@ DEADLINE: <2024-08-16 Fri> SCHEDULED: <2024-08-15 Thu>
 *** DONE compactionfilter callbacks                                 :rocksdb:
 DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
 :PROPERTIES:
-:LOCATION+: lisp/ffi/rocksdb/compaction.lisp
+:LOCATION+: compaction.lisp
 :ID:       2f3d0b40-0d14-44d4-b489-97a08c9e94ad
 :Effort:   3:00
 :CREATED:  <2024-08-18 Sun 18:52>
@@ -94,7 +95,7 @@ https://github.com/facebook/rocksdb/wiki/Compaction-Filter
 *** DONE comparator callbacks                                       :rocksdb:
 DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
-:LOCATION+: lisp/ffi/rocksdb/comparator.lisp
+:LOCATION+: comparator.lisp
 :ID:       79d12134-27e1-48ef-9e21-808c74d154c4
 :END:
 :LOGBOOK:
@@ -261,21 +262,31 @@ SCHEDULED: <2024-08-22 Thu>
 with skel taking on more responsibility we no longer need a dedicated build tool.
 - migrate all functionality to skelfile
 - cleanup readme with installation instructions (with and without =infra=)
-* PROJECT cli/clap [1/6]                                           :lisp:cli:
+* PROJECT 
+:PROPERTIES:
+:CREATED:  <2024-09-12 Thu 13:38>
+:ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
+:LOCATION: lisp/lib/cli/
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-12 Thu 13:38]
+:END:
+** PROJECT cli/clap [1/5]                                          :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
-:VERSION: 0.2
+:VERSION:  0.2
+:LOCATION+: clap/
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-21 Sun 01:33]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
 - clap is quite unstable right now and has some obvious bugs which need remedying
-** TODO conditions implementation
+*** TODO conditions implementation
 :PROPERTIES:
 :ID:       c17dae0b-93b8-467a-bc96-6dddfb7a6e53
 :END:
-** TODO minimal documentation                                           :doc:
+*** TODO minimal documentation                                          :doc:
 :PROPERTIES:
 :ID:       aef56337-8adf-4f69-823f-4380ae0c468b
 :LOCATION: lib/cli.org
@@ -283,7 +294,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
 :END:
-** DONE implement globals =*cli* *opts* *args*= etc
+*** DONE implement globals =*cli* *opts* *args*= etc
 :PROPERTIES:
 :ID:       1bb410a8-d569-4667-b024-698a3d5ab144
 :END:
@@ -291,7 +302,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - State "TODO"       from              [2024-07-27 Sat 02:39]
 - State "DONE"       from "TODO"       [2024-07-27 Sat 02:40]
 :END:
-** TODO keyword selectors                                     :lisp:cli:skel:
+*** TODO keyword selectors                                    :lisp:cli:skel:
 :PROPERTIES:
 :ID:       ca205f3d-d84d-4629-9d7a-189203c11441
 :END:
@@ -306,7 +317,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
-** FIXME opt/arg parsing
+*** WIP opt/arg parsing
 SCHEDULED: <2024-08-30 Fri 18:00>
 :PROPERTIES:
 :ID:       f44f2d22-44d8-438b-b388-546c0bc0c65b
@@ -314,12 +325,13 @@ SCHEDULED: <2024-08-30 Fri 18:00>
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2024-08-21 Wed 21:23]
+- State "WIP"        from "FIXME"      [2024-09-11 Wed 18:30]
 :END:
 - do not need to handle multiple commands
   - what do we want to do about subcommands?
 - do not need to support 'global' option for commands
 - use cli-parse to test.
-*** TODO clap fixtures                                                 :test:
+**** TODO clap fixtures                                                :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
 :ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
@@ -327,11 +339,12 @@ SCHEDULED: <2024-08-30 Fri 18:00>
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-* TODO multipoint-images                                       :lisp:bin:sys:
+** TODO multipoint-images                                      :lisp:bin:sys:
 SCHEDULED: <2024-09-08 Sun>
 :PROPERTIES:
 :ID:       f1d14ea9-fbbe-4043-a54d-d7c8774f16d6
 :CREATED:  <2024-09-01 Sun 21:52>
+:LOCATION+: multi.lisp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-28 Sun 21:01]
@@ -343,6 +356,8 @@ SCHEDULED: <2024-09-08 Sun>
     dispatched on arg0.
   - could also create a thin shim in Rust/Zig and call the appropriate
     entrypoint after loading the core.
+- for now let's put this in lib/cli so that we can use =defmain=
+
 * TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
 :PROPERTIES:
 :ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
