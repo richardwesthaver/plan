@@ -7,10 +7,12 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/comp/core/
 #+filetags: core
-* PROJECT ffi [1/8]                                                :lisp:ffi:
+* PROJECT ffi [0/4]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION: 0.1
+:LOCATION: lisp/ffi/
+:CUSTOM_ID: ffi-0-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:20]
@@ -21,6 +23,7 @@
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :LOCATION+: lisp/ffi/rocksdb
 :VERSION: 0.1.0
+:CUSTOM_ID: rocksdb-6-7
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
@@ -31,6 +34,7 @@ SCHEDULED: <2024-08-19 Mon 20:00-22:00><2024-08-20 Tue 20:00>
 :ID:       22e3eb0a-f3f7-4788-a90c-5ecd2df7db15
 :Effort:   4:00
 :CREATED:  <2024-08-19 Mon 20:05>
+:CUSTOM_ID: writebatch
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:56]
@@ -43,6 +47,7 @@ CLOCK: [2024-08-20 Tue 19:41]--[2024-08-20 Tue 20:16] =>  0:35
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 21:44>
 :ID:       05be05ba-4775-4feb-956f-7e52d31452bc
+:CUSTOM_ID: file-usr-local-include-rocksdb-c-h-write-batch
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-18 Sun 21:44]
@@ -50,6 +55,7 @@ CLOCK: [2024-08-20 Tue 19:41]--[2024-08-20 Tue 20:16] =>  0:35
 *** DONE logger
 :PROPERTIES:
 :ID:       f69ce4d5-03d3-46e1-8712-28eae841cb09
+:CUSTOM_ID: logger
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:56]
@@ -60,6 +66,7 @@ DEADLINE: <2024-08-16 Fri> SCHEDULED: <2024-08-15 Thu>
 :PROPERTIES:
 :LOCATION+: lisp/ffi/rocksdb/merge.lisp
 :ID:       2f5af48c-4e9e-4e32-b6b2-a4efa6bade12
+:CUSTOM_ID: merge-operator-callbacks
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:21]
@@ -76,6 +83,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
 :ID:       2f3d0b40-0d14-44d4-b489-97a08c9e94ad
 :Effort:   3:00
 :CREATED:  <2024-08-18 Sun 18:52>
+:CUSTOM_ID: compactionfilter-callbacks
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-14 Wed 21:50]
@@ -97,6 +105,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
 :LOCATION+: comparator.lisp
 :ID:       79d12134-27e1-48ef-9e21-808c74d154c4
+:CUSTOM_ID: comparator-callbacks
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-08-14 Wed 21:51]
@@ -106,6 +115,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 19:48>
 :ID:       cfbcad42-bb50-4170-afd8-1e0ff4dacfd1
+:CUSTOM_ID: associative-merge-implementation
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-18 Sun 19:48]
@@ -119,6 +129,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       8e29a907-c3ee-4b5e-b825-e4e4e6c6aa9b
+:CUSTOM_ID: concat-merge
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:42]
@@ -127,6 +138,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       a5ab8bc4-e2fb-4ac2-8e1d-3000e439ed33
+:CUSTOM_ID: index-merge
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:44]
@@ -135,6 +147,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       ac607107-33fb-434f-bf48-e7b9e5fc648f
+:CUSTOM_ID: incf-merge
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:43]
@@ -143,6 +156,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       307afdf9-4fc0-4c7d-b58e-9f1eb1110a74
+:CUSTOM_ID: decf-merge
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:44]
@@ -154,6 +168,7 @@ SCHEDULED: <2024-08-21 Wed>
 :ID:       c6643502-8c0c-4e44-9986-d4519f39f01c
 :Effort:   2:00
 :LOCATION: lisp/ffi/rocksdb/tests.lisp
+:CUSTOM_ID: define-merge-operator
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-18 Sun 19:53]
@@ -182,6 +197,7 @@ DEADLINE: <2024-09-07 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-19 Mon 16:17>
 :ID:       1aa4a86f-0fa6-46ba-bd42-bc87a3a64245
+:CUSTOM_ID: impl-rocksdb-slicetransform-callbacks
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-19 Mon 16:17]
@@ -189,23 +205,79 @@ DEADLINE: <2024-09-07 Sat>
 - Refiled on [2024-08-27 Tue 17:31]
 :END:
 [[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp::;;; rocksdb/slicetransform.lisp --- RocksDB SliceTransform][rocksdb/slicetransform.lisp]]
+
+** PROJECT zstd
+:PROPERTIES:
+:CREATED:  <2024-09-18 Wed 21:50>
+:ID:       1768f039-70e6-4c4a-842f-a38cb367525e
+:CUSTOM_ID: zstd
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-18 Wed 21:50]
+- Note taken on [2024-09-19 Thu 21:57] \\
+  can probably improve error handling but don't need to address until we
+  are well under way with IO/FLATE.
+:END:
+*** DONE zstd cstream tests
+:PROPERTIES:
+:CREATED:  <2024-09-18 Wed 21:50>
+:ID:       195165e9-17a3-4eb3-82db-4cec55777859
+:CUSTOM_ID: zstd-cstream-tests
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2024-09-18 Wed 21:50]
+:END:
++ v2 api
+*** TODO zdict
+:PROPERTIES:
+:CREATED:  <2024-09-19 Thu 21:57>
+:ID:       60f5d527-df22-475a-83e5-f153d7a968fa
+:CUSTOM_ID: zdict
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-19 Thu 21:57]
+:END:
+- A few structs that we can't grovel
+- A bunch of functions for pre-training a dictionary
 ** TODO readline                                                        :cli:
 :PROPERTIES:
 :ID:       4aebbb1d-201e-4a74-8e57-537cb96a39d7
+:LOCATION+: readline/
+:CUSTOM_ID: readline
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:23]
 :END:
+*** DONE reference impls
+:PROPERTIES:
+:CREATED:  <2024-09-19 Thu 22:00>
+:ID:       8992fd6f-aa77-4c44-9230-bae4fe2d5374
+:LOCATION+: pkg.lisp
+:CUSTOM_ID: reference-impls
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-09-19 Thu 22:00]
+- State "DONE"       from "RESEARCH"   [2024-09-19 Thu 23:19]
+:END:
+- document in Commentary section
+- also consider https://github.com/antirez/linenoise
+- [[https://gist.github.com/vindarel/2309154f4e751be389fa99239764c363][RLWRAP settings for SBCL · GitHub]]
+- [[https://ciel-lang.org/#/repl][CIEL Is an Extended Lisp]]
+- [[https://github.com/sharplispers/linedit/tree/master][GitHub - sharplispers/linedit: Readline-style line-editor for Common Lisp.]]
 ** TBD examples [0/6]                                               :example:
 :PROPERTIES:
 :ID:       794f6242-2589-424d-bbc1-8025530a2a6b
+:CUSTOM_ID: examples-0-6
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2024-08-15 Thu 23:02]
+- Note taken on [2024-09-19 Thu 21:58] \\
+  zstd is kinda unnecessary - showcase in IO/FLATE
 :END:
 *** TODO gstreamer practical example                              :gstreamer:
 :PROPERTIES:
 :ID:       d476e6b4-5b58-4f51-afc5-c2c0195d3799
+:CUSTOM_ID: gstreamer-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:21]
@@ -213,6 +285,7 @@ DEADLINE: <2024-09-07 Sat>
 *** TODO ublk practical example                                        :ublk:
 :PROPERTIES:
 :ID:       7887da0f-f6d7-43f0-9fcb-cef7c07fb1bb
+:CUSTOM_ID: ublk-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:22]
@@ -220,6 +293,7 @@ DEADLINE: <2024-09-07 Sat>
 *** TODO uring read/write file example                                :uring:
 :PROPERTIES:
 :ID:       7194096a-f0a2-446d-b46a-3c55e6123a16
+:CUSTOM_ID: uring-read-write-file-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:22]
@@ -227,6 +301,7 @@ DEADLINE: <2024-09-07 Sat>
 *** TODO btrfs practical example                                      :btrfs:
 :PROPERTIES:
 :ID:       595c395c-976b-4356-a3ec-df8030293326
+:CUSTOM_ID: btrfs-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:30]
@@ -236,6 +311,7 @@ DEADLINE: <2024-09-07 Sat>
 *** TODO xkb practical example                                         :x:kb:
 :PROPERTIES:
 :ID:       530aef14-b508-4d3a-8442-a16fea82039f
+:CUSTOM_ID: xkb-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:32]
@@ -243,30 +319,46 @@ DEADLINE: <2024-09-07 Sat>
 *** TODO keyutils practical example                                  :crypto:
 :PROPERTIES:
 :ID:       eec96038-ac73-477d-a443-4a9b3b5f4a5d
+:CUSTOM_ID: keyutils-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* TODO retire x.lisp                                              :lisp:skel:
+* DONE retire x.lisp                                              :lisp:skel:
 SCHEDULED: <2024-08-22 Thu>
 :PROPERTIES:
 :LOCATION: ~/comp/core/x.lisp
 :Effort:   4:00
 :ID:       88343a1c-e17b-4cb8-b6d6-f770c482665e
+:CREATED:  <2024-09-16 Mon 22:10>
+:CUSTOM_ID: retire-x-lisp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-09 Tue 22:24]
 - State "TBD"        from "TODO"       [2024-07-27 Sat 02:41]
 - State "TODO"       from "TBD"        [2024-08-16 Fri 22:58]
+- Note taken on [2024-09-16 Mon 21:52] \\
+  actually let's move it to infra/scripts..
+- Note taken on [2024-09-16 Mon 22:10] \\
+  on second look we really should start afresh lol
+- State "DONE"       from "TODO"       [2024-09-16 Mon 22:10]
 :END:
 with skel taking on more responsibility we no longer need a dedicated build tool.
 - migrate all functionality to skelfile
 - cleanup readme with installation instructions (with and without =infra=)
-* PROJECT 
+- problem :: easy to break the skel binary and overwrite a LKG
+  version, preventing future builds.
+  - +just be more careful+
+  - +sanity checks+
+  - repurpose x.lisp to recover from situations like these
+    specifically
+* PROJECT cli
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
 :LOCATION: lisp/lib/cli/
+:VERSION: 0.1.0
+:CUSTOM_ID: cli
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
@@ -276,6 +368,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
 :LOCATION+: clap/
+:CUSTOM_ID: cli-clap-1-5
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-21 Sun 01:33]
@@ -285,11 +378,13 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 *** TODO conditions implementation
 :PROPERTIES:
 :ID:       c17dae0b-93b8-467a-bc96-6dddfb7a6e53
+:CUSTOM_ID: conditions-implementation
 :END:
 *** TODO minimal documentation                                          :doc:
 :PROPERTIES:
 :ID:       aef56337-8adf-4f69-823f-4380ae0c468b
 :LOCATION: lib/cli.org
+:CUSTOM_ID: minimal-documentation
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
@@ -297,6 +392,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 *** DONE implement globals =*cli* *opts* *args*= etc
 :PROPERTIES:
 :ID:       1bb410a8-d569-4667-b024-698a3d5ab144
+:CUSTOM_ID: implement-globals-cli-opts-args-etc
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
@@ -305,6 +401,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 *** TODO keyword selectors                                    :lisp:cli:skel:
 :PROPERTIES:
 :ID:       ca205f3d-d84d-4629-9d7a-189203c11441
+:CUSTOM_ID: keyword-selectors
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:31]
@@ -317,15 +414,17 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
-*** WIP opt/arg parsing
+*** TEST opt/arg parsing
 SCHEDULED: <2024-08-30 Fri 18:00>
 :PROPERTIES:
 :ID:       f44f2d22-44d8-438b-b388-546c0bc0c65b
 :CREATED:  <2024-08-30 Fri 16:10>
+:CUSTOM_ID: opt-arg-parsing
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2024-08-21 Wed 21:23]
 - State "WIP"        from "FIXME"      [2024-09-11 Wed 18:30]
+- State "TEST"       from "WIP"        [2024-09-14 Sat 00:25]
 :END:
 - do not need to handle multiple commands
   - what do we want to do about subcommands?
@@ -335,19 +434,23 @@ SCHEDULED: <2024-08-30 Fri 18:00>
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
 :ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
+:CUSTOM_ID: clap-fixtures
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-** TODO multipoint-images                                      :lisp:bin:sys:
+** DONE multipoint-images                                      :lisp:bin:sys:
 SCHEDULED: <2024-09-08 Sun>
 :PROPERTIES:
 :ID:       f1d14ea9-fbbe-4043-a54d-d7c8774f16d6
 :CREATED:  <2024-09-01 Sun 21:52>
 :LOCATION+: multi.lisp
+:CUSTOM_ID: multipoint-images
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-28 Sun 21:01]
+- State "WIP"        from "TODO"       [2024-09-14 Sat 17:13]
+- State "DONE"       from "WIP"        [2024-09-14 Sat 18:49]
 :END:
 - multiple entrypoint lisp images
 - create multiple links to core lisp image
@@ -361,6 +464,7 @@ SCHEDULED: <2024-09-08 Sun>
 * TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
 :PROPERTIES:
 :ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
+:CUSTOM_ID: https-libyear-com-libyear
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
@@ -369,6 +473,7 @@ SCHEDULED: <2024-09-08 Sun>
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
 :VERSION: 0.1
+:CUSTOM_ID: q-0-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -377,6 +482,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** TODO SQL
 :PROPERTIES:
 :ID:       8b853556-399d-445f-8e7b-4bd4048087c5
+:CUSTOM_ID: sql
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -386,6 +492,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** DONE make-sql-data-frame
 :PROPERTIES:
 :ID:       3b4aed34-4f20-4dd9-abee-04f07cce2d84
+:CUSTOM_ID: make-sql-data-frame
 :END:
 :LOGBOOK:
 - State "FIX"        from              [2024-08-05 Mon 21:13]
@@ -395,6 +502,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** TODO DQL
 :PROPERTIES:
 :ID:       77bc044c-f4c8-440d-a590-e712ccad9bea
+:CUSTOM_ID: dql
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -407,6 +515,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO top-level macros
 :PROPERTIES:
 :ID:       782758ba-78ba-4366-996e-47b6b9123ac3
+:CUSTOM_ID: top-level-macros
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:38]
@@ -415,6 +524,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO conditions
 :PROPERTIES:
 :ID:       61adb134-1e00-4973-846b-a5afd746afaa
+:CUSTOM_ID: conditions
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
@@ -422,6 +532,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO basic predicates
 :PROPERTIES:
 :ID:       3b9067c6-27ec-45e6-a025-201695bd9ece
+:CUSTOM_ID: basic-predicates
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
@@ -437,6 +548,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO compiler design
 :PROPERTIES:
 :ID:       503c24ba-8613-4ca0-8c9c-51eced131168
+:CUSTOM_ID: compiler-design
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
@@ -444,6 +556,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO runtime design
 :PROPERTIES:
 :ID:       dd1eeab0-901d-4914-91a0-0413a3503fd1
+:CUSTOM_ID: runtime-design
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:43]
@@ -456,6 +569,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** TODO q/tests/fuzz [0/2]
 :PROPERTIES:
 :ID:       6d3c2685-5faf-4670-8ea0-b9b047c17c64
+:CUSTOM_ID: q-tests-fuzz-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:11]
@@ -464,6 +578,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO sql-fuzzer
 :PROPERTIES:
 :ID:       32506969-1c5d-4a9f-aa03-eb4b1a863f5c
+:CUSTOM_ID: sql-fuzzer
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:11]
@@ -475,6 +590,7 @@ SCHEDULED: <2024-09-08 Sun>
 *** TODO dql-fuzzer
 :PROPERTIES:
 :ID:       ef26c36a-1a5c-461a-834b-936010d49bb3
+:CUSTOM_ID: dql-fuzzer
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:12]
@@ -482,6 +598,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** TODO #? reader macro
 :PROPERTIES:
 :ID:       5da9a939-892f-439e-8072-c5c61cc1bbe3
+:CUSTOM_ID: reader-macro
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:36]
@@ -489,6 +606,7 @@ SCHEDULED: <2024-09-08 Sun>
 * RESEARCH OCI projects [0/4]                                :pod:packy:skel:
 :PROPERTIES:
 :ID:       ad581365-91ed-4ca8-a489-413a20cadbb7
+:CUSTOM_ID: oci-projects-0-4
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:35]
@@ -496,6 +614,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** RESEARCH [[https://oras.land/][oras]]
 :PROPERTIES:
 :ID:       7eef96fb-b568-45be-a6ca-fd7a4a7c9469
+:CUSTOM_ID: https-oras-land-oras
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:36]
@@ -503,6 +622,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** RESEARCH skopeo
 :PROPERTIES:
 :ID:       e7d2e4fd-82e2-47b2-86a2-8ba14fff80d4
+:CUSTOM_ID: skopeo
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:36]
@@ -510,6 +630,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** RESEARCH zot
 :PROPERTIES:
 :ID:       f98d1562-73da-4814-afd6-304d3be2c9b5
+:CUSTOM_ID: zot
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:36]
@@ -517,6 +638,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** RESEARCH [[https://www.sigstore.dev/][sigstore]]
 :PROPERTIES:
 :ID:       784024e5-6501-4fe7-93d1-44334fbee3ea
+:CUSTOM_ID: https-www-sigstore-dev-sigstore
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-01 Thu 12:30]
@@ -525,6 +647,7 @@ SCHEDULED: <2024-09-08 Sun>
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
 :VERSION: 0.1
+:CUSTOM_ID: parse-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:24]
@@ -540,6 +663,7 @@ SCHEDULED: <2024-09-08 Sun>
 ** TODO tests
 :PROPERTIES:
 :ID:       484740d6-3fb6-4796-b7e8-8f217c5063e5
+:CUSTOM_ID: tests
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:28]
@@ -549,6 +673,7 @@ need to fill.
 ** TODO toml impl
 :PROPERTIES:
 :ID:       6ba3e53d-8cfa-46fe-852a-ea462d475883
+:CUSTOM_ID: toml-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:28]
@@ -559,6 +684,7 @@ using our parser module.
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
 :VERSION: 0.2
+:CUSTOM_ID: organ-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-11-29 Wed 21:25]
@@ -570,6 +696,7 @@ using our parser module.
 ** TBD organ-export
 :PROPERTIES:
 :ID:       664309c2-55eb-45c2-88eb-a32c012c89ef
+:CUSTOM_ID: organ-export
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-11-29 Wed 21:24]
@@ -580,6 +707,7 @@ using our parser module.
 ** TODO org-parse
 :PROPERTIES:
 :ID:       2434b254-4346-4791-82da-b6bc309e8f5b
+:CUSTOM_ID: org-parse
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-11-29 Wed 21:26]
@@ -592,6 +720,7 @@ using our parser module.
 ** TBD parse org-elements as sxp                                        :sxp:
 :PROPERTIES:
 :ID:       232b7b58-2e66-479a-a978-b33f1cdda13f
+:CUSTOM_ID: parse-org-elements-as-sxp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-09-25 Mon 15:23]
@@ -632,6 +761,7 @@ using our parser module.
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
 :VERSION: 0.2
+:CUSTOM_ID: rdb-0-6
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:26]
@@ -640,6 +770,7 @@ using our parser module.
 ** TODO error handling
 :PROPERTIES:
 :ID:       299c7d94-e259-4413-8b46-13957ca8ded4
+:CUSTOM_ID: error-handling
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 22:57]
@@ -652,6 +783,7 @@ using our parser module.
 ** TODO client api
 :PROPERTIES:
 :ID:       93e0f187-c9f1-485f-9c51-b1abebf7da06
+:CUSTOM_ID: client-api
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 22:59]
@@ -663,6 +795,7 @@ using our parser module.
 ** TODO sequence/iterator impl
 :PROPERTIES:
 :ID:       6dbd6194-390b-4156-8690-75f91ce2e8d2
+:CUSTOM_ID: sequence-iterator-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 23:09]
@@ -672,6 +805,7 @@ using our parser module.
 ** TODO comparator impl
 :PROPERTIES:
 :ID:       bb1bd757-f80d-4723-ac62-45d7ef72a0a2
+:CUSTOM_ID: comparator-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 23:11]
@@ -680,6 +814,7 @@ using our parser module.
 ** TODO type system
 :PROPERTIES:
 :ID:       31a8f3e3-812f-4edc-a6d1-6540481d7dc7
+:CUSTOM_ID: type-system
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 23:12]
@@ -694,6 +829,7 @@ using our parser module.
 ** TODO set-opt/get-opt
 :PROPERTIES:
 :ID:       1a08fd02-b7e2-466b-9c43-f6570160aeb7
+:CUSTOM_ID: set-opt-get-opt
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:49]
@@ -707,6 +843,7 @@ using our parser module.
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
 :VERSION: 0.1
+:CUSTOM_ID: vc-2-3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:10]
@@ -718,6 +855,7 @@ using our parser module.
 :LOCATION: ~/.config/nushell/scripts/vc.nu
 :Effort:   3:00
 :CREATED:  <2024-08-22 Thu 22:15>
+:CUSTOM_ID: vc-mirrors-update-replacement
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:33]
@@ -727,6 +865,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** DONE git                                                          :vc:git:
 :PROPERTIES:
 :ID:       979ecc81-0b31-4182-9dc3-365d05bb2188
+:CUSTOM_ID: git
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:55]
@@ -735,6 +874,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** DONE hg                                                            :vc:hg:
 :PROPERTIES:
 :ID:       cdeb7e90-0122-4dff-8a5d-7a96fde2e8bd
+:CUSTOM_ID: hg
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:56]
@@ -745,6 +885,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION: 0.1
+:CUSTOM_ID: dat
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:08]
@@ -754,6 +895,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :Effort:   80:00
 :ID:       c808200c-450a-4f77-b4c1-6b372c7c4943
+:CUSTOM_ID: dat-parquet
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-19 Fri 21:51]
@@ -763,6 +905,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :Effort:   8:00
 :ID:       40cb89e4-db1b-4a78-b2b7-3e0fc9ee287b
+:CUSTOM_ID: dat-csv-column-selectors
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 20:53]
@@ -779,6 +922,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** TODO sxp 0.2                                                    :lisp:sxp:
 :PROPERTIES:
 :ID:       2a4d602c-2dea-451f-b06e-165ee2a523b3
+:CUSTOM_ID: sxp-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -786,6 +930,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 *** TODO WRAP-OBJECT                                                   :skel:
 :PROPERTIES:
 :ID:       1f04611d-068b-4708-b4e9-e6211cb484eb
+:CUSTOM_ID: wrap-object
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -796,6 +941,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 **** TODO sxp standard methods
 :PROPERTIES:
 :ID:       12de9774-b6d9-47d1-8dd6-8448078ea15f
+:CUSTOM_ID: sxp-standard-methods
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:06]
@@ -811,6 +957,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION: 0.1
+:CUSTOM_ID: syn
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:15]
@@ -820,6 +967,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION: 0.2
+:CUSTOM_ID: skel-1-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:55]
@@ -829,6 +977,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** DONE eval rules from CLI
 :PROPERTIES:
 :ID:       3927ffa7-c993-4963-9316-0375f2659f82
+:CUSTOM_ID: eval-rules-from-cli
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:56]
@@ -839,6 +988,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** TODO split out skel rules
 :PROPERTIES:
 :ID:       d353ab64-69a1-4fcf-9df5-1804c646f6a5
+:CUSTOM_ID: split-out-skel-rules
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
@@ -847,6 +997,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** TODO implement task-pool                                          :thread:
 :PROPERTIES:
 :ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
+:CUSTOM_ID: implement-task-pool
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
@@ -857,6 +1008,7 @@ DEADLINE: <2024-09-02 Mon> SCHEDULED: <2024-09-02 Mon 14:00>
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
 :CREATED:  <2024-08-18 Sun 22:03>
 :Effort:   8:00
+:CUSTOM_ID: implement-vm
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:11]
@@ -873,10 +1025,11 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - core/vm?
 - how will rules, commands, and components interact?
 - requires collection, build execution plan, execute plan, do stuff with results (cache)
-* PROJECT std [2/8]                                                :lisp:std:
+* PROJECT std [2/10]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION: 0.2
+:CUSTOM_ID: std-2-10
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -885,6 +1038,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE refactor system definition
 :PROPERTIES:
 :ID:       48c52da3-17bd-4193-8668-cddaf5cf1d81
+:CUSTOM_ID: refactor-system-definition
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-13 Wed 15:17]
@@ -896,6 +1050,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO cleanup fu
 :PROPERTIES:
 :ID:       730fd1f9-fa9d-4c98-baaa-27011515c639
+:CUSTOM_ID: cleanup-fu
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-13 Wed 19:39]
@@ -903,6 +1058,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO documentation sweep
 :PROPERTIES:
 :ID:       b7f48103-4fa3-48c0-93ba-8efc23848931
+:CUSTOM_ID: documentation-sweep
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
@@ -910,6 +1066,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO CLTL2 impl
 :PROPERTIES:
 :ID:       ebd0451c-530f-458d-aae2-39de7e3b436d
+:CUSTOM_ID: cltl2-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
@@ -917,6 +1074,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO more bits
 :PROPERTIES:
 :ID:       36d3040f-c899-4941-affb-30e1641d1b01
+:CUSTOM_ID: more-bits
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
@@ -924,6 +1082,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE list-package-symbols, etc
 :PROPERTIES:
 :ID:       b06b72d5-88f5-461a-bc3b-08630532c883
+:CUSTOM_ID: list-package-symbols-etc
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
@@ -933,6 +1092,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO std/tests refactor
 :PROPERTIES:
 :ID:       d7ee0946-db5d-4854-90be-11dad0fe7743
+:CUSTOM_ID: std-tests-refactor
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:42]
@@ -943,6 +1103,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO tasks
 :PROPERTIES:
 :ID:       5fa97d14-e074-4a64-90f9-cb5822e2ab3a
+:CUSTOM_ID: tasks
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:29]
@@ -950,6 +1111,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** HACK defsys                                                     :lisp:std:
 :PROPERTIES:
 :ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
+:CUSTOM_ID: defsys
 :END:
 :LOGBOOK:
 - State "HACK"       from              [2024-08-03 Sat 01:06]
@@ -961,10 +1123,22 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
+** TODO more sb-alien utils                                             :ffi:
+:PROPERTIES:
+:CREATED:  <2024-09-19 Thu 23:21>
+:ID:       a04630b6-ae87-4dfb-a366-0b90508666cc
+:CUSTOM_ID: more-sb-alien-utils
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-19 Thu 23:21]
+:END:
+- refer to cffi and uffi
+- [[https://github.com/cffi/cffi/blob/32c90d4a9a01e809f591276c058e5b3c7f39b154/src/types.lisp#L872][cffi/src/types.lisp at 32c90d4a9a01e809f591276c058e5b3c7f39b154 · cffi/cffi · GitHub]]
 * PROJECT obj [2/5]                                                :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION: 0.1
+:CUSTOM_ID: obj-2-5
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 00:59]
@@ -973,6 +1147,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** NOPE uri                                                             :net:
 :PROPERTIES:
 :ID:       ba8bb8ed-8106-4fc5-bdda-13b9ededd613
+:CUSTOM_ID: uri
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:00]
@@ -986,6 +1161,10 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE db                                                               :db:
 :PROPERTIES:
 :ID:       58a94c4b-cca3-4c86-9aa8-c8c7fd9469a6
+:CUSTOM_ID: db
+:END:
+:EDGES:
+[2024-09-16 Mon 14:41] <- [[id:9c55b120-d65e-4af5-9171-c324e211ed6a][org graph edges]]
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-20 Wed 18:26]
@@ -999,6 +1178,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :LOCATION: lisp/lib/obj/query.lisp
 :ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
+:CUSTOM_ID: complete-base-obj-query-package-2-3
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-09 Tue 22:14]
@@ -1016,6 +1196,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :Effort:   2:00
 :ID:       ea87cd03-7ecf-49f8-9743-59242e910838
+:CUSTOM_ID: aggregate-physical-plan
 :END:
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2024-08-03 Sat 01:00]
@@ -1024,6 +1205,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :Effort:   3:00
 :ID:       e00c46fd-dbd2-44ad-a41a-3ee2246ff23f
+:CUSTOM_ID: physical-expressions
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:53]
@@ -1033,6 +1215,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 *** TODO Basic Testing
 :PROPERTIES:
 :ID:       b857e6f1-c652-4024-9b87-308e1c830b2a
+:CUSTOM_ID: basic-testing
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:55]
@@ -1041,6 +1224,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO explain impl                                                    :doc:
 :PROPERTIES:
 :ID:       155f1e0c-c5ec-4175-934c-14be4adb3559
+:CUSTOM_ID: explain-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:01]
@@ -1048,6 +1232,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO explore impl                                                    :doc:
 :PROPERTIES:
 :ID:       08017f7e-de0a-442a-9cb6-5559c9159b29
+:CUSTOM_ID: explore-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
@@ -1057,6 +1242,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION: 0.1
+:CUSTOM_ID: net-5-8
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:00]
@@ -1065,6 +1251,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO fixtures                                                         :rt:
 :PROPERTIES:
 :ID:       fe592b6f-cde1-43e9-ac5a-81addc124582
+:CUSTOM_ID: fixtures
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:06]
@@ -1075,6 +1262,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO tcp                                                            :core:
 :PROPERTIES:
 :ID:       8e90fe7a-3a22-4af4-b247-64ac6890b94a
+:CUSTOM_ID: tcp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -1082,6 +1270,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO udp                                                            :core:
 :PROPERTIES:
 :ID:       d238fc1f-24be-447b-a96b-ec35958470fc
+:CUSTOM_ID: udp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -1089,6 +1278,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE crew                                                          :proto:
 :PROPERTIES:
 :ID:       efd79ab3-ebc3-427f-81a7-2ca7b6d3fa4e
+:CUSTOM_ID: crew
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -1098,6 +1288,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE http                                                          :proto:
 :PROPERTIES:
 :ID:       95fcf596-7c21-447a-b4d9-08ac1a866282
+:CUSTOM_ID: http
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -1106,6 +1297,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE dns                                                           :proto:
 :PROPERTIES:
 :ID:       8f2450ea-09fb-492e-a897-d9c62683f844
+:CUSTOM_ID: dns
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -1115,6 +1307,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE tlv                                                           :codec:
 :PROPERTIES:
 :ID:       93b3aaa0-1314-41e1-940e-283a5dac1211
+:CUSTOM_ID: tlv
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -1124,6 +1317,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** DONE osc                                                           :codec:
 :PROPERTIES:
 :ID:       c4088610-6ef4-4336-9bdf-81e24e133615
+:CUSTOM_ID: osc
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:03]
@@ -1132,6 +1326,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** WIP net/srv                                                         :lisp:
 :PROPERTIES:
 :ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
+:CUSTOM_ID: net-srv
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-19 Fri 21:50]
@@ -1141,6 +1336,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 *** RESEARCH Woo/+
 :PROPERTIES:
 :ID:       52c36c9b-22b2-4dd8-b151-9fe62810ac03
+:CUSTOM_ID: woo
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-10 Sat 01:23]
@@ -1149,6 +1345,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
 :VERSION: 0.1
+:CUSTOM_ID: pwn-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:04]
@@ -1159,6 +1356,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO diz                                                             :asm:
 :PROPERTIES:
 :ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
+:CUSTOM_ID: diz
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:04]
@@ -1168,6 +1366,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :CREATED:  <2024-09-02 Mon 16:14>
 :ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
+:CUSTOM_ID: sassy
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-02 Mon 16:14]
@@ -1177,6 +1376,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18
 :VERSION: 0.1
+:CUSTOM_ID: gui-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 03:40]
@@ -1185,6 +1385,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO wayland protocol bindings
 :PROPERTIES:
 :ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
+:CUSTOM_ID: wayland-protocol-bindings
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 03:40]
@@ -1192,6 +1393,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TBD wayland compositor                                         :rust:lisp:
 :PROPERTIES:
 :ID:       ca3d0bff-0ff7-4947-835a-b7c7e74c8679
+:CUSTOM_ID: wayland-compositor
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
@@ -1203,6 +1405,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION: 0.1
+:CUSTOM_ID: rt-1-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:06]
@@ -1211,6 +1414,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO redirect I/O in tests
 :PROPERTIES:
 :ID:       34f27f91-c93a-4841-a6ac-5692ad1d0e4f
+:CUSTOM_ID: redirect-i-o-in-tests
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:06]
@@ -1220,6 +1424,7 @@ it somehow for review.
 ** TODO *test-on-def*
 :PROPERTIES:
 :ID:       f5cf6e43-906b-4225-9cdb-ac0028b48661
+:CUSTOM_ID: test-on-def
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 17:17]
@@ -1228,6 +1433,7 @@ it somehow for review.
 ** TODO fixture api
 :PROPERTIES:
 :ID:       eb48a434-79f3-4936-be17-6777fdedcd61
+:CUSTOM_ID: fixture-api
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:22]
@@ -1238,6 +1444,7 @@ SCHEDULED: <2024-08-31 Sat 12:00> DEADLINE: <2024-09-01 Sun>
 :CREATED:  <2024-08-28 Wed 21:35>
 :ID:       91ce2763-8f64-4f24-a41e-030c22e047c8
 :Effort:   5:00
+:CUSTOM_ID: temporary-files-and-directories
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-28 Wed 21:35]
@@ -1248,6 +1455,8 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION: 0.1
+:LOCATION: emacs/
+:CUSTOM_ID: emacs-2-9
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:39]
@@ -1258,6 +1467,7 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 ** WIP comp/org capture templates                                    
 :PROPERTIES:
 :ID:       3d303736-7b79-4c5c-ba43-9ea5aa05f722
+:CUSTOM_ID: comp-org-capture-templates
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:14]
@@ -1277,17 +1487,30 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 ** TODO comp/org agenda views, export, dblock
 :PROPERTIES:
 :ID:       952fe286-9fd8-478f-bafc-a0a25ae3d17a
+:CUSTOM_ID: comp-org-agenda-views-export-dblock
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
 :END:
-*** TODO edges dblock
+*** WIP org graph edges
+SCHEDULED: <2024-09-14 Sat>
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 18:20>
 :ID:       9c55b120-d65e-4af5-9171-c324e211ed6a
+:LOCATION+: lib/graph.el
+:Effort:   5
+:CUSTOM_ID: org-graph-edges
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 18:20]
+- Note taken on [2024-09-14 Sat 16:30] \\
+  dblock will come later. for now we are going with the same strategy
+  as org-super-links - using a drawer. instead of "BACKLINKS" our
+  drawer is called simply LINKS.
+- State "WIP"        from "TODO"       [2024-09-14 Sat 16:31]
+CLOCK: [2024-09-17 Tue 19:50]
+:END:
+:EDGES:
 :END:
 - list of links between other headings
   - <= links to this item
@@ -1296,11 +1519,32 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
   - ^= parent
   - v= child
 - how should it look when exported?
+- org-graph-link-use-timestamp
+- org-graph-link properties? edge properties?
+  - keyvals =:key val= - should probably align with whatever we use
+    for =CONSTRAINTS=, for now read as sxp
 - EXPORT_EDGES property?
+#+begin_src org
+  ,* example
+  :PROPERTIES:
+  :ID:       id1
+  :CUSTOM_ID: demo
+  :END:
+  :EDGES:
+  <- [[id:bar][bar]]
+  [2024-09-14 Sat 22:37] <- [[id:bar][bar]]
+  [2024-09-14 Sat 22:50] :key val :foo (bar baz) <- [[id:bar][bar]]
+  [2024-09-14 Sat 22:37] -> [[id:foo][foo]]
+  [2024-09-14 Sat 22:39] -- [[id:sibling][sibling]]
+  [2024-09-14 Sat 22:39] >> [[id:parent][parent]]
+  [2024-09-14 Sat 22:39] << [[id:child][child]]
+  :END:
+#+end_src
 *** TODO agenda views
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 18:23>
 :ID:       4f704120-1553-46bc-ac31-5d65aaf340d3
+:CUSTOM_ID: agenda-views
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 18:23]
@@ -1311,6 +1555,7 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 ** FIXME compiler warnings
 :PROPERTIES:
 :ID:       dd4cf91d-4b45-4b5f-adee-0e248ebed0e1
+:CUSTOM_ID: compiler-warnings
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2024-08-16 Fri 22:42]
@@ -1503,6 +1748,7 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 ** TODO remove makefile
 :PROPERTIES:
 :ID:       93f3d805-9139-49b2-9b20-4e92e3dbda41
+:CUSTOM_ID: remove-makefile
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:44]
@@ -1510,6 +1756,7 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 ** OUTLINE graph                                                        :org:
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
+:CUSTOM_ID: graph
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-21 Wed 20:40]
@@ -1530,6 +1777,7 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 :ID:       08257c5a-51f2-40b2-aa1e-58b02d31c68a
 :CREATED:  <2024-08-29 Thu 18:23>
 :Effort:   4:00
+:CUSTOM_ID: org-follow-location
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-21 Wed 20:37]
@@ -1545,6 +1793,7 @@ SCHEDULED: <2024-08-30 Fri>
 :PROPERTIES:
 :CREATED:  <2024-08-29 Thu 23:46>
 :ID:       6c7c06fc-9220-40c6-8e0e-c7e734e7cd8a
+:CUSTOM_ID: org-set-location
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-29 Thu 23:46]
@@ -1559,6 +1808,7 @@ similar to org-set-effort, to be called automatically on capture.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
 :ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
+:CUSTOM_ID: org-timeline-upgrades-0-3
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-30 Fri 19:03]
@@ -1570,6 +1820,7 @@ similar to org-set-effort, to be called automatically on capture.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:22>
 :ID:       4b2f89c6-9bf0-46bf-91c5-44afd54860e8
+:CUSTOM_ID: timeline-selection-update-on-pointer-hover
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 14:22]
@@ -1580,6 +1831,7 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:20>
 :ID:       1b23b7c0-7ad3-4906-8bcb-66cad8831484
+:CUSTOM_ID: org-agenda-follow-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 14:20]
@@ -1591,6 +1843,7 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:26>
 :ID:       cb1272df-e155-417d-8fa9-380dac848915
+:CUSTOM_ID: align-org-timeline-properties-with-ulang
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 14:26]
@@ -1605,14 +1858,37 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :CREATED:  <2024-09-03 Tue 22:14>
 :ID:       c9e157da-50e9-4dc3-96fd-bb9bc9175ee5
+:CUSTOM_ID: sk-el-project-integration
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
+* PROJECT io [0/1]                                                       :io:
+:PROPERTIES:
+:CREATED:  <2024-09-19 Thu 21:54>
+:ID:       39c15417-5078-403f-b716-3b48b9d3929d
+:LOCATION: lisp/lib/io/
+:CUSTOM_ID: io-0-1
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-19 Thu 21:54]
+:END:
+** PROJECT flate [0/0]
+:PROPERTIES:
+:CREATED:  <2024-09-19 Thu 21:55>
+:ID:       025a5ce8-192f-4cd7-a6ad-1ec7882f04b7
+:CUSTOM_ID: flate-0-0
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-19 Thu 21:55]
+- State "PROJECT"    from "TODO"       [2024-09-19 Thu 21:55]
+:END:
+
 * TBD homer [1/2]                                                :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION: 0.1
+:CUSTOM_ID: homer-1-2
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-12-12 Tue 19:53]
@@ -1620,6 +1896,7 @@ for keyboard-based navigation too.
 ** DONE review GNU stow API
 :PROPERTIES:
 :ID:       73e711a9-c3f1-4157-a029-c4d3559df05e
+:CUSTOM_ID: review-gnu-stow-api
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:32]
@@ -1632,6 +1909,7 @@ rust impl: https://github.com/qboileau/rstow
 ** TODO consolidate with skel                                          :skel:
 :PROPERTIES:
 :ID:       0f07acf1-d1a8-456f-b753-ce04643260b9
+:CUSTOM_ID: consolidate-with-skel
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:32]
@@ -1641,6 +1919,7 @@ rust impl: https://github.com/qboileau/rstow
 :CREATED:  <2024-08-28 Wed 21:59>
 :ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
 :VERSION: 0.1
+:CUSTOM_ID: bench
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-28 Wed 21:59]
@@ -1652,6 +1931,7 @@ rust impl: https://github.com/qboileau/rstow
 * RESEARCH eBPF                                                         :net:
 :PROPERTIES:
 :ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de
+:CUSTOM_ID: ebpf
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-21 Wed 22:40]
@@ -1659,10 +1939,11 @@ rust impl: https://github.com/qboileau/rstow
 https://docs.kernel.org/bpf/standardization/instruction-set.html#bpf-instruction-set-architecture-isa
 https://mostlynerdless.de/blog/2023/12/31/hello-ebpf-developing-ebpf-apps-in-java-1/
 https://github.com/iovisor/bcc
-* RESEARCH batman-adv
+* RESEARCH batman-adv                                                   :net:
 :PROPERTIES:
 :CREATED:  <2024-08-23 Fri 21:16>
 :ID:       53992507-a3af-43ff-b04b-aa05ccabe2fa
+:CUSTOM_ID: batman-adv
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-23 Fri 21:16]
