@@ -1508,7 +1508,8 @@ SCHEDULED: <2024-09-14 Sat>
   as org-super-links - using a drawer. instead of "BACKLINKS" our
   drawer is called simply LINKS.
 - State "WIP"        from "TODO"       [2024-09-14 Sat 16:31]
-CLOCK: [2024-09-17 Tue 19:50]
+CLOCK: [2024-09-17 Tue 19:50]--[2024-09-17 Tue 20:20] =>  0:30
+CLOCK: [2024-09-21 Sat 13:56]--[2024-09-21 Sat 17:44] =>  3:48
 :END:
 :EDGES:
 :END:
@@ -1928,6 +1929,27 @@ rust impl: https://github.com/qboileau/rstow
 - tbd: dat generic benchmarking with fixtures
 - TPC-H
 - taobench
+* RESEARCH XDP
+:PROPERTIES:
+:CREATED:  <2024-09-20 Fri 22:34>
+:ID:       b3e0b57a-a54a-445c-a06f-37ba289a68f6
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-09-20 Fri 22:34]
+:END:
+[[https://www.datadoghq.com/blog/xdp-intro/][A Gentle Introduction to XDP | Datadog]]
+[[https://github.com/xdp-project/xdp-tools/][GitHub - xdp-project/xdp-tools: Utilities and example programs for use with XDP]]
+
+* RESEARCH DPDK
+:PROPERTIES:
+:CREATED:  <2024-09-20 Fri 22:35>
+:ID:       74665710-7b60-4001-ae9e-d47de4c53a69
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2024-09-20 Fri 22:35]
+:END:
+[[https://www.dpdk.org/][Home - DPDK]]
+[[https://github.com/DPDK/dpdk/tree/main][GitHub - DPDK/dpdk: Data Plane Development Kit]]
 * RESEARCH eBPF                                                         :net:
 :PROPERTIES:
 :ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de
@@ -1939,6 +1961,7 @@ rust impl: https://github.com/qboileau/rstow
 https://docs.kernel.org/bpf/standardization/instruction-set.html#bpf-instruction-set-architecture-isa
 https://mostlynerdless.de/blog/2023/12/31/hello-ebpf-developing-ebpf-apps-in-java-1/
 https://github.com/iovisor/bcc
+
 * RESEARCH batman-adv                                                   :net:
 :PROPERTIES:
 :CREATED:  <2024-08-23 Fri 21:16>
