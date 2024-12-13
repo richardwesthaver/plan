@@ -80,6 +80,36 @@ DEADLINE: <2024-08-23 Fri> SCHEDULED: <2024-08-18 Sun>
 - [ ] if from source run =build=
 - [ ] if from pack run =unpack=
 - [ ] run install script
+* PROJECT box
+:PROPERTIES:
+:CREATED:  <2024-09-24 Tue 21:58>
+:ID:       db6b4f9a-e9b8-4e67-ab10-044f96cbc7d8
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-24 Tue 21:58]
+:END:
+** TODO refactor box repo
+:PROPERTIES:
+:ID:       2750906a-960d-45c4-a849-eaa96a4438c7
+:CREATED:  <2024-09-24 Tue 21:59>
+:END:
+no branches - repo for each build system (archiso, qemu/kvm, etc)
+* PROJECT pod
+:PROPERTIES:
+:CREATED:  <2024-09-24 Tue 21:58>
+:ID:       6a574322-c89e-41a0-8a9d-02102155042e
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-24 Tue 21:58]
+:END:
+* PROJECT home
+:PROPERTIES:
+:CREATED:  <2024-09-24 Tue 21:58>
+:ID:       e30a4418-e86f-4597-aeca-0e5d468cd2e5
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-24 Tue 21:58]
+:END:
 * TBD [#C] demo
 SCHEDULED: <2024-08-01 Thu>
 :PROPERTIES:

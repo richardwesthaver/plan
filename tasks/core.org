@@ -7,7 +7,7 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/comp/core/
 #+filetags: core
-* PROJECT ffi [0/4]                                                :lisp:ffi:
+* PROJECT ffi [1/4]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION: 0.1
@@ -18,7 +18,7 @@
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb [6/7]                                            :rocksdb:
+** PROJECT rocksdb [7/9]                                            :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :LOCATION+: lisp/ffi/rocksdb
@@ -111,7 +111,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 - State "WIP"        from              [2024-08-14 Wed 21:51]
 - State "DONE"       from "WIP"        [2024-08-18 Sun 19:47]
 :END:
-*** TODO associative-merge implementation
+*** DONE associative-merge implementation
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 19:48>
 :ID:       cfbcad42-bb50-4170-afd8-1e0ff4dacfd1
@@ -119,13 +119,14 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-18 Sun 19:48]
+- State "DONE"       from "TODO"       [2024-11-07 Thu 21:45]
 :END:
 - need to figure out what delete-value requires
   - simply passes state + value and value-length to a function
   - when the value is null it doesn't exist in db (noop) ?
   - unclear when the merge op actually runs in relation to deletion op - before or after?
 - https://docs.rs/rocks/latest/rocks/merge_operator/index.html
-**** TODO concat-merge
+**** DONE concat-merge
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       8e29a907-c3ee-4b5e-b825-e4e4e6c6aa9b
@@ -133,8 +134,11 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:42]
+- State "DONE"       from "TODO"       [2024-11-07 Thu 20:41]
+- Note taken on [2024-11-07 Thu 20:41] \\
+  well it-s about time.. should have known the SUCCESS arg was the return value that the docs referenced..
 :END:
-**** TODO index-merge
+**** DONE index-merge
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       a5ab8bc4-e2fb-4ac2-8e1d-3000e439ed33
@@ -142,8 +146,11 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:44]
+- State "WIP"        from "TODO"       [2024-11-07 Thu 20:59]
+- State "DONE"       from "WIP"        [2024-11-07 Thu 21:44]
 :END:
-***** TODO incf-merge
+
+*** TBD incf/decf-merge
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       ac607107-33fb-434f-bf48-e7b9e5fc648f
@@ -151,15 +158,10 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-18 Sun 20:43]
-:END:
-***** TODO decf-merge
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 20:45>
-:ID:       307afdf9-4fc0-4c7d-b58e-9f1eb1110a74
-:CUSTOM_ID: decf-merge
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-18 Sun 20:44]
+- State "TEST"       from "TODO"       [2024-11-07 Thu 21:00]
+- State "TBD"        from "TEST"       [2024-11-07 Thu 21:44]
+- Note taken on [2024-11-07 Thu 21:44] \\
+  use the STATE param for this.
 :END:
 *** DONE define-merge-operator                                        :macro:
 SCHEDULED: <2024-08-21 Wed>
@@ -192,21 +194,25 @@ CLOCK: [2024-08-21 Wed 20:34]--[2024-08-21 Wed 21:13] =>  0:39
 :                                                             (SB-ALIEN:STRUCT
 :                                                              ROCKSDB::ROCKSDB-MERGEOPERATOR-T))>
 
-*** TODO impl rocksdb/slicetransform callbacks
-DEADLINE: <2024-09-07 Sat>
+*** TEST impl rocksdb/slicetransform callbacks
+DEADLINE: <2024-11-03 Sun>
 :PROPERTIES:
 :CREATED:  <2024-08-19 Mon 16:17>
 :ID:       1aa4a86f-0fa6-46ba-bd42-bc87a3a64245
 :CUSTOM_ID: impl-rocksdb-slicetransform-callbacks
+:Effort:   5h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-19 Mon 16:17]
 - New deadline from "[2024-08-27 Tue]" on [2024-08-27 Tue 17:30]
 - Refiled on [2024-08-27 Tue 17:31]
+- New deadline from "[2024-09-07 Sat]" on [2024-11-02 Sat 23:34]
+CLOCK: [2024-11-02 Sat 23:34]
+- State "TEST"       from "TODO"       [2024-11-03 Sun 00:23]
 :END:
 [[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp::;;; rocksdb/slicetransform.lisp --- RocksDB SliceTransform][rocksdb/slicetransform.lisp]]
 
-** PROJECT zstd
+** DONE zstd
 :PROPERTIES:
 :CREATED:  <2024-09-18 Wed 21:50>
 :ID:       1768f039-70e6-4c4a-842f-a38cb367525e
@@ -217,6 +223,7 @@ DEADLINE: <2024-09-07 Sat>
 - Note taken on [2024-09-19 Thu 21:57] \\
   can probably improve error handling but don't need to address until we
   are well under way with IO/FLATE.
+- State "DONE"       from "PROJECT"    [2024-11-02 Sat 23:33]
 :END:
 *** DONE zstd cstream tests
 :PROPERTIES:
@@ -228,7 +235,7 @@ DEADLINE: <2024-09-07 Sat>
 - State "DONE"       from "TODO"       [2024-09-18 Wed 21:50]
 :END:
 + v2 api
-*** TODO zdict
+*** DONE zdict
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:57>
 :ID:       60f5d527-df22-475a-83e5-f153d7a968fa
@@ -236,6 +243,9 @@ DEADLINE: <2024-09-07 Sat>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-19 Thu 21:57]
+- Note taken on [2024-10-04 Fri 20:38] \\
+  well this is annoying, there is one function which requires passing struct by value: ZDICT_finalizeDictionary
+- State "DONE"       from "TODO"       [2024-11-02 Sat 23:33]
 :END:
 - A few structs that we can't grovel
 - A bunch of functions for pre-training a dictionary
@@ -363,7 +373,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
 :END:
-** PROJECT cli/clap [1/5]                                          :lisp:cli:
+** PROJECT cli/clap [2/5]                                          :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -374,7 +384,8 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - State "TODO"       from              [2024-07-21 Sun 01:33]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-- clap is quite unstable right now and has some obvious bugs which need remedying
+- clap is quite unstable right now and has some obvious bugs which
+  need remedying
 *** TODO conditions implementation
 :PROPERTIES:
 :ID:       c17dae0b-93b8-467a-bc96-6dddfb7a6e53
@@ -414,7 +425,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
-*** TEST opt/arg parsing
+*** DONE opt/arg parsing
 SCHEDULED: <2024-08-30 Fri 18:00>
 :PROPERTIES:
 :ID:       f44f2d22-44d8-438b-b388-546c0bc0c65b
@@ -425,12 +436,15 @@ SCHEDULED: <2024-08-30 Fri 18:00>
 - State "FIXME"      from              [2024-08-21 Wed 21:23]
 - State "WIP"        from "FIXME"      [2024-09-11 Wed 18:30]
 - State "TEST"       from "WIP"        [2024-09-14 Sat 00:25]
+- State "DONE"       from "TEST"       [2024-10-15 Tue 19:38]
+- Note taken on [2024-10-15 Tue 19:39] \\
+  took far longer than expected to track this down - root cause was the =zerop= function. should be in much better shape now.
 :END:
 - do not need to handle multiple commands
   - what do we want to do about subcommands?
 - do not need to support 'global' option for commands
 - use cli-parse to test.
-**** TODO clap fixtures                                                :test:
+*** TODO clap fixtures                                                 :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
 :ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
@@ -439,7 +453,7 @@ SCHEDULED: <2024-08-30 Fri 18:00>
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-** DONE multipoint-images                                      :lisp:bin:sys:
+*** DONE multipoint-images                                     :lisp:bin:sys:
 SCHEDULED: <2024-09-08 Sun>
 :PROPERTIES:
 :ID:       f1d14ea9-fbbe-4043-a54d-d7c8774f16d6
@@ -1025,7 +1039,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - core/vm?
 - how will rules, commands, and components interact?
 - requires collection, build execution plan, execute plan, do stuff with results (cache)
-* PROJECT std [2/10]                                               :lisp:std:
+* PROJECT std [3/10]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION: 0.2
@@ -1089,13 +1103,15 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "DONE"       from "TODO"       [2024-08-07 Wed 21:07]
 :END:
 
-** TODO std/tests refactor
+** DONE std/tests refactor
 :PROPERTIES:
 :ID:       d7ee0946-db5d-4854-90be-11dad0fe7743
 :CUSTOM_ID: std-tests-refactor
+:CREATED:  <2024-10-15 Tue 19:45>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:42]
+- State "DONE"       from "TODO"       [2024-10-15 Tue 19:45]
 :END:
 - a bit too large, time to shake it up
 - need separation of concerns (files) for task-pool/threaded tests in
@@ -1107,6 +1123,8 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:29]
+- Note taken on [2024-10-15 Tue 19:45] \\
+  currently includes jobs, supervisors, task-pool, kernel - a bit overloaded
 :END:
 ** HACK defsys                                                     :lisp:std:
 :PROPERTIES:
@@ -1510,6 +1528,7 @@ SCHEDULED: <2024-09-14 Sat>
 - State "WIP"        from "TODO"       [2024-09-14 Sat 16:31]
 CLOCK: [2024-09-17 Tue 19:50]--[2024-09-17 Tue 20:20] =>  0:30
 CLOCK: [2024-09-21 Sat 13:56]--[2024-09-21 Sat 17:44] =>  3:48
+CLOCK: [2024-09-25 Wed 18:54]--[2024-09-25 Wed 19:14] =>  0:20
 :END:
 :EDGES:
 :END:
@@ -1972,3 +1991,33 @@ https://github.com/iovisor/bcc
 - State "RESEARCH"   from              [2024-08-23 Fri 21:16]
 :END:
 [[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]
+* FIXME cli tests crashing
+:PROPERTIES:
+:CREATED:  <2024-09-18 Wed 12:25>
+:ID:       23f72449-1675-4184-87ed-51debc8e31a8
+:END:
+:LOGBOOK:
+- State "FIXME"      from "TODO"       [2024-09-18 Wed 12:25]
+:END:
+* TODO project-tasks timestamp -> date when no h/m info
+:PROPERTIES:
+:ID:       ef8f7f82-9a0e-490a-aad3-e96185ad89ef
+:END:
+* TODO clean.theme move first heading below nav (when selecting)
+:PROPERTIES:
+:ID:       435261a3-80e2-43d3-ba16-a45a7e162228
+:END:
+* TODO :scripts regression                                            :infra:
+:PROPERTIES:
+:ID:       ae600bd1-3ceb-4400-8c72-71dfbbc5a8c7
+:END:
+* TODO sk.el hack-dir-local-variables                                 :emacs:
+:PROPERTIES:
+:ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
+:END:
+[[info:emacs#Directory Variables][emacs#Directory Variables]]
+* TODO sk.el indentation rules
+:PROPERTIES:
+:ID:       9b2d1c95-e724-47b8-a78c-a81805194731
+:END:
+
