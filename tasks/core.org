@@ -18,7 +18,7 @@
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb [7/9]                                            :rocksdb:
+** PROJECT rocksdb [8/9]                                            :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :LOCATION+: lisp/ffi/rocksdb
@@ -150,7 +150,7 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 - State "DONE"       from "WIP"        [2024-11-07 Thu 21:44]
 :END:
 
-*** TBD incf/decf-merge
+*** DONE incf/decf-merge
 :PROPERTIES:
 :CREATED:  <2024-08-18 Sun 20:45>
 :ID:       ac607107-33fb-434f-bf48-e7b9e5fc648f
@@ -162,6 +162,9 @@ DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
 - State "TBD"        from "TEST"       [2024-11-07 Thu 21:44]
 - Note taken on [2024-11-07 Thu 21:44] \\
   use the STATE param for this.
+- State "DONE"       from "TBD"        [2024-12-28 Sat 23:00]
+- Note taken on [2024-12-28 Sat 23:00] \\
+  see index-merge
 :END:
 *** DONE define-merge-operator                                        :macro:
 SCHEDULED: <2024-08-21 Wed>
