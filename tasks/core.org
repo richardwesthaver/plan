@@ -1019,7 +1019,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
-** NEXT implement vm
+** HOLD implement vm
 DEADLINE: <2024-09-02 Mon> SCHEDULED: <2024-09-02 Mon 14:00>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
@@ -1037,12 +1037,14 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   not liking our current impl.. rewrite and document
 - State "NEXT"       from "WIP"        [2024-08-31 Sat 12:39]
 - New deadline from "[2024-09-01 Sun]" on [2024-09-01 Sun 21:40]
+- State "HOLD"       from "NEXT"       [2025-01-18 Sat 20:06] \\
+  Too early for this
 :END:
 - core/vm.lisp
 - core/vm?
 - how will rules, commands, and components interact?
 - requires collection, build execution plan, execute plan, do stuff with results (cache)
-* PROJECT std [3/10]                                               :lisp:std:
+* PROJECT std [7/10]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION: 0.2
@@ -1064,13 +1066,15 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - remove package-inferred
 - minimize number of systems
 - use pkg.lisp files
-** TODO cleanup fu
+** DONE cleanup fu
 :PROPERTIES:
 :ID:       730fd1f9-fa9d-4c98-baaa-27011515c639
 :CUSTOM_ID: cleanup-fu
+:CREATED:  <2025-01-18 Sat 20:06>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-13 Wed 19:39]
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:06]
 :END:
 ** TODO documentation sweep
 :PROPERTIES:
@@ -1080,15 +1084,17 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
 :END:
-** TODO CLTL2 impl
+** DONE CLTL2 impl
 :PROPERTIES:
 :ID:       ebd0451c-530f-458d-aae2-39de7e3b436d
 :CUSTOM_ID: cltl2-impl
+:CREATED:  <2025-01-18 Sat 20:07>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:07]
 :END:
-** TODO more bits
+** TODO more (useful) bits
 :PROPERTIES:
 :ID:       36d3040f-c899-4941-affb-30e1641d1b01
 :CUSTOM_ID: more-bits
@@ -1119,15 +1125,17 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - a bit too large, time to shake it up
 - need separation of concerns (files) for task-pool/threaded tests in
   particular
-** TODO tasks
+** DONE tasks
 :PROPERTIES:
 :ID:       5fa97d14-e074-4a64-90f9-cb5822e2ab3a
 :CUSTOM_ID: tasks
+:CREATED:  <2025-01-18 Sat 20:07>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:29]
 - Note taken on [2024-10-15 Tue 19:45] \\
   currently includes jobs, supervisors, task-pool, kernel - a bit overloaded
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:07]
 :END:
 ** HACK defsys                                                     :lisp:std:
 :PROPERTIES:
@@ -1144,7 +1152,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
-** TODO more sb-alien utils                                             :ffi:
+** DONE more sb-alien utils                                             :ffi:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 23:21>
 :ID:       a04630b6-ae87-4dfb-a366-0b90508666cc
@@ -1152,6 +1160,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-19 Thu 23:21]
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:08]
 :END:
 - refer to cffi and uffi
 - [[https://github.com/cffi/cffi/blob/32c90d4a9a01e809f591276c058e5b3c7f39b154/src/types.lisp#L872][cffi/src/types.lisp at 32c90d4a9a01e809f591276c058e5b3c7f39b154 · cffi/cffi · GitHub]]
@@ -1354,13 +1363,15 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
 :END:
 - needs a solid task-pool impl completed first
-*** RESEARCH Woo/+
+*** DONE Woo/+
 :PROPERTIES:
 :ID:       52c36c9b-22b2-4dd8-b151-9fe62810ac03
 :CUSTOM_ID: woo
+:CREATED:  <2025-01-18 Sat 20:08>
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-10 Sat 01:23]
+- State "DONE"       from "RESEARCH"   [2025-01-18 Sat 20:08]
 :END:
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
@@ -1403,13 +1414,16 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "TODO"       from              [2023-12-17 Sun 03:40]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
 :END:
-** TODO wayland protocol bindings
+** WAIT wayland protocol bindings
 :PROPERTIES:
 :ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
 :CUSTOM_ID: wayland-protocol-bindings
+:CREATED:  <2025-01-18 Sat 20:08>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 03:40]
+- State "WAIT"       from "TODO"       [2025-01-18 Sat 20:08] \\
+  Wait until we actually have a usecase for Wayland
 :END:
 ** TBD wayland compositor                                         :rust:lisp:
 :PROPERTIES:
@@ -1422,7 +1436,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-* PROJECT rt [1/4]                                             :lisp:rt:test:
+* PROJECT rt [2/4]                                             :lisp:rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION: 0.1
@@ -1451,13 +1465,15 @@ it somehow for review.
 - State "TODO"       from              [2024-02-29 Thu 17:17]
 :END:
 - simple flag to test when file is defined (part of deftest macro)
-** TODO fixture api
+** DONE fixture api
 :PROPERTIES:
 :ID:       eb48a434-79f3-4936-be17-6777fdedcd61
 :CUSTOM_ID: fixture-api
+:CREATED:  <2025-01-18 Sat 20:09>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:22]
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:09]
 :END:
 ** DONE temporary files and directories
 SCHEDULED: <2024-08-31 Sat 12:00> DEADLINE: <2024-09-01 Sun>
@@ -1776,13 +1792,15 @@ CLOCK: [2024-09-25 Wed 18:54]--[2024-09-25 Wed 19:14] =>  0:20
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:44]
 :END:
-** OUTLINE graph                                                        :org:
+** WIP graph                                                            :org:
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
 :CUSTOM_ID: graph
+:CREATED:  <2025-01-18 Sat 20:48>
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-21 Wed 20:40]
+- State "WIP"        from "OUTLINE"    [2025-01-18 Sat 20:48]
 :END:
 - edges
   - forward links
@@ -1886,7 +1904,7 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-* PROJECT io [0/1]                                                       :io:
+* PROJECT io [1/2]                                                       :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1896,7 +1914,7 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-19 Thu 21:54]
 :END:
-** PROJECT flate [0/0]
+** DONE flate [0/0]
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:55>
 :ID:       025a5ce8-192f-4cd7-a6ad-1ec7882f04b7
@@ -1905,16 +1923,26 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-19 Thu 21:55]
 - State "PROJECT"    from "TODO"       [2024-09-19 Thu 21:55]
+- State "DONE"       from "PROJECT"    [2025-01-18 Sat 20:48]
 :END:
-
-* TBD homer [1/2]                                                :lisp:homer:
+** TODO uring
+:PROPERTIES:
+:CREATED:  <2025-01-18 Sat 20:49>
+:ID:       2a88e627-be3b-4651-8812-44039ff8994d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-01-18 Sat 20:49]
+:END:
+* WIP homer [2/2]                                                :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION: 0.1
 :CUSTOM_ID: homer-1-2
+:CREATED:  <2025-01-18 Sat 20:49>
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-12-12 Tue 19:53]
+- State "WIP"        from "TBD"        [2025-01-18 Sat 20:49]
 :END:
 ** DONE review GNU stow API
 :PROPERTIES:
@@ -1929,13 +1957,15 @@ for keyboard-based navigation too.
 'symlink farm manager'
 rust impl: https://github.com/qboileau/rstow
 
-** TODO consolidate with skel                                          :skel:
+** DONE consolidate with skel                                          :skel:
 :PROPERTIES:
 :ID:       0f07acf1-d1a8-456f-b753-ce04643260b9
 :CUSTOM_ID: consolidate-with-skel
+:CREATED:  <2025-01-18 Sat 20:49>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:32]
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:49]
 :END:
 * PROJECT bench                                                  :test:bench:
 :PROPERTIES:
@@ -1994,13 +2024,14 @@ https://github.com/iovisor/bcc
 - State "RESEARCH"   from              [2024-08-23 Fri 21:16]
 :END:
 [[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]
-* FIXME cli tests crashing
+* DONE cli tests crashing
 :PROPERTIES:
 :CREATED:  <2024-09-18 Wed 12:25>
 :ID:       23f72449-1675-4184-87ed-51debc8e31a8
 :END:
 :LOGBOOK:
 - State "FIXME"      from "TODO"       [2024-09-18 Wed 12:25]
+- State "DONE"       from "FIXME"      [2025-01-18 Sat 20:49]
 :END:
 * TODO project-tasks timestamp -> date when no h/m info
 :PROPERTIES:
@@ -2010,9 +2041,13 @@ https://github.com/iovisor/bcc
 :PROPERTIES:
 :ID:       435261a3-80e2-43d3-ba16-a45a7e162228
 :END:
-* TODO :scripts regression                                            :infra:
+* DONE :scripts regression                                            :infra:
 :PROPERTIES:
 :ID:       ae600bd1-3ceb-4400-8c72-71dfbbc5a8c7
+:CREATED:  <2025-01-18 Sat 20:49>
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-01-18 Sat 20:49]
 :END:
 * TODO sk.el hack-dir-local-variables                                 :emacs:
 :PROPERTIES:
