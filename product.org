@@ -1,4 +1,4 @@
-#+title: product roadmaps
+#+title: products
 #+setupfile: ../clean.theme
 #+filetags: product
 * PRODUCT NAS-T
@@ -8,6 +8,174 @@
 :LOGBOOK:
 - State "PRODUCT"    from              [2024-08-18 Sun 02:04]
 :END:
+** Roadmap
+*** 0.1.0 [0/3]                                                     :current:
+:PROPERTIES:
+:ID:       2f9dce5f-02c9-4115-a558-3ffb20989e59
+:END:
+**** TODO MVP [1/6]
+:PROPERTIES:
+:ID:       17820c6c-495b-461c-8e5e-0c662d73edc5
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:14]
+:END:
+***** DONE acquire domain
+:PROPERTIES:
+:ID:       bbe9d162-9bc4-428f-9a9d-cd7b4407d4f1
+:END:
+:LOGBOOK:
+- State "DONE"       from              [2023-08-01 Tue 19:16]
+:END:
+- [X] nas-t.net
+***** DRAFT nas-t.net                                              :web:rust:
+:PROPERTIES:
+:ID:       484ea4e4-a4f8-4ade-be18-27a3dd697a20
+:END:
+:LOGBOOK:
+- State "DRAFT"      from "TODO"       [2023-08-23 Wed 22:21]
+- State "TODO"       from              [2023-08-01 Tue 19:14]
+:END:
+A basic landing page with the NAS-T mission, links, and contact info
+is needed.
+
+The site should be a web-app and have basic client-side request
+capabilities for submitting inquiries/comments.
+****** TODO client [0/3]                                             :client:
+:PROPERTIES:
+:ID:       0578520e-5ad4-462d-8d26-afc213d2df3b
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:23]
+:END:
+SPA
+******* TODO styles                                                   :style:
+:PROPERTIES:
+:ID:       d461f024-c6f5-40bc-853f-f82526dbe1f1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:19]
+:END:
+Put together some color palettes and sass to make our web components
+pretty. Design in modular fashion.
+******* TODO components
+:PROPERTIES:
+:ID:       b15355af-3056-47f3-b15c-50d9cf931208
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:22]
+:END:
+- [X] index
+- [X] about
+- [X] contact
+  - [ ] >ty
+- [X] page
+- [X] app
+- [ ] err
+******* TODO hooks
+:PROPERTIES:
+:ID:       3bdd63a4-b8f2-4377-a1d2-b886c43d362a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:22]
+:END:
+******** TODO mailme
+:PROPERTIES:
+:ID:       5d3b44b2-7890-4d20-99de-9bf0325ebe70
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:30]
+:END:
+****** TODO server [0/2]                                             :server:
+:PROPERTIES:
+:ID:       d083ccce-365e-4a0a-8d21-bb8338f0c7df
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:22]
+:END:
+******* TODO mailme route
+:PROPERTIES:
+:ID:       9658dc9f-80ef-4776-aa9e-90a3e7f9d980
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:29]
+:END:
+- form submit
+  - email
+  - name
+  - message
+- return status
+******* TODO errors
+:PROPERTIES:
+:ID:       b74d0daf-5374-4a3b-a103-a3e35c628b9d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:32]
+:END:
+- basic scaffolding
+- [ ] impl IntoResponse
+***** OUTLINE daemon                                                 :design:
+:PROPERTIES:
+:ID:       c8793423-02fc-42a9-aa6c-d181a9dc37fe
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from "TODO"       [2023-08-23 Wed 22:21]
+- State "TODO"       from              [2023-08-01 Tue 19:33]
+:END:
+***** OUTLINE protocol                                               :design:
+:PROPERTIES:
+:ID:       2da478b3-55e5-4640-b2ad-62c24e59d2aa
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from "TODO"       [2023-08-23 Wed 22:21]
+- State "TODO"       from              [2023-08-01 Tue 19:34]
+:END:
+***** TODO nas-t CLI client                                     :design:impl:
+:PROPERTIES:
+:ID:       c9b7610b-1d43-4d0a-a82a-4ea4e52ffe00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-08-01 Tue 19:34]
+:END:
+***** TBD prototype
+:PROPERTIES:
+:ID:       f7e6c6bb-84b6-4099-937a-94bb9f2f3b30
+:END:
+:LOGBOOK:
+- State "TBD"        from "TODO"       [2023-08-23 Wed 22:22]
+- State "TODO"       from              [2023-08-01 Tue 19:36]
+:END:
+- proof-of-concept on x86-64 GNU/Linux Intel CPU (zor)
+- run on LAN with remote clients
+- show capabilities and limitations
+- perform basic benchmarks and discuss results
+**** TBD pitch [0/0]
+:PROPERTIES:
+:ID:       f70f81d9-1247-4317-acbe-76e84972bef6
+:END:
+- marketing/community approach
+- define rhetoric
+- optimized for variety of audiences
+**** TBD demo [0/0]
+:PROPERTIES:
+:ID:       9cb9ae20-478f-45f1-ad60-d91a5f9c04c3
+:END:
+- assess hardware options
+  - soc
+    - must run GNU/Linux (for now..)
+    - look locally, what can be re-purposed?
+    - compare performance,heat,cost
+  - storage
+    - define required I/O speeds
+    - define standard connector reqs based on soc
+  - optimize linux kernel/dist
+- infra/releng infra/deploy
+- no accessories, ssh access only (or display port based on soc)
+*** 0.2.0 [0/1]                                                        :next:
+:PROPERTIES:
+:ID:       b6ef6210-775d-431f-b457-1b4b3b30747d
+:END:
+
 * PRODUCT OTOM8
 :PROPERTIES:
 :ID:       91571c62-a1ad-4959-9006-f07e95e613a2
@@ -15,3 +183,4 @@
 :LOGBOOK:
 - State "PRODUCT"    from              [2024-08-18 Sun 02:04]
 :END:
+** Roadmap
