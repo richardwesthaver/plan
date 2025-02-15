@@ -132,12 +132,14 @@ The demo will eventually need to be integrated with and deployed by
 - timers
 - triggers
 
-* TODO tree-sitter-pack
+* DONE tree-sitter-pack
 :PROPERTIES:
 :ID:       e9d05b58-9812-4e35-8b6d-417f262a113f
+:CREATED:  <2025-02-15 Sat 16:23>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-01-24 Wed 22:59]
+- State "DONE"       from "TODO"       [2025-02-15 Sat 16:23]
 :END:
 - pull-tree-sitter-langs.sh
 - install-tree-sitter-langs.sh (OG, calls pull)

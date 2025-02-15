@@ -5,30 +5,22 @@
 #+setupfile: ../clean.theme
 #+export_file_name: index
 #+options: toc:nil
-#+BEGIN: project-info
+#+BEGIN: project-info :status nil :tasks nil
 #+CALL: project-details() :dir ~/comp/org/plan/
 
 #+RESULTS:
-|-------------+---------------------------------------------------|
-| name        | plan                                              |
-| version     | :version 0.1.0                                    |
-| description | :description CC Org Files                         |
-| skel-id     | :id 1784914079056115652                           |
-| root        | ~/comp/org/plan/                                  |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/864606270283][864606270283:26]] |
-| tags        | :tags (org docs notes blog meta plan)             |
-| updated     | Fri Feb 14 19:28:14 2025 -0500                    |
-| langs       | org                                               |
-| lines       | 2699 :λ 2618 :# 0 :_ 81                           |
-|-------------+---------------------------------------------------|
-
-#+CALL: hg-diff-stat() :dir ~/comp/org/plan/
-
-#+RESULTS:
-
-#+CALL: project-tasks() :dir ~/comp/org/plan/
-
-#+RESULTS:
+|-------------+----------------------------------------------------|
+| name        | plan                                               |
+| version     | :version 0.1.0                                     |
+| description | :description CC Org Files                          |
+| skel-id     | :id 1784914079056115652                            |
+| root        | ~/comp/org/plan/                                   |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/5cc44055acbd][5cc44055acbd:27+]] |
+| tags        | :tags (org docs notes blog meta plan)              |
+| updated     | Sat Feb 15 16:19:12 2025 -0500                     |
+| langs       | org                                                |
+| lines       | 2741 :λ 2653 :# 0 :_ 88                            |
+|-------------+----------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
 
@@ -40,20 +32,20 @@
 : 2024-09    602 ****************
 : 2024-12    131 ***
 : 2025-01      7 
-: 2025-02    318 ********
+: 2025-02    376 **********
 
 #+CALL: project-files() :dir ~/comp/org/plan/
 
 #+RESULTS:
 | file             | size | modified            |
 |------------------+------+---------------------|
+| [[https://github.com/richardwesthaver/plan/blob/default/readme.org][readme.org]]       | 3.1k | 2025-02-15 17:50:37 |
+| [[https://github.com/richardwesthaver/plan/blob/default/tasks/infra.org][tasks/infra.org]]  | 4k   | 2025-02-15 16:26:17 |
 | [[https://github.com/richardwesthaver/plan/blob/default/product.org][product.org]]      | 5k   | 2025-02-14 19:14:44 |
-| [[https://github.com/richardwesthaver/plan/blob/default/readme.org][readme.org]]       | 803  | 2024-08-27 21:03:32 |
 | [[https://github.com/richardwesthaver/plan/blob/default/roadmap.org][roadmap.org]]      | 4.4k | 2024-09-13 23:49:50 |
 | [[https://github.com/richardwesthaver/plan/blob/default/tasks/core.org][tasks/core.org]]   | 70k  | 2025-02-15 13:00:20 |
 | [[https://github.com/richardwesthaver/plan/blob/default/tasks/demo.org][tasks/demo.org]]   | 1.8k | 2024-08-26 19:59:48 |
-| [[https://github.com/richardwesthaver/plan/blob/default/tasks/infra.org][tasks/infra.org]]  | 3.9k | 2024-09-24 21:59:40 |
-| [[https://github.com/richardwesthaver/plan/blob/default/tasks/readme.org][tasks/readme.org]] | 471  | 2024-09-08 16:04:32 |
+| [[https://github.com/richardwesthaver/plan/blob/default/tasks/readme.org][tasks/readme.org]] | 438  | 2025-02-15 16:18:09 |
 
 #+END:
 
