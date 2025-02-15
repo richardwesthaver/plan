@@ -4,10 +4,6 @@
 #+setupfile: ../../clean.theme
 #+export_file_name: index
 #+options: toc:nil
-:info:
-+ version :: 0.1.0
-:end:
-
 * [[file:core.org][core]]
 :PROPERTIES:
 :ID:       b1443fce-c039-4c92-9fec-80b7cb0fe1f5
