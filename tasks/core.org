@@ -67,7 +67,7 @@
 
 #+end_example
 
-* PROJECT ffi [1/4]                                                :lisp:ffi:
+* PROJECT ffi [0/3]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION: 0.1
@@ -78,7 +78,7 @@
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb [8/9]                                            :rocksdb:
+** PROJECT rocksdb [0/1]                                            :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :LOCATION+: ffi/rocksdb
@@ -88,175 +88,6 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
 :END:
-*** DONE writebatch
-SCHEDULED: <2024-08-19 Mon 20:00-22:00><2024-08-20 Tue 20:00>
-:PROPERTIES:
-:ID:       22e3eb0a-f3f7-4788-a90c-5ecd2df7db15
-:Effort:   4:00
-:CREATED:  <2024-08-19 Mon 20:05>
-:CUSTOM_ID: writebatch
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-16 Fri 22:56]
-- State "WIP"        from "TODO"       [2024-08-19 Mon 20:01]
-CLOCK: [2024-08-19 Mon 20:01]--[2024-08-19 Mon 21:03] =>  1:02
-CLOCK: [2024-08-20 Tue 19:41]--[2024-08-20 Tue 20:16] =>  0:35
-- State "DONE"       from "WIP"        [2024-08-20 Tue 20:19]
-:END:
-**** [[file:/usr/local/include/rocksdb/c.h::/* Write batch */]]
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 21:44>
-:ID:       05be05ba-4775-4feb-956f-7e52d31452bc
-:CUSTOM_ID: file-usr-local-include-rocksdb-c-h-write-batch
-:END:
-:LOGBOOK:
-- Refiled on [2024-08-18 Sun 21:44]
-:END:
-*** DONE logger
-:PROPERTIES:
-:ID:       f69ce4d5-03d3-46e1-8712-28eae841cb09
-:CUSTOM_ID: logger
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-16 Fri 22:56]
-- State "DONE"       from "TODO"       [2024-08-18 Sun 22:00]
-:END:
-*** DONE merge-operator callbacks                                   :rocksdb:
-DEADLINE: <2024-08-16 Fri> SCHEDULED: <2024-08-15 Thu>
-:PROPERTIES:
-:LOCATION+: ffi/rocksdb/merge.lisp
-:ID:       2f5af48c-4e9e-4e32-b6b2-a4efa6bade12
-:CUSTOM_ID: merge-operator-callbacks
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-10 Sat 22:21]
-- State "WIP"        from "TODO"       [2024-08-14 Wed 21:50]
-- State "DONE"       from "WIP"        [2024-08-16 Fri 22:52]
-- Note taken on [2024-08-16 Fri 22:52] \\
-  still needs testing with actual data
-:END:
-
-*** DONE compactionfilter callbacks                                 :rocksdb:
-DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-16 Fri>
-:PROPERTIES:
-:LOCATION+: compaction.lisp
-:ID:       2f3d0b40-0d14-44d4-b489-97a08c9e94ad
-:Effort:   3:00
-:CREATED:  <2024-08-18 Sun 18:52>
-:CUSTOM_ID: compactionfilter-callbacks
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-14 Wed 21:50]
-- State "WIP"        from "TODO"       [2024-08-14 Wed 21:50]
-CLOCK: [2024-08-18 Sun 18:51]--[2024-08-18 Sun 19:46] =>  0:00
-- State "DONE"       from "WIP"        [2024-08-18 Sun 19:47]
-:END:
-
-https://github.com/facebook/rocksdb/wiki/Compaction-Filter
-
-#+begin_src lisp
-  (rocksdb-compactionfilterfactory-create nil (alien-sap (alien-callable-function 'rocksdb-destructor))
-                                          (alien-sap (alien-callable-function 'rocksdb-create-compaction-filter-never))
-                                          (alien-sap (alien-callable-function 'rocksdb-name)))
-#+end_src
-
-*** DONE comparator callbacks                                       :rocksdb:
-DEADLINE: <2024-08-18 Sun> SCHEDULED: <2024-08-17 Sat>
-:PROPERTIES:
-:LOCATION+: comparator.lisp
-:ID:       79d12134-27e1-48ef-9e21-808c74d154c4
-:CUSTOM_ID: comparator-callbacks
-:END:
-:LOGBOOK:
-- State "WIP"        from              [2024-08-14 Wed 21:51]
-- State "DONE"       from "WIP"        [2024-08-18 Sun 19:47]
-:END:
-*** DONE associative-merge implementation
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 19:48>
-:ID:       cfbcad42-bb50-4170-afd8-1e0ff4dacfd1
-:CUSTOM_ID: associative-merge-implementation
-:END:
-:LOGBOOK:
-- Refiled on [2024-08-18 Sun 19:48]
-- State "DONE"       from "TODO"       [2024-11-07 Thu 21:45]
-:END:
-- need to figure out what delete-value requires
-  - simply passes state + value and value-length to a function
-  - when the value is null it doesn't exist in db (noop) ?
-  - unclear when the merge op actually runs in relation to deletion op - before or after?
-- https://docs.rs/rocks/latest/rocks/merge_operator/index.html
-**** DONE concat-merge
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 20:45>
-:ID:       8e29a907-c3ee-4b5e-b825-e4e4e6c6aa9b
-:CUSTOM_ID: concat-merge
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-18 Sun 20:42]
-- State "DONE"       from "TODO"       [2024-11-07 Thu 20:41]
-- Note taken on [2024-11-07 Thu 20:41] \\
-  well it-s about time.. should have known the SUCCESS arg was the return value that the docs referenced..
-:END:
-**** DONE index-merge
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 20:45>
-:ID:       a5ab8bc4-e2fb-4ac2-8e1d-3000e439ed33
-:CUSTOM_ID: index-merge
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-18 Sun 20:44]
-- State "WIP"        from "TODO"       [2024-11-07 Thu 20:59]
-- State "DONE"       from "WIP"        [2024-11-07 Thu 21:44]
-:END:
-
-*** DONE incf/decf-merge
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 20:45>
-:ID:       ac607107-33fb-434f-bf48-e7b9e5fc648f
-:CUSTOM_ID: incf-merge
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-18 Sun 20:43]
-- State "TEST"       from "TODO"       [2024-11-07 Thu 21:00]
-- State "TBD"        from "TEST"       [2024-11-07 Thu 21:44]
-- Note taken on [2024-11-07 Thu 21:44] \\
-  use the STATE param for this.
-- State "DONE"       from "TBD"        [2024-12-28 Sat 23:00]
-- Note taken on [2024-12-28 Sat 23:00] \\
-  see index-merge
-:END:
-*** DONE define-merge-operator                                        :macro:
-SCHEDULED: <2024-08-21 Wed>
-:PROPERTIES:
-:CREATED:  <2024-08-18 Sun 19:52>
-:ID:       c6643502-8c0c-4e44-9986-d4519f39f01c
-:Effort:   2:00
-:LOCATION: ffi/rocksdb/tests.lisp
-:CUSTOM_ID: define-merge-operator
-:END:
-:LOGBOOK:
-- Refiled on [2024-08-18 Sun 19:53]
-- State "TODO"       from "TODO"       [2024-08-18 Sun 22:01]
-- State "TEST"       from "TODO"       [2024-08-18 Sun 22:02]
-CLOCK: [2024-08-21 Wed 20:34]--[2024-08-21 Wed 21:13] =>  0:39
-- State "DONE"       from "TEST"       [2024-08-21 Wed 21:21]
-- Note taken on [2024-08-21 Wed 21:21] \\
-  will need to do actual tests merging key/vals when we implement associative merge API
-:END:
-- define macro which eases the process of making custom merge operators
-#+begin_src lisp :package rocksdb :eval no-export
-  (define-merge-operator :incf nil
-    :full nil
-    :partial nil)
-  (create-incf-mergeoperator)
-#+end_src
-
-#+RESULTS:
-: #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X75D288000C30 :TYPE (*
-:                                                             (SB-ALIEN:STRUCT
-:                                                              ROCKSDB::ROCKSDB-MERGEOPERATOR-T))>
-
 *** TEST impl rocksdb/slicetransform callbacks
 DEADLINE: <2024-11-03 Sun>
 :PROPERTIES:
@@ -275,43 +106,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 :END:
 [[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp::;;; rocksdb/slicetransform.lisp --- RocksDB SliceTransform][rocksdb/slicetransform.lisp]]
 
-** DONE zstd
-:PROPERTIES:
-:CREATED:  <2024-09-18 Wed 21:50>
-:ID:       1768f039-70e6-4c4a-842f-a38cb367525e
-:CUSTOM_ID: zstd
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2024-09-18 Wed 21:50]
-- Note taken on [2024-09-19 Thu 21:57] \\
-  can probably improve error handling but don't need to address until we
-  are well under way with IO/FLATE.
-- State "DONE"       from "PROJECT"    [2024-11-02 Sat 23:33]
-:END:
-*** DONE zstd cstream tests
-:PROPERTIES:
-:CREATED:  <2024-09-18 Wed 21:50>
-:ID:       195165e9-17a3-4eb3-82db-4cec55777859
-:CUSTOM_ID: zstd-cstream-tests
-:END:
-:LOGBOOK:
-- State "DONE"       from "TODO"       [2024-09-18 Wed 21:50]
-:END:
-+ v2 api
-*** DONE zdict
-:PROPERTIES:
-:CREATED:  <2024-09-19 Thu 21:57>
-:ID:       60f5d527-df22-475a-83e5-f153d7a968fa
-:CUSTOM_ID: zdict
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-09-19 Thu 21:57]
-- Note taken on [2024-10-04 Fri 20:38] \\
-  well this is annoying, there is one function which requires passing struct by value: ZDICT_finalizeDictionary
-- State "DONE"       from "TODO"       [2024-11-02 Sat 23:33]
-:END:
-- A few structs that we can't grovel
-- A bunch of functions for pre-training a dictionary
 ** TODO readline                                                        :cli:
 :PROPERTIES:
 :ID:       4aebbb1d-201e-4a74-8e57-537cb96a39d7
@@ -321,22 +115,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:23]
 :END:
-*** DONE reference impls
-:PROPERTIES:
-:CREATED:  <2024-09-19 Thu 22:00>
-:ID:       8992fd6f-aa77-4c44-9230-bae4fe2d5374
-:LOCATION+: pkg.lisp
-:CUSTOM_ID: reference-impls
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-09-19 Thu 22:00]
-- State "DONE"       from "RESEARCH"   [2024-09-19 Thu 23:19]
-:END:
-- document in Commentary section
-- also consider https://github.com/antirez/linenoise
-- [[https://gist.github.com/vindarel/2309154f4e751be389fa99239764c363][RLWRAP settings for SBCL · GitHub]]
-- [[https://ciel-lang.org/#/repl][CIEL Is an Extended Lisp]]
-- [[https://github.com/sharplispers/linedit/tree/master][GitHub - sharplispers/linedit: Readline-style line-editor for Common Lisp.]]
 ** TBD examples [0/6]                                               :example:
 :PROPERTIES:
 :ID:       794f6242-2589-424d-bbc1-8025530a2a6b
@@ -397,34 +175,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* DONE retire x.lisp                                              :lisp:skel:
-SCHEDULED: <2024-08-22 Thu>
-:PROPERTIES:
-:LOCATION: ~/comp/core/x.lisp
-:Effort:   4:00
-:ID:       88343a1c-e17b-4cb8-b6d6-f770c482665e
-:CREATED:  <2024-09-16 Mon 22:10>
-:CUSTOM_ID: retire-x-lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-09 Tue 22:24]
-- State "TBD"        from "TODO"       [2024-07-27 Sat 02:41]
-- State "TODO"       from "TBD"        [2024-08-16 Fri 22:58]
-- Note taken on [2024-09-16 Mon 21:52] \\
-  actually let's move it to infra/scripts..
-- Note taken on [2024-09-16 Mon 22:10] \\
-  on second look we really should start afresh lol
-- State "DONE"       from "TODO"       [2024-09-16 Mon 22:10]
-:END:
-with skel taking on more responsibility we no longer need a dedicated build tool.
-- migrate all functionality to skelfile
-- cleanup readme with installation instructions (with and without =infra=)
-- problem :: easy to break the skel binary and overwrite a LKG
-  version, preventing future builds.
-  - +just be more careful+
-  - +sanity checks+
-  - repurpose x.lisp to recover from situations like these
-    specifically
 * PROJECT cli
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
@@ -436,7 +186,7 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
 :END:
-** PROJECT cli/clap [2/5]                                          :lisp:cli:
+** PROJECT cli/clap [1/5]                                          :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -463,15 +213,6 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
 :END:
-*** DONE implement globals =*cli* *opts* *args*= etc
-:PROPERTIES:
-:ID:       1bb410a8-d569-4667-b024-698a3d5ab144
-:CUSTOM_ID: implement-globals-cli-opts-args-etc
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-27 Sat 02:39]
-- State "DONE"       from "TODO"       [2024-07-27 Sat 02:40]
-:END:
 *** TODO keyword selectors                                    :lisp:cli:skel:
 :PROPERTIES:
 :ID:       ca205f3d-d84d-4629-9d7a-189203c11441
@@ -488,25 +229,6 @@ with skel taking on more responsibility we no longer need a dedicated build tool
 - how to apply operators?
 - pipe results?
 +forth+
-*** DONE opt/arg parsing
-SCHEDULED: <2024-08-30 Fri 18:00>
-:PROPERTIES:
-:ID:       f44f2d22-44d8-438b-b388-546c0bc0c65b
-:CREATED:  <2024-08-30 Fri 16:10>
-:CUSTOM_ID: opt-arg-parsing
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2024-08-21 Wed 21:23]
-- State "WIP"        from "FIXME"      [2024-09-11 Wed 18:30]
-- State "TEST"       from "WIP"        [2024-09-14 Sat 00:25]
-- State "DONE"       from "TEST"       [2024-10-15 Tue 19:38]
-- Note taken on [2024-10-15 Tue 19:39] \\
-  took far longer than expected to track this down - root cause was the =zerop= function. should be in much better shape now.
-:END:
-- do not need to handle multiple commands
-  - what do we want to do about subcommands?
-- do not need to support 'global' option for commands
-- use cli-parse to test.
 *** TODO clap fixtures                                                 :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
@@ -516,28 +238,6 @@ SCHEDULED: <2024-08-30 Fri 18:00>
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-*** DONE multipoint-images                                     :lisp:bin:sys:
-SCHEDULED: <2024-09-08 Sun>
-:PROPERTIES:
-:ID:       f1d14ea9-fbbe-4043-a54d-d7c8774f16d6
-:CREATED:  <2024-09-01 Sun 21:52>
-:LOCATION+: multi.lisp
-:CUSTOM_ID: multipoint-images
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-28 Sun 21:01]
-- State "WIP"        from "TODO"       [2024-09-14 Sat 17:13]
-- State "DONE"       from "WIP"        [2024-09-14 Sat 18:49]
-:END:
-- multiple entrypoint lisp images
-- create multiple links to core lisp image
-- support multiple low-level methods?
-  - naive implementation is a single entry point with a switch
-    dispatched on arg0.
-  - could also create a thin shim in Rust/Zig and call the appropriate
-    entrypoint after loading the core.
-- for now let's put this in lib/cli so that we can use =defmain=
-
 * TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
 :PROPERTIES:
 :ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
@@ -566,16 +266,6 @@ SCHEDULED: <2024-09-08 Sun>
 - Note taken on [2024-08-04 Sun 21:16] \\
   pretty close - need to fix some recursion bugs then start messing with query-engines
 :END:
-*** DONE make-sql-data-frame
-:PROPERTIES:
-:ID:       3b4aed34-4f20-4dd9-abee-04f07cce2d84
-:CUSTOM_ID: make-sql-data-frame
-:END:
-:LOGBOOK:
-- State "FIX"        from              [2024-08-05 Mon 21:13]
-- State "DONE"       from "FIX"        [2024-08-07 Wed 21:05]
-:END:
-- finish implementation
 ** TODO DQL
 :PROPERTIES:
 :ID:       77bc044c-f4c8-440d-a590-e712ccad9bea
@@ -916,7 +606,7 @@ using our parser module.
 - I feel this may be less efficient but haven't benched it (requires additional arg)
 - separate packages are a pain to query symbols with
 
-* PROJECT vc [2/3]                                                  :lisp:vc:
+* PROJECT vc [1/2]                                                  :lisp:vc:
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
 :VERSION: 0.1
@@ -939,25 +629,6 @@ using our parser module.
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
-** DONE git                                                          :vc:git:
-:PROPERTIES:
-:ID:       979ecc81-0b31-4182-9dc3-365d05bb2188
-:CUSTOM_ID: git
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-16 Sat 00:55]
-- State "DONE"       from "TODO"       [2024-08-10 Sat 01:34]
-:END:
-** DONE hg                                                            :vc:hg:
-:PROPERTIES:
-:ID:       cdeb7e90-0122-4dff-8a5d-7a96fde2e8bd
-:CUSTOM_ID: hg
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-16 Sat 00:56]
-- State "DONE"       from "TODO"       [2024-08-10 Sat 01:34]
-:END:
-
 * PROJECT dat                                                      :lisp:dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
@@ -1040,7 +711,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-* PROJECT skel [1/4]                                              :lisp:skel:
+* PROJECT skel [0/3]                                              :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION: 0.2
@@ -1051,17 +722,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
 
-** DONE eval rules from CLI
-:PROPERTIES:
-:ID:       3927ffa7-c993-4963-9316-0375f2659f82
-:CUSTOM_ID: eval-rules-from-cli
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-16 Sat 00:56]
-- State "DONE"       from "TODO"       [2024-08-05 Mon 21:06]
-:END:
-- need new command or flag for rules
-- evaluate forms instead of looking in skelfile
 ** TODO split out skel rules
 :PROPERTIES:
 :ID:       d353ab64-69a1-4fcf-9df5-1804c646f6a5
@@ -1104,7 +764,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - core/vm?
 - how will rules, commands, and components interact?
 - requires collection, build execution plan, execute plan, do stuff with results (cache)
-* PROJECT std [7/10]                                               :lisp:std:
+* PROJECT std [1/4]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION: 0.2
@@ -1114,28 +774,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** DONE refactor system definition
-:PROPERTIES:
-:ID:       48c52da3-17bd-4193-8668-cddaf5cf1d81
-:CUSTOM_ID: refactor-system-definition
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-13 Wed 15:17]
-- State "DONE"       from "TODO"       [2023-12-13 Wed 19:38]
-:END:
-- remove package-inferred
-- minimize number of systems
-- use pkg.lisp files
-** DONE cleanup fu
-:PROPERTIES:
-:ID:       730fd1f9-fa9d-4c98-baaa-27011515c639
-:CUSTOM_ID: cleanup-fu
-:CREATED:  <2025-01-18 Sat 20:06>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-13 Wed 19:39]
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:06]
-:END:
 ** TODO documentation sweep
 :PROPERTIES:
 :ID:       b7f48103-4fa3-48c0-93ba-8efc23848931
@@ -1144,16 +782,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
 :END:
-** DONE CLTL2 impl
-:PROPERTIES:
-:ID:       ebd0451c-530f-458d-aae2-39de7e3b436d
-:CUSTOM_ID: cltl2-impl
-:CREATED:  <2025-01-18 Sat 20:07>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 16:09]
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:07]
-:END:
 ** TODO more (useful) bits
 :PROPERTIES:
 :ID:       36d3040f-c899-4941-affb-30e1641d1b01
@@ -1161,41 +789,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
-:END:
-** DONE list-package-symbols, etc
-:PROPERTIES:
-:ID:       b06b72d5-88f5-461a-bc3b-08630532c883
-:CUSTOM_ID: list-package-symbols-etc
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 16:09]
-- State "DONE"       from "TODO"       [2024-08-07 Wed 21:07]
-:END:
-
-** DONE std/tests refactor
-:PROPERTIES:
-:ID:       d7ee0946-db5d-4854-90be-11dad0fe7743
-:CUSTOM_ID: std-tests-refactor
-:CREATED:  <2024-10-15 Tue 19:45>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-27 Sat 02:42]
-- State "DONE"       from "TODO"       [2024-10-15 Tue 19:45]
-:END:
-- a bit too large, time to shake it up
-- need separation of concerns (files) for task-pool/threaded tests in
-  particular
-** DONE tasks
-:PROPERTIES:
-:ID:       5fa97d14-e074-4a64-90f9-cb5822e2ab3a
-:CUSTOM_ID: tasks
-:CREATED:  <2025-01-18 Sat 20:07>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-10 Sat 01:29]
-- Note taken on [2024-10-15 Tue 19:45] \\
-  currently includes jobs, supervisors, task-pool, kernel - a bit overloaded
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:07]
 :END:
 ** HACK defsys                                                     :lisp:std:
 :PROPERTIES:
@@ -1212,19 +805,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
-** DONE more sb-alien utils                                             :ffi:
-:PROPERTIES:
-:CREATED:  <2024-09-19 Thu 23:21>
-:ID:       a04630b6-ae87-4dfb-a366-0b90508666cc
-:CUSTOM_ID: more-sb-alien-utils
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-09-19 Thu 23:21]
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:08]
-:END:
-- refer to cffi and uffi
-- [[https://github.com/cffi/cffi/blob/32c90d4a9a01e809f591276c058e5b3c7f39b154/src/types.lisp#L872][cffi/src/types.lisp at 32c90d4a9a01e809f591276c058e5b3c7f39b154 · cffi/cffi · GitHub]]
-* PROJECT obj [2/5]                                                :lisp:obj:
+* PROJECT obj [0/3]                                                :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION: 0.1
@@ -1234,37 +815,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** NOPE uri                                                             :net:
-:PROPERTIES:
-:ID:       ba8bb8ed-8106-4fc5-bdda-13b9ededd613
-:CUSTOM_ID: uri
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:00]
-- Note taken on [2023-12-20 Wed 18:26] \\
-  the franz impl doesn't play well with SBCL, at least with our
-  hacks. I'm not sure how faithfully I want to follow the RFCs
-  anyhow.. maybe we go for the dead simple approach and focus on MOP
-  for a path and URI protocol.
-:END:
-- mostly just need the tests and to finish porting the Franz implementation
-** DONE db                                                               :db:
-:PROPERTIES:
-:ID:       58a94c4b-cca3-4c86-9aa8-c8c7fd9469a6
-:CUSTOM_ID: db
-:END:
-:EDGES:
-[2024-09-16 Mon 14:41] <- [[id:9c55b120-d65e-4af5-9171-c324e211ed6a][org graph edges]]
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-20 Wed 18:26]
-- State "DONE"       from "TODO"       [2024-08-05 Mon 21:08]
-- Note taken on [2024-08-05 Mon 21:08] \\
-  XDB2 is no longer used - instead provide a simple abstract API which
-  builds up to high-level systems like RDB
-:END:
-- ported from XDB2
-** WIP complete base obj/query package [2/3]                           :q:db:
+** WIP complete base obj/query package [0/1]                           :q:db:
 :PROPERTIES:
 :LOCATION: lib/obj/query.lisp
 :ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
@@ -1282,26 +833,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
       ~RDB~, etc
     - ~query-expression~ and ~query-plan~ will be implemented in
       ~Q/SQL~ and ~Q/DQL~
-*** DONE aggregate physical plan
-:PROPERTIES:
-:Effort:   2:00
-:ID:       ea87cd03-7ecf-49f8-9743-59242e910838
-:CUSTOM_ID: aggregate-physical-plan
-:END:
-:LOGBOOK:
-- State "DONE"       from "TODO"       [2024-08-03 Sat 01:00]
-:END:
-*** DONE Physical Expressions
-:PROPERTIES:
-:Effort:   3:00
-:ID:       e00c46fd-dbd2-44ad-a41a-3ee2246ff23f
-:CUSTOM_ID: physical-expressions
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-02 Fri 15:53]
-- State "TODO"       from              [2024-08-02 Fri 15:53]
-- State "DONE"       from "TODO"       [2024-08-03 Sat 01:00]
-:END:
 *** TODO Basic Testing
 :PROPERTIES:
 :ID:       b857e6f1-c652-4024-9b87-308e1c830b2a
@@ -1328,7 +859,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
 :END:
 
-* PROJECT net [5/8]                                                :lisp:net:
+* PROJECT net [0/4]                                                :lisp:net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION: 0.1
@@ -1365,54 +896,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
 :END:
-** DONE crew                                                          :proto:
-:PROPERTIES:
-:ID:       efd79ab3-ebc3-427f-81a7-2ca7b6d3fa4e
-:CUSTOM_ID: crew
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:01]
-- State "DONE"       from "TODO"       [2024-08-10 Sat 01:31]
-:END:
-
-** DONE http                                                          :proto:
-:PROPERTIES:
-:ID:       95fcf596-7c21-447a-b4d9-08ac1a866282
-:CUSTOM_ID: http
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:01]
-- State "DONE"       from "TODO"       [2024-08-05 Mon 21:07]
-:END:
-** DONE dns                                                           :proto:
-:PROPERTIES:
-:ID:       8f2450ea-09fb-492e-a897-d9c62683f844
-:CUSTOM_ID: dns
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:01]
-- State "DONE"       from "TODO"       [2024-08-05 Mon 21:07]
-:END:
-
-** DONE tlv                                                           :codec:
-:PROPERTIES:
-:ID:       93b3aaa0-1314-41e1-940e-283a5dac1211
-:CUSTOM_ID: tlv
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:01]
-- State "DONE"       from "TODO"       [2024-08-07 Wed 21:08]
-:END:
-
-** DONE osc                                                           :codec:
-:PROPERTIES:
-:ID:       c4088610-6ef4-4336-9bdf-81e24e133615
-:CUSTOM_ID: osc
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:03]
-- State "DONE"       from "TODO"       [2024-08-07 Wed 21:08]
-:END:
 ** WIP net/srv                                                         :lisp:
 :PROPERTIES:
 :ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
@@ -1423,16 +906,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
 :END:
 - needs a solid task-pool impl completed first
-*** DONE Woo/+
-:PROPERTIES:
-:ID:       52c36c9b-22b2-4dd8-b151-9fe62810ac03
-:CUSTOM_ID: woo
-:CREATED:  <2025-01-18 Sat 20:08>
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-10 Sat 01:23]
-- State "DONE"       from "RESEARCH"   [2025-01-18 Sat 20:08]
-:END:
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
@@ -1496,7 +969,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-* PROJECT rt [2/4]                                             :lisp:rt:test:
+* PROJECT rt [1/3]                                             :lisp:rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION: 0.1
@@ -1525,30 +998,7 @@ it somehow for review.
 - State "TODO"       from              [2024-02-29 Thu 17:17]
 :END:
 - simple flag to test when file is defined (part of deftest macro)
-** DONE fixture api
-:PROPERTIES:
-:ID:       eb48a434-79f3-4936-be17-6777fdedcd61
-:CUSTOM_ID: fixture-api
-:CREATED:  <2025-01-18 Sat 20:09>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-13 Tue 22:22]
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:09]
-:END:
-** DONE temporary files and directories
-SCHEDULED: <2024-08-31 Sat 12:00> DEADLINE: <2024-09-01 Sun>
-:PROPERTIES:
-:CREATED:  <2024-08-28 Wed 21:35>
-:ID:       91ce2763-8f64-4f24-a41e-030c22e047c8
-:Effort:   5:00
-:CUSTOM_ID: temporary-files-and-directories
-:END:
-:LOGBOOK:
-- Refiled on [2024-08-28 Wed 21:35]
-CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
-- State "DONE"       from "TODO"       [2024-08-31 Sat 22:14]
-:END:
-* PROJECT emacs [2/9]                                                 :emacs:
+* PROJECT emacs [0/10]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION: 0.1
@@ -1589,56 +1039,6 @@ CLOCK: [2024-08-31 Sat 20:39]--[2024-08-31 Sat 22:14] =>  1:35
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
 :END:
-*** WIP org graph edges
-SCHEDULED: <2024-09-14 Sat>
-:PROPERTIES:
-:CREATED:  <2024-08-27 Tue 18:20>
-:ID:       9c55b120-d65e-4af5-9171-c324e211ed6a
-:LOCATION+: lib/graph.el
-:Effort:   5
-:CUSTOM_ID: org-graph-edges
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-27 Tue 18:20]
-- Note taken on [2024-09-14 Sat 16:30] \\
-  dblock will come later. for now we are going with the same strategy
-  as org-super-links - using a drawer. instead of "BACKLINKS" our
-  drawer is called simply LINKS.
-- State "WIP"        from "TODO"       [2024-09-14 Sat 16:31]
-CLOCK: [2024-09-17 Tue 19:50]--[2024-09-17 Tue 20:20] =>  0:30
-CLOCK: [2024-09-21 Sat 13:56]--[2024-09-21 Sat 17:44] =>  3:48
-CLOCK: [2024-09-25 Wed 18:54]--[2024-09-25 Wed 19:14] =>  0:20
-:END:
-:EDGES:
-:END:
-- list of links between other headings
-  - <= links to this item
-  - => links from this item
-  - == siblings
-  - ^= parent
-  - v= child
-- how should it look when exported?
-- org-graph-link-use-timestamp
-- org-graph-link properties? edge properties?
-  - keyvals =:key val= - should probably align with whatever we use
-    for =CONSTRAINTS=, for now read as sxp
-- EXPORT_EDGES property?
-#+begin_src org
-  ,* example
-  :PROPERTIES:
-  :ID:       id1
-  :CUSTOM_ID: demo
-  :END:
-  :EDGES:
-  <- [[id:bar][bar]]
-  [2024-09-14 Sat 22:37] <- [[id:bar][bar]]
-  [2024-09-14 Sat 22:50] :key val :foo (bar baz) <- [[id:bar][bar]]
-  [2024-09-14 Sat 22:37] -> [[id:foo][foo]]
-  [2024-09-14 Sat 22:39] -- [[id:sibling][sibling]]
-  [2024-09-14 Sat 22:39] >> [[id:parent][parent]]
-  [2024-09-14 Sat 22:39] << [[id:child][child]]
-  :END:
-#+end_src
 *** TODO agenda views
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 18:23>
@@ -1873,38 +1273,6 @@ CLOCK: [2024-09-25 Wed 18:54]--[2024-09-25 Wed 19:14] =>  0:20
 - emacs caching
 - KV model
 
-** DONE org-follow-location                                             :org:
-:PROPERTIES:
-:ID:       08257c5a-51f2-40b2-aa1e-58b02d31c68a
-:CREATED:  <2024-08-29 Thu 18:23>
-:Effort:   4:00
-:CUSTOM_ID: org-follow-location
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-21 Wed 20:37]
-CLOCK: [2024-08-29 Thu 18:24]--[2024-08-29 Thu 18:51] =>  0:27
-- State "WIP"        from "REFILE"     [2024-08-29 Thu 18:24]
-- State "DONE"       from "WIP"        [2024-08-29 Thu 23:46]
-:END:
-- follow LOCATION property of heading at point
-- respect parent LOCATION, buffer local settings, etc
-
-** DONE org-set-location
-SCHEDULED: <2024-08-30 Fri>
-:PROPERTIES:
-:CREATED:  <2024-08-29 Thu 23:46>
-:ID:       6c7c06fc-9220-40c6-8e0e-c7e734e7cd8a
-:CUSTOM_ID: org-set-location
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-29 Thu 23:46]
-- State "DONE"       from "TODO"       [2024-09-08 Sun 12:23]
-:END:
-similar to org-set-effort, to be called automatically on capture.
-- +should prompt for directory then file - skip file with C-u or with RET+
-  - simpler to just prompt for value with completion using
-    =org-read-property-value=
-
 ** TODO org-timeline upgrades [0/3]                                     :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
@@ -1964,7 +1332,30 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-* PROJECT io [1/2]                                                       :io:
+** TODO sk.el hack-dir-local-variables                                :emacs:
+:PROPERTIES:
+:ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
+:END:
+:LOGBOOK:
+- Refiled on [2025-02-16 Sun 19:23]
+:END:
+[[info:emacs#Directory Variables][emacs#Directory Variables]]
+** TODO sk.el indentation rules
+:PROPERTIES:
+:ID:       9b2d1c95-e724-47b8-a78c-a81805194731
+:END:
+:LOGBOOK:
+- Refiled on [2025-02-16 Sun 19:23]
+:END:
+
+** TODO project-tasks timestamp -> date when no h/m info
+:PROPERTIES:
+:ID:       ef8f7f82-9a0e-490a-aad3-e96185ad89ef
+:END:
+:LOGBOOK:
+- Refiled on [2025-02-16 Sun 19:23]
+:END:
+* PROJECT io [0/1]                                                       :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1974,17 +1365,6 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-19 Thu 21:54]
 :END:
-** DONE flate [0/0]
-:PROPERTIES:
-:CREATED:  <2024-09-19 Thu 21:55>
-:ID:       025a5ce8-192f-4cd7-a6ad-1ec7882f04b7
-:CUSTOM_ID: flate-0-0
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-09-19 Thu 21:55]
-- State "PROJECT"    from "TODO"       [2024-09-19 Thu 21:55]
-- State "DONE"       from "PROJECT"    [2025-01-18 Sat 20:48]
-:END:
 ** TODO uring
 :PROPERTIES:
 :CREATED:  <2025-01-18 Sat 20:49>
@@ -1993,7 +1373,7 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2025-01-18 Sat 20:49]
 :END:
-* WIP homer [2/2]                                                :lisp:homer:
+* WIP homer [1/1]                                                :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION: 0.1
@@ -2003,29 +1383,6 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-12-12 Tue 19:53]
 - State "WIP"        from "TBD"        [2025-01-18 Sat 20:49]
-:END:
-** DONE review GNU stow API
-:PROPERTIES:
-:ID:       73e711a9-c3f1-4157-a029-c4d3559df05e
-:CUSTOM_ID: review-gnu-stow-api
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-24 Sun 19:32]
-- State "DONE"       from "TODO"       [2024-08-05 Mon 21:06]
-:END:
-[[https://www.gnu.org/software/stow/][homepage]]
-'symlink farm manager'
-rust impl: https://github.com/qboileau/rstow
-
-** DONE consolidate with skel                                          :skel:
-:PROPERTIES:
-:ID:       0f07acf1-d1a8-456f-b753-ce04643260b9
-:CUSTOM_ID: consolidate-with-skel
-:CREATED:  <2025-01-18 Sat 20:49>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-24 Sun 19:32]
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:49]
 :END:
 * PROJECT bench                                                  :test:bench:
 :PROPERTIES:
@@ -2084,38 +1441,3 @@ https://github.com/iovisor/bcc
 - State "RESEARCH"   from              [2024-08-23 Fri 21:16]
 :END:
 [[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]
-* DONE cli tests crashing
-:PROPERTIES:
-:CREATED:  <2024-09-18 Wed 12:25>
-:ID:       23f72449-1675-4184-87ed-51debc8e31a8
-:END:
-:LOGBOOK:
-- State "FIXME"      from "TODO"       [2024-09-18 Wed 12:25]
-- State "DONE"       from "FIXME"      [2025-01-18 Sat 20:49]
-:END:
-* TODO project-tasks timestamp -> date when no h/m info
-:PROPERTIES:
-:ID:       ef8f7f82-9a0e-490a-aad3-e96185ad89ef
-:END:
-* TODO clean.theme move first heading below nav (when selecting)
-:PROPERTIES:
-:ID:       435261a3-80e2-43d3-ba16-a45a7e162228
-:END:
-* DONE :scripts regression                                            :infra:
-:PROPERTIES:
-:ID:       ae600bd1-3ceb-4400-8c72-71dfbbc5a8c7
-:CREATED:  <2025-01-18 Sat 20:49>
-:END:
-:LOGBOOK:
-- State "DONE"       from "TODO"       [2025-01-18 Sat 20:49]
-:END:
-* TODO sk.el hack-dir-local-variables                                 :emacs:
-:PROPERTIES:
-:ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
-:END:
-[[info:emacs#Directory Variables][emacs#Directory Variables]]
-* TODO sk.el indentation rules
-:PROPERTIES:
-:ID:       9b2d1c95-e724-47b8-a78c-a81805194731
-:END:
-
