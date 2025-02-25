@@ -4,17 +4,22 @@
 #+setupfile: ../../clean.theme
 #+export_file_name: index
 #+options: toc:nil
-* [[file:core.org][core]]
-:PROPERTIES:
-:ID:       b1443fce-c039-4c92-9fec-80b7cb0fe1f5
-:END:
+#+call: project-html-files()
 
-* [[file:infra.org][infra]]
-:PROPERTIES:
-:ID:       49982225-86fb-4c1f-8ade-7c230b287a50
-:END:
+#+RESULTS:
+| file  | modified            |
+|-------+---------------------|
+| [[https://compiler.company/plan/tasks/index.html][index]] | 2025-02-24 18:43:43 |
+| [[https://compiler.company/plan/tasks/core.html][core]]  | 2025-02-16 19:24:55 |
+| [[https://compiler.company/plan/tasks/demo.html][demo]]  | 2024-08-26 19:59:48 |
+| [[https://compiler.company/plan/tasks/infra.html][infra]] | 2025-02-15 16:26:17 |
 
-* [[file:demo.org][demo]]
-:PROPERTIES:
-:ID:       f132d1ff-c7dc-49cd-80ec-c117cb570887
-:END:
+#+call: project-files()
+
+#+RESULTS:
+| file       | size | modified            |
+|------------+------+---------------------|
+| [[https://github.com/richardwesthaver/plan/blob/default/tasks/readme.org][readme.org]] | 938  | 2025-02-24 18:43:43 |
+| [[https://github.com/richardwesthaver/plan/blob/default/tasks/core.org][core.org]]   | 47k  | 2025-02-16 19:24:55 |
+| [[https://github.com/richardwesthaver/plan/blob/default/tasks/demo.org][demo.org]]   | 1.8k | 2024-08-26 19:59:48 |
+| [[https://github.com/richardwesthaver/plan/blob/default/tasks/infra.org][infra.org]]  | 4k   | 2025-02-15 16:26:17 |
