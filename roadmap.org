@@ -3,7 +3,6 @@
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
 #+filetags: milestone
-
 * 2024
 :PROPERTIES:
 :ID:       bef157e2-ef55-4653-9916-1a329255a920
@@ -27,16 +26,17 @@ we have enough compute in-house.
 
 vc.compiler.company will be migrate to rurik on a dedicated pod
 +(requires ubuntu)+.
-
-** WIP Wireguard VPN                                              :net:opsec:
+** DONE Wireguard VPN                                             :net:opsec:
 :PROPERTIES:
 :ID:       867d2bd7-cedc-4695-b98a-57296bae7792
+:CREATED:  <2025-02-26 Wed 19:15>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-05-06 Mon 16:48]
 - State "WIP"        from "TODO"       [2024-05-06 Mon 16:48]
 - Note taken on [2024-08-12 Mon 18:21] \\
   all that is left is to configure for VM and containers
+- State "DONE"       from "WIP"        [2025-02-26 Wed 19:15]
 :END:
 Wireguard is a fast, secure, and easy to configure VPN library. All
 our primary devices have been configured and tested with two available
@@ -61,15 +61,17 @@ and RDB.
 Over the next few months our IO ecosystem will slowly expand. As a
 short-term goal, we will implement simple binary streams backed by
 io_uring.
-** WIP skel
+** DONE skel
 :PROPERTIES:
 :ID:       34e336b5-66e7-46db-ab65-970131748fe0
+:CREATED:  <2025-02-26 Wed 19:15>
 :END:
 :LOGBOOK:
 - State "WIP"        from "TBD"        [2024-05-06 Mon 17:06]
 - Note taken on [2024-08-12 Mon 18:21] \\
   makefiles are now replaced by skelfile rules. next step is SKEL-VM for
   optimize rule execution plans.
+- State "DONE"       from "WIP"        [2025-02-26 Wed 19:15]
 :END:
 The pieces are there, just needs glue.
 
@@ -79,15 +81,20 @@ of all =cli=.
 
 The two top priorities are VC commands and implementing a functional
 replacement for makefiles as used in the infra project.
-** TBD orgdb                                                            :mvp:
+** DONE orgdb                                                           :mvp:
 :PROPERTIES:
 :VERSION:  0.1.0
 :ID:       b07a5a1b-93ec-457e-bd50-6b00b9a10352
+:CREATED:  <2025-02-26 Wed 19:32>
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2024-08-18 Sun 01:58]
 - Note taken on [2024-08-28 Wed 21:49] \\
   see graph.el, org-graph-init.lisp
+- Note taken on [2025-02-26 Wed 19:15] \\
+  renamed to org-graph-db (graph.el)
+  see infra/scripts/org-graph-db-init.lisp and core/emacs/lib/graph.el
+- State "DONE"       from "TBD"        [2025-02-26 Wed 19:32]
 :END:
 - similar idea to org-roam
 - stored in rocksdb columns
@@ -112,14 +119,69 @@ host and grabbing a pre-compiled lisp as well as a compressed
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-16 Fri 23:04]
 :END:
-** TBD orgdb                                                         :org:db:
+
+- play-time is over, time to build
+- still, small steps, /loose/ organization practices
+** TBD CC charter
 :PROPERTIES:
-:VERSION:  1.0.0
+:CREATED:  <2025-02-26 Wed 19:43>
+:ID:       6910397b-de00-4db0-9145-7e8e0b8c76df
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-02-26 Wed 19:43]
+:END:
+- to move forward with purpose we need a clear charter
+- audience: semi-technical (knows what python and git is, has used an IDE)
+- the art of programming
+  - treating machines as extensions of ourselves, our minds and ideas
+  - understanding machines as a means of understanding the world, understanding ourselves
+  - expression of ourselves - digital traversal of mediums
+  - programming as a skill
+    - high skill-ceiling
+    - skill-multiplier: programmers benefit the most from technological
+      advances
+    - programming knowledge has high utility
+      - transferrable across domains/langs/systems
+    - IDE, domain knowledge, learning system
+  - programming as a science
+    - expression is important to scientists too
+      - math notation
+      - algorithm development
+    - modeling/simulation/forecasting
+    - search and sort
+    - multi-disciplinary utility
+      - eliminates boundaries (DRY), more knowledge sharing
+    - cellular automata
+  - needs protecting 
+    - (LLMs, cite code quality, state of C++, Hare/Zig/Nim,
+      frameworks, js ecosystem, malicious companies)
+    - client/server arch, cloud, SaaS, subscription model, browsers,
+      right to repair, limiting access to energy, data, bandwidth
+  - how?
+    - if you can't beat them...
+      - Do It Yourself
+    - eliminate dependencies
+    - encourage extension
+    - process, time
+    - Lisp/Macros/Compilers
+- re-inventing the Lisp Machine
+  - history, MIT->Symbolics->LMI->TI/Xerox->AI Winter
+  - image-based software
+  - vs other, why it failed
+  - eliminating dependence on specialized hardware
+
+** TBD graph                                                         :org:db:
+:PROPERTIES:
+:VERSION:  0.2.0
 :ID:       09987fe2-7272-4054-b728-e2c87135a8a1
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2024-08-18 Sun 02:00]
 :END:
+- systemize services
+- extend db
+- define API
+- init UI
 ** TBD bbdb                                                         :mail:db:
 :PROPERTIES:
 :VERSION:  0.1.0
@@ -128,3 +190,31 @@ host and grabbing a pre-compiled lisp as well as a compressed
 :LOGBOOK:
 - State "TBD"        from              [2024-08-18 Sun 02:03]
 :END:
+- contact management for data hoarders/hackers
+- use wide variety of techniques to disambiguate PII
+- pattern detection and analysis
+** TBD mpk
+:PROPERTIES:
+:CREATED:  <2025-02-26 Wed 21:06>
+:ID:       826fb4bb-61f6-4623-8412-bad6a3733f47
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-02-26 Wed 21:06]
+:END:
+- full mpd replication/compat
+- complete gstreamer FFI bindings
+- basic db schema
+- basic file management
+- UI design requirements
+- torrent/ytdl service layer
+** TBD alik
+:PROPERTIES:
+:CREATED:  <2025-02-26 Wed 21:08>
+:ID:       c861539c-df73-414d-915c-c61632d27ab7
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-02-26 Wed 21:08]
+:END:
+- design requirements only
+- local ML engine, LLM, compute-bias
+- container image/VM
