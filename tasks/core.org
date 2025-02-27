@@ -105,8 +105,7 @@ CLOCK: [2024-11-02 Sat 23:34]
 - State "TEST"       from "TODO"       [2024-11-03 Sun 00:23]
 - State "DONE"       from "TEST"       [2025-02-26 Wed 18:55]
 :END:
-[[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp::;;; rocksdb/slicetransform.lisp --- RocksDB SliceTransform][rocksdb/slicetransform.lisp]]
-
+[[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp][rocksdb/slicetransform.lisp]]
 ** TODO readline                                                        :cli:
 :PROPERTIES:
 :ID:       4aebbb1d-201e-4a74-8e57-537cb96a39d7
