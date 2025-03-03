@@ -1359,12 +1359,14 @@ SCHEDULED: <2025-03-01 Sat>
 :PROPERTIES:
 :ID:       9b2d1c95-e724-47b8-a78c-a81805194731
 :CREATED:  <2025-02-26 Wed 21:31>
+:LOCATION: emacs/lib/sk.el
 :END:
 :LOGBOOK:
 - Refiled on [2025-02-16 Sun 19:23]
 :END:
 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Indent.html][Lisp Indent (GNU Emacs Manual)]]
 [[https://www.n16f.net/blog/custom-common-lisp-indentation-in-emacs/][Brain dump – Custom Common Lisp indentation in Emacs]]
+
 ** TODO project-tasks timestamp -> date when no h/m info
 :PROPERTIES:
 :ID:       ef8f7f82-9a0e-490a-aad3-e96185ad89ef
