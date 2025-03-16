@@ -6,7 +6,7 @@
 #+setupfile: ../clean.theme
 #+export_file_name: index
 #+options: toc:nil
-#+BEGIN: project-info :status nil :tasks nil :html t
+#+BEGIN: project-info :status nil :tasks nil :files t
 #+CALL: project-details() :dir ~/comp/org/plan/
 
 #+RESULTS:
@@ -16,24 +16,12 @@
 | description | :description CC Org Files                          |
 | skel-id     | :id 1784914079056115652                            |
 | root        | ~/comp/org/plan/                                   |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/8cfd9e2251e2][8cfd9e2251e2:37+]] |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/c1927e4856ba][c1927e4856ba:39+]] |
 | tags        | :tags (org docs notes blog meta plan)              |
-| updated     | Thu Mar 06 19:56:48 2025 -0500                     |
+| updated     | Wed Mar 12 20:10:38 2025 -0400                     |
 | langs       | org                                                |
-| lines       | 2151 :λ 2083 :# 0 :_ 68                            |
+| lines       | 2153 :λ 2085 :# 0 :_ 68                            |
 |-------------+----------------------------------------------------|
-
-#+CALL: project-html-files() :dir ~/comp/org/plan/
-
-#+RESULTS:
-| file        | modified            |
-|-------------+---------------------|
-| [[https://compiler.company/plan/index.html][index]]       | 2025-03-09 14:26:57 |
-| [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]  | 2025-03-08 01:05:42 |
-| [[https://compiler.company/plan/product.html][product]]     | 2025-02-14 19:14:44 |
-| [[https://compiler.company/plan/roadmap.html][roadmap]]     | 2025-02-26 21:13:47 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]  | 2025-03-02 09:39:34 |
-| [[https://compiler.company/plan/tasks/infra.html][tasks/infra]] | 2025-02-15 16:26:17 |
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
 
@@ -46,18 +34,18 @@
 : 2024-12    131 ***
 : 2025-01      7 
 : 2025-02   1404 ***************************************
-: 2025-03    101 **
+: 2025-03    207 *****
 
 #+CALL: project-files() :dir ~/comp/org/plan/
 
 #+RESULTS:
-| file            | size | modified            |
-|-----------------+------+---------------------|
-| [[https://github.com/richardwesthaver/plan/blob/default/readme.org][readme.org]]      | 3.1k | 2025-03-09 14:26:57 |
-| [[https://github.com/richardwesthaver/plan/blob/default/tasks/demo.org][tasks/demo.org]]  | 2.1k | 2025-03-08 01:05:42 |
-| [[https://github.com/richardwesthaver/plan/blob/default/product.org][product.org]]     | 5k   | 2025-02-14 19:14:44 |
-| [[https://github.com/richardwesthaver/plan/blob/default/roadmap.org][roadmap.org]]     | 7.5k | 2025-02-26 21:13:47 |
-| [[https://github.com/richardwesthaver/plan/blob/default/tasks/core.org][tasks/core.org]]  | 48k  | 2025-03-02 09:39:34 |
-| [[https://github.com/richardwesthaver/plan/blob/default/tasks/infra.org][tasks/infra.org]] | 4k   | 2025-02-15 16:26:17 |
+| file        | modified            |
+|-------------+---------------------|
+| [[file:.][.]]           | 2025-03-15 19:54:13 |
+| [[file:product.org][product]]     | 2025-02-14 19:14:44 |
+| [[file:roadmap.org][roadmap]]     | 2025-02-26 21:13:47 |
+| [[file:tasks/core.org][tasks/core]]  | 2025-03-12 17:26:09 |
+| [[file:tasks/demo.org][tasks/demo]]  | 2025-03-08 01:05:42 |
+| [[file:tasks/infra.org][tasks/infra]] | 2025-02-15 16:26:17 |
 
 #+END:
