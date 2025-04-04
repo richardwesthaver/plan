@@ -10,39 +10,42 @@
 #+CALL: project-details() :dir ~/comp/org/plan/
 
 #+RESULTS:
-|-------------+----------------------------------------------------|
-| name        | plan                                               |
-| version     | :version 0.1.0                                     |
-| description | :description CC Org Files                          |
-| skel-id     | :id 1784914079056115652                            |
-| root        | ~/comp/org/plan/                                   |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/663c876649dd][663c876649dd:40+]] |
-| tags        | :tags (org docs notes blog meta plan)              |
-| updated     | Sat Mar 15 20:49:54 2025 -0400                     |
-| langs       | org                                                |
-| lines       | 2141 :λ 2075 :# 0 :_ 66                            |
-|-------------+----------------------------------------------------|
+|-------------+---------------------------------------------------|
+| name        | plan                                              |
+| version     | :version 0.1.0                                    |
+| description | :description CC Org Files                         |
+| skel-id     | :id 1784914079056115652                           |
+| root        | ~/comp/org/plan/                                  |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/b6179ae6be69][b6179ae6be69:41]] |
+| tags        | :tags (org docs notes blog meta plan)             |
+| updated     | Fri Apr 04 16:22:19 2025 -0400                    |
+| langs       | org                                               |
+| lines       | 2141 :λ 2075 :# 0 :_ 66                           |
+|-------------+---------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
 
 #+RESULTS:
-: 2024-04     45 *
-: 2024-06    100 **
-: 2024-07    150 ****
-: 2024-08   2185 *************************************************************
-: 2024-09    602 ****************
-: 2024-12    131 ***
-: 2025-01      7 
-: 2025-02   1404 ***************************************
-: 2025-03    245 ******
+#+begin_example
+2024-04     45 *
+2024-06    100 **
+2024-07    150 ****
+2024-08   2185 *************************************************************
+2024-09    602 ****************
+2024-12    131 ***
+2025-01      7 
+2025-02   1404 ***************************************
+2025-03    245 ******
+2025-04     10 
+#+end_example
 
 #+CALL: project-files() :dir ~/comp/org/plan/
 
 #+RESULTS:
 | file        | modified            |
 |-------------+---------------------|
-| [[file:.][.]]           | 2025-03-16 19:14:59 |
 | [[file:product.org][product]]     | 2025-02-14 19:14:44 |
+| [[file:.][.]]           | 2025-04-04 16:16:24 |
 | [[file:roadmap.org][roadmap]]     | 2025-02-26 21:13:47 |
 | [[file:tasks/core.org][tasks/core]]  | 2025-03-12 17:26:09 |
 | [[file:tasks/demo.org][tasks/demo]]  | 2025-03-08 01:05:42 |
