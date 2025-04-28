@@ -68,53 +68,31 @@
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION: 0.1
 :LOCATION: ffi/
-:CUSTOM_ID: ffi-0-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb [1/1]                                            :rocksdb:
+** PROJECT rocksdb [0/1]                                            :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :LOCATION+: ffi/rocksdb
 :VERSION: 0.1.0
-:CUSTOM_ID: rocksdb-6-7
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
 :END:
-*** DONE impl rocksdb/slicetransform callbacks
-DEADLINE: <2024-11-03 Sun>
+*** TBD final cleanup
 :PROPERTIES:
-:CREATED:  <2024-08-19 Mon 16:17>
-:ID:       1aa4a86f-0fa6-46ba-bd42-bc87a3a64245
-:CUSTOM_ID: impl-rocksdb-slicetransform-callbacks
-:Effort:   5h
+:CREATED:  <2025-04-26 Sat 20:24>
+:ID:       3dd20586-fc84-461a-bc59-a3d14c6fde0a
 :END:
 :LOGBOOK:
-- State "TODO"       from              [2024-08-19 Mon 16:17]
-- New deadline from "[2024-08-27 Tue]" on [2024-08-27 Tue 17:30]
-- Refiled on [2024-08-27 Tue 17:31]
-- New deadline from "[2024-09-07 Sat]" on [2024-11-02 Sat 23:34]
-CLOCK: [2024-11-02 Sat 23:34]
-- State "TEST"       from "TODO"       [2024-11-03 Sun 00:23]
-- State "DONE"       from "TEST"       [2025-02-26 Wed 18:55]
-:END:
-[[file:~/comp/core/lisp/ffi/rocksdb/slicetransform.lisp][rocksdb/slicetransform.lisp]]
-** TODO readline                                                        :cli:
-:PROPERTIES:
-:ID:       4aebbb1d-201e-4a74-8e57-537cb96a39d7
-:LOCATION+: readline/
-:CUSTOM_ID: readline
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-10 Sat 22:23]
+- State "TBD"        from              [2025-04-26 Sat 20:24]
 :END:
 ** TBD examples [0/6]                                               :example:
 :PROPERTIES:
 :ID:       794f6242-2589-424d-bbc1-8025530a2a6b
-:CUSTOM_ID: examples-0-6
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2024-08-15 Thu 23:02]
@@ -124,7 +102,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO gstreamer practical example                              :gstreamer:
 :PROPERTIES:
 :ID:       d476e6b4-5b58-4f51-afc5-c2c0195d3799
-:CUSTOM_ID: gstreamer-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:21]
@@ -132,7 +109,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO ublk practical example                                        :ublk:
 :PROPERTIES:
 :ID:       7887da0f-f6d7-43f0-9fcb-cef7c07fb1bb
-:CUSTOM_ID: ublk-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:22]
@@ -140,7 +116,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO uring read/write file example                                :uring:
 :PROPERTIES:
 :ID:       7194096a-f0a2-446d-b46a-3c55e6123a16
-:CUSTOM_ID: uring-read-write-file-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:22]
@@ -148,7 +123,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO btrfs practical example                                      :btrfs:
 :PROPERTIES:
 :ID:       595c395c-976b-4356-a3ec-df8030293326
-:CUSTOM_ID: btrfs-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:30]
@@ -158,7 +132,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO xkb practical example                                         :x:kb:
 :PROPERTIES:
 :ID:       530aef14-b508-4d3a-8442-a16fea82039f
-:CUSTOM_ID: xkb-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:32]
@@ -166,7 +139,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO keyutils practical example                                  :crypto:
 :PROPERTIES:
 :ID:       eec96038-ac73-477d-a443-4a9b3b5f4a5d
-:CUSTOM_ID: keyutils-practical-example
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
@@ -177,7 +149,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
 :LOCATION: lib/cli/
 :VERSION: 0.1.0
-:CUSTOM_ID: cli
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
@@ -187,7 +158,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
 :LOCATION+: clap/
-:CUSTOM_ID: cli-clap-1-5
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-21 Sun 01:33]
@@ -198,13 +168,11 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO conditions implementation
 :PROPERTIES:
 :ID:       c17dae0b-93b8-467a-bc96-6dddfb7a6e53
-:CUSTOM_ID: conditions-implementation
 :END:
 *** TODO minimal documentation                                          :doc:
 :PROPERTIES:
 :ID:       aef56337-8adf-4f69-823f-4380ae0c468b
 :LOCATION: lib/cli.org
-:CUSTOM_ID: minimal-documentation
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
@@ -212,7 +180,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO keyword selectors                                    :lisp:cli:skel:
 :PROPERTIES:
 :ID:       ca205f3d-d84d-4629-9d7a-189203c11441
-:CUSTOM_ID: keyword-selectors
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:31]
@@ -229,15 +196,25 @@ CLOCK: [2024-11-02 Sat 23:34]
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
 :ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
-:CUSTOM_ID: clap-fixtures
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
+** TODO linedit prefixes
+:PROPERTIES:
+:CREATED:  <2025-04-26 Sat 23:20>
+:ID:       c5ddfea6-01a3-442f-ab88-9467651dc889
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-26 Sat 23:20]
+:END:
+should be pretty simple - bind ~C-x~ to a command which calls
+~read-chord~ and looks up the next funcall in a user-specified command
+table.
+
 * TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
 :PROPERTIES:
 :ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
-:CUSTOM_ID: https-libyear-com-libyear
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
@@ -246,7 +223,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
 :VERSION: 0.1
-:CUSTOM_ID: q-0-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -255,7 +231,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 ** TODO SQL
 :PROPERTIES:
 :ID:       8b853556-399d-445f-8e7b-4bd4048087c5
-:CUSTOM_ID: sql
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -265,7 +240,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 ** TODO DQL
 :PROPERTIES:
 :ID:       77bc044c-f4c8-440d-a590-e712ccad9bea
-:CUSTOM_ID: dql
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-03 Sat 01:03]
@@ -278,7 +252,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO top-level macros
 :PROPERTIES:
 :ID:       782758ba-78ba-4366-996e-47b6b9123ac3
-:CUSTOM_ID: top-level-macros
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:38]
@@ -287,7 +260,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO conditions
 :PROPERTIES:
 :ID:       61adb134-1e00-4973-846b-a5afd746afaa
-:CUSTOM_ID: conditions
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
@@ -295,7 +267,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO basic predicates
 :PROPERTIES:
 :ID:       3b9067c6-27ec-45e6-a025-201695bd9ece
-:CUSTOM_ID: basic-predicates
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
@@ -311,7 +282,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO compiler design
 :PROPERTIES:
 :ID:       503c24ba-8613-4ca0-8c9c-51eced131168
-:CUSTOM_ID: compiler-design
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
@@ -319,7 +289,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO runtime design
 :PROPERTIES:
 :ID:       dd1eeab0-901d-4914-91a0-0413a3503fd1
-:CUSTOM_ID: runtime-design
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:43]
@@ -332,7 +301,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 ** TODO q/tests/fuzz [0/2]
 :PROPERTIES:
 :ID:       6d3c2685-5faf-4670-8ea0-b9b047c17c64
-:CUSTOM_ID: q-tests-fuzz-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:11]
@@ -341,7 +309,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO sql-fuzzer
 :PROPERTIES:
 :ID:       32506969-1c5d-4a9f-aa03-eb4b1a863f5c
-:CUSTOM_ID: sql-fuzzer
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:11]
@@ -353,7 +320,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 *** TODO dql-fuzzer
 :PROPERTIES:
 :ID:       ef26c36a-1a5c-461a-834b-936010d49bb3
-:CUSTOM_ID: dql-fuzzer
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:12]
@@ -361,56 +327,14 @@ CLOCK: [2024-11-02 Sat 23:34]
 ** TODO #? reader macro
 :PROPERTIES:
 :ID:       5da9a939-892f-439e-8072-c5c61cc1bbe3
-:CUSTOM_ID: reader-macro
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:36]
-:END:
-* RESEARCH OCI projects [0/4]                                :pod:packy:skel:
-:PROPERTIES:
-:ID:       ad581365-91ed-4ca8-a489-413a20cadbb7
-:CUSTOM_ID: oci-projects-0-4
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-01 Thu 12:35]
-:END:
-** RESEARCH [[https://oras.land/][oras]]
-:PROPERTIES:
-:ID:       7eef96fb-b568-45be-a6ca-fd7a4a7c9469
-:CUSTOM_ID: https-oras-land-oras
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-01 Thu 12:36]
-:END:
-** RESEARCH skopeo
-:PROPERTIES:
-:ID:       e7d2e4fd-82e2-47b2-86a2-8ba14fff80d4
-:CUSTOM_ID: skopeo
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-01 Thu 12:36]
-:END:
-** RESEARCH zot
-:PROPERTIES:
-:ID:       f98d1562-73da-4814-afd6-304d3be2c9b5
-:CUSTOM_ID: zot
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-01 Thu 12:36]
-:END:
-** RESEARCH [[https://www.sigstore.dev/][sigstore]]
-:PROPERTIES:
-:ID:       784024e5-6501-4fe7-93d1-44334fbee3ea
-:CUSTOM_ID: https-www-sigstore-dev-sigstore
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-01 Thu 12:30]
 :END:
 * TODO parse [0/2]                                                 :lisp:lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
 :VERSION: 0.1
-:CUSTOM_ID: parse-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:24]
@@ -426,7 +350,6 @@ CLOCK: [2024-11-02 Sat 23:34]
 ** TODO tests
 :PROPERTIES:
 :ID:       484740d6-3fb6-4796-b7e8-8f217c5063e5
-:CUSTOM_ID: tests
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:28]
@@ -436,7 +359,6 @@ need to fill.
 ** TODO toml impl
 :PROPERTIES:
 :ID:       6ba3e53d-8cfa-46fe-852a-ea462d475883
-:CUSTOM_ID: toml-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-24 Sun 19:28]
@@ -447,7 +369,6 @@ using our parser module.
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
 :VERSION: 0.2
-:CUSTOM_ID: organ-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-11-29 Wed 21:25]
@@ -459,7 +380,6 @@ using our parser module.
 ** TBD organ-export
 :PROPERTIES:
 :ID:       664309c2-55eb-45c2-88eb-a32c012c89ef
-:CUSTOM_ID: organ-export
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-11-29 Wed 21:24]
@@ -470,7 +390,6 @@ using our parser module.
 ** TODO org-parse
 :PROPERTIES:
 :ID:       2434b254-4346-4791-82da-b6bc309e8f5b
-:CUSTOM_ID: org-parse
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-11-29 Wed 21:26]
@@ -483,7 +402,6 @@ using our parser module.
 ** TBD parse org-elements as sxp                                        :sxp:
 :PROPERTIES:
 :ID:       232b7b58-2e66-479a-a978-b33f1cdda13f
-:CUSTOM_ID: parse-org-elements-as-sxp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-09-25 Mon 15:23]
@@ -524,7 +442,6 @@ using our parser module.
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
 :VERSION: 0.2
-:CUSTOM_ID: rdb-0-6
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:26]
@@ -533,7 +450,6 @@ using our parser module.
 ** TODO error handling
 :PROPERTIES:
 :ID:       299c7d94-e259-4413-8b46-13957ca8ded4
-:CUSTOM_ID: error-handling
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 22:57]
@@ -546,7 +462,6 @@ using our parser module.
 ** TODO client api
 :PROPERTIES:
 :ID:       93e0f187-c9f1-485f-9c51-b1abebf7da06
-:CUSTOM_ID: client-api
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 22:59]
@@ -558,7 +473,6 @@ using our parser module.
 ** TODO sequence/iterator impl
 :PROPERTIES:
 :ID:       6dbd6194-390b-4156-8690-75f91ce2e8d2
-:CUSTOM_ID: sequence-iterator-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 23:09]
@@ -568,7 +482,6 @@ using our parser module.
 ** TODO comparator impl
 :PROPERTIES:
 :ID:       bb1bd757-f80d-4723-ac62-45d7ef72a0a2
-:CUSTOM_ID: comparator-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 23:11]
@@ -577,7 +490,6 @@ using our parser module.
 ** TODO type system
 :PROPERTIES:
 :ID:       31a8f3e3-812f-4edc-a6d1-6540481d7dc7
-:CUSTOM_ID: type-system
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-10 Sun 23:12]
@@ -592,7 +504,6 @@ using our parser module.
 ** TODO set-opt/get-opt
 :PROPERTIES:
 :ID:       1a08fd02-b7e2-466b-9c43-f6570160aeb7
-:CUSTOM_ID: set-opt-get-opt
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:49]
@@ -606,7 +517,6 @@ using our parser module.
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
 :VERSION: 0.1
-:CUSTOM_ID: vc-2-3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:10]
@@ -618,7 +528,6 @@ using our parser module.
 :LOCATION: ~/.config/nushell/scripts/vc.nu
 :Effort:   3:00
 :CREATED:  <2024-08-22 Thu 22:15>
-:CUSTOM_ID: vc-mirrors-update-replacement
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:33]
@@ -629,7 +538,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION: 0.1
-:CUSTOM_ID: dat
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:08]
@@ -639,7 +547,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :Effort:   80:00
 :ID:       c808200c-450a-4f77-b4c1-6b372c7c4943
-:CUSTOM_ID: dat-parquet
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-19 Fri 21:51]
@@ -649,7 +556,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :Effort:   8:00
 :ID:       40cb89e4-db1b-4a78-b2b7-3e0fc9ee287b
-:CUSTOM_ID: dat-csv-column-selectors
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 20:53]
@@ -666,7 +572,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** TODO sxp 0.2                                                    :lisp:sxp:
 :PROPERTIES:
 :ID:       2a4d602c-2dea-451f-b06e-165ee2a523b3
-:CUSTOM_ID: sxp-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -674,7 +579,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 *** TODO WRAP-OBJECT                                                   :skel:
 :PROPERTIES:
 :ID:       1f04611d-068b-4708-b4e9-e6211cb484eb
-:CUSTOM_ID: wrap-object
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -685,7 +589,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 **** TODO sxp standard methods
 :PROPERTIES:
 :ID:       12de9774-b6d9-47d1-8dd6-8448078ea15f
-:CUSTOM_ID: sxp-standard-methods
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:06]
@@ -701,7 +604,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION: 0.1
-:CUSTOM_ID: syn
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:15]
@@ -711,7 +613,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION: 0.2
-:CUSTOM_ID: skel-1-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-16 Sat 00:55]
@@ -721,7 +622,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** TODO split out skel rules
 :PROPERTIES:
 :ID:       d353ab64-69a1-4fcf-9df5-1804c646f6a5
-:CUSTOM_ID: split-out-skel-rules
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
@@ -730,7 +630,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 ** TODO implement task-pool                                          :thread:
 :PROPERTIES:
 :ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
-:CUSTOM_ID: implement-task-pool
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
@@ -741,7 +640,6 @@ SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
 :CREATED:  <2024-08-18 Sun 22:03>
 :Effort:   8:00
-:CUSTOM_ID: implement-vm
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:11]
@@ -774,40 +672,215 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - main thread should show progress in parallel
   - capture conditions/debugger
   - figure out how to retrieve stacktrace from worker threads
-* PROJECT std [1/4]                                                :lisp:std:
+* PROJECT std [2/8]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION: 0.2
-:CUSTOM_ID: std-2-10
+:LOCATION: std/
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** TODO documentation sweep
+** WIP documentation sweep
 :PROPERTIES:
 :ID:       b7f48103-4fa3-48c0-93ba-8efc23848931
-:CUSTOM_ID: documentation-sweep
+:CREATED:  <2025-04-26 Sat 20:48>
+:Effort:   10:00
+:ORDERED:  t
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
+- State "WIP"        from "TODO"       [2025-04-26 Sat 20:48]
+CLOCK: [2025-04-27 Sun 15:35]--[2025-04-27 Sun 17:59] =>  2:24
+CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 :END:
-** TODO more (useful) bits
+- document functions and variables..
+#+begin_src lisp
+  (let ((ret))
+    (do-external-symbols (s :std ret)
+      (when (and (or (boundp s) (fboundp s) (cadr (multiple-value-list (typexpand s))) (find-class s nil))
+                 (not (or (documentation s 'variable) (documentation s 'function)
+                          (documentation s 'structure) (documentation s 'type)
+  			(documentation s 'setf) (documentation s 't))))
+        (push s ret)))
+    (values ret (list :missing (length ret) :/ (length (list-package-symbols :std)))))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+(SLOT-DEFINITION-READERS FINALIZE-INHERITANCE NON-POSITIVE-REAL-P
+                         PACKAGE-SYMBOL-NAMES COMPUTE-SPECIAL-BINDINGS
+                         BASIC-QUEUE SERDE-ERROR TERMIOS-LFLAG
+                         READTABLE-DOES-NOT-EXIST DESIGNATE-ORACLE
+                         PACKAGE-SYMBOLS CLASS-DIRECT-SLOTS
+                         WITH-DEFAULT-SPECIAL-BINDINGS WITH-SYNC-MESSAGE
+                         IF-MATCH PREV-COL-COUNT-OF COL-INDEX-OF REMOVE-METHOD
+                         CLASS-DIRECT-SUPERCLASSES NON-POSITIVE-SINGLE-FLOAT-P
+                         ,*WORKER-CLASS* WITH-NEW-SESSION RUN-WORKER MAKE-WORKER
+                         RAW-QUEUE-FULL-P DUMP-THREAD *DEFAULT-PACKAGE*
+                         LIST-ALL-SYMBOLS READTABLE-ERROR
+                         STANDARD-EFFECTIVE-SLOT-DEFINITION
+                         NON-POSITIVE-FLOAT-P JOBS SEGMENT-READER
+                         DIRECT-SLOT-DEFINITION-CLASS LEXENV-USER-DATA
+                         NEGATIVE-RATIONAL-P WITH-UNIQUE-NAMES
+                         READ-ALIEN-SINGLE-FLOAT SLOT-DEFINITION-ALLOCATION
+                         CHANNEL-QUEUE *PRINT-SLOT-INDENT* DE
+                         CURRENT-THREAD-SAP SCHEDULED-TASK
+                         POSITIVE-LONG-FLOAT-P JOBP WAIT-FOR-THREADS
+                         AVLTREE-LIST *DEFAULT-ARENA-SIZE* ELEMENT
+                         NON-NEGATIVE-DOUBLE-FLOAT-P ADD-DEPENDENT TASKS
+                         NON-POSITIVE-LONG-FLOAT-P POSITIVE-REAL-P
+                         THREAD-DEADLOCK METHOD-SPECIALIZERS
+                         NON-NEGATIVE-INTEGER-P METHOD-GENERIC-FUNCTION
+                         GENERIC-FUNCTION-METHOD-COMBINATION COMPILE-LISP
+                         NEGATIVE-FIXNUM-P ACCESSOR-METHOD-SLOT-DEFINITION
+                         +TIOCGWINSZ+ POP-QUEUE MACROEXPAND-ALL
+                         WHILE-WAITING-FOR DEF-SIMPLE-ERROR-REPORTER
+                         PUSH-SPIN-QUEUE SLOT-DEFINITION-NAME
+                         SLOT-DEFINITION-INITFUNCTION START-WORKER
+                         QUEUE-FULL-P* THREAD-COUNT GENSYMIFY*
+                         MAKE-LISTENER-THREAD GENERIC-FUNCTION-METHOD-CLASS
+                         HOOKS STANDARD-GENERIC-FUNCTION
+                         COMPUTE-DEFAULT-INITARGS NEGATIVE-INTEGER-P PEEK-QUEUE
+                         RAW-QUEUE-EMPTY-P SPECIALIZER-DIRECT-METHODS SYMB
+                         LINE-COUNT-OF RENAME-PACKAGE-AWAY 64-BIT-P
+                         DO-INTERNAL-SYMBOLS AVL-FIND<= ADD-DIRECT-SUBCLASS
+                         DEF-SIMPLE-WARNING-REPORTER THREAD-OS-TID
+                         PRINT-TOP-LEVEL GENERIC-FUNCTION PARSE-LAMBDA-LIST
+                         SUBST-MODE-PPCRE-LAMBDA-FORM OCTET-VECTOR-P KERNEL
+                         NYI! ORACLE-ID STATUS
+                         SPECIALIZER-DIRECT-GENERIC-FUNCTIONS EQL-SPECIALIZER
+                         WORD STANDARD-OBJECT WITH-COUNTDOWN
+                         CALL-WITH-QUEUE-LOCK PACKAGE-DEFINITION-FORM
+                         MAKE-RWLOCK WITH-TASK-POOL WRAPPED-CONDITION-VALUE
+                         MEMCPY REMOVE-DIRECT-METHOD NON-NEGATIVE-FIXNUM-P
+                         STANDARD-WRITER-METHOD SER HUMAN-READABLE-SIZE
+                         NON-NEGATIVE-REAL-P ALIEN-OR-LISP-OCTETS
+                         CLASS-PRECEDENCE-LIST NON-POSITIVE-SHORT-FLOAT-P
+                         CHANNEL LITTLE-ENDIAN-P POP-CONS-QUEUE
+                         FIND-THREAD-POOL EXTRACT-LAMBDA-LIST
+                         METHOD-COMBINATION |#"-reader| INTERN-EQL-SPECIALIZER
+                         SLOT-BOUNDP-USING-CLASS ENSURE-CLASS
+                         NEGATIVE-DOUBLE-FLOAT-P CFMAKERAW
+                         COUNTING-CHARACTER-INPUT-STREAM RAW-QUEUE-COUNT
+                         MAKE-QUEUE KILL-THREAD POP-WORKER POP-QUEUE*
+                         POSIX-MEMALIGN CLASS-NAME SERDE-CONDITION
+                         NON-POSITIVE-DOUBLE-FLOAT-P REMOVE-DIRECT-SUBCLASS
+                         PREFIX-OF WITH-THREADS STREAM-OF POP-RAW-QUEUE
+                         ,*XDG-USER-DIRS* RUN-THREAD FUNCALLABLE-STANDARD-OBJECT
+                         PRINT-ALLOCATOR-HISTOGRAM METHOD NEGATIVE-REAL-P
+                         MAKE-CONS-QUEUE GENSYMIFY MESSAGE-CONDITION TCSETATTR*
+                         REVIVE-IMAGE COMPUTE-EFFECTIVE-METHOD
+                         ADD-DIRECT-METHOD ELEMENT-STREAM GENERIC-FUNCTION-NAME
+                         CLASS-DEFAULT-INITARGS OCTET-VECTOR
+                         STANDARD-READER-METHOD ERROR-MESSAGE
+                         %DISPOSE-THREAD-STRUCTS READ-ALIEN REMOVE-DEPENDENT
+                         FULFILLEDP FORWARD-REFERENCED-CLASS ERROR-ITEM
+                         NEGATIVE-SINGLE-FLOAT-P ERROR-REASON SPIN-QUEUE
+                         TCSETATTR MAKE-INSTANCE ERROR-KIND TASK-POOL HANG
+                         PEEK-SPIN-QUEUE CHANNEL-POOL SPECIALIZER
+                         SPIN-QUEUE-COUNT *TAB-WIDTH* READ-N-BYTES AVL-FIND>=
+                         LOCK %WORKER EFFECTIVE-SLOT-DEFINITION-CLASS
+                         +TIOCSWINSZ+ XDG-USER-DIR RAW-QUEUE-CAPACITY
+                         METAOBJECT COMPILER-LET ADD-METHOD *STD-PACKAGES*
+                         QUEUE-FULL-P ENSURE-LIST KILL-WORKER
+                         THREAD-DEADLOCK-CYCLE NON-NEGATIVE-SHORT-FLOAT-P
+                         ENSURE-GENERIC-FUNCTION ENSURE-CLASS-USING-CLASS
+                         WITH-SESSION-LOCK QUEUE
+                         SET-FUNCALLABLE-INSTANCE-FUNCTION SPIN-QUEUE-EMPTY-P
+                         ,*RESULT* PARSE-DEFPKG-FORM MESSAGE 32-BIT-P RAW-QUEUE
+                         +OPOST+ SYNC-MESSAGE QUEUE-COUNT CONS-QUEUE-EMPTY-P
+                         RESET-ALLOCATOR-HISTOGRAM PEEK-QUEUE* COMPUTE-SLOTS
+                         DIRECT-SLOT-DEFINITION XDG-BASE-DIR PEEK-CONS-QUEUE
+                         TASKP MESSAGE-CONTENT *HIDDEN-PATHS* BUILD-BATCHER-SN
+                         MAKE-MACRO-LAMBDA CLASS-DIRECT-SUBCLASSES
+                         TIMED-JOIN-THREAD *TASK-PRIORITY* ALLOCATOR-HISTOGRAM
+                         SYMBOLICATE FUTEX-WAKE DOLLAR-SYMBOL-P
+                         PREFIXED-CHARACTER-OUTPUT-STREAM WITH-QUEUE-LOCK
+                         NEGATIVE-SHORT-FLOAT-P GENERIC-FUNCTION-LAMBDA-LIST
+                         WORKER-THREAD METHOD-QUALIFIERS VALIDATE-SUPERCLASS
+                         MAKE-NULL-LEXENV UPDATE-DEPENDENT DEF-WARNING-REPORTER
+                         EFFECTIVE-SLOT-DEFINITION JOIN-WORKER WRAPPED-STREAM
+                         INDEX DEFINE-LOGICAL-PATHNAME CLASS-FINALIZED-P
+                         STANDARD-DIRECT-SLOT-DEFINITION GET-FOREGROUND
+                         STANDARD-SLOT-DEFINITION ...)
+(:MISSING 413 :/ 1060)
+#+end_example
+
+- [?] alien.lisp              
+- [X] array.lisp              
+- [X] async.lisp              
+- [X] bit.lisp                
+- [X] condition.lisp          
+- [X] curry.lisp              
+- [X] defpkg.lisp             
+- [X] early.lisp              
+- [X] file.lisp               
+- [X] fmt.lisp                
+- [X] hash-table.lisp         
+- [X] list.lisp               
+- [X] macs                    
+- [X] meta.lisp               
+- [-] named-readtables.lisp   
+- [X] num                     
+- [X] os.lisp                 
+- [X] par.lisp                
+- [X] path.lisp               
+- [X] pipe.lisp               
+- [-] pkg.lisp                
+- [X] rand.lisp               
+- [ ] readtable.lisp          
+- [ ] seq.lisp                
+- [ ] serde.lisp              
+- [ ] spin.lisp               
+- [ ] std.asd                 
+- [ ] stream.lisp             
+- [ ] string.lisp             
+- [ ] sym.lisp                
+- [ ] sys.lisp                
+- [ ] task.lisp               
+- [ ] tests                   
+- [ ] thread.lisp             
+- [ ] type.lisp               
+
+*** DONE symbol cleanup
+:PROPERTIES:
+:CREATED:  <2025-04-26 Sat 22:33>
+:ID:       91c34865-9f18-47a8-b63c-4401307f8368
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-26 Sat 22:33]
+- State "DONE"       from "TODO"       [2025-04-26 Sat 22:46]
+:END:
+delete unbound non-anaphoric symbols
+#+begin_src lisp
+  (let ((ret))
+    (do-external-symbols (s :std ret)
+      (when (not (or (boundp s) (fboundp s) (cadr (multiple-value-list (typexpand s))) (find-class s nil)))
+        (push s ret))))
+#+end_src
+
+#+RESULTS:
+| TIME-REMAINING | PID-T | TIMESPEC | IT | LOFF-T | *STAGES* | %P | *TASK* | GID-T | .I | %THREAD | %A | MAYBE-INLINE | *JOBS* | *TASKS* | TIMEVAL | WINSIZE | UID-T |
+
+** TODO more (useful) bit tricks
 :PROPERTIES:
 :ID:       36d3040f-c899-4941-affb-30e1641d1b01
-:CUSTOM_ID: more-bits
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
 :END:
-** HACK defsys                                                     :lisp:std:
+** HOLD defsys                                                     :lisp:std:
 :PROPERTIES:
 :ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
-:CUSTOM_ID: defsys
+:CREATED:  <2025-04-26 Sat 22:47>
 :END:
 :LOGBOOK:
 - State "HACK"       from              [2024-08-03 Sat 01:06]
 - Refiled on [2024-08-22 Thu 19:03]
+- State "HOLD"       from "HACK"       [2025-04-26 Sat 22:47] \\
+  hold for version 0.3
 :END:
 - maybe Norvig was right and we don't need asdf/uiop, maybe not
 - the truth is somewhere in between
@@ -815,11 +888,59 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
+** TODO test sweep                                                     :test:
+:PROPERTIES:
+:CREATED:  <2025-04-27 Sun 18:02>
+:ID:       ec17d811-1573-4208-ab46-edfe9ae23d02
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-27 Sun 18:02]
+:END:
+** TODO finalize thread-pool impl                                    :thread:
+:PROPERTIES:
+:CREATED:  <2025-04-27 Sun 18:02>
+:ID:       5bb9865d-e6c1-40ca-8a53-155c417de018
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-27 Sun 18:02]
+:END:
+** TODO task-pool impl                                               :thread:
+:PROPERTIES:
+:CREATED:  <2025-04-27 Sun 18:02>
+:ID:       8326a4a5-31dc-4030-a3da-196f58b69202
+:LOCATION: std/meta.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-27 Sun 18:02]
+:END:
+** DONE explain                                                         :doc:
+:PROPERTIES:
+:ID:       155f1e0c-c5ec-4175-934c-14be4adb3559
+:LOCATION: meta.lisp
+:CREATED:  <2025-04-27 Sun 19:33>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-03 Sat 01:01]
+- State "WIP"        from "TODO"       [2025-04-27 Sun 19:33]
+- State "DONE"       from "WIP"        [2025-04-27 Sun 19:37]
+:END:
+- generic done
+- maybe simple version in std/fmt
+** DONE explore                                                         :doc:
+:PROPERTIES:
+:ID:       08017f7e-de0a-442a-9cb6-5559c9159b29
+:CREATED:  <2025-04-27 Sun 19:33>
+:END:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
+- State "WIP"        from "TODO"       [2025-04-27 Sun 19:33]
+- State "DONE"       from "WIP"        [2025-04-27 Sun 19:37]
+:END:
+- generic done
 * PROJECT obj [0/3]                                                :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION: 0.1
-:CUSTOM_ID: obj-2-5
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 00:59]
@@ -829,7 +950,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :LOCATION: lib/obj/query.lisp
 :ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
-:CUSTOM_ID: complete-base-obj-query-package-2-3
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2024-07-09 Tue 22:14]
@@ -846,34 +966,15 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 *** TODO Basic Testing
 :PROPERTIES:
 :ID:       b857e6f1-c652-4024-9b87-308e1c830b2a
-:CUSTOM_ID: basic-testing
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:55]
-:END:
-
-** TODO explain impl                                                    :doc:
-:PROPERTIES:
-:ID:       155f1e0c-c5ec-4175-934c-14be4adb3559
-:CUSTOM_ID: explain-impl
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-03 Sat 01:01]
-:END:
-** TODO explore impl                                                    :doc:
-:PROPERTIES:
-:ID:       08017f7e-de0a-442a-9cb6-5559c9159b29
-:CUSTOM_ID: explore-impl
-:END:
-:LOGBOOK:
-- State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
 :END:
 
 * PROJECT net [0/4]                                                :lisp:net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION: 0.1
-:CUSTOM_ID: net-5-8
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:00]
@@ -882,7 +983,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO fixtures                                                         :rt:
 :PROPERTIES:
 :ID:       fe592b6f-cde1-43e9-ac5a-81addc124582
-:CUSTOM_ID: fixtures
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:06]
@@ -893,7 +993,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO tcp                                                            :core:
 :PROPERTIES:
 :ID:       8e90fe7a-3a22-4af4-b247-64ac6890b94a
-:CUSTOM_ID: tcp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -901,7 +1000,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO udp                                                            :core:
 :PROPERTIES:
 :ID:       d238fc1f-24be-447b-a96b-ec35958470fc
-:CUSTOM_ID: udp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
@@ -909,7 +1007,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** WIP net/srv                                                         :lisp:
 :PROPERTIES:
 :ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
-:CUSTOM_ID: net-srv
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-19 Fri 21:50]
@@ -920,7 +1017,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
 :VERSION: 0.1
-:CUSTOM_ID: pwn-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:04]
@@ -931,7 +1027,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO diz                                                             :asm:
 :PROPERTIES:
 :ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
-:CUSTOM_ID: diz
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:04]
@@ -941,7 +1036,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :CREATED:  <2024-09-02 Mon 16:14>
 :ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
-:CUSTOM_ID: sassy
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-02 Mon 16:14]
@@ -951,7 +1045,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18
 :VERSION: 0.1
-:CUSTOM_ID: gui-0-2
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 03:40]
@@ -960,7 +1053,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** WAIT wayland protocol bindings
 :PROPERTIES:
 :ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
-:CUSTOM_ID: wayland-protocol-bindings
 :CREATED:  <2025-01-18 Sat 20:08>
 :END:
 :LOGBOOK:
@@ -971,7 +1063,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TBD wayland compositor                                         :rust:lisp:
 :PROPERTIES:
 :ID:       ca3d0bff-0ff7-4947-835a-b7c7e74c8679
-:CUSTOM_ID: wayland-compositor
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
@@ -983,7 +1074,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION: 0.1
-:CUSTOM_ID: rt-1-4
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:06]
@@ -992,7 +1082,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 ** TODO redirect I/O in tests
 :PROPERTIES:
 :ID:       34f27f91-c93a-4841-a6ac-5692ad1d0e4f
-:CUSTOM_ID: redirect-i-o-in-tests
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:06]
@@ -1002,7 +1091,6 @@ it somehow for review.
 ** TODO *test-on-def*
 :PROPERTIES:
 :ID:       f5cf6e43-906b-4225-9cdb-ac0028b48661
-:CUSTOM_ID: test-on-def
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 17:17]
@@ -1013,7 +1101,6 @@ it somehow for review.
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION: 0.1
 :LOCATION: emacs/
-:CUSTOM_ID: emacs-2-9
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:39]
@@ -1024,7 +1111,6 @@ it somehow for review.
 ** WIP comp/org capture templates                                    
 :PROPERTIES:
 :ID:       3d303736-7b79-4c5c-ba43-9ea5aa05f722
-:CUSTOM_ID: comp-org-capture-templates
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:14]
@@ -1044,7 +1130,6 @@ it somehow for review.
 ** TODO comp/org agenda views, export, dblock
 :PROPERTIES:
 :ID:       952fe286-9fd8-478f-bafc-a0a25ae3d17a
-:CUSTOM_ID: comp-org-agenda-views-export-dblock
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
@@ -1053,7 +1138,6 @@ it somehow for review.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 18:23>
 :ID:       4f704120-1553-46bc-ac31-5d65aaf340d3
-:CUSTOM_ID: agenda-views
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 18:23]
@@ -1064,7 +1148,6 @@ it somehow for review.
 ** FIXME compiler warnings
 :PROPERTIES:
 :ID:       dd4cf91d-4b45-4b5f-adee-0e248ebed0e1
-:CUSTOM_ID: compiler-warnings
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2024-08-16 Fri 22:42]
@@ -1257,7 +1340,6 @@ it somehow for review.
 ** TODO remove makefile
 :PROPERTIES:
 :ID:       93f3d805-9139-49b2-9b20-4e92e3dbda41
-:CUSTOM_ID: remove-makefile
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:44]
@@ -1265,7 +1347,6 @@ it somehow for review.
 ** WIP graph                                                            :org:
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
-:CUSTOM_ID: graph
 :CREATED:  <2025-01-18 Sat 20:48>
 :END:
 :LOGBOOK:
@@ -1287,7 +1368,6 @@ it somehow for review.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
 :ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
-:CUSTOM_ID: org-timeline-upgrades-0-3
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-30 Fri 19:03]
@@ -1299,7 +1379,6 @@ it somehow for review.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:22>
 :ID:       4b2f89c6-9bf0-46bf-91c5-44afd54860e8
-:CUSTOM_ID: timeline-selection-update-on-pointer-hover
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 14:22]
@@ -1310,7 +1389,6 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:20>
 :ID:       1b23b7c0-7ad3-4906-8bcb-66cad8831484
-:CUSTOM_ID: org-agenda-follow-impl
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 14:20]
@@ -1322,7 +1400,6 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:26>
 :ID:       cb1272df-e155-417d-8fa9-380dac848915
-:CUSTOM_ID: align-org-timeline-properties-with-ulang
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 14:26]
@@ -1337,7 +1414,6 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :CREATED:  <2024-09-03 Tue 22:14>
 :ID:       c9e157da-50e9-4dc3-96fd-bb9bc9175ee5
-:CUSTOM_ID: sk-el-project-integration
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
@@ -1376,7 +1452,6 @@ SCHEDULED: <2025-03-01 Sat>
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
 :LOCATION: lib/io/
-:CUSTOM_ID: io-0-1
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-19 Thu 21:54]
@@ -1393,7 +1468,6 @@ SCHEDULED: <2025-03-01 Sat>
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION: 0.1
-:CUSTOM_ID: homer-1-2
 :CREATED:  <2025-01-18 Sat 20:49>
 :END:
 :LOGBOOK:
@@ -1405,7 +1479,6 @@ SCHEDULED: <2025-03-01 Sat>
 :CREATED:  <2024-08-28 Wed 21:59>
 :ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
 :VERSION: 0.1
-:CUSTOM_ID: bench
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-28 Wed 21:59]
@@ -1414,44 +1487,93 @@ SCHEDULED: <2025-03-01 Sat>
 - tbd: dat generic benchmarking with fixtures
 - TPC-H
 - taobench
-* RESEARCH XDP
+* DONE XDP
 :PROPERTIES:
 :CREATED:  <2024-09-20 Fri 22:34>
 :ID:       b3e0b57a-a54a-445c-a06f-37ba289a68f6
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-09-20 Fri 22:34]
+- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:39]
 :END:
 [[https://www.datadoghq.com/blog/xdp-intro/][A Gentle Introduction to XDP | Datadog]]
 [[https://github.com/xdp-project/xdp-tools/][GitHub - xdp-project/xdp-tools: Utilities and example programs for use with XDP]]
 
-* RESEARCH DPDK
+- [[https://github.com/xdp-project/xdp-paper/blob/main/xdp-the-express-data-path.pdf][xdp-paper/xdp-the-express-data-path.pdf at main · xdp-project/xdp-paper · GitHub]]
+- [[https://docs.cilium.io/en/latest/reference-guides/bpf/index.html][BPF and XDP Reference Guide — Cilium 1.18.0-dev documentation]]
+
+- will require linking to libbpf and libxdp, needs elf loader (or use xdp-tools/iproute2)
+- blocked by bpf impl in lisp
+* DONE DPDK
 :PROPERTIES:
 :CREATED:  <2024-09-20 Fri 22:35>
 :ID:       74665710-7b60-4001-ae9e-d47de4c53a69
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-09-20 Fri 22:35]
+- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:41]
 :END:
 [[https://www.dpdk.org/][Home - DPDK]]
 [[https://github.com/DPDK/dpdk/tree/main][GitHub - DPDK/dpdk: Data Plane Development Kit]]
-* RESEARCH eBPF                                                         :net:
+#+begin_quote
+By leveraging DPDK libraries, developers can create optimized packet
+processing paths, manage timers for executing functions
+asynchronously, and utilize a wide range of drivers and libraries
+tailored for fast packet processing.
+
+librte_eal – Environment Abstraction Layer: Provides the foundational
+API for DPDK, facilitating access to hardware resources such as
+memory, timers, and logs.
+
+librte_mempool – Memory Pool Manager: Manages memory pools for
+efficient and speedy packet handling.
+
+librte_ring – Ring Buffer Manager: Implements lock-free FIFO queues,
+enabling high-speed communication between various DPDK components.
+
+librte_mbuf – Packet Buffer Management: Handles packet buffers, which
+are crucial for packet transmission and reception.
+
+librte_ethdev – Ethernet Device API: Offers an API for configuring and
+querying Ethernet devices. It supports various operations, including
+sending and receiving packets.
+
+librte_net – Network Helper Library: Provides helper APIs for dealing
+with network protocols.
+
+librte_ip_frag – IP Fragmentation and Reassembly: Handles
+fragmentation and reassembly of IP packets, supporting both IPv4 and
+IPv6.
+
+librte_kni – Kernel Network Interface: Facilitates communication
+between DPDK applications and the Linux kernel networking stack,
+primarily used for debugging or interfacing with existing Linux
+network services.
+#+end_quote
+* DONE eBPF                                                             :net:
 :PROPERTIES:
 :ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de
-:CUSTOM_ID: ebpf
+:CREATED:  <2025-04-26 Sat 20:47>
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-21 Wed 22:40]
+- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:47]
 :END:
 https://docs.kernel.org/bpf/standardization/instruction-set.html#bpf-instruction-set-architecture-isa
 https://mostlynerdless.de/blog/2023/12/31/hello-ebpf-developing-ebpf-apps-in-java-1/
 https://github.com/iovisor/bcc
+[[https://github.com/mikeroyal/eBPF-Guide][GitHub - mikeroyal/eBPF-Guide]]
+[[https://github.com/bpftrace/bpftrace/blob/master/tools/README.md][bpftrace/tools/README.md at master · bpftrace/bpftrace · GitHub]]
+- bpftrace seems quite powerful, will be useful for sysmon activities
+
+where would ebpf support go?
+
+probably io.. but maybe also log, net.. syn?
 
 * DONE batman-adv                                                       :net:
 :PROPERTIES:
 :CREATED:  <2024-08-23 Fri 21:16>
 :ID:       53992507-a3af-43ff-b04b-aa05ccabe2fa
-:CUSTOM_ID: batman-adv
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2024-08-23 Fri 21:16]
