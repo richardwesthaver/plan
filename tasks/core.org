@@ -63,7 +63,7 @@
 
 #+end_example
 
-* PROJECT ffi [0/3]                                                :lisp:ffi:
+* PROJECT ffi                                                      :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION: 0.1
@@ -143,7 +143,15 @@
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* PROJECT cli
+* PROJECT lib
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 14:04>
+:ID:       cbe46830-8363-4e11-897c-9779e1997e2b
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-05-02 Fri 14:04]
+:END:
+** PROJECT cli [0/4]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -153,7 +161,7 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
 :END:
-** PROJECT cli/clap [1/5]                                          :lisp:cli:
+*** PROJECT cli/clap [1/5]                                         :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -165,11 +173,11 @@
 :END:
 - clap is quite unstable right now and has some obvious bugs which
   need remedying
-*** TODO conditions implementation
+**** TODO conditions implementation
 :PROPERTIES:
 :ID:       c17dae0b-93b8-467a-bc96-6dddfb7a6e53
 :END:
-*** TODO minimal documentation                                          :doc:
+**** TODO minimal documentation                                         :doc:
 :PROPERTIES:
 :ID:       aef56337-8adf-4f69-823f-4380ae0c468b
 :LOCATION: lib/cli.org
@@ -177,7 +185,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
 :END:
-*** TODO keyword selectors                                    :lisp:cli:skel:
+**** TODO keyword selectors                                   :lisp:cli:skel:
 :PROPERTIES:
 :ID:       ca205f3d-d84d-4629-9d7a-189203c11441
 :END:
@@ -192,7 +200,7 @@
 - how to apply operators?
 - pipe results?
 +forth+
-*** TODO clap fixtures                                                 :test:
+**** TODO clap fixtures                                                :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
 :ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
@@ -200,7 +208,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-** TODO linedit prefixes
+*** TODO linedit prefixes
 :PROPERTIES:
 :CREATED:  <2025-04-26 Sat 23:20>
 :ID:       c5ddfea6-01a3-442f-ab88-9467651dc889
@@ -212,14 +220,24 @@ should be pretty simple - bind ~C-x~ to a command which calls
 ~read-chord~ and looks up the next funcall in a user-specified command
 table.
 
-* TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
+*** TODO accept CLI-OPTS from parent CLI-CMD in PROC-ARGS
 :PROPERTIES:
-:ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
+:ID:       7f83a47f-8f02-466f-a504-39331613a2eb
+:CREATED:  <2025-01-17 Fri 15:54>
 :END:
 :LOGBOOK:
-- State "TODO"       from              [2024-08-01 Thu 12:27]
+- Refiled on [2025-05-02 Fri 13:53]
 :END:
-* PROJECT q [0/4]                                                    :lisp:q:
+*** TODO destructure cli opts                                         :macro:
+:PROPERTIES:
+:ID:       a441b88e-697a-47bc-a25b-53313ce6c41a
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:54]
+:END:
+
+** PROJECT q [0/4]                                                   :lisp:q:
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
 :VERSION: 0.1
@@ -228,7 +246,7 @@ table.
 - State "TODO"       from              [2024-08-03 Sat 01:03]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
 :END:
-** TODO SQL
+*** TODO SQL
 :PROPERTIES:
 :ID:       8b853556-399d-445f-8e7b-4bd4048087c5
 :END:
@@ -237,7 +255,7 @@ table.
 - Note taken on [2024-08-04 Sun 21:16] \\
   pretty close - need to fix some recursion bugs then start messing with query-engines
 :END:
-** TODO DQL
+*** TODO DQL
 :PROPERTIES:
 :ID:       77bc044c-f4c8-440d-a590-e712ccad9bea
 :END:
@@ -249,7 +267,7 @@ table.
   just another half-assed prolog
 - expression and introspection is valued here much more than speed/size
 - allegro and screamer are favorites so far
-*** TODO top-level macros
+**** TODO top-level macros
 :PROPERTIES:
 :ID:       782758ba-78ba-4366-996e-47b6b9123ac3
 :END:
@@ -257,14 +275,14 @@ table.
 - State "TODO"       from              [2024-08-08 Thu 22:38]
 :END:
 - -?
-*** TODO conditions
+**** TODO conditions
 :PROPERTIES:
 :ID:       61adb134-1e00-4973-846b-a5afd746afaa
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
 :END:
-*** TODO basic predicates
+**** TODO basic predicates
 :PROPERTIES:
 :ID:       3b9067c6-27ec-45e6-a025-201695bd9ece
 :END:
@@ -279,14 +297,14 @@ table.
    setof/3   true/0   var/1   write/1   
 
 #+end_example
-*** TODO compiler design
+**** TODO compiler design
 :PROPERTIES:
 :ID:       503c24ba-8613-4ca0-8c9c-51eced131168
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:39]
 :END:
-*** TODO runtime design
+**** TODO runtime design
 :PROPERTIES:
 :ID:       dd1eeab0-901d-4914-91a0-0413a3503fd1
 :END:
@@ -298,7 +316,7 @@ table.
 - plenty of dynamic extent
 - arenas
 - thread-aware
-** TODO q/tests/fuzz [0/2]
+*** TODO q/tests/fuzz [0/2]
 :PROPERTIES:
 :ID:       6d3c2685-5faf-4670-8ea0-b9b047c17c64
 :END:
@@ -306,7 +324,7 @@ table.
 - State "TODO"       from              [2024-08-05 Mon 21:11]
 :END:
 - [[https://github.com/andygrove/how-query-engines-work/blob/main/jvm/fuzzer/src/main/kotlin/Fuzzer.kt][kquery]]
-*** TODO sql-fuzzer
+**** TODO sql-fuzzer
 :PROPERTIES:
 :ID:       32506969-1c5d-4a9f-aa03-eb4b1a863f5c
 :END:
@@ -317,27 +335,29 @@ table.
 - [ ] record-batch
 - [ ] expression
 - [ ] plan
-*** TODO dql-fuzzer
+**** TODO dql-fuzzer
 :PROPERTIES:
 :ID:       ef26c36a-1a5c-461a-834b-936010d49bb3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:12]
 :END:
-** TODO #? reader macro
+*** TODO #? reader macro
 :PROPERTIES:
 :ID:       5da9a939-892f-439e-8072-c5c61cc1bbe3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:36]
 :END:
-* TODO parse [1/2]                                                 :lisp:lib:
+** PROJECT parse [1/2]                                             :lisp:lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
 :VERSION: 0.1
+:CREATED:  <2025-05-02 Fri 14:07>
 :END:
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:24]
+- State "PROJECT"    from "TODO"       [2025-05-02 Fri 14:07]
 :END:
 :PROPERTIES:
 :ID: parse
@@ -347,7 +367,7 @@ table.
 - lalr.lisp
 - lex.lisp
 - obj api
-** TODO tests
+*** TODO tests
 :PROPERTIES:
 :ID:       484740d6-3fb6-4796-b7e8-8f217c5063e5
 :END:
@@ -356,7 +376,7 @@ table.
 :END:
 add tests for lexer and LALR. figure out if there are any gaps that we
 need to fill.
-* PROJECT organ [0/2]                                            :lisp:organ:
+** PROJECT organ [0/2]                                           :lisp:organ:
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
 :VERSION: 0.2
@@ -368,7 +388,7 @@ need to fill.
 :PROPERTIES:
 :ID: 4e7c55dc-e2fa-458f-ad3b-942b9aa336a4
 :END:
-** TBD organ-export
+*** TBD organ-export
 :PROPERTIES:
 :ID:       664309c2-55eb-45c2-88eb-a32c012c89ef
 :END:
@@ -378,7 +398,7 @@ need to fill.
 :PROPERTIES:
 :ID: 189584f5-fc22-4129-bd47-5d494a088684
 :END:
-** TODO org-parse
+*** TODO org-parse
 :PROPERTIES:
 :ID:       2434b254-4346-4791-82da-b6bc309e8f5b
 :END:
@@ -390,7 +410,7 @@ need to fill.
 :HOOKS: organ-export
 :ID: 63774177-9730-4961-8535-414fac7a6f4f
 :END:
-** TBD parse org-elements as sxp                                        :sxp:
+*** TBD parse org-elements as sxp                                       :sxp:
 :PROPERTIES:
 :ID:       232b7b58-2e66-479a-a978-b33f1cdda13f
 :END:
@@ -429,7 +449,7 @@ need to fill.
 : Slots with :INSTANCE allocation:
 :   AST                            = NIL
 
-* PROJECT rdb [0/6]                                                :lisp:rdb:
+** PROJECT rdb [0/6]                                               :lisp:rdb:
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
 :VERSION: 0.2
@@ -438,7 +458,7 @@ need to fill.
 - State "TODO"       from "TODO"       [2023-12-13 Wed 18:26]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** TODO error handling
+*** TODO error handling
 :PROPERTIES:
 :ID:       299c7d94-e259-4413-8b46-13957ca8ded4
 :END:
@@ -450,7 +470,7 @@ need to fill.
 - wrap segfault handlers
 - add restarts for common errors (bad path)
 - add cleanup routines
-** TODO client api
+*** TODO client api
 :PROPERTIES:
 :ID:       93e0f187-c9f1-485f-9c51-b1abebf7da06
 :END:
@@ -461,7 +481,7 @@ need to fill.
 - generated from RDB instances
 - compiles in CF/option/multithread/type info
 - clients implement custom Q language
-** TODO sequence/iterator impl
+*** TODO sequence/iterator impl
 :PROPERTIES:
 :ID:       6dbd6194-390b-4156-8690-75f91ce2e8d2
 :END:
@@ -470,7 +490,7 @@ need to fill.
 :END:
 - use SBCL built-ins to extend the api - wrap the raw FFI iterator
 - define mixins
-** TODO comparator impl
+*** TODO comparator impl
 :PROPERTIES:
 :ID:       bb1bd757-f80d-4723-ac62-45d7ef72a0a2
 :END:
@@ -478,7 +498,7 @@ need to fill.
 - State "TODO"       from              [2023-12-10 Sun 23:11]
 :END:
 - supply custom comparators to rocksdb from lisp
-** TODO type system
+*** TODO type system
 :PROPERTIES:
 :ID:       31a8f3e3-812f-4edc-a6d1-6540481d7dc7
 :END:
@@ -492,7 +512,7 @@ need to fill.
   - cf-spec
     - used as superclass
     - methods for abstracting CFs
-** TODO set-opt/get-opt
+*** TODO set-opt/get-opt
 :PROPERTIES:
 :ID:       1a08fd02-b7e2-466b-9c43-f6570160aeb7
 :END:
@@ -504,7 +524,65 @@ need to fill.
 - I feel this may be less efficient but haven't benched it (requires additional arg)
 - separate packages are a pain to query symbols with
 
-* PROJECT vc [1/2]                                                  :lisp:vc:
+*** TODO handle pinned vs non-pinned RocksDB accessors                  :rdb:
+:PROPERTIES:
+:ID:       8c6202a0-7a7c-4574-a8a8-82c64e63831d
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:52]
+:END:
+- may want a generalized interface that also supports with/without cf, timestamp, etc
+
+*** TODO move backup-db from rdb to rdb-database
+:PROPERTIES:
+:ID:       475089df-2829-47c6-a2a7-d9fc9521193d
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:53]
+:END:
+*** TODO rdb prefix keys
+:PROPERTIES:
+:ID:       138fa681-47e9-4789-ad41-6bb8645af991
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:53]
+:END:
+*** TODO with-latest-options                                        :rocksdb:
+:PROPERTIES:
+:ID:       e522332f-81c5-4e23-986b-7e41532f9015
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:55]
+:END:
+*** TBD can only open rocksdb column families on OPEN
+:PROPERTIES:
+:CREATED:  <2024-08-25 Sun 20:23>
+:ID:       d85472ae-7e3a-4c52-8f34-4146a07314ba
+:END:
+:LOGBOOK:
+- Note taken on [2025-05-02 Fri 13:49] \\
+  need to formalize what we've learned here (load-opts) and add to documentation
+- State "TBD"        from              [2025-05-02 Fri 13:50]
+- Refiled on [2025-05-02 Fri 13:58]
+:END:
+was getting hung up on why there is no 'open-cf' based on name in the
+C api really - the 'rocksdb-open-column-families' function is somewhat
+misleading.
+
+[[https://stackoverflow.com/a/70809225][database - Is there a way to retrieve `ColumnFamilyHandle` from `ColumnFamilyName` in RocksDb? - Stack Overflow]]
+
+ultimately there is no way to do this - when opening the database you
+can specify which CFs to be opened and a new cf-handle is always
+returned on creation.
+
+We should NOT use create- when there are existing columns that we just
+want to get a SAP for. Instead always opt for opening a new db
+instance, possibly by closing an existing one.
+** PROJECT vc [1/2]                                                 :lisp:vc:
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
 :VERSION: 0.1
@@ -513,7 +591,7 @@ need to fill.
 - State "TODO"       from              [2024-02-29 Thu 16:10]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** TODO vc-mirrors-update replacement
+*** TODO vc-mirrors-update replacement
 :PROPERTIES:
 :ID:       36c19881-72c6-4cf5-aaba-2b4ced302b97
 :LOCATION: ~/.config/nushell/scripts/vc.nu
@@ -525,7 +603,7 @@ need to fill.
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
-* PROJECT dat                                                      :lisp:dat:
+** PROJECT dat                                                     :lisp:dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION: 0.1
@@ -534,7 +612,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from              [2024-08-11 Sun 00:08]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** WIP dat/parquet                                                     :lisp:
+*** WIP dat/parquet                                                    :lisp:
 :PROPERTIES:
 :Effort:   80:00
 :ID:       c808200c-450a-4f77-b4c1-6b372c7c4943
@@ -543,7 +621,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "WIP"        from              [2024-07-19 Fri 21:51]
 :END:
 
-** TODO dat/csv column selectors                                   :lisp:dat:
+*** TODO dat/csv column selectors                                  :lisp:dat:
 :PROPERTIES:
 :Effort:   8:00
 :ID:       40cb89e4-db1b-4a78-b2b7-3e0fc9ee287b
@@ -560,14 +638,14 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - index-based-selection
 - selection-by-name
 
-** TODO sxp 0.2                                                    :lisp:sxp:
+*** TODO sxp 0.2                                                   :lisp:sxp:
 :PROPERTIES:
 :ID:       2a4d602c-2dea-451f-b06e-165ee2a523b3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 :END:
-*** TODO WRAP-OBJECT                                                   :skel:
+**** TODO WRAP-OBJECT                                                  :skel:
 :PROPERTIES:
 :ID:       1f04611d-068b-4708-b4e9-e6211cb484eb
 :END:
@@ -577,7 +655,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - use to replace LOAD-AST for sk-project and friends
 - requires mop
 - take a look at UNWRAP-OBJECT too, may need rewrite for a better API
-**** TODO sxp standard methods
+***** TODO sxp standard methods
 :PROPERTIES:
 :ID:       12de9774-b6d9-47d1-8dd6-8448078ea15f
 :END:
@@ -591,7 +669,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - obj/
   - color
   - uri
-** DONE toml impl
+*** DONE toml impl
 :PROPERTIES:
 :ID:       6ba3e53d-8cfa-46fe-852a-ea462d475883
 :CREATED:  <2025-04-30 Wed 18:30>
@@ -603,7 +681,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :END:
 the toml parser on quicklisp is based on esrap, make a comparable one
 using our parser module.
-* PROJECT syn                                                      :lisp:syn:
+** PROJECT syn                                                     :lisp:syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION: 0.1
@@ -612,7 +690,7 @@ using our parser module.
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-* PROJECT skel [0/3]                                              :lisp:skel:
+** PROJECT skel [0/3]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION: 0.2
@@ -622,7 +700,7 @@ using our parser module.
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
 
-** TODO split out skel rules
+*** TODO split out skel rules
 :PROPERTIES:
 :ID:       d353ab64-69a1-4fcf-9df5-1804c646f6a5
 :END:
@@ -630,14 +708,14 @@ using our parser module.
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
 - core/rule.lisp
-** TODO implement task-pool                                          :thread:
+*** TODO implement task-pool                                         :thread:
 :PROPERTIES:
 :ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
-** WIP implement vm
+*** WIP implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
@@ -675,6 +753,263 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - main thread should show progress in parallel
   - capture conditions/debugger
   - figure out how to retrieve stacktrace from worker threads
+*** TODO handle missing method errors or define default method when none defined :skel:bin:cli:
+:PROPERTIES:
+:ID:       4289c4ef-a766-472e-a2cb-afddb9d080e0
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:53]
+:END:
+
+*** TODO skel tasks/runner/timer
+:PROPERTIES:
+:ID:       bb53321b-fab0-4b6f-9677-3fe789ed44d3
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2025-05-02 Fri 13:55]
+:END:
+- will be first feature of skel server
+*** TODO skel template objects
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:45>
+:ID:       25984cac-4667-44bb-86e0-bc4e57740eeb
+:END:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
+- Refiled on [2025-05-02 Fri 13:59]
+:END:
+
+** PROJECT obj [0/2]                                               :lisp:obj:
+:PROPERTIES:
+:ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 00:59]
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
+:END:
+*** TODO fix obj/query stack overflow on compile
+:PROPERTIES:
+:CREATED:  <2025-04-28 Mon 14:55>
+:ID:       02fd19ee-aef4-44cd-ae87-8eedc048ae85
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-28 Mon 14:55]
+:END:
+#+begin_example
+Control stack exhausted (no more space for function call frames).
+This is probably due to heavily nested or infinitely recursive function
+calls, or a tail call that SBCL cannot or has not optimized away.
+
+PROCEED WITH CAUTION.
+   [Condition of type SB-KERNEL::CONTROL-STACK-EXHAUSTED]
+
+ 849: ((:METHOD SB-PCL::COMPUTE-EFFECTIVE-SLOT-DEFINITION-INITARGS (SB-PCL::SLOT-CLASS T)) #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN> (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SL..
+      Locals:
+	SB-PCL::ALLOCATION = :INSTANCE
+	SB-PCL::ALLOCATION-CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
+	SB-PCL::ALLOCP = T
+	CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
+	SB-PCL::DIRECT-SLOTDS = (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST>)
+	DOCUMENTATION = NIL
+	SB-PCL::DOCUMENTATIONP = NIL
+	SB-PCL::INITARGS = (:AST)
+	SB-PCL::INITFORM = NIL
+	SB-PCL::INITFUNCTION = NIL
+	SB-PCL::INITP = NIL
+	SB-PCL::NAME = OBJ/AST:AST
+	SB-PCL::NAMEP = T
+
+ 855: (SB-THREAD::CALL-WITH-RECURSIVE-LOCK #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}> #<MUTEX "PCL global mutex" taken owner=main thread>)
+      Locals:
+	GOT-IT = NIL
+	MUTEX = #<MUTEX "PCL global mutex" taken owner=main thread>
+	SB-C::THING = #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}>
+#+end_example
+
+*** WIP complete base obj/query package [0/1]                          :q:db:
+:PROPERTIES:
+:LOCATION: lib/obj/query.lisp
+:ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2024-07-09 Tue 22:14]
+:END:
+- object-based protocol for asking questions about data collections
+  using data expressions
+- +lex+, +parse+, +compile+ - all handled in the Q system
+- probably in need of refactor right after
+  - different parts of the protocol will be used by different systems
+    - ~data-source~ will be implemented in ~DAT/CSV~ ~DAT/PARQUET~,
+      ~RDB~, etc
+    - ~query-expression~ and ~query-plan~ will be implemented in
+      ~Q/SQL~ and ~Q/DQL~
+**** TODO Basic Testing
+:PROPERTIES:
+:ID:       b857e6f1-c652-4024-9b87-308e1c830b2a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-02 Fri 15:55]
+:END:
+
+** PROJECT net [0/4]                                               :lisp:net:
+:PROPERTIES:
+:ID:       5d088bf7-f201-4875-9167-4293bebbcf46
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:00]
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+:END:
+*** TODO fixtures                                                        :rt:
+:PROPERTIES:
+:ID:       fe592b6f-cde1-43e9-ac5a-81addc124582
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:06]
+:END:
+- implement simple network fixtures which can be used within the body of DEFTEST
+- start with simple sockets - UDP then TCP
+- work up towards HTTP
+*** TODO tcp                                                           :core:
+:PROPERTIES:
+:ID:       8e90fe7a-3a22-4af4-b247-64ac6890b94a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+:END:
+*** TODO udp                                                           :core:
+:PROPERTIES:
+:ID:       d238fc1f-24be-447b-a96b-ec35958470fc
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:01]
+:END:
+*** WIP net/srv                                                        :lisp:
+:PROPERTIES:
+:ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-07-19 Fri 21:50]
+- State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
+:END:
+- needs a solid task-pool impl completed first
+** PROJECT pwn [0/2]                                               :lisp:pwn:
+:PROPERTIES:
+:ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+- Note taken on [2024-02-29 Thu 16:11] \\
+  Should this be a separate application? Lisp exploit development framework
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+:END:
+*** TODO diz                                                            :asm:
+:PROPERTIES:
+:ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+:END:
+- disassembly toolkit
+*** TODO sassy                                                          :net:
+:PROPERTIES:
+:CREATED:  <2024-09-02 Mon 16:14>
+:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-02 Mon 16:14]
+:END:
+- SaaS toolkit
+** PROJECT gui [0/2]                                               :lisp:gui:
+:PROPERTIES:
+:ID:       73aea563-3df7-4611-a27d-874772806f18
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 03:40]
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+:END:
+*** WAIT wayland protocol bindings
+:PROPERTIES:
+:ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
+:CREATED:  <2025-01-18 Sat 20:08>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 03:40]
+- State "WAIT"       from "TODO"       [2025-01-18 Sat 20:08] \\
+  Wait until we actually have a usecase for Wayland
+:END:
+*** TBD wayland compositor                                        :rust:lisp:
+:PROPERTIES:
+:ID:       ca3d0bff-0ff7-4947-835a-b7c7e74c8679
+:END:
+:LOGBOOK:
+- State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
+:END:
+:PROPERTIES:
+:ID: e18a90d7-10bc-44d3-8508-56483d29d385
+:END:
+** PROJECT rt [1/3]                                            :lisp:rt:test:
+:PROPERTIES:
+:ID:       7a14c529-8609-4638-b101-7304a1605fcc
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:06]
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+:END:
+*** TODO redirect I/O in tests
+:PROPERTIES:
+:ID:       34f27f91-c93a-4841-a6ac-5692ad1d0e4f
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 16:06]
+:END:
+prevent tests from printing implicitly. redirect stream locally, cache
+it somehow for review.
+*** TODO *test-on-def*
+:PROPERTIES:
+:ID:       f5cf6e43-906b-4225-9cdb-ac0028b48661
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-02-29 Thu 17:17]
+:END:
+- simple flag to test when file is defined (part of deftest macro)
+*** TODO test-directory                                                  :rt:
+:PROPERTIES:
+:ID:       ff33fc34-5816-4165-af36-d3e0c33e5d55
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Note taken on [2025-05-02 Fri 13:53] \\
+  logical pathnames?
+- Refiled on [2025-05-02 Fri 13:54]
+:END:
+root test directory /tmp/rt with subdir for each suite, initialize
+from within suite
+
+** PROJECT io [0/1]                                                      :io:
+:PROPERTIES:
+:CREATED:  <2024-09-19 Thu 21:54>
+:ID:       39c15417-5078-403f-b716-3b48b9d3929d
+:LOCATION: lib/io/
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-09-19 Thu 21:54]
+:END:
+*** TODO uring
+:PROPERTIES:
+:CREATED:  <2025-01-18 Sat 20:49>
+:ID:       2a88e627-be3b-4651-8812-44039ff8994d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-01-18 Sat 20:49]
+:END:
+
 * PROJECT std [2/8]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
@@ -950,204 +1285,24 @@ We were doing some things right - like our semaphore worker waking
 - State "DONE"       from "WIP"        [2025-04-27 Sun 19:37]
 :END:
 - generic done
-* PROJECT obj [0/2]                                                :lisp:obj:
+** DONE define-alien-struct
 :PROPERTIES:
-:ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
-:VERSION: 0.1
+:ID:       6e3da9a1-e93e-4643-bfa8-5f47c446f26f
+:CREATED:  <2025-01-17 Fri 15:54>
 :END:
 :LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 00:59]
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
+- State "DONE"       from "TODO"       [2025-05-02 Fri 13:54]
+- Refiled on [2025-05-02 Fri 13:54]
 :END:
-** TODO fix obj/query stack overflow on compile
+- convenience for defining alien structs, especially with the same name as lisp type
+** incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
-:CREATED:  <2025-04-28 Mon 14:55>
-:ID:       02fd19ee-aef4-44cd-ae87-8eedc048ae85
+:ID:       04fdde4f-427c-47b5-8394-5b5365ede249
+:CREATED:  <2025-01-17 Fri 15:54>
 :END:
 :LOGBOOK:
-- State "TODO"       from              [2025-04-28 Mon 14:55]
+- Refiled on [2025-05-02 Fri 14:03]
 :END:
-#+begin_example
-Control stack exhausted (no more space for function call frames).
-This is probably due to heavily nested or infinitely recursive function
-calls, or a tail call that SBCL cannot or has not optimized away.
-
-PROCEED WITH CAUTION.
-   [Condition of type SB-KERNEL::CONTROL-STACK-EXHAUSTED]
-
- 849: ((:METHOD SB-PCL::COMPUTE-EFFECTIVE-SLOT-DEFINITION-INITARGS (SB-PCL::SLOT-CLASS T)) #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN> (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SL..
-      Locals:
-	SB-PCL::ALLOCATION = :INSTANCE
-	SB-PCL::ALLOCATION-CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
-	SB-PCL::ALLOCP = T
-	CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
-	SB-PCL::DIRECT-SLOTDS = (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST>)
-	DOCUMENTATION = NIL
-	SB-PCL::DOCUMENTATIONP = NIL
-	SB-PCL::INITARGS = (:AST)
-	SB-PCL::INITFORM = NIL
-	SB-PCL::INITFUNCTION = NIL
-	SB-PCL::INITP = NIL
-	SB-PCL::NAME = OBJ/AST:AST
-	SB-PCL::NAMEP = T
-
- 855: (SB-THREAD::CALL-WITH-RECURSIVE-LOCK #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}> #<MUTEX "PCL global mutex" taken owner=main thread>)
-      Locals:
-	GOT-IT = NIL
-	MUTEX = #<MUTEX "PCL global mutex" taken owner=main thread>
-	SB-C::THING = #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}>
-#+end_example
-
-** WIP complete base obj/query package [0/1]                           :q:db:
-:PROPERTIES:
-:LOCATION: lib/obj/query.lisp
-:ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
-:END:
-:LOGBOOK:
-- State "WIP"        from              [2024-07-09 Tue 22:14]
-:END:
-- object-based protocol for asking questions about data collections
-  using data expressions
-- +lex+, +parse+, +compile+ - all handled in the Q system
-- probably in need of refactor right after
-  - different parts of the protocol will be used by different systems
-    - ~data-source~ will be implemented in ~DAT/CSV~ ~DAT/PARQUET~,
-      ~RDB~, etc
-    - ~query-expression~ and ~query-plan~ will be implemented in
-      ~Q/SQL~ and ~Q/DQL~
-*** TODO Basic Testing
-:PROPERTIES:
-:ID:       b857e6f1-c652-4024-9b87-308e1c830b2a
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-02 Fri 15:55]
-:END:
-
-* PROJECT net [0/4]                                                :lisp:net:
-:PROPERTIES:
-:ID:       5d088bf7-f201-4875-9167-4293bebbcf46
-:VERSION: 0.1
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:00]
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-:END:
-** TODO fixtures                                                         :rt:
-:PROPERTIES:
-:ID:       fe592b6f-cde1-43e9-ac5a-81addc124582
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-11 Sun 00:06]
-:END:
-- implement simple network fixtures which can be used within the body of DEFTEST
-- start with simple sockets - UDP then TCP
-- work up towards HTTP
-** TODO tcp                                                            :core:
-:PROPERTIES:
-:ID:       8e90fe7a-3a22-4af4-b247-64ac6890b94a
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:01]
-:END:
-** TODO udp                                                            :core:
-:PROPERTIES:
-:ID:       d238fc1f-24be-447b-a96b-ec35958470fc
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:01]
-:END:
-** WIP net/srv                                                         :lisp:
-:PROPERTIES:
-:ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-19 Fri 21:50]
-- State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
-:END:
-- needs a solid task-pool impl completed first
-* PROJECT pwn [0/2]                                                :lisp:pwn:
-:PROPERTIES:
-:ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
-:VERSION: 0.1
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:04]
-- Note taken on [2024-02-29 Thu 16:11] \\
-  Should this be a separate application? Lisp exploit development framework
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-:END:
-** TODO diz                                                             :asm:
-:PROPERTIES:
-:ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:04]
-:END:
-- disassembly toolkit
-** TODO sassy                                                           :net:
-:PROPERTIES:
-:CREATED:  <2024-09-02 Mon 16:14>
-:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-09-02 Mon 16:14]
-:END:
-- SaaS toolkit
-* PROJECT gui [0/2]                                                :lisp:gui:
-:PROPERTIES:
-:ID:       73aea563-3df7-4611-a27d-874772806f18
-:VERSION: 0.1
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 03:40]
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-:END:
-** WAIT wayland protocol bindings
-:PROPERTIES:
-:ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
-:CREATED:  <2025-01-18 Sat 20:08>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 03:40]
-- State "WAIT"       from "TODO"       [2025-01-18 Sat 20:08] \\
-  Wait until we actually have a usecase for Wayland
-:END:
-** TBD wayland compositor                                         :rust:lisp:
-:PROPERTIES:
-:ID:       ca3d0bff-0ff7-4947-835a-b7c7e74c8679
-:END:
-:LOGBOOK:
-- State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
-:END:
-:PROPERTIES:
-:ID: e18a90d7-10bc-44d3-8508-56483d29d385
-:END:
-* PROJECT rt [1/3]                                             :lisp:rt:test:
-:PROPERTIES:
-:ID:       7a14c529-8609-4638-b101-7304a1605fcc
-:VERSION: 0.1
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 16:06]
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-:END:
-** TODO redirect I/O in tests
-:PROPERTIES:
-:ID:       34f27f91-c93a-4841-a6ac-5692ad1d0e4f
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 16:06]
-:END:
-prevent tests from printing implicitly. redirect stream locally, cache
-it somehow for review.
-** TODO *test-on-def*
-:PROPERTIES:
-:ID:       f5cf6e43-906b-4225-9cdb-ac0028b48661
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 17:17]
-:END:
-- simple flag to test when file is defined (part of deftest macro)
 * PROJECT emacs [0/10]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
@@ -1499,24 +1654,27 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - Refiled on [2025-02-16 Sun 19:23]
 :END:
-* PROJECT io [0/1]                                                       :io:
+** TODO org-graph edge relative links
 :PROPERTIES:
-:CREATED:  <2024-09-19 Thu 21:54>
-:ID:       39c15417-5078-403f-b716-3b48b9d3929d
-:LOCATION: lib/io/
+:CREATED:  <2025-05-02 Fri 13:45>
+:ID:       7684cce3-7690-4330-b9d8-3bed172d06ea
 :END:
 :LOGBOOK:
-- State "PROJECT"    from              [2024-09-19 Thu 21:54]
+- State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
+- Refiled on [2025-05-02 Fri 14:03]
 :END:
-** TODO uring
+- index based? inherit from parent only for now
+  - how to implement for complete tree?
+  - custom_id for edges? like @ref bibtex
+* PROJECT app
 :PROPERTIES:
-:CREATED:  <2025-01-18 Sat 20:49>
-:ID:       2a88e627-be3b-4651-8812-44039ff8994d
+:CREATED:  <2025-05-02 Fri 14:05>
+:ID:       80b3830d-f1c6-47cd-ae3e-3c661ffb0238
 :END:
 :LOGBOOK:
-- State "TODO"       from              [2025-01-18 Sat 20:49]
+- State "PROJECT"    from              [2025-05-02 Fri 14:05]
 :END:
-* WIP homer [1/1]                                                :lisp:homer:
+** WIP homer [1/1]                                               :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION: 0.1
@@ -1525,6 +1683,23 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-12-12 Tue 19:53]
 - State "WIP"        from "TBD"        [2025-01-18 Sat 20:49]
+:END:
+** WIP mpk [0/1]
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 14:06>
+:ID:       e8566657-1ca8-49fa-8262-7338eac5bf8f
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2025-05-02 Fri 14:06]
+:END:
+*** TODO setup API for tmdb and tvdb
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:45>
+:ID:       4700c8a9-d19e-4122-b4dc-6aef22b5f4a4
+:END:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
+- Refiled on [2025-05-02 Fri 14:08]
 :END:
 * PROJECT bench                                                  :test:bench:
 :PROPERTIES:
@@ -1539,96 +1714,3 @@ SCHEDULED: <2025-03-01 Sat>
 - tbd: dat generic benchmarking with fixtures
 - TPC-H
 - taobench
-* DONE XDP
-:PROPERTIES:
-:CREATED:  <2024-09-20 Fri 22:34>
-:ID:       b3e0b57a-a54a-445c-a06f-37ba289a68f6
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-09-20 Fri 22:34]
-- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:39]
-:END:
-[[https://www.datadoghq.com/blog/xdp-intro/][A Gentle Introduction to XDP | Datadog]]
-[[https://github.com/xdp-project/xdp-tools/][GitHub - xdp-project/xdp-tools: Utilities and example programs for use with XDP]]
-
-- [[https://github.com/xdp-project/xdp-paper/blob/main/xdp-the-express-data-path.pdf][xdp-paper/xdp-the-express-data-path.pdf at main · xdp-project/xdp-paper · GitHub]]
-- [[https://docs.cilium.io/en/latest/reference-guides/bpf/index.html][BPF and XDP Reference Guide — Cilium 1.18.0-dev documentation]]
-
-- will require linking to libbpf and libxdp, needs elf loader (or use xdp-tools/iproute2)
-- blocked by bpf impl in lisp
-* DONE DPDK
-:PROPERTIES:
-:CREATED:  <2024-09-20 Fri 22:35>
-:ID:       74665710-7b60-4001-ae9e-d47de4c53a69
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-09-20 Fri 22:35]
-- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:41]
-:END:
-[[https://www.dpdk.org/][Home - DPDK]]
-[[https://github.com/DPDK/dpdk/tree/main][GitHub - DPDK/dpdk: Data Plane Development Kit]]
-#+begin_quote
-By leveraging DPDK libraries, developers can create optimized packet
-processing paths, manage timers for executing functions
-asynchronously, and utilize a wide range of drivers and libraries
-tailored for fast packet processing.
-
-librte_eal – Environment Abstraction Layer: Provides the foundational
-API for DPDK, facilitating access to hardware resources such as
-memory, timers, and logs.
-
-librte_mempool – Memory Pool Manager: Manages memory pools for
-efficient and speedy packet handling.
-
-librte_ring – Ring Buffer Manager: Implements lock-free FIFO queues,
-enabling high-speed communication between various DPDK components.
-
-librte_mbuf – Packet Buffer Management: Handles packet buffers, which
-are crucial for packet transmission and reception.
-
-librte_ethdev – Ethernet Device API: Offers an API for configuring and
-querying Ethernet devices. It supports various operations, including
-sending and receiving packets.
-
-librte_net – Network Helper Library: Provides helper APIs for dealing
-with network protocols.
-
-librte_ip_frag – IP Fragmentation and Reassembly: Handles
-fragmentation and reassembly of IP packets, supporting both IPv4 and
-IPv6.
-
-librte_kni – Kernel Network Interface: Facilitates communication
-between DPDK applications and the Linux kernel networking stack,
-primarily used for debugging or interfacing with existing Linux
-network services.
-#+end_quote
-* DONE eBPF                                                             :net:
-:PROPERTIES:
-:ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de
-:CREATED:  <2025-04-26 Sat 20:47>
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-21 Wed 22:40]
-- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:47]
-:END:
-https://docs.kernel.org/bpf/standardization/instruction-set.html#bpf-instruction-set-architecture-isa
-https://mostlynerdless.de/blog/2023/12/31/hello-ebpf-developing-ebpf-apps-in-java-1/
-https://github.com/iovisor/bcc
-[[https://github.com/mikeroyal/eBPF-Guide][GitHub - mikeroyal/eBPF-Guide]]
-[[https://github.com/bpftrace/bpftrace/blob/master/tools/README.md][bpftrace/tools/README.md at master · bpftrace/bpftrace · GitHub]]
-- bpftrace seems quite powerful, will be useful for sysmon activities
-
-where would ebpf support go?
-
-probably io.. but maybe also log, net.. syn?
-
-* DONE batman-adv                                                       :net:
-:PROPERTIES:
-:CREATED:  <2024-08-23 Fri 21:16>
-:ID:       53992507-a3af-43ff-b04b-aa05ccabe2fa
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-23 Fri 21:16]
-- State "DONE"       from "RESEARCH"   [2025-03-12 Wed 17:15]
-:END:
-[[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]

@@ -177,3 +177,37 @@ our current impl looks like this
   pr submitted
 :END:
 [[gh:sharplispers/linedit/pull/11][sharplispers/linedit#11]]
+* TBD stumpwm
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:15>
+:ID:       038c7ad6-6e12-48dc-823c-5a5ad948839c
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-05-02 Fri 13:15]
+:END:
+** TBD clim-mode-line
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:16>
+:ID:       f4868078-70a6-4da4-9110-e730625c72c1
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-05-02 Fri 13:16]
+:END:
+- will probably make a new API for this which won't be contribed -
+  still should do a once over and cover any TODOs or bugs
+*** TODO interpret stumpwm mode-line format
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:17>
+:ID:       57aced0e-2df5-480b-80dc-40cd43db8343
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-02 Fri 13:17]
+:END:
+* TBD mcclim
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:15>
+:ID:       d170a060-6ec9-4d0d-b571-2dfe634862b0
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-05-02 Fri 13:15]
+:END:
