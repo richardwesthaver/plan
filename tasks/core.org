@@ -1,4 +1,4 @@
-#+title: core tasks
+#+title: Core Tasks
 #+author: Richard Westhaver
 #+email: richard.westhaver@gmail.com
 #+description: core task list

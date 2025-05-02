@@ -1,4 +1,4 @@
-#+title: rnd
+#+title: R&D Tasks
 #+author: Richard Westhaver
 #+email: richard.westhaver@gmail.com
 #+description: R&D tasks

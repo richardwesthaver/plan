@@ -2,8 +2,9 @@
 #+author: Richard Westhaver
 #+description: tasks related to OSS contributions
 #+setupfile: ../../clean.theme
-#+filetags: demo
+#+filetags: contrib
 #+ARCHIVE: ../../archive/plan.org::** demo
+#+location: ~/comp/contrib/
 #+category: project
 * OUTLINE Logical Pathnames Proposal
 :PROPERTIES:
@@ -30,10 +31,58 @@
     could just work on a patch to submit for sbcl - still need to look at
     if any other impl does something fancy
   #+end_example
-* RESEARCH Shirakumo Ecosystem [0/2]
+
+#+begin_example
+  Bike: honestly that's the only thing i use them for, but i'm open to
+  suggestions. what would you like to have beyond the
+  logical-pathname-translations interface?
+
+  [10:26 PM]ellis: what I'm thinking is some sort of API where you can
+  provide additional layers of translation, maybe by specifying a
+  keyword argument args in the form :translate-device (lambda (device)
+  ;; translation? side effects on dynamic vars?) :translate-version..
+
+  [10:31 PM]ellis: for load-logical-pathname-translations i like the
+  idea of a similar situation with a user defined function instead of
+  relying on 'SYS:SITE;HOST.TRANSLATIONS' - maybe I want to use this in
+  a p2p discovery service for example and I want to specify a function
+  which does a remote lookup, parses a response and returns the
+  appropriate form
+
+  [10:33 PM]ellis: right now i'm just experimenting with the
+  conventional local-projects approach, stuff like 'SYS:TMP' and
+  'MEDIA:MUSIC', which has kept me busy enough but will find some time
+  to prototype something out
+
+  [10:40 PM]ellis: a few other things that came to mind..  cached/db
+  access to pathname translation index-based wildcard translation
+  (sketchy) - (translate-logical-pathname "MEDIA:MUSIC;0"
+  :translate-wildcard (lambda (x) (aref
+  ,*sorted-music-directory-contents* x)))
+
+  [10:44 PM]ellis: really makes more sense as a package, like
+  translate-pathname* but just a shame to waste those keyword args lol
+
+  [10:44 PM]ellis: (defvar *default-logical-pathname-translator* 'translate-logical-pathname)
+#+end_example
+- [2025-05-02 Fri 14:57] initial feedback
+  #+begin_example
+    3:48 AM]Isomorphism: Yeah but on the other hand, why not just make a
+    dedicated library to your path parsing thing? Generic extensions to
+    path resolution is a little scary to me, given that something
+    unrelated could suddenly become vulnerable to some injection attack
+
+    [9:51 AM]Bike: i would generally be skeptical of a global hook like
+    this translator. it's nasty if libraries can rebind or set a variable
+    and suddenly logical pathname stuff everywhere breaks, including
+    inside the implementation. logical-pathname-translations is sorta
+    there already though
+  #+end_example
+* RESEARCH Shirakumo Ecosystem [0/3]
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:15>
 :ID:       7547601b-97f4-46dd-9d3f-d3b21f8818bc
+:LICENSE: zlib
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-05-01 Thu 21:15]
@@ -51,10 +100,23 @@
 - https://github.com/Shirakumo/lichat-protocol
 - https://github.com/Shirakumo/l-hacd
 - https://github.com/Shirakumo/hourly
+** TODO get familiar with core eco
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 15:02>
+:ID:       2178c2c1-04b8-41e0-814b-7b7ad06ca5d0
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-02 Fri 15:02]
+:END:
+- tests, documentation, builds
+- [[https://shinmera.github.io/parachute/][Parachute]]
+- [[https://shinmera.github.io/documentation-utils/][Documentation Utils]]
+- [[https://shinmera.github.io/type-templates/][Type Templates]]
 ** TBD 3d-math patches [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:24>
 :ID:       087698d2-d959-4707-ada0-53879367a3fe
+:LOCATION: 3d-math/
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2025-05-01 Thu 21:24]
@@ -63,6 +125,7 @@
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:25>
 :ID:       a8ac36f2-a52e-4a38-8213-e152a3b57662
+:LOCATION: 3d-math/quaternions/
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-01 Thu 21:25]
@@ -73,12 +136,17 @@
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:27>
 :ID:       9e394ba4-990c-46bb-b0f0-665deea74c23
+:LOCATION: 3d-math/test.lisp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-01 Thu 21:27]
 - State "RESEARCH"   from "TODO"       [2025-05-01 Thu 21:27]
 :END:
 - [[gh:visgl/math.gl/tree/master/test][visgl/math.gl]] (typescript)
+- [[gh:recp/cglm/tree/master/test][cglm/test at master · recp/cglm]] (C)
+- [[gh:HedbergMartin/rust_3dm/tree/master/src/tests][rust_3dm/src/tests at master · HedbergMartin/rust_3dm]] (rs)
+- [[https://github.com/rustgd/cgmath/tree/master/tests][cgmath]] (rs)
+- [[gh:dimforge/nalgebra/tree/main/tests][nalgebra/tests at main · dimforge/nalgebra]] (rs)
 ** TBD redist [0/0]
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 22:05>
