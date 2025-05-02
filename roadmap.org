@@ -121,7 +121,9 @@ host and grabbing a pre-compiled lisp as well as a compressed
 :END:
 
 - play-time is over, time to build
-- still, small steps, /loose/ organization practices
+- complete core v0.1
+- small steps, /loose/ organization practices, use time effectively
+- be proactive, empower the community, make contributions regularly
 ** TBD CC charter
 :PROPERTIES:
 :CREATED:  <2025-02-26 Wed 19:43>
@@ -218,3 +220,13 @@ host and grabbing a pre-compiled lisp as well as a compressed
 - design requirements only
 - local ML engine, LLM, compute-bias
 - container image/VM
+- c2, not-in-scope: p2p
+** TODO contrib
+:PROPERTIES:
+:CREATED:  <2025-05-01 Thu 18:19>
+:ID:       686b14b0-4400-44cf-b255-988b81ede5da
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-01 Thu 18:19]
+:END:
+- 

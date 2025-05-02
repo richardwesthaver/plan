@@ -331,7 +331,7 @@ table.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:36]
 :END:
-* TODO parse [0/2]                                                 :lisp:lib:
+* TODO parse [1/2]                                                 :lisp:lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
 :VERSION: 0.1
@@ -356,15 +356,6 @@ table.
 :END:
 add tests for lexer and LALR. figure out if there are any gaps that we
 need to fill.
-** TODO toml impl
-:PROPERTIES:
-:ID:       6ba3e53d-8cfa-46fe-852a-ea462d475883
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-24 Sun 19:28]
-:END:
-the toml parser on quicklisp is based on esrap, make a comparable one
-using our parser module.
 * PROJECT organ [0/2]                                            :lisp:organ:
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
@@ -600,6 +591,18 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - obj/
   - color
   - uri
+** DONE toml impl
+:PROPERTIES:
+:ID:       6ba3e53d-8cfa-46fe-852a-ea462d475883
+:CREATED:  <2025-04-30 Wed 18:30>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-24 Sun 19:28]
+- State "DONE"       from "TODO"       [2025-04-30 Wed 18:30]
+- Refiled on [2025-04-30 Wed 18:32]
+:END:
+the toml parser on quicklisp is based on esrap, make a comparable one
+using our parser module.
 * PROJECT syn                                                      :lisp:syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
@@ -896,7 +899,7 @@ delete unbound non-anaphoric symbols
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
 :END:
-** TODO finalize thread-pool impl                                    :thread:
+** TODO thread-pool impl                                    :thread:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
 :ID:       5bb9865d-e6c1-40ca-8a53-155c417de018
@@ -904,6 +907,16 @@ delete unbound non-anaphoric symbols
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
 :END:
+*** TODO review previous state of std/tasks
+:PROPERTIES:
+:CREATED:  <2025-04-28 Mon 17:56>
+:ID:       bf5bb8f3-7add-4099-a193-06ecb9860008
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-28 Mon 17:56]
+:END:
+We were doing some things right - like our semaphore worker waking
+- already added this to BROADCAST-WORK (comment suggestion by lmj)
 ** TODO task-pool impl                                               :thread:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
@@ -937,7 +950,7 @@ delete unbound non-anaphoric symbols
 - State "DONE"       from "WIP"        [2025-04-27 Sun 19:37]
 :END:
 - generic done
-* PROJECT obj [0/3]                                                :lisp:obj:
+* PROJECT obj [0/2]                                                :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION: 0.1
@@ -946,6 +959,45 @@ delete unbound non-anaphoric symbols
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+** TODO fix obj/query stack overflow on compile
+:PROPERTIES:
+:CREATED:  <2025-04-28 Mon 14:55>
+:ID:       02fd19ee-aef4-44cd-ae87-8eedc048ae85
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-04-28 Mon 14:55]
+:END:
+#+begin_example
+Control stack exhausted (no more space for function call frames).
+This is probably due to heavily nested or infinitely recursive function
+calls, or a tail call that SBCL cannot or has not optimized away.
+
+PROCEED WITH CAUTION.
+   [Condition of type SB-KERNEL::CONTROL-STACK-EXHAUSTED]
+
+ 849: ((:METHOD SB-PCL::COMPUTE-EFFECTIVE-SLOT-DEFINITION-INITARGS (SB-PCL::SLOT-CLASS T)) #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN> (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SL..
+      Locals:
+	SB-PCL::ALLOCATION = :INSTANCE
+	SB-PCL::ALLOCATION-CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
+	SB-PCL::ALLOCP = T
+	CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
+	SB-PCL::DIRECT-SLOTDS = (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST>)
+	DOCUMENTATION = NIL
+	SB-PCL::DOCUMENTATIONP = NIL
+	SB-PCL::INITARGS = (:AST)
+	SB-PCL::INITFORM = NIL
+	SB-PCL::INITFUNCTION = NIL
+	SB-PCL::INITP = NIL
+	SB-PCL::NAME = OBJ/AST:AST
+	SB-PCL::NAMEP = T
+
+ 855: (SB-THREAD::CALL-WITH-RECURSIVE-LOCK #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}> #<MUTEX "PCL global mutex" taken owner=main thread>)
+      Locals:
+	GOT-IT = NIL
+	MUTEX = #<MUTEX "PCL global mutex" taken owner=main thread>
+	SB-C::THING = #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}>
+#+end_example
+
 ** WIP complete base obj/query package [0/1]                           :q:db:
 :PROPERTIES:
 :LOCATION: lib/obj/query.lisp
