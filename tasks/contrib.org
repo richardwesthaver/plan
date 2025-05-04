@@ -155,69 +155,7 @@
 :LOGBOOK:
 - State "TBD"        from              [2025-05-01 Thu 22:05]
 :END:
-* TBD lparallel [0/2]
-:PROPERTIES:
-:CREATED:  <2025-05-01 Thu 22:05>
-:ID:       58f84b83-31ab-4b68-8ca8-062f447d25fb
-:END:
-:LOGBOOK:
-- State "TBD"        from              [2025-05-01 Thu 22:05]
-:END:
-** TODO Replace queues with semaphores [0/0]
-:PROPERTIES:
-:CREATED:  <2025-05-01 Thu 22:06>
-:ID:       658a596f-830c-4a39-8513-78ffceaad4e5
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-01 Thu 22:06]
-:END:
-shoot first questions later, just submit the patch clearing the todo, SBCL only
-[[gh:lmj/lparallel/blob/master/src/kernel/core.lisp][lparallel/src/kernel/core.lisp]]
 
-our current impl:
-#+begin_src lisp
-  (defun broadcast-work (function &rest args)
-    "Wait for current and pending work to complete, if any, then
-  simultaneously execute the given work inside each worker. Wait until
-  this work is complete, then return the results in a vector.
-
-  Calling `broadcast-work' from inside a worker is an error."
-    (when *worker*
-      (error "Cannot call `broadcast-work' from inside a worker."))
-    (let* ((function (std/curry:ensure-function function))
-  	 (*thread-pool* (check-thread-pool))
-  	 (worker-count (worker-count*))
-  	 (channel (make-instance 'channel))
-  	 (from-workers (make-semaphore :count worker-count))
-  	 (to-workers (make-semaphore :count worker-count)))
-      (loop repeat worker-count 
-  	  do (submit-work channel (lambda ()
-  				    (try-semaphore from-workers)
-  				    (wait-on-semaphore to-workers)
-  				    (apply function args))))
-      (loop repeat worker-count 
-  	  do (wait-on-semaphore from-workers))
-      (loop repeat worker-count 
-  	  do (try-semaphore to-workers))
-      (map-into (make-array worker-count) (lambda () (receive-result channel)))))
-
-#+end_src
-
-** OUTLINE worker-notifications/handshake API change
-:PROPERTIES:
-:CREATED:  <2025-05-01 Thu 22:08>
-:ID:       9bf48146-d3af-41d0-a87d-007ae9cfcc79
-:END:
-:LOGBOOK:
-- State "OUTLINE"    from              [2025-05-01 Thu 22:08]
-:END:
-our current impl looks like this
-#+begin_src lisp
-(defvar *default-worker-tx-capacity* 8)
-(defclass worker-status ()
-  ((%rx :initform (sb-concurrency:make-gate))
-   (%tx :initform (make-queue :fixed-capacity *default-worker-tx-capacity*))))
-#+end_src
 * RESEARCH sharplispers
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 22:15>
@@ -245,6 +183,71 @@ our current impl looks like this
   pr submitted
 :END:
 [[gh:sharplispers/linedit/pull/11][sharplispers/linedit#11]]
+** WIP lparallel [0/2]
+:PROPERTIES:
+:CREATED:  <2025-05-01 Thu 22:05>
+:ID:       58f84b83-31ab-4b68-8ca8-062f447d25fb
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-05-01 Thu 22:05]
+- State "WIP"        from "TBD"        [2025-05-03 Sat 20:12]
+:END:
+*** WAIT Replace queues with semaphores [0/0]
+:PROPERTIES:
+:CREATED:  <2025-05-01 Thu 22:06>
+:ID:       658a596f-830c-4a39-8513-78ffceaad4e5
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-01 Thu 22:06]
+- State "WAIT"       from "TODO"       [2025-05-03 Sat 20:11] \\
+  pr submitted
+:END:
+shoot first questions later, just submit the patch clearing the todo, SBCL only
+[[gh:lmj/lparallel/blob/master/src/kernel/core.lisp][lparallel/src/kernel/core.lisp]]
+
+our current impl:
+#+begin_src lisp
+  (defun broadcast-work (function &rest args)
+    "Wait for current and pending work to complete, if any, then
+  simultaneously execute the given work inside each worker. Wait until
+  this work is complete, then return the results in a vector.
+
+  Calling `broadcast-work' from inside a worker is an error."
+    (when *worker*
+      (error "Cannot call `broadcast-work' from inside a worker."))
+    (let* ((function (std/curry:ensure-function function))
+  	 (*thread-pool* (check-thread-pool))
+  	 (worker-count (worker-count*))
+  	 (channel (make-instance 'channel))
+  	 (from-workers (make-semaphore))
+  	 (to-workers (make-semaphore)))
+      (loop repeat worker-count 
+  	  do (submit-work channel (lambda ()
+  				    (signal-semaphore from-workers)
+  				    (wait-on-semaphore to-workers)
+  				    (apply function args))))
+      (loop repeat worker-count 
+  	  do (wait-on-semaphore from-workers))
+      (loop repeat worker-count 
+  	  do (signal-semaphore to-workers))
+      (map-into (make-array worker-count) (lambda () (receive-result channel)))))
+#+end_src
+
+** OUTLINE worker-notifications/handshake API change
+:PROPERTIES:
+:CREATED:  <2025-05-01 Thu 22:08>
+:ID:       9bf48146-d3af-41d0-a87d-007ae9cfcc79
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2025-05-01 Thu 22:08]
+:END:
+our current impl looks like this
+#+begin_src lisp
+(defvar *default-worker-tx-capacity* 8)
+(defclass worker-status ()
+  ((%rx :initform (sb-concurrency:make-gate))
+   (%tx :initform (make-queue :fixed-capacity *default-worker-tx-capacity*))))
+#+end_src
 * TBD stumpwm
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:15>
@@ -279,3 +282,31 @@ our current impl looks like this
 :LOGBOOK:
 - State "TBD"        from              [2025-05-02 Fri 13:15]
 :END:
+* RESEARCH edicl
+:PROPERTIES:
+:CREATED:  <2025-05-03 Sat 20:13>
+:ID:       bf829af6-bbb8-4e64-8839-41f0aac733f2
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2025-05-03 Sat 20:13]
+:END:
+** WAIT cl-who fixes
+:PROPERTIES:
+:CREATED:  <2025-05-03 Sat 20:13>
+:ID:       71fd1e6c-e1c0-43d5-8f8a-ee348f815b60
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2025-05-03 Sat 20:13]
+- State "WAIT"       from "WIP"        [2025-05-03 Sat 20:15]
+:END:
+closes an issue - pr submitted
+** WAIT cl-interpol system descriptions
+:PROPERTIES:
+:CREATED:  <2025-05-03 Sat 20:13>
+:ID:       e1e64ce5-7567-43d5-a865-c3afd85b1361
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2025-05-03 Sat 20:13]
+- State "WAIT"       from "WIP"        [2025-05-03 Sat 20:15]
+:END:
+closes a request issue - pr submitted
