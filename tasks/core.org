@@ -1242,16 +1242,40 @@ delete unbound non-anaphoric symbols
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
 :END:
-*** TODO review previous state of std/tasks
+*** DONE review previous state of std/tasks
 :PROPERTIES:
 :CREATED:  <2025-04-28 Mon 17:56>
 :ID:       bf5bb8f3-7add-4099-a193-06ecb9860008
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-04-28 Mon 17:56]
+- State "DONE"       from "TODO"       [2025-05-06 Tue 21:57]
 :END:
 We were doing some things right - like our semaphore worker waking
 - already added this to BROADCAST-WORK (comment suggestion by lmj)
+- mailbox stuff not as useful (speed is a concern over more primitive cas queues and spinlocks)
+*** TODO specify kernel function prototypes
+:PROPERTIES:
+:CREATED:  <2025-05-06 Tue 21:57>
+:ID:       8738d5a0-0555-425d-addc-38e132503fbe
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-06 Tue 21:57]
+:END:
+- should be easy to:
+  - register kernel prototypes
+  - define new kernel functions
+  - modify kernels in running threads
+  - communicate with kerneled objects
+    - via oracle, supervisor, simple state machines
+
+:notes:
+- kernel ops :: internal VM operations performed by kernel functions
+- kernel commands :: external commands which modify the state of the kerneled object
+- ideally provides closure with captured variables able to be
+  dynamically rebound across threads.
+- oracle thread when designated should have solo write access to kernel ops
+:end:
 ** TODO task-pool impl                                               :thread:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>

@@ -156,13 +156,14 @@
 - State "TBD"        from              [2025-05-01 Thu 22:05]
 :END:
 
-* RESEARCH sharplispers
+* WIP sharplispers
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 22:15>
 :ID:       b26437fd-633c-4ea3-bf73-3b62d72c855c
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-05-01 Thu 22:15]
+- State "WIP"        from "RESEARCH"   [2025-05-04 Sun 19:38]
 :END:
 ** WIP linedit [0/0]
 :PROPERTIES:
@@ -282,15 +283,16 @@ our current impl looks like this
 :LOGBOOK:
 - State "TBD"        from              [2025-05-02 Fri 13:15]
 :END:
-* RESEARCH edicl
+* WIP edicl
 :PROPERTIES:
 :CREATED:  <2025-05-03 Sat 20:13>
 :ID:       bf829af6-bbb8-4e64-8839-41f0aac733f2
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-05-03 Sat 20:13]
+- State "WIP"        from "RESEARCH"   [2025-05-04 Sun 19:38]
 :END:
-** WAIT cl-who fixes
+** DONE cl-who fixes
 :PROPERTIES:
 :CREATED:  <2025-05-03 Sat 20:13>
 :ID:       71fd1e6c-e1c0-43d5-8f8a-ee348f815b60
@@ -298,8 +300,11 @@ our current impl looks like this
 :LOGBOOK:
 - State "WIP"        from              [2025-05-03 Sat 20:13]
 - State "WAIT"       from "WIP"        [2025-05-03 Sat 20:15]
+- State "DONE"       from "WAIT"       [2025-05-04 Sun 19:32]
 :END:
 closes an issue - pr submitted
+- removed sbcl element-type change - needs further review
+- merged
 ** WAIT cl-interpol system descriptions
 :PROPERTIES:
 :CREATED:  <2025-05-03 Sat 20:13>
@@ -310,3 +315,18 @@ closes an issue - pr submitted
 - State "WAIT"       from "WIP"        [2025-05-03 Sat 20:15]
 :END:
 closes a request issue - pr submitted
+** WAIT chunga memory-leak fixes
+:PROPERTIES:
+:CREATED:  <2025-05-04 Sun 19:31>
+:ID:       b756c934-df65-474a-a631-a156b8c1edea
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-04 Sun 19:31]
+- State "WAIT"       from "TODO"       [2025-05-04 Sun 19:36]
+:END:
+- [[https://github.com/edicl/drakma/issues/140][Random headers lead to memory exaust. · Issue #140 · edicl/drakma · GitHub]]
+
+- [[https://github.com/edicl/chunga/issues/13][as-keyword-if-found problems · Issue #13 · edicl/chunga · GitHub]]
+  - commented, can probably just add a better changelog description and patch the upstreams
+  - hunchensocket tbd
+- could check quicklisp for other upstreams

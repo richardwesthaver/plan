@@ -178,3 +178,14 @@ probably io.. but maybe also log, net.. syn?
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
 :END:
+
+* RESEARCH Hilbert Curves
+:PROPERTIES:
+:CREATED:  <2025-05-07 Wed 16:14>
+:ID:       e6e79d8f-5958-4fe2-9380-710c7392423e
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2025-05-07 Wed 16:14]
+:END:
+- Hilbert R-Trees, X-Tree..
+  - X+ Trees? need to see the most recent research and why it hasn't become popular

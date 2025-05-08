@@ -36,35 +36,41 @@ DEADLINE: <2024-08-23 Fri> SCHEDULED: <2024-08-18 Sun>
 - [X] pod
 - [X] box
 - [X] .hgsub
-* TODO [#A] deploy [0/4]                                               :lisp:
+* DONE [#A] deploy [4/4]                                               :lisp:
 :PROPERTIES:
 :Effort:   8h
 :ID:       f9b9c56b-90ce-462c-9b50-de88e28b1f15
+:CREATED:  <2025-05-04 Sun 19:41>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-30 Sat 19:20]
+- State "DONE"       from "TODO"       [2025-05-04 Sun 19:41]
 :END:
-- [ ] collect artifacts
-- [ ] pack
-- [ ] send output to =DIST=
-- [ ] Adapt to =skel deploy=
+- [X] collect artifacts
+- [X] pack
+- [X] send output to =DIST=
+- [X] Adapt to =skel deploy=
 
 - *assumptions*
   - host is qualified builder
   - all dependendencies installed on system (not in stash)
   - current user has access to DIST
 
-* TODO [#B] publish [0/4]                                        :lisp:emacs:
+- done in org skelfile
+* DONE [#B] publish [4/4]                                        :lisp:emacs:
 :PROPERTIES:
 :ID:       e308e4b8-d5eb-4498-8c74-2535895b02ca
+:CREATED:  <2025-05-04 Sun 19:41>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-06-21 Fri 15:00]
+- State "DONE"       from "TODO"       [2025-05-04 Sun 19:41]
 :END:
-- [ ] load dependencies (htmlize,default.el,babel.org)
-- [ ] load =publish.el=
-- [ ] set =publish-directory=
-- [ ] eval =publish=
+- done in org skelfile
+- [X] load dependencies (htmlize,default.el,babel.org)
+- [X] load =publish.el=
+- [X] set =publish-directory=
+- [X] eval =publish=
 
 * TODO install [0/7]
 :PROPERTIES:
@@ -80,7 +86,7 @@ DEADLINE: <2024-08-23 Fri> SCHEDULED: <2024-08-18 Sun>
 - [ ] if from source run =build=
 - [ ] if from pack run =unpack=
 - [ ] run install script
-* PROJECT box
+* PROJECT box [0/1]
 :PROPERTIES:
 :CREATED:  <2024-09-24 Tue 21:58>
 :ID:       db6b4f9a-e9b8-4e67-ab10-044f96cbc7d8
@@ -94,7 +100,7 @@ DEADLINE: <2024-08-23 Fri> SCHEDULED: <2024-08-18 Sun>
 :CREATED:  <2024-09-24 Tue 21:59>
 :END:
 no branches - repo for each build system (archiso, qemu/kvm, etc)
-* PROJECT pod
+* PROJECT pod [0/1]
 :PROPERTIES:
 :CREATED:  <2024-09-24 Tue 21:58>
 :ID:       6a574322-c89e-41a0-8a9d-02102155042e
@@ -102,7 +108,16 @@ no branches - repo for each build system (archiso, qemu/kvm, etc)
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-24 Tue 21:58]
 :END:
-* PROJECT home
+** TODO dev containers
+:PROPERTIES:
+:CREATED:  <2025-05-04 Sun 20:36>
+:ID:       19d3b82c-3afa-48df-a8c4-9f020a46f8fa
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-04 Sun 20:36]
+:END:
+- project-specific
+* PROJECT home [0/0]
 :PROPERTIES:
 :CREATED:  <2024-09-24 Tue 21:58>
 :ID:       e30a4418-e86f-4597-aeca-0e5d468cd2e5
