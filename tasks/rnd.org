@@ -179,7 +179,29 @@ probably io.. but maybe also log, net.. syn?
 - State "TODO"       from              [2024-08-01 Thu 12:27]
 :END:
 
-* RESEARCH Hilbert Curves
+* WIP Curves
+:PROPERTIES:
+:CREATED:  <2025-05-08 Thu 18:00>
+:ID:       63a03922-03bb-47dd-af82-e7274135c0e1
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2025-05-08 Thu 18:00]
+:END:
+Realistically we may need a dedicated lib/math..
+obj doesn't cover all the bases.
+
+SBCL provides the numeric tower via types, we really need a math tower..
+** WIP SFC
+:PROPERTIES:
+:CREATED:  <2025-05-08 Thu 18:01>
+:ID:       2578ff0f-c71d-4c9d-89da-ea97a3146156
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2025-05-08 Thu 18:01]
+- State "WIP"        from "OUTLINE"    [2025-05-08 Thu 18:01]
+:END:
+Space-Filling Curves
+*** RESEARCH Hilbert Curves
 :PROPERTIES:
 :CREATED:  <2025-05-07 Wed 16:14>
 :ID:       e6e79d8f-5958-4fe2-9380-710c7392423e
