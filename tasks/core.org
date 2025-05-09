@@ -1018,13 +1018,16 @@ from within suite
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
 :END:
-*** RESEARCH Ecosystem
+*** WIP Ecosystem
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:27>
 :ID:       c95d1f51-ef69-4489-af4c-b555ccaaed36
+:Effort:   4h
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-05-08 Thu 18:27]
+- State "WIP"        from "RESEARCH"   [2025-05-08 Thu 20:53]
+CLOCK: [2025-05-08 Thu 20:55]
 :END:
 - [[https://github.com/Lisp-Stat][Common Lisp Statistics · GitHub]]
 - [[https://github.com/Lisp-Stat/lisp-stat][GitHub - Lisp-Stat/lisp-stat: Lisp-Stat main system]]
@@ -1034,10 +1037,14 @@ from within suite
 - and next.. [[https://github.com/pola-rs/polars/tree/main][pola.rs]]
 - use [[id:087698d2-d959-4707-ada0-53879367a3fe][3d-math patches]] as a way to learn more about what we will need
 - we need a lot more than just matrix acceleration.
+- [[https://github.com/JuliaLang/llvm-project/blob/85122d41d6783e828412f9a1d0f7c771e2a38acc/mlir/docs/Dialects/Linalg/_index.md][llvm-project/mlir/docs/Dialects/Linalg/_index.md · JuliaLang/llvm-project]]
+- LAPACK? ye probably - be aware of symbol rewrites caused by FC
+
 *** TODO refactor libs into math
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:31>
 :ID:       d77c8507-b61c-4dc8-a1bd-45f10043b094
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-08 Thu 18:31]
@@ -1045,7 +1052,7 @@ from within suite
 - obj should NOT depend on math
 - math depends on ffi, depended on by dsp,net,apps,etc
 - should probably have the most tests of all libs
-* PROJECT std [2/8]                                                :lisp:std:
+* PROJECT std [3/11]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION: 0.2
@@ -1273,6 +1280,7 @@ delete unbound non-anaphoric symbols
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
 :ID:       5bb9865d-e6c1-40ca-8a53-155c417de018
+:LOCATION+: thread.lisp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
@@ -1311,11 +1319,20 @@ We were doing some things right - like our semaphore worker waking
   dynamically rebound across threads.
 - oracle thread when designated should have solo write access to kernel ops
 :end:
+** TODO save-core                                                       :sys:
+:PROPERTIES:
+:ID:       594cdcc2-5de7-4efe-bec5-cf5fbf5fe4ad
+:CREATED:  <2025-05-08 Thu 20:50>
+:LOCATION+: sys.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-08 Thu 20:50]
+:END:
 ** TODO task-pool impl                                               :thread:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
 :ID:       8326a4a5-31dc-4030-a3da-196f58b69202
-:LOCATION: std/meta.lisp
+:LOCATION+: task.lisp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
@@ -1354,13 +1371,15 @@ We were doing some things right - like our semaphore worker waking
 - Refiled on [2025-05-02 Fri 13:54]
 :END:
 - convenience for defining alien structs, especially with the same name as lisp type
-** incorporate sb-cltl2 generators/iterators into STD/PIPE
+** TBD incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
 :ID:       04fdde4f-427c-47b5-8394-5b5365ede249
 :CREATED:  <2025-01-17 Fri 15:54>
 :END:
 :LOGBOOK:
 - Refiled on [2025-05-02 Fri 14:03]
+- State "TODO"       from              [2025-05-08 Thu 20:51]
+- State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 :END:
 * PROJECT emacs [0/10]                                                :emacs:
 :PROPERTIES:
