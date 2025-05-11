@@ -1,7 +1,7 @@
-#+title: R&D Tasks
+#+title: R&D
 #+author: Richard Westhaver
 #+email: richard.westhaver@gmail.com
-#+description: R&D tasks
+#+description: Research tasks
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** core
@@ -171,14 +171,15 @@ probably io.. but maybe also log, net.. syn?
 :END:
 [[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]
 
-* TODO [[https://libyear.com/][libyear]]                                                    :lisp:skel:
+* NOPE [[https://libyear.com/][libyear]]                                                    :lisp:skel:
 :PROPERTIES:
 :ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
+:CREATED:  <2025-05-10 Sat 22:33>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-01 Thu 12:27]
 :END:
-
+Not that useful in our current environment (NIH)
 * WIP Curves
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:00>
@@ -188,6 +189,7 @@ probably io.. but maybe also log, net.. syn?
 - State "WIP"        from              [2025-05-08 Thu 18:00]
 :END:
 Realistically we may need a dedicated lib/math..
+
 obj doesn't cover all the bases.
 
 SBCL provides the numeric tower via types, we really need a math tower..

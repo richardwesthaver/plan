@@ -90,6 +90,68 @@
 :LOGBOOK:
 - State "TBD"        from              [2025-04-26 Sat 20:24]
 :END:
+** PROJECT blas
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:34>
+:ID:       fe955338-3377-49a0-aa7a-717d61ab231d
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-05-10 Sat 22:34]
+:END:
+implement bindings to the Fortran BLAS functions
+*** TODO Level 1
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:34>
+:ID:       59340eb3-4a47-4ec8-a235-291606d2eca0
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-10 Sat 22:34]
+:END:
+*** TODO Level 2
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:34>
+:ID:       88e76978-3e0b-47c9-a4f4-1d982f58bb9c
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-10 Sat 22:34]
+:END:
+*** TODO Level 3
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:34>
+:ID:       76d5e03b-8be9-4e03-9cef-5fb9507a2632
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-10 Sat 22:34]
+:END:
+*** TODO Tests
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:34>
+:ID:       8c9729c6-b36f-41c0-a6cc-2ce2fa972211
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-10 Sat 22:34]
+:END:
+- a few from each level
+- benchmarks
+*** TODO improve API
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:35>
+:ID:       8db310f4-8df4-42fb-8a03-96776ff456c6
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-10 Sat 22:35]
+:END:
+- should have a very clean interface with io/static
+- make sure to bench vs using plain sb-sys:with-pinned-objects
+*** TODO Conditions
+:PROPERTIES:
+:CREATED:  <2025-05-10 Sat 22:37>
+:ID:       f1147442-abb3-4f2d-aadf-697563cd8617
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-10 Sat 22:37]
+:END:
+- need some basic error handling which indicates an error thrown from C.
 ** TBD examples [0/6]                                               :example:
 :PROPERTIES:
 :ID:       794f6242-2589-424d-bbc1-8025530a2a6b
@@ -151,7 +213,7 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT cli [0/4]
+** PROJECT cli [0/5]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -208,6 +270,16 @@
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
+*** FIXME linedit path completion
+SCHEDULED: <2025-05-11 Sun>
+:PROPERTIES:
+:CREATED:  <2025-05-11 Sun 00:59>
+:ID:       02a3763c-fc2a-4fea-936b-afd7350cc123
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2025-05-11 Sun 00:59]
+:END:
+currently segfaults - should be easy to fix
 *** TODO linedit prefixes
 :PROPERTIES:
 :CREATED:  <2025-04-26 Sat 23:20>
@@ -690,7 +762,7 @@ using our parser module.
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** PROJECT skel [0/3]                                             :lisp:skel:
+** PROJECT skel [0/6]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION: 0.2
@@ -715,7 +787,7 @@ using our parser module.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
-*** WIP implement vm
+*** WAIT implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
@@ -742,6 +814,8 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   which needs to be done in =skel/core= which we can make progress on in
   preparation.
 - New deadline from "[2024-09-02 Mon]" on [2025-02-26 Wed 19:14]
+- State "WAIT"       from "WIP"        [2025-05-11 Sun 01:00] \\
+  waiting on completion of std/task and friends
 :END:
 - core/vm.lisp
 - how will rules, commands, and components interact?
@@ -1014,6 +1088,7 @@ from within suite
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:27>
 :ID:       1b08ca47-cace-4ce5-a0f2-cd74dcf8c547
+:LOCATION: lib/math
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
@@ -1027,7 +1102,7 @@ from within suite
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-05-08 Thu 18:27]
 - State "WIP"        from "RESEARCH"   [2025-05-08 Thu 20:53]
-CLOCK: [2025-05-08 Thu 20:55]
+CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
 :END:
 - [[https://github.com/Lisp-Stat][Common Lisp Statistics · GitHub]]
 - [[https://github.com/Lisp-Stat/lisp-stat][GitHub - Lisp-Stat/lisp-stat: Lisp-Stat main system]]
@@ -1039,7 +1114,7 @@ CLOCK: [2025-05-08 Thu 20:55]
 - we need a lot more than just matrix acceleration.
 - [[https://github.com/JuliaLang/llvm-project/blob/85122d41d6783e828412f9a1d0f7c771e2a38acc/mlir/docs/Dialects/Linalg/_index.md][llvm-project/mlir/docs/Dialects/Linalg/_index.md · JuliaLang/llvm-project]]
 - LAPACK? ye probably - be aware of symbol rewrites caused by FC
-
+  - solved in [[id:fe955338-3377-49a0-aa7a-717d61ab231d][blas]] (wip)
 *** TODO refactor libs into math
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:31>

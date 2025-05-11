@@ -112,7 +112,7 @@
 - [[https://shinmera.github.io/parachute/][Parachute]]
 - [[https://shinmera.github.io/documentation-utils/][Documentation Utils]]
 - [[https://shinmera.github.io/type-templates/][Type Templates]]
-** TBD 3d-math patches [0/2]
+** WIP 3d-math patches [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:24>
 :ID:       087698d2-d959-4707-ada0-53879367a3fe
@@ -121,14 +121,16 @@
 :LOGBOOK:
 - State "TBD"        from              [2025-05-01 Thu 21:24]
 :END:
-*** TODO quaternion convention
+*** WIP quaternion convention
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:25>
 :ID:       a8ac36f2-a52e-4a38-8213-e152a3b57662
-:LOCATION: 3d-math/quaternions/
+:LOCATION+: quaternions/
+:Effort:   3h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-01 Thu 21:25]
+CLOCK: [2025-05-09 Fri 17:21]--[2025-05-09 Fri 18:30] =>  1:09
 :END:
 - check the article referred to: [[gh:Shinmera/3d-math/issues/5][Shinmera/3d-math#5]]
 - if it's trivial just submit a pr
@@ -136,7 +138,7 @@
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 21:27>
 :ID:       9e394ba4-990c-46bb-b0f0-665deea74c23
-:LOCATION: 3d-math/test.lisp
+:LOCATION+: test.lisp
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-01 Thu 21:27]
