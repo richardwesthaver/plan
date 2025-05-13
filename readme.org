@@ -16,11 +16,11 @@
 | description | :description CC Org Files                          |
 | skel-id     | :id 1784914079056115652                            |
 | root        | ~/comp/org/plan/                                   |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/032181d325d0][032181d325d0:55+]] |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/c677e2325574][c677e2325574:56+]] |
 | tags        | :tags (org docs notes blog meta plan)              |
-| updated     | Thu May 08 23:26:06 2025 -0400                     |
+| updated     | Sun May 11 01:01:10 2025 -0400                     |
 | langs       | org                                                |
-| lines       | 3053 :λ 2937 :# 0 :_ 116                           |
+| lines       | 3145 :λ 3031 :# 0 :_ 114                           |
 |-------------+----------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -37,21 +37,21 @@
 2025-02   1404 ***************************************
 2025-03    245 ******
 2025-04    747 ********************
-2025-05   1813 **************************************************
+2025-05   1952 ******************************************************
 #+end_example
 
-#+CALL: project-files() :dir ~/comp/org/plan/
+#+CALL: project-html-files() :dir ~/comp/org/plan/
 
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[file:.][.]]             | 2025-05-08 23:32:00 |
-| [[file:tasks/contrib.org][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[file:tasks/core.org][tasks/core]]    | 2025-05-09 17:12:18 |
-| [[file:product.org][product]]       | 2025-02-14 19:14:44 |
-| [[file:roadmap.org][roadmap]]       | 2025-05-01 18:22:39 |
-| [[file:tasks/demo.org][tasks/demo]]    | 2025-03-08 01:05:42 |
-| [[file:tasks/infra.org][tasks/infra]]   | 2025-05-04 20:36:24 |
-| [[file:tasks/rnd.org][tasks/rnd]]     | 2025-05-08 18:19:27 |
+| [[https://compiler.company/plan/index.html][index]]         | 2025-05-13 17:34:15 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-05-12 23:34:12 |
+| [[https://compiler.company/plan/product.html][product]]       | 2025-02-14 19:14:44 |
+| [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-05-01 18:22:39 |
+| [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
+| [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2025-03-08 01:05:42 |
+| [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2025-05-04 20:36:24 |
+| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2025-05-10 22:33:35 |
 
 #+END:

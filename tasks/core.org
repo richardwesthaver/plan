@@ -99,21 +99,23 @@
 - State "PROJECT"    from              [2025-05-10 Sat 22:34]
 :END:
 implement bindings to the Fortran BLAS functions
-*** TODO Level 1
+*** DONE Level 1
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
 :ID:       59340eb3-4a47-4ec8-a235-291606d2eca0
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-10 Sat 22:34]
+- State "DONE"       from "TODO"       [2025-05-12 Mon 22:56]
 :END:
-*** TODO Level 2
+*** WIP Level 2
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
 :ID:       88e76978-3e0b-47c9-a4f4-1d982f58bb9c
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-10 Sat 22:34]
+- State "WIP"        from "TODO"       [2025-05-12 Mon 22:56]
 :END:
 *** TODO Level 3
 :PROPERTIES:
@@ -213,7 +215,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT cli [0/5]
+** PROJECT cli [1/5]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -270,7 +272,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-*** FIXME linedit path completion
+*** DONE linedit path completion
 SCHEDULED: <2025-05-11 Sun>
 :PROPERTIES:
 :CREATED:  <2025-05-11 Sun 00:59>
@@ -278,6 +280,9 @@ SCHEDULED: <2025-05-11 Sun>
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2025-05-11 Sun 00:59]
+- State "DONE"       from "FIXME"      [2025-05-11 Sun 18:36]
+- Note taken on [2025-05-11 Sun 18:36] \\
+  turns out STD/OS:WITH-DIRECTORY-ITERATOR was the culprit - re-arranged a null-alien check and good to go.
 :END:
 currently segfaults - should be easy to fix
 *** TODO linedit prefixes
@@ -1066,7 +1071,7 @@ it somehow for review.
 root test directory /tmp/rt with subdir for each suite, initialize
 from within suite
 
-** PROJECT io [0/1]                                                      :io:
+** PROJECT io [0/2]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1083,7 +1088,17 @@ from within suite
 :LOGBOOK:
 - State "TODO"       from              [2025-01-18 Sat 20:49]
 :END:
-
+*** TODO zlib compression
+:PROPERTIES:
+:CREATED:  <2025-05-12 Mon 23:22>
+:ID:       41241d38-f0f9-4b96-97e5-d8a11622396d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-12 Mon 23:22]
+:END:
+- uses deflate
+- refactor salza2 to use io protos
+- replace salza2 and remove dependency
 ** PROJECT math                                                        :math:
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:27>
