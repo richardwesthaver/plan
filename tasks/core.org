@@ -39,18 +39,12 @@
 
   ;   Undefined variables:
 
-  (CLI/TOOLS/TERM:*ALACRITTY-CONFIG-PATH*
-   STD/THREAD:*DEFAULT-SPECIAL-BINDINGS* SYN/CLI:*GEN-CLI*
+  (
+  ;; STD/THREAD:*DEFAULT-SPECIAL-BINDINGS* 
    JACK:*JACK-CLIENT* JACK::*JACK-DEFAULT-AUDIO-TYPE*
    JACK::*JACK-DEFAULT-MIDI-TYPE* ORGAN/GRAPH::*ORG-GRAPH-DB*
    ORGAN/CLI:*ORGAN-CLI* POD::*POD-CLI* RDB/CLI:*RDB-CLI*
-   READLINE:*RL-ALREADY-PROMPTED*
-   READLINE:*RL-ATTEMPTED-COMPLETION-FUNCTION*
-   READLINE:*RL-ATTEMPTED-COMPLETION-OVER*
-   READLINE:*RL-DEPREP-TERM-FUNCTION* READLINE:*RL-ERASE-EMPTY-LINE*
-   READLINE:*RL-GETC-FUNCTION* READLINE:*RL-HISTORY-LENGTH*
-   READLINE:*RL-NUM-CHARS-TO-READ* READLINE:*RL-PREP-TERM-FUNCTION*
-   READLINE:*RL-REDISPLAY-FUNCTION* VC/CLI:*VC-CLI*
+   VC/CLI:*VC-CLI*
    NET/SRV/HTTP::+HTTP-BAD-REQUEST+
    NET/SRV/HTTP::+HTTP-VERSION-NOT-SUPPORTED+ SKEL/CORE/INT:SKEL-CACHE
    SKEL/CORE/INT:SKEL-DATA SKEL/CORE/INT:SKEL-PATH
@@ -108,7 +102,7 @@ implement bindings to the Fortran BLAS functions
 - State "TODO"       from              [2025-05-10 Sat 22:34]
 - State "DONE"       from "TODO"       [2025-05-12 Mon 22:56]
 :END:
-*** WIP Level 2
+*** DONE Level 2
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
 :ID:       88e76978-3e0b-47c9-a4f4-1d982f58bb9c
@@ -116,14 +110,37 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2025-05-10 Sat 22:34]
 - State "WIP"        from "TODO"       [2025-05-12 Mon 22:56]
+- State "DONE"       from "WIP"        [2025-05-14 Wed 18:05]
 :END:
-*** TODO Level 3
+*** DONE Level 3
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
 :ID:       76d5e03b-8be9-4e03-9cef-5fb9507a2632
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-10 Sat 22:34]
+- State "DONE"       from "TODO"       [2025-05-18 Sun 20:30]
+:END:
+*** DONE LAPACK
+:PROPERTIES:
+:CREATED:  <2025-05-18 Sun 21:07>
+:ID:       b329e013-4906-44f3-91c9-c383d8d468df
+:Effort:   2h
+:ORDERED:  t
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-18 Sun 21:07]
+- State "WIP"        from "TODO"       [2025-05-18 Sun 21:08]
+CLOCK: [2025-05-18 Sun 21:08]--[2025-05-18 Sun 23:08] =>  2:00
+- State "DONE"       from "WIP"        [2025-05-19 Mon 11:52]
+:END:
+*** TODO BLAS Extensions
+:PROPERTIES:
+:CREATED:  <2025-05-18 Sun 21:07>
+:ID:       6f99cfe0-3c9b-4d3b-b9eb-b41bf6fb4473
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-18 Sun 21:07]
 :END:
 *** TODO Tests
 :PROPERTIES:
@@ -505,8 +522,8 @@ need to fill.
 #+end_src
 
 #+name: oe-form
-#+begin_src emacs-lisp :results output replace
-  (macroexpand-1 (org-element-parse-buffer))
+#+begin_src emacs-lisp :results replace
+  (org-element-parse-buffer)
 #+end_src
 
 #+RESULTS: oe-form
@@ -514,13 +531,12 @@ need to fill.
 #+name: oe-sxp
 #+begin_src lisp :results output :var in=oe-form()
   (let ((sxp (sxp:make-sxp)))
-    ;; SIMPLE-READER-ERROR #\) when using read
-    (sxp:wrap-from-string! sxp in)
+    (sxp:read-sxp-string sxp in)
     (describe sxp))
 #+end_src
 
 #+RESULTS: oe-sxp
-: #<DAT/SXP:SXP {1026EFA513}>
+: #<OBJ/AST:AST {1215B0A143}>
 :   [standard-object]
 : 
 : Slots with :INSTANCE allocation:
@@ -680,7 +696,7 @@ instance, possibly by closing an existing one.
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
-** PROJECT dat                                                     :lisp:dat:
+** PROJECT dat [2/4]                                               :lisp:dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION: 0.1
@@ -697,7 +713,22 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :LOGBOOK:
 - State "WIP"        from              [2024-07-19 Fri 21:51]
 :END:
-
+**** TODO RLE
+:PROPERTIES:
+:CREATED:  <2025-05-16 Fri 23:23>
+:ID:       a645c320-ea80-471a-8deb-c7e807970107
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-16 Fri 23:23]
+:END:
+**** TODO tcompact
+:PROPERTIES:
+:CREATED:  <2025-05-16 Fri 23:25>
+:ID:       f367ad82-1b61-4034-8c89-fa812d8f0b96
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-16 Fri 23:25]
+:END:
 *** TODO dat/csv column selectors                                  :lisp:dat:
 :PROPERTIES:
 :Effort:   8:00
@@ -715,26 +746,32 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - index-based-selection
 - selection-by-name
 
-*** TODO sxp 0.2                                                   :lisp:sxp:
+*** DONE sxp 0.2                                                   :lisp:sxp:
 :PROPERTIES:
 :ID:       2a4d602c-2dea-451f-b06e-165ee2a523b3
+:CREATED:  <2025-05-16 Fri 23:20>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
+- State "DONE"       from "TODO"       [2025-05-16 Fri 23:20]
 :END:
-**** TODO WRAP-OBJECT                                                  :skel:
+**** NOPE WRAP-OBJECT                                                  :skel:
 :PROPERTIES:
 :ID:       1f04611d-068b-4708-b4e9-e6211cb484eb
+:CREATED:  <2025-05-16 Fri 23:20>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
+- Note taken on [2025-05-16 Fri 23:20] \\
+  using obj/ast instead - lisp is data is code
 :END:
 - use to replace LOAD-AST for sk-project and friends
 - requires mop
 - take a look at UNWRAP-OBJECT too, may need rewrite for a better API
-***** TODO sxp standard methods
+***** NOPE sxp standard methods
 :PROPERTIES:
 :ID:       12de9774-b6d9-47d1-8dd6-8448078ea15f
+:CREATED:  <2025-05-16 Fri 23:20>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-13 Tue 22:06]
@@ -758,7 +795,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :END:
 the toml parser on quicklisp is based on esrap, make a comparable one
 using our parser module.
-** PROJECT syn                                                     :lisp:syn:
+** PROJECT syn [0/2]                                               :lisp:syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION: 0.1
@@ -767,7 +804,23 @@ using our parser module.
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** PROJECT skel [0/6]                                             :lisp:skel:
+*** TODO tempo
+:PROPERTIES:
+:CREATED:  <2025-05-16 Fri 23:19>
+:ID:       25c20927-7ba3-4821-91b9-ad05a1a4b7f7
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-16 Fri 23:19]
+:END:
+*** TODO lint
+:PROPERTIES:
+:CREATED:  <2025-05-16 Fri 23:19>
+:ID:       fbb51cc0-134d-4df5-9b58-6067ed8c2fa8
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-16 Fri 23:19]
+:END:
+** PROJECT skel [1/6]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION: 0.2
@@ -777,12 +830,14 @@ using our parser module.
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
 
-*** TODO split out skel rules
+*** DONE split out skel rules
 :PROPERTIES:
 :ID:       d353ab64-69a1-4fcf-9df5-1804c646f6a5
+:CREATED:  <2025-05-16 Fri 22:45>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
+- State "DONE"       from "TODO"       [2025-05-16 Fri 22:45]
 :END:
 - core/rule.lisp
 *** TODO implement task-pool                                         :thread:
@@ -839,8 +894,9 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :END:
 :LOGBOOK:
 - Refiled on [2025-05-02 Fri 13:53]
+- Note taken on [2025-05-16 Fri 22:46] \\
+  likely need to refactor our sk-VERB mess
 :END:
-
 *** TODO skel tasks/runner/timer
 :PROPERTIES:
 :ID:       bb53321b-fab0-4b6f-9677-3fe789ed44d3
@@ -850,7 +906,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
 - will be first feature of skel server
-*** TODO skel template objects
+*** OUTLINE skel template objects
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:45>
 :ID:       25984cac-4667-44bb-86e0-bc4e57740eeb
@@ -858,9 +914,13 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
 - Refiled on [2025-05-02 Fri 13:59]
+- State "OUTLINE"    from "TODO"       [2025-05-16 Fri 22:53]
 :END:
-
-** PROJECT obj [0/2]                                               :lisp:obj:
+- refs:
+  - emacs: (skeleton, tempo)
+  - cl-emb
+  - https://github.com/alpha123/cl-template
+** PROJECT obj [1/4]                                               :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION: 0.1
@@ -869,13 +929,16 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-*** TODO fix obj/query stack overflow on compile
+*** DONE fix obj/query stack overflow on compile
 :PROPERTIES:
 :CREATED:  <2025-04-28 Mon 14:55>
 :ID:       02fd19ee-aef4-44cd-ae87-8eedc048ae85
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-04-28 Mon 14:55]
+- State "DONE"       from "TODO"       [2025-05-20 Tue 18:33]
+- Note taken on [2025-05-20 Tue 18:35] \\
+  soft fix - commented out shit
 :END:
 #+begin_example
 Control stack exhausted (no more space for function call frames).
@@ -908,7 +971,7 @@ PROCEED WITH CAUTION.
 	SB-C::THING = #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}>
 #+end_example
 
-*** WIP complete base obj/query package [0/1]                          :q:db:
+*** WIP complete base obj/query package [0/2]                          :q:db:
 :PROPERTIES:
 :LOCATION: lib/obj/query.lisp
 :ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
@@ -932,7 +995,40 @@ PROCEED WITH CAUTION.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:55]
 :END:
-
+**** TODO decide if this should be part of lib/q instead
+SCHEDULED: <2025-05-23 Fri>
+:PROPERTIES:
+:CREATED:  <2025-05-20 Tue 18:32>
+:ID:       2d4cd4c1-7596-4816-a764-5210fd369308
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-20 Tue 18:32]
+:END:
+*** OUTLINE exfil from obj
+:PROPERTIES:
+:ID:       75b1cd6f-f9c5-4f4c-924e-88fa1c8583b2
+:CREATED:  <2025-05-20 Tue 18:37>
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2025-05-20 Tue 18:37]
+:END:
+- things lib/math will need from obj:
+  - plan
+  - store
+  - graph
+  - srv?
+  - schema?
+- hash :: may go to std
+- iter :: may go to std
+- unit :: probably going to lib/math
+*** TODO tensor
+:PROPERTIES:
+:CREATED:  <2025-05-20 Tue 18:37>
+:ID:       b515faef-e1dc-4b30-bf50-599b7394e797
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-20 Tue 18:37]
+:END:
 ** PROJECT net [0/4]                                               :lisp:net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
@@ -975,34 +1071,6 @@ PROCEED WITH CAUTION.
 - State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
 :END:
 - needs a solid task-pool impl completed first
-** PROJECT pwn [0/2]                                               :lisp:pwn:
-:PROPERTIES:
-:ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
-:VERSION: 0.1
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:04]
-- Note taken on [2024-02-29 Thu 16:11] \\
-  Should this be a separate application? Lisp exploit development framework
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-:END:
-*** TODO diz                                                            :asm:
-:PROPERTIES:
-:ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:04]
-:END:
-- disassembly toolkit
-*** TODO sassy                                                          :net:
-:PROPERTIES:
-:CREATED:  <2024-09-02 Mon 16:14>
-:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-09-02 Mon 16:14]
-:END:
-- SaaS toolkit
 ** PROJECT gui [0/2]                                               :lisp:gui:
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18
@@ -1124,12 +1192,41 @@ CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
 - [[https://github.com/takagi/cl-cuda][GitHub - takagi/cl-cuda: Cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs.]]
 - [[https://github.com/quil-lang/magicl][GitHub - quil-lang/magicl: Matrix Algebra proGrams In Common Lisp.]]
 - [[https://srfi.schemers.org/srfi-231/srfi-231.html][SRFI 231: Intervals and Generalized Arrays]]
+- [[https://lisplab.common-lisp.dev/][lisplab]]
+- [[https://github.com/bharath1097/matlisp/][matlisp]]
+- 
 - and next.. [[https://github.com/pola-rs/polars/tree/main][pola.rs]]
 - use [[id:087698d2-d959-4707-ada0-53879367a3fe][3d-math patches]] as a way to learn more about what we will need
 - we need a lot more than just matrix acceleration.
 - [[https://github.com/JuliaLang/llvm-project/blob/85122d41d6783e828412f9a1d0f7c771e2a38acc/mlir/docs/Dialects/Linalg/_index.md][llvm-project/mlir/docs/Dialects/Linalg/_index.md · JuliaLang/llvm-project]]
 - LAPACK? ye probably - be aware of symbol rewrites caused by FC
   - solved in [[id:fe955338-3377-49a0-aa7a-717d61ab231d][blas]] (wip)
+
+- [[https://yongbo-tan.gitbooks.io/learn-tensorflow/content/chapter1/what-is-the-difference-between-tensors-and-matrices.html][What is the difference between Tensors and Matrices? · Learn Tensorflow]]
+  #+begin_quote
+  A matrix is a two-dimensional grid of size n×m that contains numbers:
+  you can add and subtract matrices of the same size, multiply one
+  matrix with another as long as the sizes are
+  compatible((n×m)×(m×p)=n×p)((n×m)×(m×p)=n×p), and multiply an entire
+  matrix by a constant.
+  
+  A vector is a matrix with just one row or column (but see below),
+  vector has direction, but tensor has no direction.
+  
+  A tensor is often thought of as a generalized matrix. That is, it
+  could be
+  
+  a 1-D matrix, like a vector, which is actually such a tensor,
+  a 3-D matrix (something like a cube of numbers),
+  a 0-D matrix (a single number), or
+  a higher dimensional structure that is harder to visualize.
+  The dimension of the tensor is called its rank.
+  
+  Any rank-2 tensor can be represented as a matrix, but not every matrix
+  is really a rank-2 tensor. The numerical values of a tensor’s matrix
+  representation depend on what transformation rules have been applied
+  to the entire system.
+#+end_quote
 *** TODO refactor libs into math
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:31>
@@ -1140,8 +1237,34 @@ CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
 - State "TODO"       from              [2025-05-08 Thu 18:31]
 :END:
 - obj should NOT depend on math
+- accumulators? hmm..
+  - need to be in math but also used by queries which is in obj
+  - may need to split out obj/query to Q
 - math depends on ffi, depended on by dsp,net,apps,etc
 - should probably have the most tests of all libs
+- i think we want OBJ/TENSOR
+** PROJECT log [0/1]
+:PROPERTIES:
+:CREATED:  <2025-05-16 Fri 23:44>
+:ID:       10f18d64-0862-4764-ae66-c548ccfdd82c
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-05-16 Fri 23:44]
+:END:
+*** TODO async-db-log-file
+:PROPERTIES:
+:CREATED:  <2025-05-16 Fri 23:45>
+:ID:       b79073a2-85b4-46f8-8e24-542012fa3cac
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-05-16 Fri 23:45]
+:END:
+- db can only have single writer
+- wbwi + commit
+- better condition handling when db already opened (read rocksdb error codes? i know we have the strings..)
+- also nice to have blobdb logs
+  - individual log files living in same directory, only one write needed
+  - still doesn't necessarily prevent deadlocks, just much harder to trigger
 * PROJECT std [3/11]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
@@ -1471,7 +1594,7 @@ We were doing some things right - like our semaphore worker waking
 - State "TODO"       from              [2025-05-08 Thu 20:51]
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 :END:
-* PROJECT emacs [0/10]                                                :emacs:
+* PROJECT emacs [1/11]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION: 0.1
@@ -1712,12 +1835,14 @@ We were doing some things right - like our semaphore worker waking
   Loading /home/ellis/.emacs.d/ellis.el (source)...done
   Starting Emacs daemon.
 #+end_example
-** TODO remove makefile
+** DONE remove makefile
 :PROPERTIES:
 :ID:       93f3d805-9139-49b2-9b20-4e92e3dbda41
+:CREATED:  <2025-05-14 Wed 15:58>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:44]
+- State "DONE"       from "TODO"       [2025-05-14 Wed 15:58]
 :END:
 ** WIP graph                                                            :org:
 :PROPERTIES:
@@ -1869,6 +1994,35 @@ SCHEDULED: <2025-03-01 Sat>
 - State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
 - Refiled on [2025-05-02 Fri 14:08]
 :END:
+** PROJECT pwn [0/2]                                               :lisp:pwn:
+:PROPERTIES:
+:ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
+:VERSION: 0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+- Note taken on [2024-02-29 Thu 16:11] \\
+  Should this be a separate application? Lisp exploit development framework
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+- Refiled on [2025-05-16 Fri 23:56]
+:END:
+*** TODO diz                                                            :asm:
+:PROPERTIES:
+:ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+:END:
+- disassembly toolkit
+*** TODO sassy                                                          :net:
+:PROPERTIES:
+:CREATED:  <2024-09-02 Mon 16:14>
+:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-02 Mon 16:14]
+:END:
+- SaaS toolkit
 * PROJECT bench                                                  :test:bench:
 :PROPERTIES:
 :CREATED:  <2024-08-28 Wed 21:59>
