@@ -16,11 +16,11 @@
 | description | :description CC Org Files                          |
 | skel-id     | :id 1784914079056115652                            |
 | root        | ~/comp/org/plan/                                   |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/c15e0016e5ff][c15e0016e5ff:57+]] |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/8a91620157bc][8a91620157bc:58+]] |
 | tags        | :tags (org docs notes blog meta plan)              |
-| updated     | Tue May 13 17:59:10 2025 -0400                     |
+| updated     | Wed May 21 20:12:31 2025 -0400                     |
 | langs       | org                                                |
-| lines       | 3214 :λ 3103 :# 0 :_ 111                           |
+| lines       | 3344 :λ 3229 :# 0 :_ 115                           |
 |-------------+----------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -29,15 +29,15 @@
 #+begin_example
 2024-04     45 *
 2024-06    100 **
-2024-07    150 ****
-2024-08   2185 *************************************************************
+2024-07    150 ***
+2024-08   2185 **********************************************************
 2024-09    602 ****************
 2024-12    131 ***
 2025-01      7 
-2025-02   1404 ***************************************
+2025-02   1404 *************************************
 2025-03    245 ******
-2025-04    747 ********************
-2025-05   2005 *******************************************************
+2025-04    747 *******************
+2025-05   2293 *************************************************************
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -45,8 +45,8 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://compiler.company/plan/index.html][index]]         | 2025-05-17 15:25:52 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-05-17 00:00:30 |
+| [[https://compiler.company/plan/index.html][index]]         | 2025-05-21 20:18:51 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-05-21 21:37:36 |
 | [[https://compiler.company/plan/product.html][product]]       | 2025-02-14 19:14:44 |
 | [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-05-01 18:22:39 |
 | [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
