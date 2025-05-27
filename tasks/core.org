@@ -1154,7 +1154,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   - emacs: (skeleton, tempo)
   - cl-emb
   - https://github.com/alpha123/cl-template
-** PROJECT obj [1/3]                                               :lisp:obj:
+** PROJECT obj [2/3]                                               :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1206,13 +1206,14 @@ PROCEED WITH CAUTION.
 	SB-C::THING = #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}>
 #+end_example
 
-*** WIP exfil from obj
+*** DONE exfil from obj
 :PROPERTIES:
 :ID:       75b1cd6f-f9c5-4f4c-924e-88fa1c8583b2
 :CREATED:  <2025-05-20 Tue 18:37>
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2025-05-20 Tue 18:37]
+- State "DONE"       from "WIP"        [2025-05-26 Mon 18:52]
 :END:
 - things lib/math will need from obj:
   - plan
@@ -1243,8 +1244,10 @@ PROCEED WITH CAUTION.
   - compiles methods in place.. =(defmethod foo () (compile-and-eval `(defmethod %foo ...)) (%foo))=
   - mention in the comments of using MOP instead
 - instead of macro-based templates let's abuse compiler macros as much as we can
-- then if we need them 
-
+- [ ] investigate tensor methods
+- instead of compiler macros, let's abuse the compiler :)
+  - deftransform, array specialization stuff (sb-vm, sb-c)
+- sbcl has its own concept of higher-ordered types see define-type-class
 ** PROJECT net [0/4]                                               :lisp:net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
@@ -1446,7 +1449,7 @@ CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
   representation depend on what transformation rules have been applied
   to the entire system.
   #+end_quote
-*** TODO refactor libs into math
+*** DONE refactor libs into math
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:31>
 :ID:       d77c8507-b61c-4dc8-a1bd-45f10043b094
@@ -1454,6 +1457,7 @@ CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-08 Thu 18:31]
+- State "DONE"       from "TODO"       [2025-05-26 Mon 18:15]
 :END:
 - obj should NOT depend on math
   + math depends on obj for tensor
