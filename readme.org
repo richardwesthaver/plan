@@ -16,11 +16,11 @@
 | description | :description CC Org Files                         |
 | skel-id     | :id 1784914079056115652                           |
 | root        | ~/comp/org/plan/                                  |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/7cfd23ffe8fc][7cfd23ffe8fc:65]] |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/9bca96c71518][9bca96c71518:66]] |
 | tags        | :tags (org docs notes blog meta plan)             |
-| updated     | Sun Jun 01 22:52:18 2025 -0400                    |
+| updated     | Mon Jun 02 21:13:25 2025 -0400                    |
 | langs       | org                                               |
-| lines       | 3595 :λ 3458 :# 0 :_ 137                          |
+| lines       | 3596 :λ 3459 :# 0 :_ 137                          |
 |-------------+---------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -38,7 +38,7 @@
 2025-03    245 ****
 2025-04    747 **************
 2025-05   3065 *************************************************************
-2025-06     24 
+2025-06     51 *
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -47,7 +47,7 @@
 | file          | modified            |
 |---------------+---------------------|
 | [[https://compiler.company/plan/product.html][product]]       | 2025-02-14 19:14:44 |
-| [[https://compiler.company/plan/index.html][index]]         | 2025-06-01 01:14:39 |
+| [[https://compiler.company/plan/index.html][index]]         | 2025-06-01 22:58:56 |
 | [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-05-01 18:22:39 |
 | [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
 | [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-05-31 00:53:38 |
