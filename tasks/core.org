@@ -164,191 +164,6 @@
 - State "PROJECT"    from              [2025-05-10 Sat 22:34]
 :END:
 implement bindings to the Fortran BLAS functions
-*** DONE Level 1
-:PROPERTIES:
-:CREATED:  <2025-05-10 Sat 22:34>
-:ID:       59340eb3-4a47-4ec8-a235-291606d2eca0
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-10 Sat 22:34]
-- State "DONE"       from "TODO"       [2025-05-12 Mon 22:56]
-:END:
-*** DONE Level 2
-:PROPERTIES:
-:CREATED:  <2025-05-10 Sat 22:34>
-:ID:       88e76978-3e0b-47c9-a4f4-1d982f58bb9c
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-10 Sat 22:34]
-- State "WIP"        from "TODO"       [2025-05-12 Mon 22:56]
-- State "DONE"       from "WIP"        [2025-05-14 Wed 18:05]
-:END:
-*** DONE Level 3
-:PROPERTIES:
-:CREATED:  <2025-05-10 Sat 22:34>
-:ID:       76d5e03b-8be9-4e03-9cef-5fb9507a2632
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-10 Sat 22:34]
-- State "DONE"       from "TODO"       [2025-05-18 Sun 20:30]
-:END:
-*** DONE LAPACK (f77blas.h)
-:PROPERTIES:
-:CREATED:  <2025-05-18 Sun 21:07>
-:ID:       b329e013-4906-44f3-91c9-c383d8d468df
-:Effort:   2h
-:ORDERED:  t
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-18 Sun 21:07]
-- State "WIP"        from "TODO"       [2025-05-18 Sun 21:08]
-CLOCK: [2025-05-18 Sun 21:08]--[2025-05-18 Sun 23:08] =>  2:00
-- State "DONE"       from "WIP"        [2025-05-19 Mon 11:52]
-- Note taken on [2025-05-24 Sat 18:55] \\
-  this does NOT include the lapack.h functions
-:END:
-*** DONE LAPACK codegen
-:PROPERTIES:
-:CREATED:  <2025-05-24 Sat 18:55>
-:ID:       c61882ca-8923-4ee9-8663-760b87a19915
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-24 Sat 18:55]
-- State "DONE"       from "TODO"       [2025-05-25 Sun 22:29]
-- Note taken on [2025-05-25 Sun 22:30] \\
-  see lapack-ffi.lisp
-:END:
-lapack.h is massive and impractical to attempt lisp bindings from
-scratch.
-
-instead, our current approach is based on tree-sitter:
-
-#+begin_src lisp
-  (tree-sitter:load-tree-sitter)
-  (tree-sitter:load-tree-sitter-alien)
-  (tree-sitter:load-tree-sitter-c)
-#+end_src
-
-#+RESULTS:
-: #P"/usr/local/lib/libtree-sitter-c.so"
-
-#+begin_src lisp
-  (syn/ts::ts-file-query :c #p"/usr/include/openblas/lapack.h" "(declaration)")
-#+end_src
-
-#+RESULTS:
-: #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X71384C005800 :TYPE (*
-:                                                             (SB-ALIEN:STRUCT
-:                                                              TREE-SITTER:TS-QUERY-CURSOR))>
-
-this segfaults:
-
-#+begin_src lisp :eval never
-  (in-package :syn/ts)
-  (sb-alien:with-alien ((m (* tree-sitter::ts-query-match) (sb-alien:make-alien tree-sitter::ts-query-match)))
-    (sb-sys::with-pinned-objects (m)
-      (tree-sitter::ts-query-cursor-next-match
-       (syn/ts::ts-file-query :c #p"/usr/include/openblas/lapack.h" "(declaration)") m)))
-
-#+end_src
-
-#+begin_src lisp
-  (let ((tree (flatten (syn/ts::parse-file :c #p"/usr/include/openblas/lapack.h")))
-        (dx 0)
-        (ret))
-    (loop with dx = 0
-  	for di = (print (position :declaration tree :start dx))
-  	if (null di) 
-  	do (return ret)
-  	else
-  	do (progn
-  	     (setf dx (incf di))
-  	     (let ((ei (print (position :declaration tree :start dx))))
-  	       (push (subseq tree di ei) ret)))))
-#+end_src
-
-#+begin_src lisp :output none
-  (setq 
-   ,*lapack*
-   (let* ((str (read-file #p"/usr/include/openblas/lapack.h"))
-  	(tree (flatten (syn/ts::parse-string :c str :consume t :produce-cst nil)))
-  	(dx 0)
-  	(ret))
-     (setq *lapack.h* str)
-     (loop with dx = 0
-  	 for di = (position :declaration tree :start dx)
-  	 if (null di) 
-  	 do (return ret)
-  	 else
-  	 do (progn
-  	      (setf dx di)
-  	      (incf dx)
-  	      (let ((ei (position :declaration tree :start dx)))
-  		(push (subseq tree di ei) ret))))))
-  (list (length *lapack*) (length *lapack.h*))
-#+end_src
-
-#+RESULTS:
-| 1332 | 747544 |
-
-#+begin_src lisp
-  (labels ((lastr (x start end)
-             (apply 'subseq *lapack.h* (subseq x start end)))
-           (lasym (str) (symbolicate (string-upcase (substitute #\- #\_ str))))
-           (lasym* (str)
-             (let ((len (length str)))
-               (list '* (lasym (subseq str 0 
-                                       (if (char= (char str (1- len)) #\*)
-                                           (1- len)
-                                           len))))))
-  	 (lasyms (x start end)
-  	   (symbolicate (string-upcase (substitute #\- #\_ (lastr x start end)))))
-  	 (laparm (str)
-  	   (let ((a (nreverse (split-sequence #\space str))))
-  	     (list (if (string-equal (first a) "T")
-                         (gensym "T")
-                         (lasym (first a)))
-  		   (if (third a)
-                         ;; type param (could be X const* or const X*)
-                         (if (string-equal (third a) "const")
-                             (lasym* (second a))
-                             (lasym* (third a)))
-                         (when (second a)
-  			 (lasym* (second a)))))))
-           (gen-lapack-args (p x)
-             (let* ((pa (position :parameter-list x)) ;; param start
-  	          (pb (position :preproc-ifdef x)) ;; param end
-  	          (params (subseq x pa pb)))
-  	     (loop with p1 = 0
-  	           for pos = (position :parameter-declaration params :start p1)
-  	           while pos
-  	           do (setf p1 (1+ pos))
-  	           collect (laparm (lastr params (+ pos 1) (+ pos 3)))))))
-    (setq *code*
-  	(mapcar
-  	 (lambda (x)
-  	   (let ((p (position :function-declarator x)))
-  	     (list* 'deflapack
-  		    ;; routine name
-  		    (lasyms x (+ p 5) (+ p 7))
-  		    ;; return-type
-  		    (lasyms x (- p 3) (- p 1))
-  		    ;; list of function parameters (NAME TYPE)
-  		    (remove-if (lambda (x) (eql (car x) 'fortran-strlen)) (gen-lapack-args p x)))))
-  	 ,*lapack*)))
-  (length *code*)
-#+end_src
-
-#+RESULTS:
-: 1332
-
-#+begin_src lisp :results none :var file="~/comp/core/ffi/blas/lapack-ffi.lisp"
-  (with-output-to-file (f file) 
-    (write-line ";;; lapack-ffi.lisp --- LAPACK Alien Routines -*- buffer-read-only:t -*-" f)
-    (write-line "(in-package :lapack)" f)
-    (mapc (lambda (x) (write x :stream f :case :downcase) (terpri f)) *code*))
-#+end_src
-
 *** TODO BLAS Extensions
 :PROPERTIES:
 :CREATED:  <2025-05-18 Sun 21:07>
@@ -449,7 +264,7 @@ this segfaults:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT cli [1/5]
+** PROJECT cli [0/4]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -506,19 +321,6 @@ this segfaults:
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
-*** DONE linedit path completion
-SCHEDULED: <2025-05-11 Sun>
-:PROPERTIES:
-:CREATED:  <2025-05-11 Sun 00:59>
-:ID:       02a3763c-fc2a-4fea-936b-afd7350cc123
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-05-11 Sun 00:59]
-- State "DONE"       from "FIXME"      [2025-05-11 Sun 18:36]
-- Note taken on [2025-05-11 Sun 18:36] \\
-  turns out STD/OS:WITH-DIRECTORY-ITERATOR was the culprit - re-arranged a null-alien check and good to go.
-:END:
-currently segfaults - should be easy to fix
 *** TODO linedit prefixes
 :PROPERTIES:
 :CREATED:  <2025-04-26 Sat 23:20>
@@ -956,7 +758,7 @@ see graph node [[id:c90cebbe-e91a-4438-a21d-eefb707a6194][github.com]]
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
-** PROJECT dat [2/4]                                               :lisp:dat:
+** PROJECT dat [1/3]                                               :lisp:dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION:  0.1
@@ -1006,56 +808,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - index-based-selection
 - selection-by-name
 
-*** DONE sxp 0.2                                                   :lisp:sxp:
-:PROPERTIES:
-:ID:       2a4d602c-2dea-451f-b06e-165ee2a523b3
-:CREATED:  <2025-05-16 Fri 23:20>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-12 Tue 19:49]
-- State "DONE"       from "TODO"       [2025-05-16 Fri 23:20]
-:END:
-**** NOPE WRAP-OBJECT                                                  :skel:
-:PROPERTIES:
-:ID:       1f04611d-068b-4708-b4e9-e6211cb484eb
-:CREATED:  <2025-05-16 Fri 23:20>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-12 Tue 19:49]
-- Note taken on [2025-05-16 Fri 23:20] \\
-  using obj/ast instead - lisp is data is code
-:END:
-- use to replace LOAD-AST for sk-project and friends
-- requires mop
-- take a look at UNWRAP-OBJECT too, may need rewrite for a better API
-***** NOPE sxp standard methods
-:PROPERTIES:
-:ID:       12de9774-b6d9-47d1-8dd6-8448078ea15f
-:CREATED:  <2025-05-16 Fri 23:20>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-13 Tue 22:06]
-:END:
-- hash-table
-- classoid
-- vector
-- boolean
-- obj/
-  - color
-  - uri
-*** DONE toml impl
-:PROPERTIES:
-:ID:       6ba3e53d-8cfa-46fe-852a-ea462d475883
-:CREATED:  <2025-04-30 Wed 18:30>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-24 Sun 19:28]
-- State "DONE"       from "TODO"       [2025-04-30 Wed 18:30]
-- Refiled on [2025-04-30 Wed 18:32]
-:END:
-the toml parser on quicklisp is based on esrap, make a comparable one
-using our parser module.
-** PROJECT syn [0/2]                                               :lisp:syn:
+** PROJECT syn [0/3]                                               :lisp:syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION:  0.1
@@ -1064,6 +817,30 @@ using our parser module.
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+
+*** WIP gen
+:PROPERTIES:
+:ID:       8f44301f-c35a-4a97-88c2-6ea2295513b1
+:CREATED:  <2025-06-03 Tue 21:44>
+:Effort:   100h
+:END:
+:LOGBOOK:
+CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
+:END:
+
+**** TODO C function declaration arguments
+:PROPERTIES:
+:ID:       d91584a1-0e99-461b-9045-b521e9d2fe92
+:CREATED:  <2025-06-03 Tue 21:45>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-03 Tue 21:46]
+:END:
+- this should give us enough to remove the remaining C code from the
+  core source tree
+- replace zstd/alien.c and tree-sitter/alien.c with C gen-syntax.
+- next we will target full header files
+  - REW_MODE
 *** TODO tempo
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:19>
@@ -1080,7 +857,7 @@ using our parser module.
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
-** PROJECT skel [1/6]                                             :lisp:skel:
+** PROJECT skel [0/5]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -1090,16 +867,6 @@ using our parser module.
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
 
-*** DONE split out skel rules
-:PROPERTIES:
-:ID:       d353ab64-69a1-4fcf-9df5-1804c646f6a5
-:CREATED:  <2025-05-16 Fri 22:45>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-11 Sun 00:10]
-- State "DONE"       from "TODO"       [2025-05-16 Fri 22:45]
-:END:
-- core/rule.lisp
 *** TODO implement task-pool                                         :thread:
 :PROPERTIES:
 :ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
@@ -1180,7 +947,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   - emacs: (skeleton, tempo)
   - cl-emb
   - https://github.com/alpha123/cl-template
-** PROJECT obj [2/3]                                               :lisp:obj:
+** PROJECT obj [0/1]                                               :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1190,64 +957,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-*** DONE fix obj/query stack overflow on compile
-:PROPERTIES:
-:CREATED:  <2025-04-28 Mon 14:55>
-:ID:       02fd19ee-aef4-44cd-ae87-8eedc048ae85
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-28 Mon 14:55]
-- State "DONE"       from "TODO"       [2025-05-20 Tue 18:33]
-- Note taken on [2025-05-20 Tue 18:35] \\
-  soft fix - commented out shit
-:END:
-#+begin_example
-Control stack exhausted (no more space for function call frames).
-This is probably due to heavily nested or infinitely recursive function
-calls, or a tail call that SBCL cannot or has not optimized away.
-
-PROCEED WITH CAUTION.
-   [Condition of type SB-KERNEL::CONTROL-STACK-EXHAUSTED]
-
- 849: ((:METHOD SB-PCL::COMPUTE-EFFECTIVE-SLOT-DEFINITION-INITARGS (SB-PCL::SLOT-CLASS T)) #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN> (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SL..
-      Locals:
-	SB-PCL::ALLOCATION = :INSTANCE
-	SB-PCL::ALLOCATION-CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
-	SB-PCL::ALLOCP = T
-	CLASS = #<STANDARD-CLASS OBJ/QUERY:LOGICAL-QUERY-PLAN>
-	SB-PCL::DIRECT-SLOTDS = (#<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST> #<STANDARD-DIRECT-SLOT-DEFINITION OBJ/AST:AST>)
-	DOCUMENTATION = NIL
-	SB-PCL::DOCUMENTATIONP = NIL
-	SB-PCL::INITARGS = (:AST)
-	SB-PCL::INITFORM = NIL
-	SB-PCL::INITFUNCTION = NIL
-	SB-PCL::INITP = NIL
-	SB-PCL::NAME = OBJ/AST:AST
-	SB-PCL::NAMEP = T
-
- 855: (SB-THREAD::CALL-WITH-RECURSIVE-LOCK #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}> #<MUTEX "PCL global mutex" taken owner=main thread>)
-      Locals:
-	GOT-IT = NIL
-	MUTEX = #<MUTEX "PCL global mutex" taken owner=main thread>
-	SB-C::THING = #<FUNCTION (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN SB-PCL::UPDATE-CLASS) {739064260D1B}>
-#+end_example
-
-*** DONE exfil from obj
-:PROPERTIES:
-:ID:       75b1cd6f-f9c5-4f4c-924e-88fa1c8583b2
-:CREATED:  <2025-05-20 Tue 18:37>
-:END:
-:LOGBOOK:
-- State "OUTLINE"    from              [2025-05-20 Tue 18:37]
-- State "DONE"       from "WIP"        [2025-05-26 Mon 18:52]
-:END:
-- things lib/math will need from obj:
-  - plan
-  - store
-  - graph
-  - srv?
-  - schema?
-- hash :: may go to std
 *** WIP tensor
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
@@ -1423,78 +1132,6 @@ from within suite
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
 :END:
-*** DONE Ecosystem
-:PROPERTIES:
-:CREATED:  <2025-05-08 Thu 18:27>
-:ID:       c95d1f51-ef69-4489-af4c-b555ccaaed36
-:Effort:   4h
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2025-05-08 Thu 18:27]
-- State "WIP"        from "RESEARCH"   [2025-05-08 Thu 20:53]
-CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
-- State "DONE"       from "WIP"        [2025-05-21 Wed 21:17]
-:END:
-- [[https://github.com/Lisp-Stat][Common Lisp Statistics · GitHub]]
-- [[https://github.com/Lisp-Stat/lisp-stat][GitHub - Lisp-Stat/lisp-stat: Lisp-Stat main system]]
-- [[https://github.com/takagi/cl-cuda][GitHub - takagi/cl-cuda: Cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs.]]
-- [[https://github.com/quil-lang/magicl][GitHub - quil-lang/magicl: Matrix Algebra proGrams In Common Lisp.]]
-- [[https://srfi.schemers.org/srfi-231/srfi-231.html][SRFI 231: Intervals and Generalized Arrays]]
-- [[https://lisplab.common-lisp.dev/][lisplab]]
-- [[https://github.com/bharath1097/matlisp/][matlisp]]
-- 
-- and next.. [[https://github.com/pola-rs/polars/tree/main][pola.rs]]
-- use [[id:087698d2-d959-4707-ada0-53879367a3fe][3d-math patches]] as a way to learn more about what we will need
-- we need a lot more than just matrix acceleration.
-- [[https://github.com/JuliaLang/llvm-project/blob/85122d41d6783e828412f9a1d0f7c771e2a38acc/mlir/docs/Dialects/Linalg/_index.md][llvm-project/mlir/docs/Dialects/Linalg/_index.md · JuliaLang/llvm-project]]
-- LAPACK? ye probably - be aware of symbol rewrites caused by FC
-  - solved in [[id:fe955338-3377-49a0-aa7a-717d61ab231d][blas]] (wip)
-
-- [[https://yongbo-tan.gitbooks.io/learn-tensorflow/content/chapter1/what-is-the-difference-between-tensors-and-matrices.html][What is the difference between Tensors and Matrices? · Learn Tensorflow]]
-  #+begin_quote
-  A matrix is a two-dimensional grid of size n×m that contains numbers:
-  you can add and subtract matrices of the same size, multiply one
-  matrix with another as long as the sizes are
-  compatible((n×m)×(m×p)=n×p)((n×m)×(m×p)=n×p), and multiply an entire
-  matrix by a constant.
-  
-  A vector is a matrix with just one row or column (but see below),
-  vector has direction, but tensor has no direction.
-  
-  A tensor is often thought of as a generalized matrix. That is, it
-  could be
-  
-  a 1-D matrix, like a vector, which is actually such a tensor,
-  a 3-D matrix (something like a cube of numbers),
-  a 0-D matrix (a single number), or
-  a higher dimensional structure that is harder to visualize.
-  The dimension of the tensor is called its rank.
-  
-  Any rank-2 tensor can be represented as a matrix, but not every matrix
-  is really a rank-2 tensor. The numerical values of a tensor’s matrix
-  representation depend on what transformation rules have been applied
-  to the entire system.
-  #+end_quote
-*** DONE refactor libs into math
-:PROPERTIES:
-:CREATED:  <2025-05-08 Thu 18:31>
-:ID:       d77c8507-b61c-4dc8-a1bd-45f10043b094
-:Effort:   4:00
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-08 Thu 18:31]
-- State "DONE"       from "TODO"       [2025-05-26 Mon 18:15]
-:END:
-- obj should NOT depend on math
-  + math depends on obj for tensor
-- accumulators? hmm..
-  - need to be in math but also used by queries which is in obj
-  - may need to split out obj/query to Q
-    + done
-  + moved to std/seq
-- math depends on ffi, depended on by dsp,net,apps,etc
-- should probably have the most tests of all libs
-- we want OBJ/TENSOR - see [[id:b515faef-e1dc-4b30-bf50-599b7394e797][tensor]] 
 ** PROJECT log [0/1]
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:44>
@@ -1518,7 +1155,7 @@ CLOCK: [2025-05-08 Thu 20:55]--[2025-05-08 Thu 22:55] =>  2:00
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [3/12]                                               :lisp:std:
+* PROJECT std [0/9]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1711,26 +1348,6 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 - [ ] thread.lisp             
 - [ ] type.lisp               
 
-*** DONE symbol cleanup
-:PROPERTIES:
-:CREATED:  <2025-04-26 Sat 22:33>
-:ID:       91c34865-9f18-47a8-b63c-4401307f8368
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-26 Sat 22:33]
-- State "DONE"       from "TODO"       [2025-04-26 Sat 22:46]
-:END:
-delete unbound non-anaphoric symbols
-#+begin_src lisp
-  (let ((ret))
-    (do-external-symbols (s :std ret)
-      (when (not (or (boundp s) (fboundp s) (cadr (multiple-value-list (typexpand s))) (find-class s nil)))
-        (push s ret))))
-#+end_src
-
-#+RESULTS:
-| TIME-REMAINING | PID-T | TIMESPEC | IT | LOFF-T | *STAGES* | %P | *TASK* | GID-T | .I | %THREAD | %A | MAYBE-INLINE | *JOBS* | *TASKS* | TIMEVAL | WINSIZE | UID-T |
-
 ** TODO more (useful) bit tricks
 :PROPERTIES:
 :ID:       36d3040f-c899-4941-affb-30e1641d1b01
@@ -1755,6 +1372,12 @@ delete unbound non-anaphoric symbols
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
+*** Modules
+:PROPERTIES:
+:ID:       bf2c2465-c6ef-4e6a-ac26-87ed26f2b07e
+:CREATED:  <2025-06-03 Tue 20:19>
+:END:
+- [[https://www.lispworks.com/documentation/HyperSpec/Body/f_provid.htm][CLHS: Function PROVIDE, REQUIRE]]
 ** TODO test sweep                                                     :test:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
@@ -1772,18 +1395,6 @@ delete unbound non-anaphoric symbols
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
 :END:
-*** DONE review previous state of std/tasks
-:PROPERTIES:
-:CREATED:  <2025-04-28 Mon 17:56>
-:ID:       bf5bb8f3-7add-4099-a193-06ecb9860008
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-28 Mon 17:56]
-- State "DONE"       from "TODO"       [2025-05-06 Tue 21:57]
-:END:
-We were doing some things right - like our semaphore worker waking
-- already added this to BROADCAST-WORK (comment suggestion by lmj)
-- mailbox stuff not as useful (speed is a concern over more primitive cas queues and spinlocks)
 *** TODO specify kernel function prototypes
 :PROPERTIES:
 :CREATED:  <2025-05-06 Tue 21:57>
@@ -1841,40 +1452,6 @@ We were doing some things right - like our semaphore worker waking
 - State "FIXME"      from              [2025-05-29 Thu 22:38]
 :END:
 copy-check-and-promote <- copy-slot-and-check
-** DONE explain                                                         :doc:
-:PROPERTIES:
-:ID:       155f1e0c-c5ec-4175-934c-14be4adb3559
-:LOCATION: meta.lisp
-:CREATED:  <2025-04-27 Sun 19:33>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-03 Sat 01:01]
-- State "WIP"        from "TODO"       [2025-04-27 Sun 19:33]
-- State "DONE"       from "WIP"        [2025-04-27 Sun 19:37]
-:END:
-- generic done
-- maybe simple version in std/fmt
-** DONE explore                                                         :doc:
-:PROPERTIES:
-:ID:       08017f7e-de0a-442a-9cb6-5559c9159b29
-:CREATED:  <2025-04-27 Sun 19:33>
-:END:
-:LOGBOOK:
-- State "TODO"       from "TODO"       [2024-08-12 Mon 22:26]
-- State "WIP"        from "TODO"       [2025-04-27 Sun 19:33]
-- State "DONE"       from "WIP"        [2025-04-27 Sun 19:37]
-:END:
-- generic done
-** DONE define-alien-struct
-:PROPERTIES:
-:ID:       6e3da9a1-e93e-4643-bfa8-5f47c446f26f
-:CREATED:  <2025-01-17 Fri 15:54>
-:END:
-:LOGBOOK:
-- State "DONE"       from "TODO"       [2025-05-02 Fri 13:54]
-- Refiled on [2025-05-02 Fri 13:54]
-:END:
-- convenience for defining alien structs, especially with the same name as lisp type
 ** TBD incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
 :ID:       04fdde4f-427c-47b5-8394-5b5365ede249
@@ -1885,7 +1462,7 @@ copy-check-and-promote <- copy-slot-and-check
 - State "TODO"       from              [2025-05-08 Thu 20:51]
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 :END:
-* PROJECT emacs [1/11]                                                :emacs:
+* PROJECT emacs [0/11]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -2126,15 +1703,6 @@ copy-check-and-promote <- copy-slot-and-check
   Loading /home/ellis/.emacs.d/ellis.el (source)...done
   Starting Emacs daemon.
 #+end_example
-** DONE remove makefile
-:PROPERTIES:
-:ID:       93f3d805-9139-49b2-9b20-4e92e3dbda41
-:CREATED:  <2025-05-14 Wed 15:58>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-16 Fri 22:44]
-- State "DONE"       from "TODO"       [2025-05-14 Wed 15:58]
-:END:
 ** WIP graph                                                            :org:
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
@@ -2155,6 +1723,16 @@ copy-check-and-promote <- copy-slot-and-check
 - emacs caching
 - KV model
 
+*** TODO default values for link commands
+:PROPERTIES:
+:ID:       9c3970e8-dccd-4d28-8960-6dba639ab4a9
+:CREATED:  <2025-06-03 Tue 22:07>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-03 Tue 22:07]
+- Refiled on [2025-06-03 Tue 22:10]
+:END:
+- ie ~C-c g w~ pre-populate with name of node, maybe thing-at-point with ~C-u~
 ** TODO org-timeline upgrades [0/3]                                     :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>

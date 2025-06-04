@@ -56,130 +56,6 @@ quite easily.
 - State "RESEARCH"   from "TODO"       [2024-09-03 Tue 17:46]
 :END:
 [[https://docs.podman.io/en/latest/markdown/podman-farm.1.html][podman-farm — Podman documentation]]
-* DONE [[https://pmem.io/][PMem.io]]
-:PROPERTIES:
-:CREATED:  <2024-09-03 Tue 11:22>
-:ID:       de7772c4-8f61-4ded-b89a-064db4bffcf5
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from "TODO"       [2024-09-03 Tue 11:22]
-- State "DONE"       from "RESEARCH"   [2025-01-17 Fri 18:19]
-:END:
-- consider use cases in Lisp images - pre-loading and coordinating
-  shared fasls and core images
-- no longer maintained by intel
-* RESEARCH [[https://gist.github.com/MaxXor/ba1665f47d56c24018a943bb114640d7][encrypted btrfs luks/dm-crypt]]
-:PROPERTIES:
-:CREATED:  <2024-09-29 Sun 01:57>
-:ID:       75c3ec1b-355b-4d99-910b-ae328f2b9051
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from "TODO"       [2024-09-29 Sun 01:57]
-:END:
-
-* DONE XDP
-:PROPERTIES:
-:CREATED:  <2024-09-20 Fri 22:34>
-:ID:       b3e0b57a-a54a-445c-a06f-37ba289a68f6
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-09-20 Fri 22:34]
-- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:39]
-:END:
-[[https://www.datadoghq.com/blog/xdp-intro/][A Gentle Introduction to XDP | Datadog]]
-[[https://github.com/xdp-project/xdp-tools/][GitHub - xdp-project/xdp-tools: Utilities and example programs for use with XDP]]
-
-- [[https://github.com/xdp-project/xdp-paper/blob/main/xdp-the-express-data-path.pdf][xdp-paper/xdp-the-express-data-path.pdf at main · xdp-project/xdp-paper · GitHub]]
-- [[https://docs.cilium.io/en/latest/reference-guides/bpf/index.html][BPF and XDP Reference Guide — Cilium 1.18.0-dev documentation]]
-
-- will require linking to libbpf and libxdp, needs elf loader (or use xdp-tools/iproute2)
-- blocked by bpf impl in lisp
-* DONE DPDK
-:PROPERTIES:
-:CREATED:  <2024-09-20 Fri 22:35>
-:ID:       74665710-7b60-4001-ae9e-d47de4c53a69
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-09-20 Fri 22:35]
-- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:41]
-:END:
-[[https://www.dpdk.org/][Home - DPDK]]
-[[https://github.com/DPDK/dpdk/tree/main][GitHub - DPDK/dpdk: Data Plane Development Kit]]
-#+begin_quote
-By leveraging DPDK libraries, developers can create optimized packet
-processing paths, manage timers for executing functions
-asynchronously, and utilize a wide range of drivers and libraries
-tailored for fast packet processing.
-
-librte_eal – Environment Abstraction Layer: Provides the foundational
-API for DPDK, facilitating access to hardware resources such as
-memory, timers, and logs.
-
-librte_mempool – Memory Pool Manager: Manages memory pools for
-efficient and speedy packet handling.
-
-librte_ring – Ring Buffer Manager: Implements lock-free FIFO queues,
-enabling high-speed communication between various DPDK components.
-
-librte_mbuf – Packet Buffer Management: Handles packet buffers, which
-are crucial for packet transmission and reception.
-
-librte_ethdev – Ethernet Device API: Offers an API for configuring and
-querying Ethernet devices. It supports various operations, including
-sending and receiving packets.
-
-librte_net – Network Helper Library: Provides helper APIs for dealing
-with network protocols.
-
-librte_ip_frag – IP Fragmentation and Reassembly: Handles
-fragmentation and reassembly of IP packets, supporting both IPv4 and
-IPv6.
-
-librte_kni – Kernel Network Interface: Facilitates communication
-between DPDK applications and the Linux kernel networking stack,
-primarily used for debugging or interfacing with existing Linux
-network services.
-#+end_quote
-* DONE eBPF                                                             :net:
-:PROPERTIES:
-:ID:       6cfbb313-4673-4fca-afcf-3fe00c12a3de
-:CREATED:  <2025-04-26 Sat 20:47>
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-21 Wed 22:40]
-- State "DONE"       from "RESEARCH"   [2025-04-26 Sat 20:47]
-:END:
-https://docs.kernel.org/bpf/standardization/instruction-set.html#bpf-instruction-set-architecture-isa
-https://mostlynerdless.de/blog/2023/12/31/hello-ebpf-developing-ebpf-apps-in-java-1/
-https://github.com/iovisor/bcc
-[[https://github.com/mikeroyal/eBPF-Guide][GitHub - mikeroyal/eBPF-Guide]]
-[[https://github.com/bpftrace/bpftrace/blob/master/tools/README.md][bpftrace/tools/README.md at master · bpftrace/bpftrace · GitHub]]
-- bpftrace seems quite powerful, will be useful for sysmon activities
-
-where would ebpf support go?
-
-probably io.. but maybe also log, net.. syn?
-
-* DONE batman-adv                                                       :net:
-:PROPERTIES:
-:CREATED:  <2024-08-23 Fri 21:16>
-:ID:       53992507-a3af-43ff-b04b-aa05ccabe2fa
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2024-08-23 Fri 21:16]
-- State "DONE"       from "RESEARCH"   [2025-03-12 Wed 17:15]
-:END:
-[[https://www.open-mesh.org/projects/batman-adv/wiki][Doc-overview - batman-adv - Open Mesh]]
-
-* NOPE [[https://libyear.com/][libyear]]                                                    :lisp:skel:
-:PROPERTIES:
-:ID:       4420950f-cea0-4a17-8b1a-19f46b78a921
-:CREATED:  <2025-05-10 Sat 22:33>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-01 Thu 12:27]
-:END:
-Not that useful in our current environment (NIH)
 * WIP Curves
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:00>
@@ -193,6 +69,9 @@ Realistically we may need a dedicated lib/math..
 obj doesn't cover all the bases.
 
 SBCL provides the numeric tower via types, we really need a math tower..
+
+- see [[id:1b08ca47-cace-4ce5-a0f2-cd74dcf8c547][math]] and [[id:b515faef-e1dc-4b30-bf50-599b7394e797][tensor]]
+
 ** WIP SFC
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:01>
@@ -213,3 +92,6 @@ Space-Filling Curves
 :END:
 - Hilbert R-Trees, X-Tree..
   - X+ Trees? need to see the most recent research and why it hasn't become popular
+
+- persistance?
+  - maybe 'generation' is a dimension, Ln is on disk files
