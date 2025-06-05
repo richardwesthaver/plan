@@ -10,18 +10,18 @@
 #+CALL: project-details() :dir ~/comp/org/plan/
 
 #+RESULTS:
-|-------------+---------------------------------------------------|
-| name        | plan                                              |
-| version     | :version 0.1.0                                    |
-| description | :description CC Org Files                         |
-| skel-id     | :id 1784914079056115652                           |
-| root        | ~/comp/org/plan/                                  |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/92ecb95f5a9a][92ecb95f5a9a:67]] |
-| tags        | :tags (org docs notes blog meta plan)             |
-| updated     | Mon Jun 02 22:24:23 2025 -0400                    |
-| langs       | org                                               |
-| lines       | 3605 :λ 3468 :# 0 :_ 137                          |
-|-------------+---------------------------------------------------|
+|-------------+-----------------------------------------------------------|
+| name        | plan                                                      |
+| version     | :version 0.1.0                                            |
+| description | :description CC Org Files                                 |
+| skel-id     | :id 1784914079056115652                                   |
+| root        | ~/comp/org/plan/                                          |
+| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/e95e35f74a0c][e95e35f74a0c:68]]         |
+| tags        | :tags (org docs notes blog meta plan archive notes graph) |
+| updated     | Tue Jun 03 22:21:48 2025 -0400                            |
+| langs       | org                                                       |
+| lines       | 2993 :λ 2896 :# 0 :_ 97                                   |
+|-------------+-----------------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
 
@@ -38,7 +38,7 @@
 2025-03    245 ****
 2025-04    747 **************
 2025-05   3065 *************************************************************
-2025-06     72 *
+2025-06    802 ***************
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -47,12 +47,12 @@
 | file          | modified            |
 |---------------+---------------------|
 | [[https://compiler.company/plan/product.html][product]]       | 2025-02-14 19:14:44 |
-| [[https://compiler.company/plan/index.html][index]]         | 2025-06-02 21:19:47 |
+| [[https://compiler.company/plan/index.html][index]]         | 2025-06-02 22:30:56 |
 | [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-05-01 18:22:39 |
 | [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-06-02 22:23:30 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-06-03 22:19:08 |
 | [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2025-03-08 01:05:42 |
-| [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2025-05-04 20:36:24 |
-| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2025-05-10 22:33:35 |
+| [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2025-06-03 19:50:16 |
+| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2025-06-03 19:49:15 |
 
 #+END:
