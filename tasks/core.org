@@ -1039,6 +1039,22 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - State "TODO"       from              [2025-05-20 Tue 18:37]
 - State "WIP"        from "TODO"       [2025-05-21 Wed 21:15]
 :END:
+**** TBD arrow interface
+:PROPERTIES:
+:ID:       b15aa26d-da7f-420b-8291-fdf23d4223bd
+:CREATED:  <2025-06-06 Fri 22:39>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-06 Fri 22:39]
+- State "TBD"        from "TODO"       [2025-06-06 Fri 22:39]
+:END:
+- implement the same surface area as the pycapsule
+  - [[https://arrow.apache.org/docs/format/CDataInterface/PyCapsuleInterface.html][The Arrow PyCapsule Interface — Apache Arrow v20.0.0]]
+    - [[https://arrow.apache.org/docs/format/CDataInterface.html#c-data-interface][The Arrow C data interface — Apache Arrow v20.0.0]]
+    - [[https://arrow.apache.org/docs/format/CStreamInterface.html#c-stream-interface][The Arrow C stream interface — Apache Arrow v20.0.0]]
+    - [[https://arrow.apache.org/docs/format/CDeviceDataInterface.html#c-device-data-interface][The Arrow C Device data interface — Apache Arrow v20.0.0]]
+- [[https://github.com/dmlc/dlpack][GitHub - dmlc/dlpack: common in-memory tensor structure]]
+
 **** TODO dispatch strategy for tensor methods
 :PROPERTIES:
 :ID:       0521332c-11d2-4ffc-8ada-99690b8b2655
