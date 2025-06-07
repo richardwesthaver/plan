@@ -155,6 +155,32 @@
 :END:
 - may need to do a C wrapper, do some research first to make sure we
   didn't miss something in impl.
+** PROJECT ssh2
+:PROPERTIES:
+:ID:       07b3ad22-97e1-40b4-9dc0-e8ea97ba4fa6
+:CREATED:  <2025-06-06 Fri 13:28>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-06-06 Fri 13:29]
+:END:
+- mvp and testing
+** PROJECT rustls
+:PROPERTIES:
+:ID:       7d0469e9-b40a-48bb-aa43-807ef9a19fff
+:CREATED:  <2025-06-06 Fri 13:28>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-06-06 Fri 13:29]
+:END:
+- testing and utils
+*** RESEARCH cl+ssl low-level API
+:PROPERTIES:
+:ID:       be17b0b4-c840-4cc9-a8f2-9cf4fc482d17
+:CREATED:  <2025-06-06 Fri 13:29>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2025-06-06 Fri 13:29]
+:END:
 ** PROJECT blas
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
@@ -857,7 +883,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
-** PROJECT skel [0/5]                                             :lisp:skel:
+** PROJECT skel [0/6]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -874,6 +900,16 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
+*** TODO ensure-rule-source
+:PROPERTIES:
+:ID:       2cc2520e-870c-4dbe-be64-2e177d44d929
+:CREATED:  <2025-06-06 Fri 17:53>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-06 Fri 17:53]
+:END:
+- check the hash of sources against a cache, skip if found
+- need a way of managing cache invalidation - timeouts and manual purges
 *** WAIT implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
@@ -947,6 +983,42 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   - emacs: (skeleton, tempo)
   - cl-emb
   - https://github.com/alpha123/cl-template
+- see also [[id:25c20927-7ba3-4821-91b9-ad05a1a4b7f7][tempo]]
+** PROJECT cry
+:PROPERTIES:
+:ID:       2d5bcf6e-6652-4e33-b923-d2311896eee8
+:CREATED:  <2025-06-06 Fri 13:30>
+:LOCATION+: cry/
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-06-06 Fri 13:30]
+:END:
+*** WIP ssl
+:PROPERTIES:
+:ID:       53e803e1-40fc-4da5-925e-7909154a590b
+:CREATED:  <2025-06-06 Fri 15:06>
+:ORDERED:  t
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2025-06-06 Fri 15:06]
+:END:
+**** WIP cl+ssl -> rustls
+:PROPERTIES:
+:ID:       1841fd20-35b0-444f-a610-67dc4291ee18
+:CREATED:  <2025-06-06 Fri 13:30>
+:Effort:   40h
+:LOCATION+: ssl/
+:END:
+:LOGBOOK:
+CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
+:END:
+- [[https://github.com/cl-plus-ssl/cl-plus-ssl][cl+ssl src]]
+- ffi-buffer -> static-vector
+- openssl has differences in symbol-names between versions - cl+ssl
+  makes efforts to accomodate this
+- rustls doesn't suffer from this - if we ever end up implementing
+  openssl too we won't bother with portability here either. Use Linux
+  or gtfo.
 ** PROJECT obj [0/1]                                               :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
@@ -1181,136 +1253,17 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 - document functions and variables..
 #+begin_src lisp
   (let ((ret))
-    (do-external-symbols (s :std ret)
+    (do-external-symbols (s :std)
       (when (and (or (boundp s) (fboundp s) (cadr (multiple-value-list (typexpand s))) (find-class s nil))
                  (not (or (documentation s 'variable) (documentation s 'function)
                           (documentation s 'structure) (documentation s 'type)
   			(documentation s 'setf) (documentation s 't))))
         (push s ret)))
-    (values ret (list :missing (length ret) :/ (length (list-package-symbols :std)))))
+    (list :missing (length ret) :/ (length (list-package-symbols :std))))
 #+end_src
 
 #+RESULTS:
-#+begin_example
-(COMPUTE-EFFECTIVE-SLOT-DEFINITION GENSYMIFY STANDARD-METHOD POSITIVE-INTEGER-P
-                                   NON-POSITIVE-DOUBLE-FLOAT-P TASKP +TCSANOW+
-                                   METHOD-QUALIFIERS LIST-ALL-SYMBOLS
-                                   POP-QUEUE* READ-N-BYTES
-                                   STANDARD-READER-METHOD ENSURE-GETHASH
-                                   COL-INDEX-OF +TCSADRAIN+ OUTSIDE-BOUNDS
-                                   INVALID-NUMBER-REASON METHOD-COMBINATION
-                                   ALIEN-OR-LISP-OCTETS METHOD-LAMBDA-LIST
-                                   QUEUE BUILT-IN-CLASS REMOVE-DIRECT-METHOD
-                                   WORD MAKE-MACRO-LAMBDA NON-POSITIVE-FIXNUM-P
-                                   PUSH-QUEUE* READ-ALIEN-FIXNUM STATUS
-                                   START-TASK-WORKER ZIP-TREE ALLOCATE-INSTANCE
-                                   STREAM-OF SYMB SPECIALIZER-DIRECT-METHODS
-                                   SET-FUNCALLABLE-INSTANCE-FUNCTION TCGETATTR*
-                                   WITH-TASK-POOL INVALID-NUMBER-VALUE
-                                   ENSURE-CLASS +TIOCSWINSZ+ ORACLE-ID
-                                   PUSH-WORKER
-                                   ENSURE-GENERIC-FUNCTION-USING-CLASS BUS
-                                   NON-NEGATIVE-RATIONAL-P ADD-METHOD
-                                   QUEUE-FULL-P NON-NEGATIVE-LONG-FLOAT-P
-                                   %THREAD-LOCAL-REFERENCES THREAD-ID-LIST
-                                   GENERIC-FUNCTION-METHOD-CLASS
-                                   GENERIC-FUNCTION UNIT-OF-DISTANCE
-                                   STANDARD-OBJECT CART-ETYPECASE JOIN-WORKER
-                                   ,*OMIT-NULLS* AVL-FIND>= COMPUTE-SLOTS
-                                   SOURCE-LOCATION CONDITION-WAIT*
-                                   POSIX-MEMALIGN MAKE-METHOD-LAMBDA PUSH-QUEUE
-                                   MAKE-SPIN-QUEUE COMPILE-LISP
-                                   SLOT-DEFINITION-NAME IF-MATCH |#"-reader|
-                                   PUSH-CONS-QUEUE WORKERS WORKER-THREAD
-                                   SAVE-LISP-AND-LIVE STANDARD-WRITER-METHOD
-                                   NEGATIVE-FIXNUM-P STANDARD-SLOT-DEFINITION
-                                   FUNCALLABLE-STANDARD-OBJECT ADD-DEPENDENT
-                                   RWLOCK-WRLOCK *DEFAULT-PACKAGE* *RESULT*
-                                   PARSE-LAMBDA-LIST LINE-COUNT-OF
-                                   SERDE-CONDITION PRINT-TOP-LEVEL
-                                   COMPUTE-APPLICABLE-METHODS POWER-OF-TWO-P
-                                   RWLOCK-RDLOCK SLOT-DEFINITION-TYPE
-                                   MAKE-LOGICAL-HOST DO-INTERNAL-SYMBOLS
-                                   MESSAGE ENSURE-PACKAGE DRAW-FILLED-CIRCLE
-                                   GENERIC-FUNCTION-METHOD-COMBINATION
-                                   CLASS-DIRECT-SUPERCLASSES MAKE-THREADS
-                                   MAKE-ORACLE PACKAGE-SYMBOLS
-                                   SUBST-MODE-PPCRE-LAMBDA-FORM
-                                   ADD-DIRECT-SUBCLASS PARSE-DEFPKG-FORM
-                                   FIND-METHOD-COMBINATION HANG
-                                   FINALIZE-INHERITANCE POSITIVE-SINGLE-FLOAT-P
-                                   LOCK SCHEDULE PRINTLN-TOP-LEVEL
-                                   READ-LISP-UNTIL-END LEXENV-FIND
-                                   ACCESSOR-METHOD-SLOT-DEFINITION CPU-VENDOR
-                                   DESIGNATE-ORACLE SYNC-MESSAGE NLET-TAIL
-                                   QUEUE-COUNT* METHOD-SPECIALIZERS
-                                   READTABLE-DOES-NOT-EXIST
-                                   DIRECT-SLOT-DEFINITION HUMAN-READABLE-SIZE
-                                   %DISPOSE-THREAD-STRUCTS
-                                   SLOT-DEFINITION-WRITERS SEGMENT-READER
-                                   ,*TASK-PRIORITY* MATCH-MODE-PPCRE-LAMBDA-FORM
-                                   ERROR-KIND NON-NEGATIVE-SHORT-FLOAT-P
-                                   CLASS-DIRECT-SUBCLASSES MAKE-LISTENER-THREAD
-                                   SLOT-VALUE-USING-CLASS NEGATIVE-INTEGER-P
-                                   NEGATIVE-SINGLE-FLOAT-P STD-THREAD-ERROR
-                                   FUNCALLABLE-STANDARD-CLASS
-                                   DIRECT-SLOT-DEFINITION-CLASS
-                                   NON-POSITIVE-SHORT-FLOAT-P LOGBIT
-                                   WITH-SESSION-LOCK EFFECTIVE-SLOT-DEFINITION
-                                   WRITE-PREFIX WITH-COMIC-STRIP
-                                   PEEK-SPIN-QUEUE SLOT-DEFINITION-INITFUNCTION
-                                   POSITIVE-LONG-FLOAT-P BASIC-QUEUE RAW-QUEUE
-                                   WITH-NEW-SESSION EQL-SPECIALIZER
-                                   RAW-QUEUE-FULL-P PEEK-QUEUE*
-                                   COMPUTE-DEFAULT-INITARGS TCSETATTR*
-                                   NON-NEGATIVE-FLOAT-P PEEK-RAW-QUEUE
-                                   SLOT-DEFINITION-INITFORM STANDARD-CLASS
-                                   WORKER-COUNT* ENSURE-GENERIC-FUNCTION DE
-                                   GENERIC-FUNCTION-LAMBDA-LIST CLASS-SLOTS
-                                   RAW-QUEUE-CAPACITY SPIN-QUEUE-EMPTY-P
-                                   CLASS-DIRECT-DEFAULT-INITARGS WITH-DEATHLOK
-                                   RUN-WORKER WRITER-METHOD-CLASS
-                                   STANDARD-ACCESSOR-METHOD PATTERN-TO-BITMAP
-                                   WITH-FSLOTS READ-UNTIL-END TERMIOS-OFLAG
-                                   SPIN-QUEUE METHOD-GENERIC-FUNCTION
-                                   STANDARD-INSTANCE-ACCESS DUMP-THREAD
-                                   MAKE-NULL-LEXENV METAOBJECT
-                                   DEF-WARNING-REPORTER CHANNEL-POOL
-                                   COMPUTE-EFFECTIVE-METHOD MAKE-WORKERS
-                                   EFFECTIVE-SLOT-DEFINITION-CLASS ERROR-REASON
-                                   MAKE-INSTANCE JOBS FILL-BITMAP WHEN-MATCH
-                                   KILL-WORKER WRAPPED-CHARACTER-INPUT-STREAM
-                                   MAKE-BITMAP MESSAGE-CONDITION +TIOCGWINSZ+
-                                   POSITIVE-FIXNUM-P CURRENT-THREAD-SAP
-                                   QUEUE-EMPTY-P ERROR-ITEM GET-FOREGROUND
-                                   POP-WORKER MAP-DEPENDENTS POP-CONS-QUEUE
-                                   NEGATIVE-RATIONAL-P BUILD-BATCHER-SN
-                                   GENERIC-FUNCTION-METHODS POSITIVE-FLOAT-P
-                                   SLOT-DEFINITION-READERS CLASS-DIRECT-SLOTS
-                                   CART-CASE FUTEX-WAKE SLOT-DEFINITION
-                                   NON-NEGATIVE-DOUBLE-FLOAT-P
-                                   COMPUTE-SPECIAL-BINDINGS ENSURE-LIST
-                                   DRAW-BORDER MAKE-RAW-QUEUE
-                                   NEGATIVE-SHORT-FLOAT-P END-THREAD-POOL
-                                   PRINT-IN-BOX WORKER-INDEX DOLLAR-SYMBOL-P
-                                   |#`-reader| KILL-THREAD ERROR-NAME
-                                   +TIOCNOTTY+ *XDG-USER-DIRS* RANDOM-DO
-                                   VALIDATE-SUPERCLASS WITH-UNIQUE-NAMES
-                                   MAKE-JOB FIND-THREAD-POOL XDG-BASE-DIR
-                                   COMPUTE-APPLICABLE-METHODS-USING-CLASSES
-                                   MEMSET NON-NEGATIVE-REAL-P CLASS-PROTOTYPE
-                                   32-BIT-P T WITH-READTABLE SYMBOLICATE
-                                   NON-POSITIVE-REAL-P SCHEDULED-TASK
-                                   UPDATE-DEPENDENT NON-POSITIVE-RATIONAL-P
-                                   PRINT-BOXED MEMCPY WITH-COUNTDOWN
-                                   ALLOCATOR-HISTOGRAM
-                                   FUNCALLABLE-STANDARD-INSTANCE-ACCESS
-                                   GENERIC-FUNCTION-ARGUMENT-PRECEDENCE-ORDER
-                                   ADD-DIRECT-METHOD KERNEL DELETE-FILE-ERROR
-                                   PACKAGE-SYMBOL-NAMES GET-REAL-TIME-SECONDS
-                                   ...)
-(:MISSING 449 :/ 1140)
-#+end_example
+| :MISSING | 603 | :/ | 1324 |
 
 - [?] alien.lisp              
 - [X] array.lisp              
@@ -1347,7 +1300,11 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 - [ ] tests                   
 - [ ] thread.lisp             
 - [ ] type.lisp               
-
+** standard package sets
+:PROPERTIES:
+:ID:       e24f525a-5564-4489-91de-041cfbd8c7af
+:CREATED:  <2025-06-06 Fri 21:46>
+:END:
 ** TODO more (useful) bit tricks
 :PROPERTIES:
 :ID:       36d3040f-c899-4941-affb-30e1641d1b01
@@ -1816,6 +1773,20 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - Refiled on [2025-02-16 Sun 19:23]
 :END:
+** TODO defpkg-format                                                  :lisp:
+:PROPERTIES:
+:ID:       7dda38e6-df14-4b9e-bb00-8b101f66a73b
+:CREATED:  <2025-06-06 Fri 21:37>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-06 Fri 21:37]
+:END:
+- inside body of a form, check it is a defpackage-like form then apply
+  formatting
+- keywordicate symbols
+- indentation
+- make a tbd task for refactoring imports/sorting
+
 ** TODO org-graph edge relative links
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:45>
