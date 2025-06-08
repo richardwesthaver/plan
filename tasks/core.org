@@ -1435,7 +1435,7 @@ copy-check-and-promote <- copy-slot-and-check
 - State "TODO"       from              [2025-05-08 Thu 20:51]
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 :END:
-* PROJECT emacs [0/11]                                                :emacs:
+* PROJECT emacs [1/12]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1802,6 +1802,17 @@ SCHEDULED: <2025-03-01 Sat>
 - keywordicate symbols
 - indentation
 - make a tbd task for refactoring imports/sorting
+
+** DONE project-info better vc info
+:PROPERTIES:
+:ID:       2fe42dc8-002d-4daf-b183-82811b4da1be
+:CREATED:  <2025-06-08 Sun 13:20>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-08 Sun 13:20]
+- State "DONE"       from "TODO"       [2025-06-08 Sun 15:30]
+:END:
+- at least have option of disabling - it isn't always correct about the location
 
 ** TODO org-graph edge relative links
 :PROPERTIES:

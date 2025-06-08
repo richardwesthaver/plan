@@ -6,8 +6,8 @@
 #+setupfile: ../clean.theme
 #+export_file_name: index
 #+options: toc:nil
-#+BEGIN: project-info :status nil :tasks nil :files t
-#+CALL: project-details() :dir ~/comp/org/plan/
+#+BEGIN: project-info :status nil :tasks nil :files t :vc nil
+#+CALL: project-details(vc='nil) :dir ~/comp/org/plan/
 
 #+RESULTS:
 |-------------+-----------------------------------------------------------|
@@ -16,11 +16,10 @@
 | description | :description CC Org Files                                 |
 | skel-id     | :id 1784914079056115652                                   |
 | root        | ~/comp/org/plan/                                          |
-| vc          | :hg [[https://vc.compiler.company/plan][vc.compiler.company/plan]] :rev [[https://vc.compiler.company/plan/rev/fddc749f4e2a][fddc749f4e2a:71]]         |
 | tags        | :tags (org docs notes blog meta plan archive notes graph) |
-| updated     | Fri Jun 06 22:13:57 2025 -0400                            |
+| updated     | Sat Jun 07 18:19:15 2025 -0400                            |
 | langs       | org                                                       |
-| lines       | 2964 :λ 2867 :# 0 :_ 97                                   |
+| lines       | 2988 :λ 2890 :# 0 :_ 98                                   |
 |-------------+-----------------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -38,21 +37,21 @@
 2025-03    245 ****
 2025-04    747 **************
 2025-05   3065 *************************************************************
-2025-06   1071 *********************
+2025-06   1099 *********************
 #+end_example
 
-#+CALL: project-html-files() :dir ~/comp/org/plan/
+#+CALL: project-files() :dir ~/comp/org/plan/
 
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://compiler.company/plan/product.html][product]]       | 2025-02-14 19:14:44 |
-| [[https://compiler.company/plan/index.html][index]]         | 2025-06-05 22:15:52 |
-| [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-05-01 18:22:39 |
-| [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2025-06-06 21:47:20 |
-| [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2025-03-08 01:05:42 |
-| [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2025-06-03 19:50:16 |
-| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2025-06-03 19:49:15 |
+| [[file:readme.org][readme]]        | 2025-06-08 15:23:41 |
+| [[file:tasks/core.org][tasks/core]]    | 2025-06-08 13:21:19 |
+| [[file:product.org][product]]       | 2025-02-14 19:14:44 |
+| [[file:roadmap.org][roadmap]]       | 2025-05-01 18:22:39 |
+| [[file:tasks/contrib.org][tasks/contrib]] | 2025-05-09 19:55:46 |
+| [[file:tasks/demo.org][tasks/demo]]    | 2025-03-08 01:05:42 |
+| [[file:tasks/infra.org][tasks/infra]]   | 2025-06-03 19:50:16 |
+| [[file:tasks/rnd.org][tasks/rnd]]     | 2025-06-03 19:49:15 |
 
 #+END:
