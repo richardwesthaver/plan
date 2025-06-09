@@ -18,11 +18,11 @@
 #+begin_src emacs-lisp :results silent
   (rgrep ".*;; TODO" "*.*" "~/comp/core/")
 #+end_src
-*194*
+*195*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*;; FIXME" "*.*" "~/comp/core/")
 #+end_src
-*25*
+*28*
 
 * FIXME undefined symbols
 :PROPERTIES:
@@ -1706,13 +1706,27 @@ copy-check-and-promote <- copy-slot-and-check
 - Refiled on [2025-06-03 Tue 22:10]
 :END:
 - ie ~C-c g w~ pre-populate with name of node, maybe thing-at-point with ~C-u~
-** TODO org-timeline upgrades [0/3]                                     :org:
+*** TODO org-graph edge relative links
+:PROPERTIES:
+:CREATED:  <2025-05-02 Fri 13:45>
+:ID:       7684cce3-7690-4330-b9d8-3bed172d06ea
+:END:
+:LOGBOOK:
+- State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
+- Refiled on [2025-05-02 Fri 14:03]
+- Refiled on [2025-06-08 Sun 18:11]
+:END:
+- index based? inherit from parent only for now
+  - how to implement for complete tree?
+  - custom_id for edges? like @ref bibtex
+** TBD org-timeline upgrades [0/3]                                      :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
 :ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
 :END:
 :LOGBOOK:
 - Refiled on [2024-08-30 Fri 19:03]
+- State "TBD"        from "TODO"       [2025-06-08 Sun 18:07]
 :END:
 [[https://github.com/deopurkar/org-timeline][GitHub - deopurkar/org-timeline: Add graphical view of agenda to agenda buffer]]
 - now lives in lib/org-timeline.el
@@ -1814,18 +1828,6 @@ SCHEDULED: <2025-03-01 Sat>
 :END:
 - at least have option of disabling - it isn't always correct about the location
 
-** TODO org-graph edge relative links
-:PROPERTIES:
-:CREATED:  <2025-05-02 Fri 13:45>
-:ID:       7684cce3-7690-4330-b9d8-3bed172d06ea
-:END:
-:LOGBOOK:
-- State "TODO"       from "TODO"       [2025-05-02 Fri 13:45]
-- Refiled on [2025-05-02 Fri 14:03]
-:END:
-- index based? inherit from parent only for now
-  - how to implement for complete tree?
-  - custom_id for edges? like @ref bibtex
 * PROJECT app
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:05>
