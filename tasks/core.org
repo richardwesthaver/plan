@@ -883,7 +883,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
-** PROJECT skel [0/6]                                             :lisp:skel:
+** PROJECT skel [0/7]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -969,6 +969,16 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
 - will be first feature of skel server
+*** FIXME skel rule compilation environment
+:PROPERTIES:
+:ID:       eb00ee5b-8ae8-4d38-8b89-b83cd20e1e2a
+:CREATED:  <2025-06-09 Mon 23:19>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-09 Mon 23:19]
+- State "FIXME"      from              [2025-06-09 Mon 23:19]
+:END:
+[[file:~/comp/core/lib/skel/core/rule.lisp::;; FIX 2025-06-09:][loc]]
 *** OUTLINE skel template objects
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:45>
@@ -1019,7 +1029,7 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - rustls doesn't suffer from this - if we ever end up implementing
   openssl too we won't bother with portability here either. Use Linux
   or gtfo.
-** PROJECT obj [0/1]                                               :lisp:obj:
+** PROJECT obj [0/2]                                               :lisp:obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1029,6 +1039,24 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+*** TODO equiv
+:PROPERTIES:
+:ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
+:CREATED:  <2025-06-09 Mon 14:46>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-09 Mon 14:46]
+:END:
+**** OUTLINE next steps
+:PROPERTIES:
+:ID:       df12ca39-ad89-4858-bc1e-4b0efddee649
+:CREATED:  <2025-06-09 Mon 14:47>
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2025-06-09 Mon 14:47]
+:END:
+- probably want to hook into sbcl low-level equality mechanics
+- leverage type-classes/primitive-type
 *** WIP tensor
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
@@ -1071,6 +1099,19 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - instead of compiler macros, let's abuse the compiler :)
   - deftransform, array specialization stuff (sb-vm, sb-c)
 - sbcl has its own concept of higher-ordered types see define-type-class
+
+***** RESEARCH SB-SIMD
+:PROPERTIES:
+:ID:       bc69db9c-023a-4235-b0a9-e84061cd703e
+:CREATED:  <2025-06-09 Mon 12:13>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2025-06-09 Mon 12:13]
+:END:
+array optimizations
+- simd packs should interop with tensors anyways - simd-tensor, packed-tensor?
+- learn how all the deftransforms work, how to define a type-class, etc
+- use similar macro structuring
 ** PROJECT net [0/4]                                               :lisp:net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
