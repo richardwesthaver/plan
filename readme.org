@@ -17,9 +17,9 @@
 | skel-id     | :id 1784914079056115652                                   |
 | root        | ~/comp/org/plan/                                          |
 | tags        | :tags (org docs notes blog meta plan archive notes graph) |
-| updated     | Sun Jun 08 22:23:31 2025 -0400                            |
+| updated     | Tue Jun 10 12:36:21 2025 -0400                            |
 | langs       | org                                                       |
-| lines       | 2992 :λ 2893 :# 0 :_ 99                                   |
+| lines       | 3033 :λ 2933 :# 0 :_ 100                                  |
 |-------------+-----------------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -37,7 +37,7 @@
 2025-03    245 ****
 2025-04    747 **************
 2025-05   3065 *************************************************************
-2025-06   1183 ***********************
+2025-06   1238 ************************
 #+end_example
 
 #+CALL: project-files() :dir ~/comp/org/plan/
@@ -46,10 +46,10 @@
 | file          | modified            |
 |---------------+---------------------|
 | [[file:product.org][product]]       | 2025-02-14 19:14:44 |
-| [[file:readme.org][readme]]        | 2025-06-08 17:10:39 |
+| [[file:readme.org][readme]]        | 2025-06-08 22:31:09 |
 | [[file:roadmap.org][roadmap]]       | 2025-05-01 18:22:39 |
 | [[file:tasks/contrib.org][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[file:tasks/core.org][tasks/core]]    | 2025-06-08 18:12:25 |
+| [[file:tasks/core.org][tasks/core]]    | 2025-06-10 12:25:14 |
 | [[file:tasks/demo.org][tasks/demo]]    | 2025-03-08 01:05:42 |
 | [[file:tasks/infra.org][tasks/infra]]   | 2025-06-03 19:50:16 |
 | [[file:tasks/rnd.org][tasks/rnd]]     | 2025-06-03 19:49:15 |

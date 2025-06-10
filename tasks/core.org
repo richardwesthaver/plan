@@ -883,7 +883,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
-** PROJECT skel [0/7]                                             :lisp:skel:
+** PROJECT skel [1/8]                                             :lisp:skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -892,15 +892,15 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - State "TODO"       from              [2023-12-16 Sat 00:55]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-
-*** TODO implement task-pool                                         :thread:
+*** TODO rule source
 :PROPERTIES:
-:ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
+:ID:       5fd2c3b4-19bf-42b0-8cb5-fd23dc206756
+:CREATED:  <2025-06-10 Tue 13:36>
 :END:
 :LOGBOOK:
-- State "TODO"       from              [2024-08-11 Sun 00:10]
+- State "TODO"       from              [2025-06-10 Tue 13:36]
 :END:
-*** TODO ensure-rule-source
+**** TODO ensure-rule-source
 :PROPERTIES:
 :ID:       2cc2520e-870c-4dbe-be64-2e177d44d929
 :CREATED:  <2025-06-06 Fri 17:53>
@@ -910,6 +910,13 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :END:
 - check the hash of sources against a cache, skip if found
 - need a way of managing cache invalidation - timeouts and manual purges
+*** TODO implement task-pool                                         :thread:
+:PROPERTIES:
+:ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-08-11 Sun 00:10]
+:END:
 *** WAIT implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
@@ -969,7 +976,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
 - will be first feature of skel server
-*** FIXME skel rule compilation environment
+*** DONE skel rule compilation environment
 :PROPERTIES:
 :ID:       eb00ee5b-8ae8-4d38-8b89-b83cd20e1e2a
 :CREATED:  <2025-06-09 Mon 23:19>
@@ -977,6 +984,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "TODO"       from              [2025-06-09 Mon 23:19]
 - State "FIXME"      from              [2025-06-09 Mon 23:19]
+- State "DONE"       from "FIXME"      [2025-06-10 Tue 13:36]
 :END:
 [[file:~/comp/core/lib/skel/core/rule.lisp::;; FIX 2025-06-09:][loc]]
 *** OUTLINE skel template objects
@@ -1284,7 +1292,7 @@ from within suite
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [0/9]                                                :lisp:std:
+* PROJECT std [0/11]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1361,6 +1369,24 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 :PROPERTIES:
 :ID:       e24f525a-5564-4489-91de-041cfbd8c7af
 :CREATED:  <2025-06-06 Fri 21:46>
+:END:
+** TODO user-add
+:PROPERTIES:
+:ID:       cddd0d4a-1d28-415a-8605-136347b1e1be
+:CREATED:  <2025-06-10 Tue 18:14>
+:LOCATION+: os.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-10 Tue 18:15]
+:END:
+** TODO group-add
+:PROPERTIES:
+:ID:       b80304b3-7f27-4374-af33-6a81b7382216
+:CREATED:  <2025-06-10 Tue 18:14>
+:LOCATION+: os.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-10 Tue 18:14]
 :END:
 ** TODO more (useful) bit tricks
 :PROPERTIES:
