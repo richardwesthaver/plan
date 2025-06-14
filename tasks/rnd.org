@@ -8,11 +8,17 @@
 #+LOCATION: ~/comp/
 #+filetags: rnd
 
-* pot of greed
+* OUTLINE pot of greed
 :PROPERTIES:
 :ID:       020f0ea3-9584-4d4a-9976-adb8f790ce29
 :CREATED:  <2025-01-17 Fri 15:54>
 :END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2025-06-11 Wed 22:41]
+:END:
+- honeypot
+- capture, log, amuse, retaliate
+- traffic redirection
 * RESEARCH Writing a C Compiler
 :PROPERTIES:
 :CREATED:  <2024-09-29 Sun 15:57>
@@ -92,6 +98,6 @@ Space-Filling Curves
 :END:
 - Hilbert R-Trees, X-Tree..
   - X+ Trees? need to see the most recent research and why it hasn't become popular
-
-- persistance?
+    - speed?
+- persistence?
   - maybe 'generation' is a dimension, Ln is on disk files

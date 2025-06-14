@@ -3,10 +3,13 @@
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
 #+filetags: milestone
-* 2024
+* DONE 2024
 :PROPERTIES:
 :ID:       bef157e2-ef55-4653-9916-1a329255a920
 :CREATED:  <2024-08-26 Mon 18:47>
+:END:
+:LOGBOOK:
+- State "DONE"       from              [2025-06-11 Wed 22:40]
 :END:
 ** DONE migrate VC off of EC2                                 :opsec:vc:code:
 :PROPERTIES:
@@ -112,12 +115,14 @@ programs into the system bootstrap process. This iteration of the
 infra project will have a few POSIX shell scripts for checking the
 host and grabbing a pre-compiled lisp as well as a compressed
 =infra.core= image.
-* OUTLINE 2025
+* HACK 2025
 :PROPERTIES:
 :ID:       93349821-ca20-4c07-a016-fd270c0c3b8d
+:CREATED:  <2025-06-11 Wed 22:40>
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-16 Fri 23:04]
+- State "HACK"       from "OUTLINE"    [2025-06-11 Wed 22:40]
 :END:
 
 - play-time is over, time to build
@@ -230,3 +235,11 @@ host and grabbing a pre-compiled lisp as well as a compressed
 - State "TODO"       from              [2025-05-01 Thu 18:19]
 :END:
 - 
+* OUTLINE 2026
+:PROPERTIES:
+:ID:       2075c192-a962-4dfc-9f0f-de44320ac79e
+:CREATED:  <2025-06-11 Wed 22:41>
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2025-06-11 Wed 22:41]
+:END:

@@ -290,7 +290,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT cli [0/4]
+** PROJECT cli [1/5]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -300,6 +300,20 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
 :END:
+*** DONE with-sbcl                                                    :macro:
+SCHEDULED: <2025-06-11 Wed>
+:PROPERTIES:
+:ID:       fa7302b5-b7ea-400c-b159-ec522eb858b4
+:CREATED:  <2025-06-10 Tue 22:43>
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2025-06-10 Tue 22:43]
+- State "DONE"       from "FIXME"      [2025-06-11 Wed 18:19]
+- Note taken on [2025-06-11 Wed 18:19] \\
+  good enough for now - package re-export issues in std
+:END:
+[[file:~/comp/core/skelfile::;; FIX 2025-06-10: why can't we find compile-system even when specifying the package?][loc]]
+std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 *** PROJECT cli/clap [1/5]                                         :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
@@ -348,6 +362,7 @@ implement bindings to the Fortran BLAS functions
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
 *** TODO linedit prefixes
+SCHEDULED: <2025-06-13 Fri>
 :PROPERTIES:
 :CREATED:  <2025-04-26 Sat 23:20>
 :ID:       c5ddfea6-01a3-442f-ab88-9467651dc889
@@ -376,7 +391,7 @@ table.
 - Refiled on [2025-05-02 Fri 13:54]
 :END:
 
-** PROJECT q [0/4]                                                   :lisp:q:
+** PROJECT q [0/4]                                                        :q:
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
 :VERSION:  0.1
@@ -385,7 +400,7 @@ table.
 - State "TODO"       from              [2024-08-03 Sat 01:03]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
 :END:
-*** TODO SQL
+*** TODO [#B] SQL
 :PROPERTIES:
 :ID:       8b853556-399d-445f-8e7b-4bd4048087c5
 :END:
@@ -481,16 +496,16 @@ table.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-05 Mon 21:12]
 :END:
-*** TODO #? reader macro
+*** TODO [#C] #? reader macro
 :PROPERTIES:
 :ID:       5da9a939-892f-439e-8072-c5c61cc1bbe3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-08 Thu 22:36]
 :END:
-*** WIP complete base obj/query package [0/2]                          :q:db:
+*** WIP [#A] complete base query protocol [1/2]                          :db:
 :PROPERTIES:
-:LOCATION: lib/obj/query.lisp
+:LOCATION: lib/q/query.lisp
 :ID:       8e8bfeaf-22d2-4bad-a8e5-a19765561efa
 :END:
 :LOGBOOK:
@@ -513,7 +528,7 @@ table.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:55]
 :END:
-**** TODO decide if this should be part of lib/q instead
+**** DONE decide if this should be part of lib/q instead
 SCHEDULED: <2025-05-23 Fri>
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:32>
@@ -521,8 +536,11 @@ SCHEDULED: <2025-05-23 Fri>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-20 Tue 18:32]
+- State "DONE"       from "TODO"       [2025-06-11 Wed 18:20]
+- Note taken on [2025-06-11 Wed 18:21] \\
+  answer: yes
 :END:
-** PROJECT parse [1/2]                                             :lisp:lib:
+** PROJECT parse [1/2]                                                  :lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
 :VERSION:  0.1
@@ -549,7 +567,7 @@ SCHEDULED: <2025-05-23 Fri>
 :END:
 add tests for lexer and LALR. figure out if there are any gaps that we
 need to fill.
-** PROJECT organ [0/2]                                           :lisp:organ:
+** PROJECT organ [0/2]                                                :organ:
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
 :VERSION:  0.2
@@ -621,7 +639,7 @@ need to fill.
 : Slots with :INSTANCE allocation:
 :   AST                            = NIL
 
-** PROJECT rdb [0/6]                                               :lisp:rdb:
+** PROJECT rdb [0/6]                                                    :rdb:
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
 :VERSION:  0.2
@@ -754,7 +772,7 @@ returned on creation.
 We should NOT use create- when there are existing columns that we just
 want to get a SAP for. Instead always opt for opening a new db
 instance, possibly by closing an existing one.
-** PROJECT vc [0/2]                                                 :lisp:vc:
+** PROJECT vc [0/2]                                                      :vc:
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
 :VERSION:  0.1
@@ -784,7 +802,7 @@ see graph node [[id:c90cebbe-e91a-4438-a21d-eefb707a6194][github.com]]
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
-** PROJECT dat [1/3]                                               :lisp:dat:
+** PROJECT dat [1/3]                                                    :dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION:  0.1
@@ -793,7 +811,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from              [2024-08-11 Sun 00:08]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-*** WIP dat/parquet                                                    :lisp:
+*** WIP dat/parquet
 :PROPERTIES:
 :Effort:   80:00
 :ID:       c808200c-450a-4f77-b4c1-6b372c7c4943
@@ -817,7 +835,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:25]
 :END:
-*** TODO dat/csv column selectors                                  :lisp:dat:
+*** TODO dat/csv column selectors                                       :dat:
 :PROPERTIES:
 :Effort:   8:00
 :ID:       40cb89e4-db1b-4a78-b2b7-3e0fc9ee287b
@@ -834,7 +852,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - index-based-selection
 - selection-by-name
 
-** PROJECT syn [0/3]                                               :lisp:syn:
+** PROJECT syn [0/3]                                                    :syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION:  0.1
@@ -883,7 +901,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
-** PROJECT skel [1/8]                                             :lisp:skel:
+** PROJECT skel [1/8]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -1002,7 +1020,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   - cl-emb
   - https://github.com/alpha123/cl-template
 - see also [[id:25c20927-7ba3-4821-91b9-ad05a1a4b7f7][tempo]]
-** PROJECT cry
+** PROJECT cry                                                       :crypto:
 :PROPERTIES:
 :ID:       2d5bcf6e-6652-4e33-b923-d2311896eee8
 :CREATED:  <2025-06-06 Fri 13:30>
@@ -1037,7 +1055,7 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - rustls doesn't suffer from this - if we ever end up implementing
   openssl too we won't bother with portability here either. Use Linux
   or gtfo.
-** PROJECT obj [0/2]                                               :lisp:obj:
+** PROJECT obj [2/4]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1065,6 +1083,24 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 :END:
 - probably want to hook into sbcl low-level equality mechanics
 - leverage type-classes/primitive-type
+*** DONE url-encode
+:PROPERTIES:
+:ID:       669dbc13-4bfc-44ba-bd8e-9337809dd1b5
+:CREATED:  <2025-06-12 Thu 21:24>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-12 Thu 21:24]
+- State "DONE"       from "TODO"       [2025-06-13 Fri 13:39]
+:END:
+*** DONE url-decode
+:PROPERTIES:
+:ID:       f1bac2bf-8d36-4929-827e-37bdfd09366a
+:CREATED:  <2025-06-12 Thu 21:25>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-12 Thu 21:25]
+- State "DONE"       from "TODO"       [2025-06-13 Fri 13:39]
+:END:
 *** WIP tensor
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
@@ -1120,7 +1156,7 @@ array optimizations
 - simd packs should interop with tensors anyways - simd-tensor, packed-tensor?
 - learn how all the deftransforms work, how to define a type-class, etc
 - use similar macro structuring
-** PROJECT net [0/4]                                               :lisp:net:
+** PROJECT net [0/4]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION:  0.1
@@ -1130,6 +1166,79 @@ array optimizations
 - State "TODO"       from              [2023-12-17 Sun 01:00]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
 :END:
+*** TODO remove cl+ssl dependency
+:PROPERTIES:
+:ID:       036a7995-be25-4b9f-92b2-d5efd8955667
+:CREATED:  <2025-06-13 Fri 16:12>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-13 Fri 16:12]
+:END:
+#+begin_src emacs-lisp :dir :eval no-export :results silent
+  (rgrep "ssl" "*.*" "~/comp/core/lib/net/")
+#+end_src
+
+*** TODO remove babel dependency
+:PROPERTIES:
+:ID:       ebffdecc-af18-4fdf-b068-6a95d68e59c8
+:CREATED:  <2025-06-13 Fri 16:11>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-13 Fri 16:11]
+:END:
+we want to resuse the internal sbcl machinery as much as possible to
+avoid making copies of string coders.
+
+babel provides a flexible charset coding library similar to
+libiconv. The semantics are somewhat different from SBCL but they
+share basically the same goal.
+
+It appears that babel ENCODINGs are used in many places where a simple
+sbcl EXTERNAL-FORMAT would do. The difference is that EXTERNAL-FORMATs
+are not supposed to be extensible (AFAIK). Babel seems to make the
+assumption that we aren't supposed to mess with sb-impl and other
+internals much - which is where all the useful stuff is.
+
+I have a hunch there is some reason other than portability that its so
+prevelant tho.. only one way to find out :)
+
+#+begin_src emacs-lisp :dir :eval no-export :results silent
+  (rgrep "babel" "*.*" "~/comp/core/lib/net/")
+#+end_src
+- babel-encodings
+  - enc-max-units-per-char
+  - lookup-mapping
+  - *string-vector-mappings*
+  - code-point-counter
+  - decoder
+
+#+begin_src lisp
+  ;; defined in sb external format def macros
+  (defun ,(make-od-name ',octets-to-string-name/cr accessor) (array astart aend replacement)
+    (declare (optimize speed)
+             (type ,type array)
+             (type array-range astart aend)
+             (ignorable replacement))
+    (let ((string (make-array 0 :element-type 'character :fill-pointer 0 :adjustable t)))
+      (loop for apos from astart below aend
+            do (let* ((byte (,accessor array apos))
+                      (code (,',->code-name byte))
+                      (string-content
+                        (cond
+                          ((null code)
+                           (decoding-error array apos (1+ apos)
+                                           '(,',external-format :newline :cr)
+                                           replacement
+                                           ',',decoding-condition-name
+                                           apos))
+                          ((= code 13) (code-char 10))
+                          (t (code-char code)))))
+                 (if (characterp string-content)
+                     (vector-push-extend string-content string)
+                     (loop for c across string-content
+                           do (vector-push-extend c string))))
+            finally (return (coerce string 'simple-string))))))
+#+end_src
 *** TODO fixtures                                                        :rt:
 :PROPERTIES:
 :ID:       fe592b6f-cde1-43e9-ac5a-81addc124582
@@ -1154,16 +1263,19 @@ array optimizations
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
 :END:
-*** WIP net/srv                                                        :lisp:
+*** WAIT net/srv                                                       :lisp:
 :PROPERTIES:
 :ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
+:CREATED:  <2025-06-13 Fri 13:40>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-19 Fri 21:50]
 - State "WIP"        from "TODO"       [2024-07-19 Fri 21:51]
+- State "WAIT"       from "WIP"        [2025-06-13 Fri 13:40] \\
+  task-pools
 :END:
 - needs a solid task-pool impl completed first
-** PROJECT gui [0/2]                                               :lisp:gui:
+** PROJECT gui [0/2]                                                    :gui:
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18
 :LOCATION+: gui/
@@ -1193,7 +1305,7 @@ array optimizations
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-** PROJECT rt [1/3]                                            :lisp:rt:test:
+** PROJECT rt [1/3]                                                 :rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION:  0.1
@@ -1232,7 +1344,7 @@ it somehow for review.
 root test directory /tmp/rt with subdir for each suite, initialize
 from within suite
 
-** PROJECT io [0/2]                                                      :io:
+** PROJECT io [1/3]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1249,17 +1361,30 @@ from within suite
 :LOGBOOK:
 - State "TODO"       from              [2025-01-18 Sat 20:49]
 :END:
-*** TODO zlib compression
+*** DONE zlib compression
 :PROPERTIES:
 :CREATED:  <2025-05-12 Mon 23:22>
 :ID:       41241d38-f0f9-4b96-97e5-d8a11622396d
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-12 Mon 23:22]
+- State "WIP"        from "TODO"       [2025-06-11 Wed 23:13]
+- State "DONE"       from "WIP"        [2025-06-13 Fri 13:41]
 :END:
 - uses deflate
 - refactor salza2 to use io protos
 - replace salza2 and remove dependency
+*** TODO virtual streams
+:PROPERTIES:
+:ID:       a1522a85-f8d7-4341-b22c-32fc09bd07a3
+:CREATED:  <2025-06-11 Wed 18:15>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-11 Wed 18:15]
+:END:
+- we probably do want something similar to flexi-streams after all
+- need condition handling for external-formats and list/vector streams
+- hook them in to io/fast and io/static
 ** PROJECT math                                                        :math:
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:27>
@@ -1292,7 +1417,7 @@ from within suite
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [0/11]                                               :lisp:std:
+* PROJECT std [2/13]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1314,6 +1439,7 @@ from within suite
 - State "WIP"        from "TODO"       [2025-04-26 Sat 20:48]
 CLOCK: [2025-04-27 Sun 15:35]--[2025-04-27 Sun 17:59] =>  2:24
 CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
+CLOCK: [2025-06-11 Wed 20:00]--[2025-06-11 Wed 20:39] =>  0:39
 :END:
 - document functions and variables..
 #+begin_src lisp
@@ -1328,7 +1454,7 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 #+end_src
 
 #+RESULTS:
-| :MISSING | 603 | :/ | 1324 |
+| :MISSING | 575 | :/ | 1341 |
 
 - [?] alien.lisp              
 - [X] array.lisp              
@@ -1352,10 +1478,10 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 - [X] pipe.lisp               
 - [-] pkg.lisp                
 - [X] rand.lisp               
-- [ ] readtable.lisp          
-- [ ] seq.lisp                
-- [ ] serde.lisp              
-- [ ] spin.lisp               
+- [X] readtable.lisp          
+- [X] seq.lisp                
+- [X] serde.lisp              
+- [X] spin.lisp               
 - [ ] std.asd                 
 - [ ] stream.lisp             
 - [ ] string.lisp             
@@ -1365,12 +1491,15 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 - [ ] tests                   
 - [ ] thread.lisp             
 - [ ] type.lisp               
-** standard package sets
+** TODO standard package sets
 :PROPERTIES:
 :ID:       e24f525a-5564-4489-91de-041cfbd8c7af
 :CREATED:  <2025-06-06 Fri 21:46>
 :END:
-** TODO user-add
+:LOGBOOK:
+- State "TODO"       from              [2025-06-11 Wed 20:39]
+:END:
+** DONE user-add
 :PROPERTIES:
 :ID:       cddd0d4a-1d28-415a-8605-136347b1e1be
 :CREATED:  <2025-06-10 Tue 18:14>
@@ -1378,8 +1507,9 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-06-10 Tue 18:15]
+- State "DONE"       from "TODO"       [2025-06-12 Thu 13:19]
 :END:
-** TODO group-add
+** DONE group-add
 :PROPERTIES:
 :ID:       b80304b3-7f27-4374-af33-6a81b7382216
 :CREATED:  <2025-06-10 Tue 18:14>
@@ -1387,6 +1517,7 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-06-10 Tue 18:14]
+- State "DONE"       from "TODO"       [2025-06-12 Thu 13:19]
 :END:
 ** TODO more (useful) bit tricks
 :PROPERTIES:
@@ -1395,6 +1526,20 @@ CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
 :END:
+** TODO external-formats
+:PROPERTIES:
+:ID:       4c786bf4-9750-466b-86b3-d2a579a9b4ab
+:CREATED:  <2025-06-11 Wed 18:17>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-11 Wed 20:39]
+:END:
+- wrap internal sbcl implementation
+  - SB-IMPL, SB-INT
+  - external-format (ef-)
+- conditions
+- 'preferred' formats
+- check/translate fns
 ** HOLD defsys                                                     :lisp:std:
 :PROPERTIES:
 :ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
@@ -1895,7 +2040,7 @@ SCHEDULED: <2025-03-01 Sat>
 :END:
 - at least have option of disabling - it isn't always correct about the location
 
-* PROJECT app
+* PROJECT app                                                      :app:lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:05>
 :ID:       80b3830d-f1c6-47cd-ae3e-3c661ffb0238
@@ -1973,7 +2118,7 @@ SCHEDULED: <2025-03-01 Sat>
 - State "TODO"       from              [2024-09-02 Mon 16:14]
 :END:
 - SaaS toolkit
-* PROJECT bench                                                  :test:bench:
+* PROJECT bench                                             :test:bench:lisp:
 :PROPERTIES:
 :CREATED:  <2024-08-28 Wed 21:59>
 :ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
