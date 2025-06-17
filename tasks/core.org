@@ -1321,7 +1321,7 @@ SCHEDULED: <2025-06-17 Tue>
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [2/13]                                               :lisp:std:
+* PROJECT std [3/13]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1336,7 +1336,6 @@ SCHEDULED: <2025-06-17 Tue>
 :ID:       b7f48103-4fa3-48c0-93ba-8efc23848931
 :CREATED:  <2025-04-26 Sat 20:48>
 :Effort:   10:00
-:ORDERED:  t
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
@@ -1344,6 +1343,7 @@ SCHEDULED: <2025-06-17 Tue>
 CLOCK: [2025-04-27 Sun 15:35]--[2025-04-27 Sun 17:59] =>  2:24
 CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
 CLOCK: [2025-06-11 Wed 20:00]--[2025-06-11 Wed 20:39] =>  0:39
+CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :END:
 - document functions and variables..
 #+begin_src lisp
@@ -1386,15 +1386,16 @@ CLOCK: [2025-06-11 Wed 20:00]--[2025-06-11 Wed 20:39] =>  0:39
 - [X] seq.lisp                
 - [X] serde.lisp              
 - [X] spin.lisp               
-- [ ] std.asd                 
-- [ ] stream.lisp             
-- [ ] string.lisp             
-- [ ] sym.lisp                
-- [ ] sys.lisp                
-- [ ] task.lisp               
+- [X] std.asd                 
+- [X] stream.lisp             
+- [X] string.lisp             
+- [X] sym.lisp                
+- [X] sys.lisp                
+- [X] task.lisp               
+- [X] type.lisp               
 - [ ] tests                   
 - [ ] thread.lisp             
-- [ ] type.lisp               
+
 ** TODO standard package sets
 :PROPERTIES:
 :ID:       e24f525a-5564-4489-91de-041cfbd8c7af
@@ -1430,13 +1431,14 @@ CLOCK: [2025-06-11 Wed 20:00]--[2025-06-11 Wed 20:39] =>  0:39
 :LOGBOOK:
 - State "TODO"       from              [2024-02-29 Thu 16:09]
 :END:
-** TODO external-formats
+** DONE external-formats
 :PROPERTIES:
 :ID:       4c786bf4-9750-466b-86b3-d2a579a9b4ab
 :CREATED:  <2025-06-11 Wed 18:17>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-06-11 Wed 20:39]
+- State "DONE"       from "TODO"       [2025-06-17 Tue 18:09]
 :END:
 - wrap internal sbcl implementation
   - SB-IMPL, SB-INT
