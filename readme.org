@@ -17,7 +17,7 @@
 | skel-id     | :id 1784914079056115652                                   |
 | root        | ~/comp/org/plan/                                          |
 | tags        | :tags (org docs notes blog meta plan archive notes graph) |
-| updated     | Tue Jun 17 20:45:53 2025 -0400                            |
+| updated     | Fri Jun 20 19:48:23 2025 -0400                            |
 | langs       | org                                                       |
 | lines       | 3256 :λ 3151 :# 0 :_ 105                                  |
 |-------------+-----------------------------------------------------------|
@@ -37,7 +37,7 @@
 2025-03    245 ****
 2025-04    747 **************
 2025-05   3065 *************************************************************
-2025-06   1889 *************************************
+2025-06   1895 *************************************
 #+end_example
 
 #+CALL: project-files() :dir ~/comp/org/plan/
@@ -46,7 +46,7 @@
 | file          | modified            |
 |---------------+---------------------|
 | [[file:product.org][product]]       | 2025-02-14 19:14:44 |
-| [[file:readme.org][readme]]        | 2025-06-17 19:52:37 |
+| [[file:readme.org][readme]]        | 2025-06-17 23:34:27 |
 | [[file:roadmap.org][roadmap]]       | 2025-06-11 22:41:25 |
 | [[file:tasks/contrib.org][tasks/contrib]] | 2025-05-09 19:55:46 |
 | [[file:tasks/core.org][tasks/core]]    | 2025-06-17 19:31:16 |
