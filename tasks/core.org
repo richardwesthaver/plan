@@ -290,7 +290,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT cli [2/5]
+** PROJECT cli [2/6]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -333,7 +333,7 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 **** TODO minimal documentation                                         :doc:
 :PROPERTIES:
 :ID:       aef56337-8adf-4f69-823f-4380ae0c468b
-:LOCATION: lib/cli.org
+:LOCATION+: ~/comp/org/docs/core/lib/cli.org
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-07-27 Sat 02:39]
@@ -361,6 +361,16 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 :LOGBOOK:
 - State "TODO"       from              [2024-09-01 Sun 21:54]
 :END:
+*** TODO linedit keyboard macros
+:PROPERTIES:
+:ID:       64803129-f7c8-4609-b47d-203d19e6e9bf
+:CREATED:  <2025-06-27 Fri 14:02>
+:LOCATION+: linedit.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-27 Fri 14:02]
+:END:
+
 *** DONE linedit prefixes
 SCHEDULED: <2025-06-13 Fri>
 :PROPERTIES:
@@ -1228,7 +1238,7 @@ it somehow for review.
 root test directory /tmp/rt with subdir for each suite, initialize
 from within suite
 
-** PROJECT io [1/5]                                                      :io:
+** PROJECT io [2/5]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1258,7 +1268,7 @@ from within suite
 - uses deflate
 - refactor salza2 to use io protos
 - replace salza2 and remove dependency
-*** FIXME stream-write-sequence for deflate
+*** NOPE stream-write-sequence for deflate
 SCHEDULED: <2025-06-17 Tue>
 :PROPERTIES:
 :ID:       e306decd-5e38-4cb4-b43e-c49d3606f6ba
@@ -1267,6 +1277,7 @@ SCHEDULED: <2025-06-17 Tue>
 :LOGBOOK:
 - State "FIXME"      from              [2025-06-16 Mon 22:44]
 :END:
+- use compress and decompress instead - no direct stream support
 *** FIXME zstd streams
 SCHEDULED: <2025-06-17 Tue>
 :PROPERTIES:
@@ -1299,7 +1310,7 @@ SCHEDULED: <2025-06-17 Tue>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
 :END:
-** PROJECT log [0/1]
+** PROJECT log [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:44>
 :ID:       10f18d64-0862-4764-ae66-c548ccfdd82c
@@ -1307,6 +1318,14 @@ SCHEDULED: <2025-06-17 Tue>
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-16 Fri 23:44]
+:END:
+*** TODO log-broadcast-stream
+:PROPERTIES:
+:ID:       de06ee9d-6a26-46a2-b123-e8154d3b63c8
+:CREATED:  <2025-06-28 Sat 23:19>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-28 Sat 23:19]
 :END:
 *** TODO async-db-log-file
 :PROPERTIES:
