@@ -1341,7 +1341,7 @@ SCHEDULED: <2025-06-17 Tue>
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [3/13]                                               :lisp:std:
+* PROJECT std [3/14]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1489,6 +1489,14 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :CREATED:  <2025-06-03 Tue 20:19>
 :END:
 - [[https://www.lispworks.com/documentation/HyperSpec/Body/f_provid.htm][CLHS: Function PROVIDE, REQUIRE]]
+** TBD array index fmt                                                  :fmt:
+:PROPERTIES:
+:CREATED:  <2025-07-05 Sat 23:44>
+:ID:       bd7e248e-e6d1-42e1-9ae6-0c820fa581dd
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-07-05 Sat 23:44]
+:END:
 ** TODO test sweep                                                     :test:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
