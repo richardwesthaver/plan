@@ -281,6 +281,17 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
+* PROJECT bin
+:PROPERTIES:
+:ID:       94f244f1-7175-45af-b511-a4177ff78097
+:CREATED:  <2025-07-08 Tue 22:27>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-07-08 Tue 22:27]
+:END:
+- find purpose for this
+- now that cli/clap is integrated with apps we may want to use bin
+  just to ship separate cores - no asd just scripts
 * PROJECT lib                                                          :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>

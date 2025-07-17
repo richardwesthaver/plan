@@ -101,3 +101,12 @@ Space-Filling Curves
     - speed?
 - persistence?
   - maybe 'generation' is a dimension, Ln is on disk files
+* RESEARCH good lisp API docgen
+:PROPERTIES:
+:ID:       66cbdde4-b73f-4c8b-a023-1b280c227658
+:CREATED:  <2025-07-08 Tue 22:40>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2025-07-08 Tue 22:40]
+:END:
+[[https://crategus.com/books/cl-cffi-gtk/][cl-cffi-gtk API documentation]]
