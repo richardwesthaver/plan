@@ -824,7 +824,7 @@ see graph node [[id:c90cebbe-e91a-4438-a21d-eefb707a6194][github.com]]
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
 :END:
-** PROJECT dat [1/3]                                                    :dat:
+** PROJECT dat [0/3]                                                    :dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION:  0.1
@@ -873,7 +873,18 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 
 - index-based-selection
 - selection-by-name
-
+*** TODO dat/sxp
+:PROPERTIES:
+:ID:       1005b8fa-a850-4674-bd6c-fabecdcc5639
+:CREATED:  <2025-07-27 Sun 00:00>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-07-27 Sun 00:00]
+:END:
+- sxp is back on the menu
+- serializable format supporting as many objects as possible
+- first implementation of complete STORE protocol
+- act as human/machine-readable db format
 ** PROJECT syn [0/3]                                                    :syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
