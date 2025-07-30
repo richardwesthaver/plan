@@ -970,7 +970,7 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
   openssl too we won't bother with portability here either. Use Linux
   or gtfo.
   - but rustls depends on aws-lc which is a fork of openssl/libcrypto
-** PROJECT obj [2/4]                                                    :obj:
+** PROJECT obj [2/5]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1071,6 +1071,17 @@ array optimizations
 - simd packs should interop with tensors anyways - simd-tensor, packed-tensor?
 - learn how all the deftransforms work, how to define a type-class, etc
 - use similar macro structuring
+
+*** TODO style/theme
+:PROPERTIES:
+:ID:       9dfe3f93-b0d0-4d9c-bdb6-1bd045037853
+:CREATED:  <2025-07-29 Tue 16:35>
+:LOCATION+: color/theme.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-07-29 Tue 16:35]
+:END:
+
 ** PROJECT net [1/6]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
@@ -1191,17 +1202,21 @@ prevelant tho.. only one way to find out :)
   task-pools
 :END:
 - needs a solid task-pool impl completed first
-** PROJECT gui [0/2]                                                    :gui:
+** DONE gui [2/2]                                                       :gui:
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18
 :LOCATION+: gui/
 :VERSION:  0.1
+:CREATED:  <2025-07-28 Mon 21:54>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 03:40]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+- Note taken on [2025-07-28 Mon 21:54] \\
+  moved to shed
+- State "DONE"       from "PROJECT"    [2025-07-28 Mon 21:54]
 :END:
-*** WAIT wayland protocol bindings
+*** NOPE wayland protocol bindings
 :PROPERTIES:
 :ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
 :CREATED:  <2025-01-18 Sat 20:08>
@@ -1210,10 +1225,12 @@ prevelant tho.. only one way to find out :)
 - State "TODO"       from              [2023-12-17 Sun 03:40]
 - State "WAIT"       from "TODO"       [2025-01-18 Sat 20:08] \\
   Wait until we actually have a usecase for Wayland
+- State "NOPE"       from "WAIT"       [2025-07-28 Mon 21:54]
 :END:
-*** TBD wayland compositor                                        :rust:lisp:
+*** NOPE wayland compositor                                       :rust:lisp:
 :PROPERTIES:
 :ID:       ca3d0bff-0ff7-4947-835a-b7c7e74c8679
+:CREATED:  <2025-07-28 Mon 21:54>
 :END:
 :LOGBOOK:
 - State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
@@ -1363,7 +1380,7 @@ SCHEDULED: <2025-06-17 Tue>
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [3/14]                                               :lisp:std:
+* PROJECT std [7/14]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1396,11 +1413,11 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
                           (documentation s 'structure) (documentation s 'type)
   			(documentation s 'setf) (documentation s 't))))
         (push s ret)))
-    (list :missing (length ret) :/ (length (list-package-symbols :std))))
+    (list :missing (length ret) '/ (length (list-package-symbols :std))))
 #+end_src
 
 #+RESULTS:
-| :MISSING | 575 | :/ | 1341 |
+| :MISSING | 529 | / | 1420 |
 
 - [?] alien.lisp              
 - [X] array.lisp              
@@ -1438,13 +1455,16 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 - [ ] tests                   
 - [ ] thread.lisp             
 
-** TODO standard package sets
+** DONE standard package sets
 :PROPERTIES:
 :ID:       e24f525a-5564-4489-91de-041cfbd8c7af
 :CREATED:  <2025-06-06 Fri 21:46>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-06-11 Wed 20:39]
+- State "DONE"       from "TODO"       [2025-07-28 Mon 19:34]
+- Note taken on [2025-07-28 Mon 19:34] \\
+  :prelude defpkg option
 :END:
 ** DONE user-add
 :PROPERTIES:
@@ -1527,7 +1547,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
 :END:
-** TODO thread-pool impl                                    :thread:
+** DONE thread-pool impl                                             :thread:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
 :ID:       5bb9865d-e6c1-40ca-8a53-155c417de018
@@ -1535,6 +1555,9 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
+- State "DONE"       from "TODO"       [2025-07-28 Mon 19:31]
+- Note taken on [2025-07-28 Mon 19:31] \\
+  work submission finally works
 :END:
 *** TODO specify kernel function prototypes
 :PROPERTIES:
@@ -1567,7 +1590,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :LOGBOOK:
 - State "TODO"       from              [2025-05-08 Thu 20:50]
 :END:
-** TODO task-pool impl                                               :thread:
+** NOPE task-pool impl                                               :thread:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
 :ID:       8326a4a5-31dc-4030-a3da-196f58b69202
@@ -1575,8 +1598,10 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-04-27 Sun 18:02]
+- Note taken on [2025-07-28 Mon 19:32] \\
+  thread-pool will suffice - tasks subject to change
 :END:
-** TODO castable
+** NOPE castable
 :PROPERTIES:
 :CREATED:  <2025-05-29 Thu 22:37>
 :ID:       b7bd09e1-e268-4bbb-9ff5-da2c070c8112
@@ -1584,7 +1609,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :LOGBOOK:
 - State "TODO"       from              [2025-05-29 Thu 22:37]
 :END:
-*** FIXME assertion failures in multi-threaded context
+*** NOPE assertion failures in multi-threaded context
 :PROPERTIES:
 :ID:       1168ebb1-ed20-4e90-aa4c-498e3bc2b1a9
 :CREATED:  <2025-05-29 Thu 22:37>
@@ -2005,7 +2030,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:05]
 :END:
-** PROJECT skel [1/8]                                                  :skel:
+** PROJECT skel [1/7]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -2039,7 +2064,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
-*** WAIT implement vm
+*** TODO implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
@@ -2068,6 +2093,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - New deadline from "[2024-09-02 Mon]" on [2025-02-26 Wed 19:14]
 - State "WAIT"       from "WIP"        [2025-05-11 Sun 01:00] \\
   waiting on completion of std/task and friends
+- State "TODO"       from "WAIT"       [2025-07-28 Mon 22:15]
 :END:
 - core/vm.lisp
 - how will rules, commands, and components interact?
