@@ -3,139 +3,30 @@
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
 #+filetags: milestone
-* DONE 2024
-:PROPERTIES:
-:ID:       bef157e2-ef55-4653-9916-1a329255a920
-:CREATED:  <2024-08-26 Mon 18:47>
-:END:
-:LOGBOOK:
-- State "DONE"       from              [2025-06-11 Wed 22:40]
-:END:
-** DONE migrate VC off of EC2                                 :opsec:vc:code:
-:PROPERTIES:
-:ID:       e71f5fa6-59de-4c80-9cf8-3345f7310105
-:CREATED:  <2024-09-03 Tue 22:13>
-:END:
-:LOGBOOK:
-- State "WIP"        from              [2024-05-06 Mon 16:43]
-- Note taken on [2024-09-03 Tue 16:52] \\
-  removed dependency on heptapod, running plain ol hgweb behind proxy
-- State "DONE"       from "WIP"        [2024-09-03 Tue 22:13]
-- Note taken on [2024-09-03 Tue 22:13] \\
-  next up: clonebundles,packy,git hosting
-:END:
-We no longer need to maintain an instance of our forge in AWS now that
-we have enough compute in-house.
-
-vc.compiler.company will be migrate to rurik on a dedicated pod
-+(requires ubuntu)+.
-** DONE Wireguard VPN                                             :net:opsec:
-:PROPERTIES:
-:ID:       867d2bd7-cedc-4695-b98a-57296bae7792
-:CREATED:  <2025-02-26 Wed 19:15>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-05-06 Mon 16:48]
-- State "WIP"        from "TODO"       [2024-05-06 Mon 16:48]
-- Note taken on [2024-08-12 Mon 18:21] \\
-  all that is left is to configure for VM and containers
-- State "DONE"       from "WIP"        [2025-02-26 Wed 19:15]
-:END:
-Wireguard is a fast, secure, and easy to configure VPN library. All
-our primary devices have been configured and tested with two available
-endpoints. Our goal is to migrate all existing devices, then make
-appropriate accomodations for Podman containers, and finally KVM.
-** TODO IO                                                             :lisp:
-SCHEDULED: <2024-10-11 Fri>
-:PROPERTIES:
-:ID:       ad563749-b7c1-4d17-8a9d-65361ce8013a
-:CREATED:  <2024-08-28 Wed 21:49>
-:END:
-:LOGBOOK:
-- State "TBD"        from              [2024-05-06 Mon 16:50]
-- State "TODO"       from "TBD"        [2024-08-28 Wed 21:49]
-:END:
-io_uring is the Linux library we have chosen to spend some time
-getting comfortable with and for which we've written incomplete Common
-Lisp bindings - URING. This library will soon be developed in parallel
-to the higher-level IO library - similar to the development of ROCKSDB
-and RDB.
-
-Over the next few months our IO ecosystem will slowly expand. As a
-short-term goal, we will implement simple binary streams backed by
-io_uring.
-** DONE skel
-:PROPERTIES:
-:ID:       34e336b5-66e7-46db-ab65-970131748fe0
-:CREATED:  <2025-02-26 Wed 19:15>
-:END:
-:LOGBOOK:
-- State "WIP"        from "TBD"        [2024-05-06 Mon 17:06]
-- Note taken on [2024-08-12 Mon 18:21] \\
-  makefiles are now replaced by skelfile rules. next step is SKEL-VM for
-  optimize rule execution plans.
-- State "DONE"       from "WIP"        [2025-02-26 Wed 19:15]
-:END:
-The pieces are there, just needs glue.
-
-A usable SKEL system is a top priority for this year. To get there we
-need to give love to many of the underlying core libraries too - most
-of all =cli=.
-
-The two top priorities are VC commands and implementing a functional
-replacement for makefiles as used in the infra project.
-** DONE orgdb                                                           :mvp:
-:PROPERTIES:
-:VERSION:  0.1.0
-:ID:       b07a5a1b-93ec-457e-bd50-6b00b9a10352
-:CREATED:  <2025-02-26 Wed 19:32>
-:END:
-:LOGBOOK:
-- State "TBD"        from              [2024-08-18 Sun 01:58]
-- Note taken on [2024-08-28 Wed 21:49] \\
-  see graph.el, org-graph-init.lisp
-- Note taken on [2025-02-26 Wed 19:15] \\
-  renamed to org-graph-db (graph.el)
-  see infra/scripts/org-graph-db-init.lisp and core/emacs/lib/graph.el
-- State "DONE"       from "TBD"        [2025-02-26 Wed 19:32]
-:END:
-- similar idea to org-roam
-- stored in rocksdb columns
-
-** DONE infra
-:PROPERTIES:
-:ID:       615dfb29-859c-4ad7-9acf-01ea8aee1174
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-05-06 Mon 17:06]
-- State "DONE"       from "TODO"       [2024-08-12 Mon 18:23]
-:END:
-It is time to move away from makefiles and start integrating our own
-programs into the system bootstrap process. This iteration of the
-infra project will have a few POSIX shell scripts for checking the
-host and grabbing a pre-compiled lisp as well as a compressed
-=infra.core= image.
-* HACK 2025
+* WIP 2025
 :PROPERTIES:
 :ID:       93349821-ca20-4c07-a016-fd270c0c3b8d
 :CREATED:  <2025-06-11 Wed 22:40>
+:ORDERED:  t
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-16 Fri 23:04]
 - State "HACK"       from "OUTLINE"    [2025-06-11 Wed 22:40]
+- State "WIP"        from "HACK"       [2025-08-23 Sat 21:11]
 :END:
 
 - play-time is over, time to build
 - complete core v0.1
 - small steps, /loose/ organization practices, use time effectively
 - be proactive, empower the community, make contributions regularly
-** TBD CC charter
+** OUTLINE CC charter
 :PROPERTIES:
 :CREATED:  <2025-02-26 Wed 19:43>
 :ID:       6910397b-de00-4db0-9145-7e8e0b8c76df
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2025-02-26 Wed 19:43]
+- State "OUTLINE"    from "TBD"        [2025-08-23 Sat 21:36]
 :END:
 - to move forward with purpose we need a clear charter
 - audience: semi-technical (knows what python and git is, has used an IDE)
@@ -176,6 +67,20 @@ host and grabbing a pre-compiled lisp as well as a compressed
   - image-based software
   - vs other, why it failed
   - eliminating dependence on specialized hardware
+- exploring modern computability
+  - 'mixed' systems - highly distributed systems with human operators
+  - explainability, introspection, etc
+  - finding the 'happy path' on target machines
+  - make every device possible 'well-behaved'
+  - highly deterministic, highly interactive
+- designing robust systems and toolchains
+  - targeting a 'fleet' of machines/devices/nodes
+    - home
+    - office
+    - lab
+    - vehicle
+  - modular p2p protocols, schedulers, services
+  - small worker nodes, large service nodes, REPL access anywhere
 
 ** TBD graph                                                         :org:db:
 :PROPERTIES:
@@ -200,7 +105,7 @@ host and grabbing a pre-compiled lisp as well as a compressed
 - contact management for data hoarders/hackers
 - use wide variety of techniques to disambiguate PII
 - pattern detection and analysis
-** TBD mpk
+** WIP mpk
 :PROPERTIES:
 :CREATED:  <2025-02-26 Wed 21:06>
 :ID:       826fb4bb-61f6-4623-8412-bad6a3733f47
@@ -221,12 +126,15 @@ host and grabbing a pre-compiled lisp as well as a compressed
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2025-02-26 Wed 21:08]
+- Note taken on [2025-08-23 Sat 21:31] \\
+  honestly not sure that we even need this - skel is covering a lot of
+  ground and still no 'personal' uses for LLMs.
 :END:
 - design requirements only
 - local ML engine, LLM, compute-bias
 - container image/VM
 - c2, not-in-scope: p2p
-** TODO contrib
+** WIP contrib
 :PROPERTIES:
 :CREATED:  <2025-05-01 Thu 18:19>
 :ID:       686b14b0-4400-44cf-b255-988b81ede5da
@@ -234,7 +142,6 @@ host and grabbing a pre-compiled lisp as well as a compressed
 :LOGBOOK:
 - State "TODO"       from              [2025-05-01 Thu 18:19]
 :END:
-- 
 * OUTLINE 2026
 :PROPERTIES:
 :ID:       2075c192-a962-4dfc-9f0f-de44320ac79e
@@ -243,3 +150,22 @@ host and grabbing a pre-compiled lisp as well as a compressed
 :LOGBOOK:
 - State "OUTLINE"    from              [2025-06-11 Wed 22:41]
 :END:
+** TBD wm
+:PROPERTIES:
+:ID:       782f6e6e-3c39-49e5-9901-2da56271173d
+:CREATED:  <2025-08-23 Sat 21:33>
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-08-23 Sat 21:33]
+:END:
+- build a fully integrated Window Manager based on our fork of StumpWM
+** TBD cl
+:PROPERTIES:
+:ID:       221cb8f8-7e91-451a-b416-aefd34c3c9f6
+:CREATED:  <2025-08-23 Sat 21:34>
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2025-08-23 Sat 21:34]
+:END:
+- create an initial fork of SBCL which maintains compatibility with upstream
+- begin specification of cursed-lisp

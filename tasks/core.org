@@ -119,22 +119,25 @@
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
 :END:
-** PROJECT rocksdb [0/1]                                            :rocksdb:
+** DONE rocksdb [1/1]                                               :rocksdb:
 :PROPERTIES:
 :ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
 :LOCATION+: ffi/rocksdb
 :VERSION:  0.1.0
+:CREATED:  <2025-08-23 Sat 22:00>
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-08-16 Fri 22:57]
+- State "DONE"       from "PROJECT"    [2025-08-23 Sat 22:00]
 :END:
-*** TBD final cleanup
+*** DONE final cleanup
 :PROPERTIES:
 :CREATED:  <2025-04-26 Sat 20:24>
 :ID:       3dd20586-fc84-461a-bc59-a3d14c6fde0a
 :END:
 :LOGBOOK:
 - State "TBD"        from              [2025-04-26 Sat 20:24]
+- State "DONE"       from "TBD"        [2025-08-23 Sat 22:00]
 :END:
 ** PROJECT tree-sitter [0/1]                                            :syn:
 :PROPERTIES:
@@ -181,6 +184,11 @@
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-06-06 Fri 13:29]
 :END:
+- based on CFFI and gray streams
+- defines libssl BIO_METHOD for lisp streams
+  - file descriptor approach is still faster and used by default
+- cross-platform (windows)
+- can define custom BIOs
 ** PROJECT blas
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
