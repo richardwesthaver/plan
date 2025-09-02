@@ -902,7 +902,6 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from              [2024-08-13 Tue 22:15]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-
 *** WIP gen
 :PROPERTIES:
 :ID:       8f44301f-c35a-4a97-88c2-6ea2295513b1
@@ -912,20 +911,45 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 :LOGBOOK:
 CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :END:
-
-**** TODO C function declaration arguments
+**** DONE C function declaration arguments
 :PROPERTIES:
 :ID:       d91584a1-0e99-461b-9045-b521e9d2fe92
 :CREATED:  <2025-06-03 Tue 21:45>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-06-03 Tue 21:46]
+- State "WIP"        from "TODO"       [2025-08-30 Sat 23:11]
+- Note taken on [2025-08-30 Sat 23:11] \\
+  need to fix the deref operator - does not seem to be printing correctly
+- State "DONE"       from "WIP"        [2025-08-30 Sat 23:19]
 :END:
 - this should give us enough to remove the remaining C code from the
   core source tree
 - replace zstd/alien.c and tree-sitter/alien.c with C gen-syntax.
 - next we will target full header files
   - REW_MODE
+
+**** FIXME deref op
+:PROPERTIES:
+:ID:       6a3eb8d5-4ee6-450e-b3e1-9a19ec5415f2
+:CREATED:  <2025-08-30 Sat 23:11>
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2025-08-30 Sat 23:11]
+:END:
+#+begin_src lisp :results replace output
+  (in-package :c)
+  (describe (deref foo))
+#+end_src
+
+#+RESULTS:
+: #<SYN/GEN/C:PREFIX-EXPRESSION {122A137C53}>
+:   [standard-object]
+: 
+: Slots with :INSTANCE allocation:
+:   OP                             = COMMON-LISP:*
+:   OBJECT                         = #<SYN/GEN:IDENT {122A132F23}>
+
 *** TODO tempo
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:19>
@@ -978,7 +1002,7 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
   openssl too we won't bother with portability here either. Use Linux
   or gtfo.
   - but rustls depends on aws-lc which is a fork of openssl/libcrypto
-** PROJECT obj [2/5]                                                    :obj:
+** PROJECT obj [2/6]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1080,7 +1104,7 @@ array optimizations
 - learn how all the deftransforms work, how to define a type-class, etc
 - use similar macro structuring
 
-*** TODO style/theme
+*** TODO color/theme
 :PROPERTIES:
 :ID:       9dfe3f93-b0d0-4d9c-bdb6-1bd045037853
 :CREATED:  <2025-07-29 Tue 16:35>
@@ -1089,7 +1113,40 @@ array optimizations
 :LOGBOOK:
 - State "TODO"       from              [2025-07-29 Tue 16:35]
 :END:
+**** TODO base16 themes
+:PROPERTIES:
+:ID:       3d467376-0ada-4bcf-9330-80bbdbb34769
+:CREATED:  <2025-08-30 Sat 21:32>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-08-30 Sat 21:32]
+- Note taken on [2025-08-30 Sat 23:19] \\
+  just need to add some default palettes to *COLOR-PALETTES* and good to go
+:END:
+- [[https://alex-courtis.github.io/base16-site/][base16]]
+#+begin_quote
+Base16 aims to group similar language constructs with a single
+color. For example, floats, ints, and doubles would belong to the same
+colour group. The colors for the default theme were chosen to be
+easily separable, but scheme designers should pick whichever colours
+they desire, e.g. base0B (green by default) could be replaced with
+red. There are, however, some general guidelines below that stipulate
+which base0B should be used to highlight each construct when designing
+templates for editors.
 
+Since describing syntax highlighting can be tricky, please see
+base16-vim and base16-textmate for reference. Though it should be
+noted that each editor will have some discrepancies due the fact that
+editors generally have different syntax highlighting engines.
+
+Colors base00 to base07 are typically variations of a shade and run
+from darkest to lightest. These colors are used for foreground and
+background, status bars, line highlighting and such. Colors base08 to
+base0F are typically individual colors used for types, operators,
+names and variables. In order to create a dark theme, colors base00 to
+base07 should span from dark to light. For a light theme, these
+colours should span from light to dark.
+#+end_quote
 ** PROJECT net [1/6]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
@@ -1525,16 +1582,19 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 - State "TODO"       from              [2025-07-30 Wed 22:37]
 :END:
 define-factory? java ptsd
-** HOLD defsys                                                     :lisp:std:
+** WIP defsys                                                      :lisp:std:
 :PROPERTIES:
 :ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
 :CREATED:  <2025-04-26 Sat 22:47>
+:Effort:   40h
 :END:
 :LOGBOOK:
 - State "HACK"       from              [2024-08-03 Sat 01:06]
 - Refiled on [2024-08-22 Thu 19:03]
 - State "HOLD"       from "HACK"       [2025-04-26 Sat 22:47] \\
   hold for version 0.3
+- State "TODO"       from "HOLD"       [2025-08-30 Sat 23:08]
+CLOCK: [2025-08-30 Sat 23:08]
 :END:
 - maybe Norvig was right and we don't need asdf/uiop, maybe not
 - the truth is somewhere in between
@@ -1637,7 +1697,7 @@ define-factory? java ptsd
 - State "FIXME"      from              [2025-05-29 Thu 22:38]
 :END:
 copy-check-and-promote <- copy-slot-and-check
-** TBD incorporate sb-cltl2 generators/iterators into STD/PIPE
+** TODO incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
 :ID:       04fdde4f-427c-47b5-8394-5b5365ede249
 :CREATED:  <2025-01-17 Fri 15:54>
@@ -1646,6 +1706,7 @@ copy-check-and-promote <- copy-slot-and-check
 - Refiled on [2025-05-02 Fri 14:03]
 - State "TODO"       from              [2025-05-08 Thu 20:51]
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
+- State "TODO"       from "TBD"        [2025-08-30 Sat 23:09]
 :END:
 * PROJECT emacs [1/12]                                                :emacs:
 :PROPERTIES:
@@ -2049,7 +2110,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:05]
 :END:
-** PROJECT skel [1/7]                                                  :skel:
+** PROJECT skel [2/8]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -2083,7 +2144,8 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
-*** TODO implement vm
+- thread-pool
+*** NOPE implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
@@ -2169,7 +2231,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   - cl-emb
   - https://github.com/alpha123/cl-template
 - see also [[id:25c20927-7ba3-4821-91b9-ad05a1a4b7f7][tempo]]
-** WAIT homer [1/1]                                              :lisp:homer:
+*** NEXT homer [1/1]                                             :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION:  0.1
@@ -2180,6 +2242,15 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "WIP"        from "TBD"        [2025-01-18 Sat 20:49]
 - State "WAIT"       from "WIP"        [2025-05-21 Wed 21:35] \\
   waiting on thread pools
+- State "NEXT"       from "WAIT"       [2025-08-30 Sat 18:34]
+:END:
+*** PROJECT krypt
+:PROPERTIES:
+:ID:       0508b176-bee9-4c35-8081-18df55ea27c6
+:CREATED:  <2025-06-15 Sun 21:46>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-06-15 Sun 21:46]
 :END:
 ** WIP mpk [0/2]
 :PROPERTIES:
@@ -2209,43 +2280,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "WAIT"       from              [2025-05-21 Wed 21:35] \\
   waiting on thread pools
 :END:
-** PROJECT pwn [0/2]                                               :lisp:pwn:
-:PROPERTIES:
-:ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
-:VERSION:  0.1
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:04]
-- Note taken on [2024-02-29 Thu 16:11] \\
-  Should this be a separate application? Lisp exploit development framework
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-- Refiled on [2025-05-16 Fri 23:56]
-:END:
-*** TODO diz                                                            :asm:
-:PROPERTIES:
-:ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 01:04]
-:END:
-- disassembly toolkit
-*** TODO sassy                                                          :net:
-:PROPERTIES:
-:CREATED:  <2024-09-02 Mon 16:14>
-:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-09-02 Mon 16:14]
-:END:
-- SaaS toolkit
-** PROJECT krypt
-:PROPERTIES:
-:ID:       0508b176-bee9-4c35-8081-18df55ea27c6
-:CREATED:  <2025-06-15 Sun 21:46>
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2025-06-15 Sun 21:46]
-:END:
+
 * PROJECT bench                                             :test:bench:lisp:
 :PROPERTIES:
 :CREATED:  <2024-08-28 Wed 21:59>

@@ -1,0 +1,54 @@
+#+title: Shed Tasks
+#+author: Richard Westhaver
+#+email: richard.westhaver@gmail.com
+#+description: shed task list
+#+setupfile: ../../clean.theme
+#+OPTIONS: num:nil d:t prop:t toc:t
+#+ARCHIVE: ../../archive/plan.org::** shed
+#+LOCATION: ~/comp/shed/
+#+filetags: shed
+* PROJECT tenex
+:PROPERTIES:
+:ID:       5e5a0352-1e4c-45cb-85e7-3d54f894aa04
+:CREATED:  <2025-08-30 Sat 18:35>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-08-30 Sat 18:35]
+:END:
+* PROJECT wm
+:PROPERTIES:
+:ID:       9328a28e-c496-4b88-b91e-0c4054287aef
+:CREATED:  <2025-08-30 Sat 18:35>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-08-30 Sat 18:35]
+:END:
+* PROJECT pwn [0/2]                                                :lisp:pwn:
+:PROPERTIES:
+:ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
+:VERSION:  0.1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+- Note taken on [2024-02-29 Thu 16:11] \\
+  Should this be a separate application? Lisp exploit development framework
+- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
+- Refiled on [2025-05-16 Fri 23:56]
+:END:
+*** TODO diz                                                            :asm:
+:PROPERTIES:
+:ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-17 Sun 01:04]
+:END:
+- disassembly toolkit
+*** TODO sassy                                                          :net:
+:PROPERTIES:
+:CREATED:  <2024-09-02 Mon 16:14>
+:ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2024-09-02 Mon 16:14]
+:END:
+- SaaS toolkit
