@@ -2110,7 +2110,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:05]
 :END:
-** PROJECT skel [2/8]                                                  :skel:
+** PROJECT skel [3/10]                                                 :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -2252,6 +2252,17 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-15 Sun 21:46]
 :END:
+*** DONE infra :lisp module
+:PROPERTIES:
+:CREATED:  <2025-09-07 Sun 21:11>
+:ID:       51b5db8e-7d6a-4f7f-b8e9-ba683d834715
+:END:
+:LOGBOOK:
+- State "FIXME"      from "TODO"       [2025-09-07 Sun 21:11]
+- Refiled on [2025-09-07 Sun 21:13]
+- State "DONE"       from "FIXME"      [2025-09-08 Mon 18:48]
+:END:
+- we broke sk-file-component, need to repair
 ** WIP mpk [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:06>
@@ -2281,6 +2292,10 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   waiting on thread pools
 :END:
 
+*** TODO media logging
+:LOGBOOK:
+- Refiled on [2025-09-06 Sat 17:47]
+:END:
 * PROJECT bench                                             :test:bench:lisp:
 :PROPERTIES:
 :CREATED:  <2024-08-28 Wed 21:59>
