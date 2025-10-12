@@ -1722,7 +1722,7 @@ copy-check-and-promote <- copy-slot-and-check
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 - State "TODO"       from "TBD"        [2025-08-30 Sat 23:09]
 :END:
-* PROJECT emacs [2/12]                                                :emacs:
+* PROJECT emacs [2/15]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -2061,6 +2061,17 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
+** TODO skel widgets                                                   :skel:
+:PROPERTIES:
+:ID:       a80df9ee-e772-499b-b996-78962bd13cd4
+:CREATED:  <2025-10-12 Sun 00:33>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-10-12 Sun 00:33]
+:END:
+- ideally have a function that overlays a skelfile/sxp buffer with a
+  customization interface
+- need to maintain mapping between buffer forms and widgets
 ** TODO sk.el hack-dir-local-variables                                :emacs:
 :PROPERTIES:
 :ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
