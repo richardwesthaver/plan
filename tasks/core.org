@@ -802,6 +802,11 @@ returned on creation.
 We should NOT use create- when there are existing columns that we just
 want to get a SAP for. Instead always opt for opening a new db
 instance, possibly by closing an existing one.
+*** TODO undefined RDB/STORE symbols
+:LOGBOOK:
+- Refiled on [2025-10-11 Sat 21:39]
+:END:
+RDB::CURSOR-GET-BOTH-BUFFERED RDB::CURSOR-MOVE-BUFFERED RDB::CURSOR-SET-BUFFERED RDB::DB-CURSOR RDB::DB-CURSOR-DELETE RDB::DB-CURSOR-MOVE-BUFFERED RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED RDB::DB-DELETE-BUFFERED RDB::DB-DELETE-KV-BUFFERED RDB::DB-GET-KEY-BUFFERED RDB::DB-PUT-BUFFERED RDB::DUP-BTREES RDB::INDEX-TABLE-ASSOC RDB::KEY-FN RDB::PRIMARY
 ** PROJECT vc [0/2]                                                      :vc:
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
@@ -2121,6 +2126,15 @@ SCHEDULED: <2025-03-01 Sat>
 :END:
 - at least have option of disabling - it isn't always correct about the location
 
+** TODO speedbar-obj-alist for cl
+:LOGBOOK:
+- Refiled on [2025-10-11 Sat 21:39]
+:END:
+(fasls)
+** TODO new graph property: pronunciation
+:LOGBOOK:
+- Refiled on [2025-10-11 Sat 21:40]
+:END:
 * PROJECT app                                                      :app:lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:05>
