@@ -597,7 +597,7 @@ SCHEDULED: <2025-05-23 Fri>
 :END:
 add tests for lexer and LALR. figure out if there are any gaps that we
 need to fill.
-** PROJECT organ [0/2]                                                :organ:
+** PROJECT organ [0/4]                                                :organ:
 :PROPERTIES:
 :ID:       f5ad161f-c954-45e2-aeb4-c88d916bae7f
 :VERSION:  0.2
@@ -657,9 +657,7 @@ need to fill.
 
 #+name: oe-sxp
 #+begin_src lisp :results output :var in=oe-form()
-  (let ((sxp (sxp:make-sxp)))
-    (sxp:read-sxp-string sxp in)
-    (describe sxp))
+  (describe sxp)
 #+end_src
 
 #+RESULTS: oe-sxp
@@ -669,6 +667,20 @@ need to fill.
 : Slots with :INSTANCE allocation:
 :   AST                            = NIL
 
+*** WIP org-heading refinement
+:PROPERTIES:
+:CREATED:  <2025-10-14 Tue 22:24>
+:ID:       d9e4736c-5902-4b40-840a-faf48d67ea27
+:Effort:   5h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-10-14 Tue 22:24]
+CLOCK: [2025-10-14 Tue 22:24]--[2025-10-14 Tue 22:25] =>  0:01
+:END:
+- time for trees
+- recursively parse headlines and store them in =AST= slots
+- sections (=ORG-CONTENTS=) contain everything upto the next heading
+  or EOF
 ** PROJECT rdb [0/6]                                                    :rdb:
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
@@ -1608,7 +1620,7 @@ define-factory? java ptsd
 - State "HOLD"       from "HACK"       [2025-04-26 Sat 22:47] \\
   hold for version 0.3
 - State "TODO"       from "HOLD"       [2025-08-30 Sat 23:08]
-CLOCK: [2025-08-30 Sat 23:08]
+CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 :END:
 - maybe Norvig was right and we don't need asdf/uiop, maybe not
 - the truth is somewhere in between
