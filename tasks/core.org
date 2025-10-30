@@ -16,13 +16,17 @@
 - State "FIXME"      from              [2025-05-31 Sat 00:53]
 :END:
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*;; TODO" "*.*" "~/comp/core/")
+  (rgrep ".*; TODO" "*.*" "~/comp/core/")
 #+end_src
-*195*
+*204*
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*;; FIXME" "*.*" "~/comp/core/")
+  (rgrep ".*; FIXME" "*.*" "~/comp/core/")
 #+end_src
-*28*
+*33*
+#+begin_src emacs-lisp :results silent
+  (rgrep ".*; REVIEW" "*.*" "~/comp/core/")
+#+end_src
+*14*
 
 * FIXME undefined symbols
 :PROPERTIES:
@@ -333,7 +337,7 @@ SCHEDULED: <2025-06-11 Wed>
 :END:
 [[file:~/comp/core/skelfile::;; FIX 2025-06-10: why can't we find compile-system even when specifying the package?][loc]]
 std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
-*** PROJECT cli/clap [1/5]                                         :lisp:cli:
+*** PROJECT cli/clap [0/5]                                         :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -372,6 +376,15 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 - how to apply operators?
 - pipe results?
 +forth+
+**** TODO hooks
+:PROPERTIES:
+:CREATED:  <2025-10-28 Tue 21:07>
+:ID:       971196cb-be16-45b2-8715-d395527edd4c
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-10-28 Tue 21:07]
+:END:
+cli should have relevant hooks
 **** TODO clap fixtures                                                :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
