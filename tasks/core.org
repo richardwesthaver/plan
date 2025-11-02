@@ -828,6 +828,9 @@ We should NOT use create- when there are existing columns that we just
 want to get a SAP for. Instead always opt for opening a new db
 instance, possibly by closing an existing one.
 *** TODO undefined RDB/STORE symbols
+:PROPERTIES:
+:ID:       5f1bfe1a-a01f-4ded-b85f-b10a4cf8dc70
+:END:
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:39]
 :END:
@@ -1747,7 +1750,7 @@ copy-check-and-promote <- copy-slot-and-check
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 - State "TODO"       from "TBD"        [2025-08-30 Sat 23:09]
 :END:
-* PROJECT emacs [2/15]                                                :emacs:
+* PROJECT emacs [2/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -2078,7 +2081,7 @@ for keyboard-based navigation too.
 - TIMELINE_TEXT = SUMMARY
 - TIMELINE_GROUP = GROUP or CATEGORY
 - TIMELINE_DO_NOT_OVERLAP
-** TODO sk.el project integration                                      :skel:
+** TODO skel.el project integration                                    :skel:
 :PROPERTIES:
 :CREATED:  <2024-09-03 Tue 22:14>
 :ID:       c9e157da-50e9-4dc3-96fd-bb9bc9175ee5
@@ -2086,6 +2089,15 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
+** TODO allout-mode support
+:PROPERTIES:
+:ID:       a4f2ff53-87cb-4d7e-95e9-9dab485fedc2
+:CREATED:  <2025-10-31 Fri 00:52>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-10-31 Fri 00:52]
+:END:
+should extensively support throughout our code
 ** TODO skel widgets                                                   :skel:
 :PROPERTIES:
 :ID:       a80df9ee-e772-499b-b996-78962bd13cd4
@@ -2097,7 +2109,17 @@ for keyboard-based navigation too.
 - ideally have a function that overlays a skelfile/sxp buffer with a
   customization interface
 - need to maintain mapping between buffer forms and widgets
-** TODO sk.el hack-dir-local-variables                                :emacs:
+** TODO desktop save functions
+:PROPERTIES:
+:ID:       6fcda66a-3a65-4e82-91b5-cf996efff1b2
+:CREATED:  <2025-10-30 Thu 23:47>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-10-30 Thu 23:47]
+:END:
+- need to set the =desktop-save-buffer= value for the following buffers:
+- slime,ielm,eshell,org-agenda,notmuch,elfeed
+** TODO skel.el hack-dir-local-variables                              :emacs:
 :PROPERTIES:
 :ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
 :END:
@@ -2163,11 +2185,17 @@ SCHEDULED: <2025-03-01 Sat>
 - at least have option of disabling - it isn't always correct about the location
 
 ** TODO speedbar-obj-alist for cl
+:PROPERTIES:
+:ID:       351e0b8a-3608-4f35-9201-9921cdf8968b
+:END:
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:39]
 :END:
 (fasls)
 ** TODO new graph property: pronunciation
+:PROPERTIES:
+:ID:       5cd73df3-1409-4bb3-95c2-695514f16b44
+:END:
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 :END:
@@ -2180,7 +2208,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:05]
 :END:
-** PROJECT skel [3/10]                                                 :skel:
+** PROJECT skel [3/11]                                                 :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -2314,6 +2342,14 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   waiting on thread pools
 - State "NEXT"       from "WAIT"       [2025-08-30 Sat 18:34]
 :END:
+*** TODO project desktop config
+:PROPERTIES:
+:CREATED:  <2025-10-30 Thu 22:51>
+:ID:       c4ead324-31bc-46a9-af3c-d5bde43ac5e2
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-10-30 Thu 22:51]
+:END:
 *** PROJECT krypt
 :PROPERTIES:
 :ID:       0508b176-bee9-4c35-8081-18df55ea27c6
@@ -2363,6 +2399,9 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :END:
 
 *** TODO media logging
+:PROPERTIES:
+:ID:       731eb21c-d7c1-4dbe-9f11-e364a25426f0
+:END:
 :LOGBOOK:
 - Refiled on [2025-09-06 Sat 17:47]
 :END:

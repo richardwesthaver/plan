@@ -81,7 +81,6 @@
     - vehicle
   - modular p2p protocols, schedulers, services
   - small worker nodes, large service nodes, REPL access anywhere
-
 ** TBD graph                                                         :org:db:
 :PROPERTIES:
 :VERSION:  0.2.0

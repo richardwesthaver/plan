@@ -17,9 +17,9 @@
 | skel-id     | 1784914079056115652                                 |
 | root        | ~/comp/org/plan/                                    |
 | tags        | (org docs notes blog meta plan archive notes graph) |
-| updated     | Sun Oct 19 20:18:24 2025 -0400                      |
+| updated     | Wed Oct 29 21:23:05 2025 -0400                      |
 | langs       | org                                                 |
-| lines       | 3583 :λ 3476 :# 0 :_ 107                            |
+| lines       | 3614 :λ 3507 :# 0 :_ 107                            |
 |-------------+-----------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -41,23 +41,23 @@
 2025-07    233 ****
 2025-08    233 ****
 2025-09    344 ******
-2025-10    190 ***
+2025-10    223 ****
 #+end_example
 
-#+CALL: project-files() :dir ~/comp/org/plan/
+#+CALL: project-html-files() :dir ~/comp/org/plan/
 
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[file:readme.org][readme]]        | 2025-10-26 21:13:58 |
-| [[file:tasks/core.org][tasks/core]]    | 2025-10-28 21:08:02 |
-| [[file:product.org][product]]       | 2025-02-14 19:14:44 |
-| [[file:roadmap.org][roadmap]]       | 2025-08-23 21:36:12 |
-| [[file:tasks/contrib.org][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[file:tasks/demo.org][tasks/demo]]    | 2025-03-08 01:05:42 |
-| [[file:tasks/ext.org][tasks/ext]]     | 2025-07-10 15:54:43 |
-| [[file:tasks/infra.org][tasks/infra]]   | 2025-06-03 19:50:16 |
-| [[file:tasks/rnd.org][tasks/rnd]]     | 2025-07-08 22:40:22 |
-| [[file:tasks/shed.org][tasks/shed]]    | 2025-08-30 18:39:19 |
+| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-01 00:13:42 |
+| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-10-31 00:52:51 |
+| [[https://otom8.dev/plan/product.html][product]]       | 2025-02-14 19:14:44 |
+| [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-08-23 21:36:12 |
+| [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
+| [[https://otom8.dev/plan/tasks/demo.html][tasks/demo]]    | 2025-03-08 01:05:42 |
+| [[https://otom8.dev/plan/tasks/ext.html][tasks/ext]]     | 2025-07-10 15:54:43 |
+| [[https://otom8.dev/plan/tasks/infra.html][tasks/infra]]   | 2025-06-03 19:50:16 |
+| [[https://otom8.dev/plan/tasks/rnd.html][tasks/rnd]]     | 2025-07-08 22:40:22 |
+| [[https://otom8.dev/plan/tasks/shed.html][tasks/shed]]    | 2025-08-30 18:39:19 |
 
 #+END:
