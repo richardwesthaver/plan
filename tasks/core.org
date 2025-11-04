@@ -113,7 +113,7 @@
 
 #+end_example
 
-* PROJECT ffi                                                      :lisp:ffi:
+* PROJECT ffi [1/6]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION:  0.1
@@ -293,7 +293,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* PROJECT bin
+* PROJECT bin [0/0]
 :PROPERTIES:
 :ID:       94f244f1-7175-45af-b511-a4177ff78097
 :CREATED:  <2025-07-08 Tue 22:27>
@@ -304,7 +304,7 @@ implement bindings to the Fortran BLAS functions
 - find purpose for this
 - now that cli/clap is integrated with apps we may want to use bin
   just to ship separate cores - no asd just scripts
-* PROJECT lib                                                          :lisp:
+* PROJECT lib [1/16]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
 :ID:       cbe46830-8363-4e11-897c-9779e1997e2b
@@ -1045,6 +1045,17 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+*** TODO object schema
+DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
+:PROPERTIES:
+:CREATED:  <2025-11-03 Mon 19:14>
+:ID:       01351f90-e599-41a8-96b2-0138ff3112eb
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-03 Mon 19:14]
+:END:
+- get this working and tested, implement for org-graph
+- keep working our way up the chain to stored-object-schemas
 *** TODO equiv
 :PROPERTIES:
 :ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
@@ -2199,7 +2210,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 :END:
-* PROJECT app                                                      :app:lisp:
+* PROJECT app [0/2]                                                :app:lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:05>
 :ID:       80b3830d-f1c6-47cd-ae3e-3c661ffb0238
@@ -2405,7 +2416,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - Refiled on [2025-09-06 Sat 17:47]
 :END:
-* PROJECT bench                                             :test:bench:lisp:
+* PROJECT bench [0/0]                                         :test:bench:lisp:
 :PROPERTIES:
 :CREATED:  <2024-08-28 Wed 21:59>
 :ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
