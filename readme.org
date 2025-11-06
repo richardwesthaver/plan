@@ -13,13 +13,13 @@
 |-------------+-----------------------------------------------------|
 | name        | plan                                                |
 | version     | 0.1.0                                               |
-| description | CC Org Files                                        |
+| description | NIL                                                 |
 | skel-id     | 1784914079056115652                                 |
 | root        | ~/comp/org/plan/                                    |
 | tags        | (org docs notes blog meta plan archive notes graph) |
-| updated     | Sun Nov 02 16:07:44 2025 -0500                      |
+| updated     | Tue Nov 04 17:12:03 2025 -0500                      |
 | langs       | org                                                 |
-| lines       | 3631 :λ 3525 :# 0 :_ 106                            |
+| lines       | 3643 :λ 3537 :# 0 :_ 106                            |
 |-------------+-----------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -42,7 +42,7 @@
 2025-08    233 ****
 2025-09    344 ******
 2025-10    223 ****
-2025-11     82 *
+2025-11    116 **
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -50,11 +50,11 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
+| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-05 19:37:05 |
 | [[https://otom8.dev/plan/product.html][product]]       | 2025-11-01 02:17:57 |
-| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-01 00:56:07 |
 | [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
 | [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-11-01 02:17:57 |
+| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-11-04 15:01:11 |
 | [[https://otom8.dev/plan/tasks/demo.html][tasks/demo]]    | 2025-03-08 01:05:42 |
 | [[https://otom8.dev/plan/tasks/ext.html][tasks/ext]]     | 2025-07-10 15:54:43 |
 | [[https://otom8.dev/plan/tasks/infra.html][tasks/infra]]   | 2025-06-03 19:50:16 |
