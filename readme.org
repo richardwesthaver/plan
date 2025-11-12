@@ -16,8 +16,8 @@
 | description | CC Org Files                                        |
 | skel-id     | 1784914079056115652                                 |
 | root        | ~/comp/org/plan/                                    |
-| tags        | (org docs notes blog meta plan archive notes graph) |
-| updated     | Tue Nov 11 17:59:20 2025 -0500                      |
+| tags        | (ORG DOCS NOTES BLOG META PLAN ARCHIVE NOTES GRAPH) |
+| updated     | Tue Nov 11 19:47:57 2025 -0500                      |
 | langs       | org                                                 |
 | lines       | 3643 :λ 3537 :# 0 :_ 106                            |
 |-------------+-----------------------------------------------------|
@@ -42,7 +42,7 @@
 2025-08    233 ****
 2025-09    344 ******
 2025-10    223 ****
-2025-11    140 **
+2025-11    148 **
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -50,8 +50,8 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
+| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-11 20:22:34 |
 | [[https://otom8.dev/plan/product.html][product]]       | 2025-11-01 02:17:57 |
-| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-10 19:53:08 |
 | [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
 | [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
 | [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-11-04 15:01:11 |
