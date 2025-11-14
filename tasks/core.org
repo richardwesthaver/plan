@@ -304,7 +304,7 @@ implement bindings to the Fortran BLAS functions
 - find purpose for this
 - now that cli/clap is integrated with apps we may want to use bin
   just to ship separate cores - no asd just scripts
-* PROJECT lib [1/16]                                                   :lisp:
+* PROJECT lib [1/17]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
 :ID:       cbe46830-8363-4e11-897c-9779e1997e2b
@@ -1467,6 +1467,39 @@ SCHEDULED: <2025-06-17 Tue>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
 :END:
+** PROJECT box
+:PROPERTIES:
+:ID:       3329b301-f396-48f8-b097-dca46fbfd74d
+:CREATED:  <2025-11-13 Thu 20:10>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-11-13 Thu 20:10]
+:END:
+*** DONE type keyword for box configs
+:PROPERTIES:
+:ID:       b51a0a08-9e05-4485-864c-b9b4661d95d3
+:CREATED:  <2025-11-13 Thu 20:09>
+:Effort:   2:00
+:END:
+:LOGBOOK:
+CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
+- Note taken on [2025-11-13 Thu 21:29] \\
+  pretty easy, just gotta finesse safe-io-syntax
+- State "WIP"        from              [2025-11-13 Thu 21:30]
+- State "DONE"       from "WIP"        [2025-11-13 Thu 21:49]
+:END:
+- erased on read
+- might want to indicate working-dir, output
+**** DONE from keyword
+:PROPERTIES:
+:ID:       58aa8a9d-2b92-4a4a-87a9-c3086907fb91
+:CREATED:  <2025-11-13 Thu 21:30>
+:END:
+:LOGBOOK:
+- State "WIP"        from              [2025-11-13 Thu 21:30]
+- State "DONE"       from "WIP"        [2025-11-13 Thu 21:48]
+:END:
+
 ** PROJECT log [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:44>
