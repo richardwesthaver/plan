@@ -171,22 +171,58 @@
 - State "PROJECT"    from              [2025-06-06 Fri 13:29]
 :END:
 - mvp and testing
-** PROJECT rustls
+** PROJECT openssl
 :PROPERTIES:
 :ID:       7d0469e9-b40a-48bb-aa43-807ef9a19fff
 :CREATED:  <2025-06-06 Fri 13:28>
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:29]
+- Note taken on [2025-11-14 Fri 19:34] \\
+  rustls moved to basement, renamed to openssl
 :END:
-- testing and utils
-*** RESEARCH cl+ssl low-level API
+- no AWS_LC for now
+- vanilla openssl (vendored)
+*** TODO complete ffi
+:PROPERTIES:
+:ID:       f99d13c1-fd8e-4ac3-989a-230dc8397389
+:CREATED:  <2025-11-14 Fri 19:35>
+:Effort:   5h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-14 Fri 19:35]
+:END:
+- finish the routines, define default callbacks
+- may depend on a =std/alien:defcallback= macro
+**** WIP cl+ssl -> rustls
+:PROPERTIES:
+:ID:       1841fd20-35b0-444f-a610-67dc4291ee18
+:CREATED:  <2025-06-06 Fri 13:30>
+:Effort:   40h
+:LOCATION+: ssl/
+:END:
+:LOGBOOK:
+CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
+- Refiled on [2025-11-14 Fri 19:37]
+:END:
+- [[https://github.com/cl-plus-ssl/cl-plus-ssl][cl+ssl src]]
+- ffi-buffer -> static-vector
+- openssl has differences in symbol-names between versions - cl+ssl
+  makes efforts to accomodate this
+- rustls doesn't suffer from this - if we ever end up implementing
+  openssl too we won't bother with portability here either. Use Linux
+  or gtfo.
+  - but rustls depends on aws-lc which is a fork of openssl/libcrypto
+*** DONE cl+ssl low-level API
 :PROPERTIES:
 :ID:       be17b0b4-c840-4cc9-a8f2-9cf4fc482d17
 :CREATED:  <2025-06-06 Fri 13:29>
+:Effort:   2h
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-06-06 Fri 13:29]
+CLOCK: [2025-11-14 Fri 19:34]--[2025-11-14 Fri 19:34] =>  0:00
+- State "DONE"       from "WIP"        [2025-11-14 Fri 19:34]
 :END:
 - based on CFFI and gray streams
 - defines libssl BIO_METHOD for lisp streams
@@ -1008,33 +1044,29 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:30]
 :END:
-*** WIP ssl
+*** WIP tls
 :PROPERTIES:
 :ID:       53e803e1-40fc-4da5-925e-7909154a590b
 :CREATED:  <2025-06-06 Fri 15:06>
 :ORDERED:  t
+:LOCATION+: tls/
 :END:
 :LOGBOOK:
 - State "WIP"        from              [2025-06-06 Fri 15:06]
+- Note taken on [2025-11-14 Fri 19:37] \\
+  rename to tls
 :END:
-**** WIP cl+ssl -> rustls
+**** WIP ssl streams
 :PROPERTIES:
-:ID:       1841fd20-35b0-444f-a610-67dc4291ee18
-:CREATED:  <2025-06-06 Fri 13:30>
-:Effort:   40h
-:LOCATION+: ssl/
+:ID:       aea7eefe-6823-4924-8248-d74923f68c0b
+:CREATED:  <2025-11-14 Fri 19:38>
+:Effort:   8h
+:LOCATION+: stream.lisp
 :END:
 :LOGBOOK:
-CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
+CLOCK: [2025-11-14 Fri 19:38]
 :END:
-- [[https://github.com/cl-plus-ssl/cl-plus-ssl][cl+ssl src]]
-- ffi-buffer -> static-vector
-- openssl has differences in symbol-names between versions - cl+ssl
-  makes efforts to accomodate this
-- rustls doesn't suffer from this - if we ever end up implementing
-  openssl too we won't bother with portability here either. Use Linux
-  or gtfo.
-  - but rustls depends on aws-lc which is a fork of openssl/libcrypto
+
 ** PROJECT obj [2/6]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
@@ -1467,6 +1499,8 @@ SCHEDULED: <2025-06-17 Tue>
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
 :END:
+- depends on tensor library
+
 ** PROJECT box
 :PROPERTIES:
 :ID:       3329b301-f396-48f8-b097-dca46fbfd74d
