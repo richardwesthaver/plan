@@ -1096,7 +1096,16 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :LOGBOOK:
 - State "TODO"       from              [2025-06-09 Mon 14:46]
 :END:
-**** OUTLINE next steps
+**** TODO documentation
+:PROPERTIES:
+:ID:       8c7669a3-5552-40cd-b9c9-1ae064382cd7
+:CREATED:  <2025-11-20 Thu 21:18>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-20 Thu 21:18]
+:END:
+- specify mapping to lisp equality primitives
+***** OUTLINE next steps
 :PROPERTIES:
 :ID:       df12ca39-ad89-4858-bc1e-4b0efddee649
 :CREATED:  <2025-06-09 Mon 14:47>
@@ -1106,6 +1115,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 - probably want to hook into sbcl low-level equality mechanics
 - leverage type-classes/primitive-type
+- egraphs, etc
 *** DONE url-encode
 :PROPERTIES:
 :ID:       669dbc13-4bfc-44ba-bd8e-9337809dd1b5
@@ -1128,7 +1138,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
 :ID:       b515faef-e1dc-4b30-bf50-599b7394e797
-:LOCATION+: tensor.lisp
+:LOCATION+: tensor/
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-20 Tue 18:37]
@@ -1167,7 +1177,29 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
   - deftransform, array specialization stuff (sb-vm, sb-c)
 - sbcl has its own concept of higher-ordered types see define-type-class
 
-***** RESEARCH SB-SIMD
+- MATLISP main branch uses MOP - tensor-class and
+  tensor-method-generator, in addition to the auto-memoized templates
+  (std/meta for us)
+  - [2025-11-20 Thu] *currently transitioning to this API*
+  - attempting to leverage STD:KERNEL-CLASS for the tensor accessor
+    stuff. Could be a bad idea.. TBD.
+
+**** TODO figure out path forward for obj/tensor/loop
+:PROPERTIES:
+:ID:       ac8dfb86-8592-4e59-8292-19b515e81557
+:CREATED:  <2025-11-21 Fri 21:39>
+:LOCATION+: loop.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-21 Fri 21:39]
+:END:
+- FOR-MOD clause
+- [[file:~/.stash/scratch/matlisp-git/src/base/boolean.lisp]] - usage
+- also bool.lisp
+- technically possible with sbcl internals, but likely very difficult
+- to not get stuck in implementation we should have a workaround solution
+
+**** RESEARCH SB-SIMD
 :PROPERTIES:
 :ID:       bc69db9c-023a-4235-b0a9-e84061cd703e
 :CREATED:  <2025-06-09 Mon 12:13>
@@ -1189,7 +1221,7 @@ array optimizations
 :LOGBOOK:
 - State "TODO"       from              [2025-07-29 Tue 16:35]
 :END:
-**** TODO base16 themes
+**** DONE base16 palettes
 :PROPERTIES:
 :ID:       3d467376-0ada-4bcf-9330-80bbdbb34769
 :CREATED:  <2025-08-30 Sat 21:32>
@@ -1198,6 +1230,7 @@ array optimizations
 - State "TODO"       from              [2025-08-30 Sat 21:32]
 - Note taken on [2025-08-30 Sat 23:19] \\
   just need to add some default palettes to *COLOR-PALETTES* and good to go
+- State "DONE"       from "TODO"       [2025-11-20 Thu 21:21]
 :END:
 - [[https://alex-courtis.github.io/base16-site/][base16]]
 #+begin_quote
@@ -1565,7 +1598,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [7/15]                                               :lisp:std:
+* PROJECT std [7/17]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1575,6 +1608,21 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+** TODO missing symbols
+:PROPERTIES:
+:ID:       6dc49cf7-f024-4b9b-a149-6e60934a6918
+:CREATED:  <2025-11-21 Fri 20:52>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-21 Fri 20:52]
+:END:
+#+begin_example
+; compilation unit finished
+;   Undefined functions:
+;     STD/ASYNC::BODY STD/MACS:DEFUNITS STD/PRINT::FMT-MUMBLE STD/PRINT::FMT-TIME STD/ASYNC::WITH-PARSED-BODY
+;   Undefined variables:
+;     STD/DEFSYS:*MODULE-TABLE* STD/MACS::CABLE STD/MACS::CM STD/ASYNC::DECLARES STD/MACS::DISTANCE STD/MACS::FATHOM STD/MACS::FOOT STD/MACS::FURLONG STD/MACS::INCH STD/MACS::KM STD/MACS::LIGHT-YEAR STD/MACS::M STD/MACS::MILE STD/MACS::MM STD/MACS::NAUTICAL-MILE STD/MACS::NM STD/MACS::YARD
+#+end_example
 ** WIP documentation sweep
 :PROPERTIES:
 :ID:       b7f48103-4fa3-48c0-93ba-8efc23848931
@@ -1604,7 +1652,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 #+RESULTS:
 | :MISSING | 529 | / | 1420 |
 
-- [?] alien.lisp              
+- [X] alien.lisp              
 - [X] array.lisp              
 - [X] async.lisp              
 - [X] bit.lisp                
@@ -1618,7 +1666,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 - [X] list.lisp               
 - [X] macs                    
 - [X] meta.lisp               
-- [-] named-readtables.lisp   
+- [X] named-readtables.lisp   
 - [X] num                     
 - [X] os.lisp                 
 - [X] par.lisp                
@@ -1637,7 +1685,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 - [X] sys.lisp                
 - [X] task.lisp               
 - [X] type.lisp               
-- [ ] tests                   
+- [X] tests                   
 - [ ] thread.lisp             
 
 ** DONE standard package sets
@@ -1693,7 +1741,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 - conditions
 - 'preferred' formats
 - check/translate fns
-** TODO defclass*/define-class
+** TODO defclass*
 :PROPERTIES:
 :ID:       b3b8fbbb-543a-4914-a4dd-0635677c35ee
 :CREATED:  <2025-07-30 Wed 22:37>
@@ -1701,7 +1749,7 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 :LOGBOOK:
 - State "TODO"       from              [2025-07-30 Wed 22:37]
 :END:
-define-factory? java ptsd
+VERBS will need more work
 ** WIP defsys                                                      :lisp:std:
 :PROPERTIES:
 :ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
@@ -1718,7 +1766,7 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 :END:
 - maybe Norvig was right and we don't need asdf/uiop, maybe not
 - the truth is somewhere in between
-- [ ] defsys macro
+- [X] defsys macro
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
@@ -1817,6 +1865,23 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 - State "FIXME"      from              [2025-05-29 Thu 22:38]
 :END:
 copy-check-and-promote <- copy-slot-and-check
+** TODO compiler-macro utils
+:PROPERTIES:
+:ID:       877d4467-35d6-44c3-9d4f-3608bfb16011
+:CREATED:  <2025-11-20 Thu 22:53>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-20 Thu 22:53]
+:END:
+- probably going in prim
+- simple predicates to simplify all the cond forms required by
+  MATLISP-style tensors (via TRIVIA:MATCH/EMATCH).
+- NOTE: destructuring-case actually helps quite a lot with this, but
+  requires a significant amount of nesting to accomplish something
+  much more terse in MATCH syntax. should also be able to leverage
+  switch
+- pattern matching engine isn't something that I want to explicitly
+  build into std
 ** TODO incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
 :ID:       04fdde4f-427c-47b5-8394-5b5365ede249
