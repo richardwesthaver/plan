@@ -17,7 +17,7 @@
 | skel-id     | 1784914079056115652                                 |
 | root        | ~/comp/org/plan/                                    |
 | tags        | (ORG DOCS NOTES BLOG META PLAN ARCHIVE NOTES GRAPH) |
-| updated     | Sun Nov 23 15:05:49 2025 -0500                      |
+| updated     | Sun Nov 23 16:27:38 2025 -0500                      |
 | langs       | org                                                 |
 | lines       | 3775 :λ 3664 :# 0 :_ 111                            |
 |-------------+-----------------------------------------------------|
@@ -42,7 +42,7 @@
 2025-08    233 ****
 2025-09    344 ******
 2025-10    223 ****
-2025-11    364 *******
+2025-11    374 *******
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -50,8 +50,8 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
+| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-23 16:34:08 |
 | [[https://otom8.dev/plan/product.html][product]]       | 2025-11-01 02:17:57 |
-| [[https://otom8.dev/plan/index.html][index]]         | 2025-11-18 22:47:09 |
 | [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
 | [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
 | [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-11-21 21:42:18 |
