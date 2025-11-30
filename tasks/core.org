@@ -962,7 +962,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - serializable format supporting as many objects as possible
 - first implementation of complete STORE protocol
 - act as human/machine-readable db format
-** PROJECT syn [0/3]                                                    :syn:
+** PROJECT syn [0/4]                                                    :syn:
 :PROPERTIES:
 :ID:       a199245b-4bed-48eb-83f5-e83c03da3a7d
 :VERSION:  0.1
@@ -1027,6 +1027,34 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
+*** TODO grovel
+:PROPERTIES:
+:ID:       d20b9fab-0866-4c21-8055-e67b2cbd7f3c
+:CREATED:  <2025-11-27 Thu 21:23>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-27 Thu 21:23]
+:END:
+- green impl of SB-GROVEL
+- no dependency on ASDF
+- no constants.lisp
+  - use lookup functions to retrieve forms
+- directly integrates with SYS
+- depends on C and Tree-sitter C bindings
+- does NOT execute compiled C, simply uses the C compiler for macro
+  expansion and parses with SYN/TS, spits out Lisp forms (probably
+  depend on STD/ALIEN).
+- unsure on the caching strategy
+  - where should the compiled output go? we probably want to keep some
+    accounting info in the fsys, forms in a fasl (invisible to user)
+  - avoid reparsing when C files are unmodified
+  - avoid regen when Lisp AND C files are unmodified
+- do we need an incremental update feature? where forms are
+  user-maintained, and we emit conditions when a user-specified
+  version goes out of sync..
+  - we might need this to specify the :IN :OUT parameters in
+    DEFINE-ALIEN-ROUTINE arguments - don't think those can be
+    determined programatically but TBD
 *** TODO lint
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:19>
@@ -1192,6 +1220,8 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-11-21 Fri 21:39]
+- Note taken on [2025-11-29 Sat 15:59] \\
+  currently stuck in implementation..
 :END:
 - FOR-MOD clause
 - [[file:~/.stash/scratch/matlisp-git/src/base/boolean.lisp]] - usage
@@ -1598,7 +1628,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [7/17]                                               :lisp:std:
+* PROJECT std [8/19]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1893,6 +1923,32 @@ copy-check-and-promote <- copy-slot-and-check
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 - State "TODO"       from "TBD"        [2025-08-30 Sat 23:09]
 :END:
+** DONE with-memoization
+:PROPERTIES:
+:ID:       eebb1d8d-3784-4d9d-8ab8-083c72dca881
+:CREATED:  <2025-11-29 Sat 16:17>
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2025-11-29 Sat 16:17]
+- State "DONE"       from "FIXME"      [2025-11-29 Sat 18:26]
+- Note taken on [2025-11-29 Sat 18:26] \\
+  using CDR where we wanted CADR, rebound an existing GENSYM (ARG)
+:END:
+- definitely not working as intended, see =OBJ/TENSOR::*SPECIALIZER-TABLE*=
+** TODO Standard Loop Paths
+:PROPERTIES:
+:ID:       0eeee1a4-84cf-4e40-9ab9-50a8c0f810c6
+:CREATED:  <2025-11-29 Sat 16:00>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-11-29 Sat 16:00]
+:END:
+- index
+- elt
+- queues..
+- probably want to register and manage these somehow.. maybe
+  separate/backup lisp universe
+- [[id:04fdde4f-427c-47b5-8394-5b5365ede249][incorporate sb-cltl2 generators/iterators into STD/PIPE]]
 * PROJECT emacs [2/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
