@@ -1188,13 +1188,14 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
     - [[https://arrow.apache.org/docs/format/CDeviceDataInterface.html#c-device-data-interface][The Arrow C Device data interface — Apache Arrow v20.0.0]]
 - [[https://github.com/dmlc/dlpack][GitHub - dmlc/dlpack: common in-memory tensor structure]]
 
-**** TODO dispatch strategy for tensor methods
+**** DONE dispatch strategy for tensor methods
 :PROPERTIES:
 :ID:       0521332c-11d2-4ffc-8ada-99690b8b2655
 :CREATED:  <2025-05-26 Mon 00:56>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-26 Mon 00:56]
+- State "DONE"       from "TODO"       [2025-12-02 Tue 20:52]
 :END:
 - MATLISP uses a somewhat janky macro-based template approach
   - compiles methods in place.. =(defmethod foo () (compile-and-eval `(defmethod %foo ...)) (%foo))=
@@ -1212,7 +1213,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
   - attempting to leverage STD:KERNEL-CLASS for the tensor accessor
     stuff. Could be a bad idea.. TBD.
 
-**** TODO figure out path forward for obj/tensor/loop
+**** DONE figure out path forward for obj/tensor/loop
 :PROPERTIES:
 :ID:       ac8dfb86-8592-4e59-8292-19b515e81557
 :CREATED:  <2025-11-21 Fri 21:39>
@@ -1222,12 +1223,43 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 - State "TODO"       from              [2025-11-21 Fri 21:39]
 - Note taken on [2025-11-29 Sat 15:59] \\
   currently stuck in implementation..
+- Note taken on [2025-12-02 Tue 20:51] \\
+  using loop-paths
+- State "DONE"       from "TODO"       [2025-12-02 Tue 20:51]
 :END:
 - FOR-MOD clause
 - [[file:~/.stash/scratch/matlisp-git/src/base/boolean.lisp]] - usage
 - also bool.lisp
 - technically possible with sbcl internals, but likely very difficult
 - to not get stuck in implementation we should have a workaround solution
+
+**** TODO graph-idx loop-path
+:PROPERTIES:
+:ID:       d7fbd40d-510f-485d-9237-fef53d4f9a58
+:CREATED:  <2025-12-02 Tue 20:51>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-02 Tue 20:52]
+:END:
+
+**** FIXME define-tensor-method
+:PROPERTIES:
+:ID:       3efa7637-6eec-4d3c-8a4f-9be7c0db440d
+:CREATED:  <2025-12-02 Tue 20:55>
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2025-12-02 Tue 20:55]
+:END:
+- still something suspicious going on, computed method isn't being
+  dispatched correctly
+**** TODO slice loop-path
+:PROPERTIES:
+:ID:       a2738b46-2321-4b04-8602-2c1c86b9d8b6
+:CREATED:  <2025-12-02 Tue 20:52>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-02 Tue 20:52]
+:END:
 
 **** RESEARCH SB-SIMD
 :PROPERTIES:
@@ -1250,6 +1282,8 @@ array optimizations
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-07-29 Tue 16:35]
+- Note taken on [2025-12-02 Tue 20:53] \\
+  need easy way to demo/cycle through palettes - use std draw functions and print-color
 :END:
 **** DONE base16 palettes
 :PROPERTIES:
@@ -1628,7 +1662,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [8/19]                                               :lisp:std:
+* PROJECT std [8/21]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1935,6 +1969,16 @@ copy-check-and-promote <- copy-slot-and-check
   using CDR where we wanted CADR, rebound an existing GENSYM (ARG)
 :END:
 - definitely not working as intended, see =OBJ/TENSOR::*SPECIALIZER-TABLE*=
+** TODO sap-ref
+:PROPERTIES:
+:ID:       c6fb6eea-351e-43d2-ac1c-9a772acf9360
+:CREATED:  <2025-12-02 Tue 20:56>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-02 Tue 20:56]
+:END:
+- some errors being uncovered with dispatch
+  - check SAP-REF-DOUBLE vs SAP-REF as well as SETF expansions
 ** TODO Standard Loop Paths
 :PROPERTIES:
 :ID:       0eeee1a4-84cf-4e40-9ab9-50a8c0f810c6
