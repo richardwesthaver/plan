@@ -1162,7 +1162,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 - State "TODO"       from              [2025-06-12 Thu 21:25]
 - State "DONE"       from "TODO"       [2025-06-13 Fri 13:39]
 :END:
-*** WIP tensor
+*** WIP tensor [2/7]
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
 :ID:       b515faef-e1dc-4b30-bf50-599b7394e797
@@ -1252,6 +1252,19 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 - still something suspicious going on, computed method isn't being
   dispatched correctly
+#+begin_src lisp :results replace output
+  (handler-case (obj/tensor::ref (obj/tensor::zeros 100) 0)
+      (error (c) (print c)))
+#+end_src
+
+#+RESULTS:
+: 
+: #<TYPE-ERROR expected-type: ARRAY
+:              datum:
+:              #<OBJ/TENSOR::|<BLAS-MIXIN SIMPLE-DENSE-TENSOR: DOUBLE-FLOAT>| {120DB56EE3}>> 
+
+- one of the filters isn't doing the right thing in the presence of
+  standard method defs (generic defs)
 **** TODO slice loop-path
 :PROPERTIES:
 :ID:       a2738b46-2321-4b04-8602-2c1c86b9d8b6
@@ -1662,7 +1675,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [8/21]                                               :lisp:std:
+* PROJECT std [8/20]                                               :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1929,13 +1942,18 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 - State "FIXME"      from              [2025-05-29 Thu 22:38]
 :END:
 copy-check-and-promote <- copy-slot-and-check
-** TODO compiler-macro utils
+** HOLD compiler-macro utils
 :PROPERTIES:
 :ID:       877d4467-35d6-44c3-9d4f-3608bfb16011
 :CREATED:  <2025-11-20 Thu 22:53>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-11-20 Thu 22:53]
+- Note taken on [2025-12-02 Tue 21:00] \\
+  may not be as necessary as I thought, letv* and lety get us a long
+  way. we should come back to this for transforms and other sorts of
+  optimizations. maybe hash-cache too.
+- State "HOLD"       from "TODO"       [2025-12-02 Tue 21:01]
 :END:
 - probably going in prim
 - simple predicates to simplify all the cond forms required by
@@ -1946,7 +1964,7 @@ copy-check-and-promote <- copy-slot-and-check
   switch
 - pattern matching engine isn't something that I want to explicitly
   build into std
-** TODO incorporate sb-cltl2 generators/iterators into STD/PIPE
+** HOLD incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
 :ID:       04fdde4f-427c-47b5-8394-5b5365ede249
 :CREATED:  <2025-01-17 Fri 15:54>
@@ -1956,6 +1974,8 @@ copy-check-and-promote <- copy-slot-and-check
 - State "TODO"       from              [2025-05-08 Thu 20:51]
 - State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
 - State "TODO"       from "TBD"        [2025-08-30 Sat 23:09]
+- State "HOLD"       from "TODO"       [2025-12-02 Tue 20:59] \\
+  low prio
 :END:
 ** DONE with-memoization
 :PROPERTIES:
