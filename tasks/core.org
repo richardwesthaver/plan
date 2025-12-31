@@ -113,7 +113,17 @@
 
 #+end_example
 
-* PROJECT ffi [1/6]                                                :lisp:ffi:
+- [2025-12-13 Sat]
+#+begin_example
+; compilation unit finished
+;   Undefined functions:
+;     RDB::CURSOR-GET-BOTH-BUFFERED RDB::CURSOR-MOVE-BUFFERED RDB::CURSOR-SET-BUFFERED RDB::DB-CURSOR RDB::DB-CURSOR-MOVE-BUFFERED RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED RDB::DB-DELETE-BUFFERED RDB::DB-DELETE-KV-BUFFERED RDB::DB-GET-KEY-BUFFERED RDB::DB-PUT-BUFFERED RDB::DUP-BTREES RDB::INDEX-TABLE-ASSOC CRY/TLS::SSL-CHECK-VERIFY-P NET/SRV/HTTP::SSL-STREAM-X509-CERTIFICATE CRY/TLS::VERIFY-HOSTNAME
+;   Undefined variables:
+;     CRY/TLS::*DEFAULT-BUFFER-SIZE* CRY/TLS::*DEFAULT-CIPHER-LIST* SYN/CLI:*GEN-CLI* CRY/TLS::*MAKE-SSL-CLIENT-STREAM-VERIFY-DEFAULT* ORGAN/GRAPH:*ORG-GRAPH-FILES* ORGAN/CLI:*ORGAN-CLI* POD::*POD-CLI* RDB/CLI:*RDB-CLI* VC/CLI:*VC-CLI*
+;   caught 4 fatal ERROR conditions
+;   caught 5 ERROR conditions
+#+end_example
+* PROJECT ffi [2/6]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION:  0.1
@@ -171,7 +181,7 @@
 - State "PROJECT"    from              [2025-06-06 Fri 13:29]
 :END:
 - mvp and testing
-** PROJECT openssl
+** DONE openssl
 :PROPERTIES:
 :ID:       7d0469e9-b40a-48bb-aa43-807ef9a19fff
 :CREATED:  <2025-06-06 Fri 13:28>
@@ -180,10 +190,24 @@
 - State "PROJECT"    from              [2025-06-06 Fri 13:29]
 - Note taken on [2025-11-14 Fri 19:34] \\
   rustls moved to basement, renamed to openssl
+- State "DONE"       from "PROJECT"    [2025-12-25 Thu 22:22]
 :END:
-- no AWS_LC for now
+- no AWS_LC
 - vanilla openssl (vendored)
-*** TODO complete ffi
+#+begin_example
+STYLE-WARNING:
+   Couldn't grovel for SSL_OP_IGNORE_UNEXPECTED_EOF (unknown to the C compiler).
+STYLE-WARNING: Couldn't grovel for SSL_OP_NO_SSLv1 (unknown to the C compiler).
+STYLE-WARNING:
+   Couldn't grovel for SSL_OP_NO_SSLv1_1 (unknown to the C compiler).
+STYLE-WARNING:
+   Couldn't grovel for SSL_OP_NO_SSLv1_2 (unknown to the C compiler).
+STYLE-WARNING:
+   Couldn't grovel for SSL_CTRL_SET_MIN_PROTO_VERSION (unknown to the C compiler).
+STYLE-WARNING:
+   Couldn't grovel for SSL_CTRL_SET_MAX_PROTO_VERSION (unknown to the C compiler).
+#+end_example
+*** DONE complete ffi
 :PROPERTIES:
 :ID:       f99d13c1-fd8e-4ac3-989a-230dc8397389
 :CREATED:  <2025-11-14 Fri 19:35>
@@ -191,10 +215,11 @@
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-11-14 Fri 19:35]
+- State "DONE"       from "TODO"       [2025-12-25 Thu 22:59]
 :END:
 - finish the routines, define default callbacks
 - may depend on a =std/alien:defcallback= macro
-**** WIP cl+ssl -> rustls
+**** NOPE cl+ssl -> rustls
 :PROPERTIES:
 :ID:       1841fd20-35b0-444f-a610-67dc4291ee18
 :CREATED:  <2025-06-06 Fri 13:30>
@@ -212,7 +237,7 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - rustls doesn't suffer from this - if we ever end up implementing
   openssl too we won't bother with portability here either. Use Linux
   or gtfo.
-  - but rustls depends on aws-lc which is a fork of openssl/libcrypto
+  - but rustls depends on aws-lc which is a fork of openssl/libcrypto..
 *** DONE cl+ssl low-level API
 :PROPERTIES:
 :ID:       be17b0b4-c840-4cc9-a8f2-9cf4fc482d17
@@ -223,6 +248,7 @@ CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
 - State "RESEARCH"   from              [2025-06-06 Fri 13:29]
 CLOCK: [2025-11-14 Fri 19:34]--[2025-11-14 Fri 19:34] =>  0:00
 - State "DONE"       from "WIP"        [2025-11-14 Fri 19:34]
+- State "DONE"       from "DONE"       [2025-12-25 Thu 22:59]
 :END:
 - based on CFFI and gray streams
 - defines libssl BIO_METHOD for lisp streams
@@ -238,13 +264,14 @@ CLOCK: [2025-11-14 Fri 19:34]--[2025-11-14 Fri 19:34] =>  0:00
 - State "PROJECT"    from              [2025-05-10 Sat 22:34]
 :END:
 implement bindings to the Fortran BLAS functions
-*** TODO BLAS Extensions
+*** DONE BLAS Extensions
 :PROPERTIES:
 :CREATED:  <2025-05-18 Sun 21:07>
 :ID:       6f99cfe0-3c9b-4d3b-b9eb-b41bf6fb4473
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-18 Sun 21:07]
+- State "DONE"       from "TODO"       [2025-12-25 Thu 23:14]
 :END:
 
 *** TODO Tests

@@ -15,6 +15,35 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2025-08-30 Sat 18:35]
 :END:
+- use NET protocols (connection, client, route, request, response)
+** TODO NWS
+:PROPERTIES:
+:ID:       fb0e1533-ee5a-40de-9b95-e4e385f6eb48
+:CREATED:  <2025-12-30 Tue 20:46>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-30 Tue 20:46]
+:END:
+** TODO Cloudflare
+:PROPERTIES:
+:ID:       4705f376-d3fd-4dcf-b01f-3c5fb07c0cb6
+:CREATED:  <2025-12-30 Tue 20:42>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-30 Tue 20:46]
+:END:
+- MVP
+  - auth
+  - upload to R2
+  - upload and deploy pages
+** TODO Transmission
+:PROPERTIES:
+:ID:       464861a5-0adb-4174-950e-524a45b5606d
+:CREATED:  <2025-12-30 Tue 20:47>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-30 Tue 20:47]
+:END:
 * PROJECT wm
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
@@ -23,6 +52,16 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2025-08-30 Sat 18:35]
 :END:
+** TODO fix TTF rendering
+:PROPERTIES:
+:ID:       6edc01c8-1732-4dc3-9493-bb6e289f80e0
+:CREATED:  <2025-12-30 Tue 20:40>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-30 Tue 20:40]
+:END:
+- failure when calling ENTRY-WEIGHT method on NIL
+- from obj/val:get-val <- text-line-pixarray <- draw-text-align <- wm:render-string
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
@@ -35,7 +74,7 @@
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
 - Refiled on [2025-05-16 Fri 23:56]
 :END:
-*** TODO diz                                                            :asm:
+** TODO diz                                                             :asm:
 :PROPERTIES:
 :ID:       bb192fb0-ad07-44be-89c0-27dbf78a830d
 :END:
@@ -43,7 +82,8 @@
 - State "TODO"       from              [2023-12-17 Sun 01:04]
 :END:
 - disassembly toolkit
-*** TODO sassy                                                          :net:
+- leverage sb-capstone?
+** TODO sassy                                                           :net:
 :PROPERTIES:
 :CREATED:  <2024-09-02 Mon 16:14>
 :ID:       83eb5ce0-97b4-40c3-b355-7aef4e5604e9
@@ -52,3 +92,21 @@
 - State "TODO"       from              [2024-09-02 Mon 16:14]
 :END:
 - SaaS toolkit
+* PROJECT BBDB
+:PROPERTIES:
+:ID:       37844b01-6e4c-4037-a9da-defa487e81ce
+:CREATED:  <2025-12-30 Tue 20:49>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2025-12-30 Tue 20:49]
+:END:
+- rocksdb + store
+- session protocol?
+** TODO schema
+:PROPERTIES:
+:ID:       993439f3-47a8-469c-85d5-8ff5c19bfe21
+:CREATED:  <2025-12-30 Tue 20:50>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-12-30 Tue 20:50]
+:END:
