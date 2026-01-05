@@ -18,15 +18,15 @@
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; TODO" "*.*" "~/comp/core/")
 #+end_src
-*204*
+*223*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; FIXME" "*.*" "~/comp/core/")
 #+end_src
-*33*
+*34*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; REVIEW" "*.*" "~/comp/core/")
 #+end_src
-*14*
+*15*
 
 * FIXME undefined symbols
 :PROPERTIES:
@@ -1637,7 +1637,20 @@ SCHEDULED: <2025-06-17 Tue>
 - State "PROJECT"    from              [2025-05-08 Thu 18:27]
 :END:
 - depends on tensor library
+*** RESEARCH in-vector iterator
+:PROPERTIES:
+:ID:       39228192-543a-40e1-a97b-81ad89b49785
+:CREATED:  <2026-01-01 Thu 17:45>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-01-01 Thu 17:45]
+:END:
 
+#+begin_example lisp
+  (for j in-vector (δ-i g) from li below ri)
+#+end_example
+- expand into LOOP OR
+- maybe we should do VIDX loop-path after all
 ** PROJECT box
 :PROPERTIES:
 :ID:       3329b301-f396-48f8-b097-dca46fbfd74d
@@ -1702,7 +1715,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [8/20]                                               :lisp:std:
+* PROJECT std [10/21]                                              :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1874,12 +1887,62 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 - [ ] use macro
 - [ ] using macro
 - [ ] requires macro
+*** IO
+:PROPERTIES:
+:ID:       22be6e84-6690-47c4-acd9-274ad81ef058
+:CREATED:  <2025-12-30 Tue 22:26>
+:END:
+- touch files as little as possible (cache)
+- may require file-level locks..
+- [ ] look into sbcl hooks and internals to capture datetimes on compile/load
+- batch and auto-dispatch bulk IO tasks on collections
+- timers? file watchers?
+*** Caching
+:PROPERTIES:
+:ID:       21961225-6451-4cd6-8b03-012fa390793e
+:CREATED:  <2025-12-30 Tue 22:30>
+:END:
+- priority is memoization of load-system and compile-system calls,
+  with ability to force re-evaluation (without clearing entire cache)
+  - store caches in session
+  - separate from task cache?
+*** System Methods
+:PROPERTIES:
+:ID:       588236c6-b97a-4960-aa57-8802229932a2
+:CREATED:  <2025-12-30 Tue 22:33>
+:END:
+- multi-threaded by default (dynamic)
+- similar to =define-tensor-method= but for parallel ops
+- may want to start with something like =async-method=
+  - compatible with =defmethod=?
+  - can do something fancy in the defgeneric maybe (build up the task/job prototypes)
+- without async, _execute immediately_ do not create tasks/jobs, but respect the cache
+- maybe /always/ return STATUS?
+**** System Ops
+:PROPERTIES:
+:ID:       18861e3c-3ef7-4ed8-a88b-8b463c9ef35a
+:CREATED:  <2025-12-30 Tue 22:40>
+:END:
+- always operates on a single task, fed by the session scheduler
+- guaranteed to be called when a system method is called with =:async
+  t= (default)
+- updates and returns the STATUS slot of the received task
+- result values captured and returned to session result queue
 *** Modules
 :PROPERTIES:
 :ID:       bf2c2465-c6ef-4e6a-ac26-87ed26f2b07e
 :CREATED:  <2025-06-03 Tue 20:19>
 :END:
 - [[https://www.lispworks.com/documentation/HyperSpec/Body/f_provid.htm][CLHS: Function PROVIDE, REQUIRE]]
+  - will only take string designators - can't be used for sys:module
+- have a MODULE class but not actually using it - only serves as a
+  module root (systems)
+  - this might be ok - keep going without it.
+  - when we fully commit, delete the class and factor into system class
+- module methods?
+  - unsure if we want to include them in the system session or have
+    them implicitly memoized.
+- more important to have good hooks api
 ** RESEARCH array index fmt                                             :fmt:
 :PROPERTIES:
 :CREATED:  <2025-07-05 Sat 23:44>
@@ -1969,7 +2032,7 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 - State "FIXME"      from              [2025-05-29 Thu 22:38]
 :END:
 copy-check-and-promote <- copy-slot-and-check
-** HOLD compiler-macro utils
+** DONE compiler-macro utils
 :PROPERTIES:
 :ID:       877d4467-35d6-44c3-9d4f-3608bfb16011
 :CREATED:  <2025-11-20 Thu 22:53>
@@ -1981,16 +2044,17 @@ copy-check-and-promote <- copy-slot-and-check
   way. we should come back to this for transforms and other sorts of
   optimizations. maybe hash-cache too.
 - State "HOLD"       from "TODO"       [2025-12-02 Tue 21:01]
+- State "DONE"       from "HOLD"       [2025-12-30 Tue 22:54]
 :END:
 - probably going in prim
-- simple predicates to simplify all the cond forms required by
-  MATLISP-style tensors (via TRIVIA:MATCH/EMATCH).
 - NOTE: destructuring-case actually helps quite a lot with this, but
   requires a significant amount of nesting to accomplish something
   much more terse in MATCH syntax. should also be able to leverage
   switch
 - pattern matching engine isn't something that I want to explicitly
   build into std
+  - [2025-12-30 Tue] but kinda did anyway.. see std/macs:match
+    - next step should be to make this extendable
 ** HOLD incorporate sb-cltl2 generators/iterators into STD/PIPE
 :PROPERTIES:
 :ID:       04fdde4f-427c-47b5-8394-5b5365ede249
@@ -2016,16 +2080,29 @@ copy-check-and-promote <- copy-slot-and-check
   using CDR where we wanted CADR, rebound an existing GENSYM (ARG)
 :END:
 - definitely not working as intended, see =OBJ/TENSOR::*SPECIALIZER-TABLE*=
-** TODO sap-ref
+** DONE sap-ref
 :PROPERTIES:
 :ID:       c6fb6eea-351e-43d2-ac1c-9a772acf9360
 :CREATED:  <2025-12-02 Tue 20:56>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-12-02 Tue 20:56]
+- State "DONE"       from "TODO"       [2025-12-30 Tue 22:54]
 :END:
 - some errors being uncovered with dispatch
   - check SAP-REF-DOUBLE vs SAP-REF as well as SETF expansions
+** TBD ignorable-gensyms
+:PROPERTIES:
+:ID:       80763d08-e3fc-47e7-b5d8-4414f6d82ac9
+:CREATED:  <2026-01-01 Thu 18:29>
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2026-01-01 Thu 18:29]
+:END:
+- only a handful of usecases to work acround letv and friends. may
+  want to elect to just PARSE-BODY correctly or otherwise apply
+  declarations (ignorable being ignored in deeply nested macros, see
+  MATH/GRAPH:GRAPHFIB)
 ** TODO Standard Loop Paths
 :PROPERTIES:
 :ID:       0eeee1a4-84cf-4e40-9ab9-50a8c0f810c6

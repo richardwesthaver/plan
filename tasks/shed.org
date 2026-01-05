@@ -44,7 +44,24 @@
 :LOGBOOK:
 - State "TODO"       from              [2025-12-30 Tue 20:47]
 :END:
-* PROJECT wm
+* PROJECT xlib
+:PROPERTIES:
+:ID:       1d75bafe-e79a-4a32-ae78-0bfb98c368b2
+:CREATED:  <2026-01-01 Thu 19:24>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2026-01-01 Thu 19:24]
+:END:
+** TBD re-implement macros
+:PROPERTIES:
+:ID:       eff909ce-5a8e-4a0d-b06b-76928c1c446e
+:CREATED:  <2026-01-01 Thu 19:24>
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2026-01-01 Thu 19:24]
+:END:
+- define-accesor -> define-io
+* PROJECT wm [1/11]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
 :CREATED:  <2025-08-30 Sat 18:35>
@@ -52,6 +69,8 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2025-08-30 Sat 18:35]
 :END:
+- ioloop.. would uring be useful?
+  - otherwise develop better optimization strat
 ** TODO fix TTF rendering
 :PROPERTIES:
 :ID:       6edc01c8-1732-4dc3-9493-bb6e289f80e0
@@ -62,6 +81,174 @@
 :END:
 - failure when calling ENTRY-WEIGHT method on NIL
 - from obj/val:get-val <- text-line-pixarray <- draw-text-align <- wm:render-string
+** TODO integrated keymaps
+:PROPERTIES:
+:ID:       33b99b81-3e2d-4b7b-b1a4-fc3e07afebd7
+:CREATED:  <2026-01-01 Thu 01:06>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:06]
+:END:
+- refactor xlib/translations, io/kbd, and wm/key*
+- see also xlib:grab-keyboard, xlib:ungrab-keyboard
+** TODO modeline features
+:PROPERTIES:
+:ID:       9f4b6c8c-ee3d-40e7-af99-47d9fc481e9f
+:CREATED:  <2026-01-01 Thu 01:07>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:07]
+:END:
+- version string?
+- IO
+  - kbd
+  - improve disks (dynamically reload, robustness, condition handling)
+  - kbd
+  - integrated net
+  - audio/video devices
+  - fans/temp? (acpid)
+- CLI
+  - systemd
+  - mail (use notmuch directly)
+  - tmux
+  - pacman (packy)
+  - sparklines?
+- DSP
+  - media status/controls (mpk)
+    - now playing
+- NET
+  - dbus
+  - DNS
+  - gps
+  - weather (tenex)
+- (advanced debugging) strace? pdumps?
+** RESEARCH tray
+:PROPERTIES:
+:ID:       c2c7dc0d-dad8-49f7-b356-b21d704fcc7f
+:CREATED:  <2026-01-01 Thu 01:10>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-01-01 Thu 01:10]
+:END:
+- figure out capabilities of xembed
+** TODO integrate obj/time
+:PROPERTIES:
+:ID:       6d92d963-ee77-4b65-bab2-7ab9c35c865f
+:CREATED:  <2026-01-01 Thu 01:32>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:32]
+:END:
+- may be able to grab utils (time-format), deffmt's from wm/time.lisp
+- eventually should be able to delete this file
+** TODO integrate colors
+:PROPERTIES:
+:ID:       821fb277-898a-4bf1-841e-5465d3153243
+:CREATED:  <2026-01-01 Thu 01:11>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:11]
+:END:
+- themes/palettes from obj/color
+- color printing should make use of ansi color code printer (in CLI)
+  - on second look we should actually move the superior printer in
+    wm/color to obj/color (or maybe cli)
+- apply-color and friends should use style protocol
+#+begin_quote
+A change in color, or presentation in general, is started by a ^. If that
+^ is followed by a single number, that's taken as the index into the color
+map to be set as the foreground color. If the ^ is followed by two numbers,
+the first is taken as the index of the foreground color, and the second as
+the index of the background color. Either of those can also be *, which
+means the value should be set to default.
+
+^n resets the foreground and background color back to default.
+^A B turns bright colors on, and b turns them off.
+^R turns reverse colors on and r turns them off.
+^[ pushes the current settings onto the color stack. The current settings
+   remain unchanged.
+^] pops color settings off the stack.
+^> aligns the rest of the string to the right of the window.
+^f<n> switches to the font at index n in the screen's font stack.
+^^ prints a regular caret
+^(<modifier> &rest arguments) allows for more complicated color settings:
+   <modifier> can be one of :fg, :bg, :reverse, :bright, :push, :pop, :font
+   and :>.
+   The arguments for each modifier differ:
+   - :fg and :bg take a color as an argument, which can either be a numeric
+     index into the color map or a hexadecimal color in the form of "#fff"
+     or "#ffffff".
+   - :reverse and :bright take either t or nil as an argument. A t enables
+     the setting and nil disables it.
+   - :push and :pop take no arguments. :push pushes the current settings onto
+     the color stack, leaving the current settings intact. :pop pops color
+     settings off the stack, updating the current settings.
+   - :font takes an integer that represents an index into the screen's list
+     of fonts, or, possibly, a literal font object that can immediately be
+     used. In a string you'll probably only want to specify an integer.
+   - :> takes no arguments. It triggers right-alignment for the rest of the
+     line.
+
+#+end_quote
+*** TODO xlib <-> obj/color
+:PROPERTIES:
+:ID:       1e512bec-39bb-4a4c-8d4c-f3958c578d6d
+:CREATED:  <2026-01-01 Thu 01:25>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:26]
+:END:
+- bridge the gap
+** TODO integrate log
+:PROPERTIES:
+:ID:       d5147703-7f12-4646-b342-6ec4b723e173
+:CREATED:  <2026-01-01 Thu 01:34>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:34]
+:END:
+- use logger, grab utils
+- debug.lisp
+  - likely will delete this file, refactor into var.lisp
+** TODO refactor wm/module
+:PROPERTIES:
+:ID:       47d63cba-e49f-4853-b17a-01be94585515
+:CREATED:  <2026-01-01 Thu 01:36>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:36]
+:END:
+- integrate with SYS:MODULE system?
+- otherwise just delete and load files instead
+** TODO refactor wm/help
+:PROPERTIES:
+:ID:       db542d14-194b-4958-b122-eb393322ac4b
+:CREATED:  <2026-01-01 Thu 01:38>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:38]
+:END:
+- which-key-mode should prob be a module
+- integrate with DOC, maybe some ORGAN
+** DONE test-wm
+:PROPERTIES:
+:ID:       3fac3b13-bf32-466c-8ece-e8ae3ba0976c
+:CREATED:  <2026-01-01 Thu 01:42>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 01:42]
+- State "DONE"       from "TODO"       [2026-01-01 Thu 16:13]
+:END:
+- verify correctness, develop better testing pattern
+** TODO integrate cmd
+:PROPERTIES:
+:ID:       22c59cc6-7aa7-4d28-a1db-88d2726dee79
+:CREATED:  <2026-01-01 Thu 16:12>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-01 Thu 16:12]
+:END:
+- merge with cli/clap/cmd if possible
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
@@ -110,3 +297,5 @@
 :LOGBOOK:
 - State "TODO"       from              [2025-12-30 Tue 20:50]
 :END:
+- needs to be as generic as possible
+- serialize schema info directly into DEFAULT cf

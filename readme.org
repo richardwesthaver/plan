@@ -10,17 +10,17 @@
 #+CALL: project-details(vc='nil) :dir ~/comp/org/plan/
 
 #+RESULTS:
-|-------------+-----------------------------------------------------|
-| name        | plan                                                |
-| version     | 0.1.0                                               |
-| description | CC Org Files                                        |
-| skel-id     | 1784914079056115652                                 |
-| root        | ~/comp/org/plan/                                    |
-| tags        | (ORG DOCS NOTES BLOG META PLAN ARCHIVE NOTES GRAPH) |
-| updated     | Fri Dec 05 00:01:53 2025 -0500                      |
-| langs       | org                                                 |
-| lines       | 3909 :λ 3794 :# 0 :_ 115                            |
-|-------------+-----------------------------------------------------|
+|-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name        | plan                                                                                                                                                                                                 |
+| version     | (("#:fatal" 0.061999 "") ("unknown" "argument:" "show") ("0.1.0" "" ""))                                                                                                                             |
+| description | (("#:fatal" 0.063 "") ("unknown" "argument:" "show") ("CC" "Org" "Files"))                                                                                                                           |
+| skel-id     | (("#:fatal" 0.063999 "") ("unknown" "argument:" "show") (1784914079056115652 "" ""))                                                                                                                 |
+| root        | ~/comp/org/plan/                                                                                                                                                                                     |
+| tags        | (("#:fatal" 0.060999 "") ("unknown" "argument:" "show") ("ORG" "" "") ("DOCS" "" "") ("NOTES" "" "") ("BLOG" "" "") ("META" "" "") ("PLAN" "" "") ("ARCHIVE" "" "") ("NOTES" "" "") ("GRAPH" "" "")) |
+| updated     | Tue Dec 30 21:00:06 2025 -0500                                                                                                                                                                       |
+| langs       | org                                                                                                                                                                                                  |
+| lines       | 3981 :λ 3866 :# 0 :_ 115                                                                                                                                                                        |
+|-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
 
@@ -43,7 +43,7 @@
 2025-09    344 ******
 2025-10    223 ****
 2025-11    440 ********
-2025-12     89 *
+2025-12    204 ****
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -51,15 +51,15 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://otom8.dev/plan/index.html][index]]         | 2025-12-08 21:37:50 |
-| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-12-07 00:07:37 |
+| [[https://otom8.dev/plan/index.html][index]]         | 2025-12-30 21:38:31 |
 | [[https://otom8.dev/plan/product.html][product]]       | 2025-11-01 02:17:57 |
 | [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
 | [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
+| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2025-12-25 23:14:48 |
 | [[https://otom8.dev/plan/tasks/demo.html][tasks/demo]]    | 2025-03-08 01:05:42 |
 | [[https://otom8.dev/plan/tasks/ext.html][tasks/ext]]     | 2025-07-10 15:54:43 |
 | [[https://otom8.dev/plan/tasks/infra.html][tasks/infra]]   | 2025-06-03 19:50:16 |
 | [[https://otom8.dev/plan/tasks/rnd.html][tasks/rnd]]     | 2025-07-08 22:40:22 |
-| [[https://otom8.dev/plan/tasks/shed.html][tasks/shed]]    | 2025-08-30 18:39:19 |
+| [[https://otom8.dev/plan/tasks/shed.html][tasks/shed]]    | 2025-12-30 20:50:20 |
 
 #+END:
