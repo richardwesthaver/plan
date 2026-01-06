@@ -7,7 +7,6 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/comp/
 #+filetags: rnd
-
 * OUTLINE pot of greed
 :PROPERTIES:
 :ID:       020f0ea3-9584-4d4a-9976-adb8f790ce29

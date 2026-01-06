@@ -1090,6 +1090,16 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "TODO"       from              [2025-05-16 Fri 23:19]
 :END:
+*** TODO whitespace cleanup
+:PROPERTIES:
+:ID:       859c42e3-b305-4ba6-a7c5-6e5ead1e5210
+:CREATED:  <2025-06-29 Sun 22:50>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2025-06-29 Sun 22:50]
+- Refiled on [2026-01-05 Mon 19:24]
+:END:
+- make a script
 ** PROJECT cry                                                       :crypto:
 :PROPERTIES:
 :ID:       2d5bcf6e-6652-4e33-b923-d2311896eee8

@@ -88,3 +88,14 @@ The demo will eventually need to be integrated with and deployed by
 - timers
 - triggers
 
+** OUTLINE integration path for infra and core
+:PROPERTIES:
+:ID:       1e04af5d-8c78-497f-bd6e-dcaf4ed58790
+:CREATED:  <2025-06-29 Sun 22:51>
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from "TODO"       [2025-06-29 Sun 22:55]
+- Refiled on [2026-01-05 Mon 19:24]
+:END:
+- skelfile rules for bootstrapping
+- do we need to fork cl+ssl? probably not

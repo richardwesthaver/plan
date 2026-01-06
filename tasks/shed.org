@@ -60,7 +60,10 @@
 :LOGBOOK:
 - State "TBD"        from              [2026-01-01 Thu 19:24]
 :END:
-- define-accesor -> define-io
+- +define-accesor -> define-io+
+  - accessors are macros (card32-put, card32-get)
+- read-card32/write-card32 are also macros..
+- aref-card32/aset-card32 are functions (dependent.lisp)
 * PROJECT wm [1/11]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
