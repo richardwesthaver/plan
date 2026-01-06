@@ -1128,9 +1128,6 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :Effort:   8h
 :LOCATION+: stream.lisp
 :END:
-:LOGBOOK:
-CLOCK: [2025-11-14 Fri 19:38]
-:END:
 
 ** PROJECT obj [2/6]                                                    :obj:
 :PROPERTIES:
@@ -1725,7 +1722,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [10/21]                                              :lisp:std:
+* PROJECT std [10/22]                                              :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1735,6 +1732,18 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+** WIP annotations
+:PROPERTIES:
+:ID:       0c6d3580-78e8-42d4-8472-1d336c31aa73
+:CREATED:  <2026-01-05 Mon 21:27>
+:LOCATION+: print.lisp
+:Effort:   8h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-05 Mon 21:27]
+CLOCK: [2026-01-05 Mon 21:29]--[2026-01-05 Mon 21:29] =>  0:00
+:END:
+
 ** TODO missing symbols
 :PROPERTIES:
 :ID:       6dc49cf7-f024-4b9b-a149-6e60934a6918
