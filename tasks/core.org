@@ -757,7 +757,7 @@ CLOCK: [2025-10-14 Tue 22:24]--[2025-10-14 Tue 22:25] =>  0:01
 - recursively parse headlines and store them in =AST= slots
 - sections (=ORG-CONTENTS=) contain everything upto the next heading
   or EOF
-** PROJECT rdb [0/6]                                                    :rdb:
+** PROJECT rdb [1/13]                                                   :rdb:
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
 :VERSION:  0.2
@@ -866,6 +866,16 @@ CLOCK: [2025-10-14 Tue 22:24]--[2025-10-14 Tue 22:25] =>  0:01
 :LOGBOOK:
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
+*** DONE SER and DE failures
+:PROPERTIES:
+:ID:       0a7fdd67-7efe-4a04-9327-8e6f9c0a75af
+:CREATED:  <2026-01-07 Wed 22:13>
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2026-01-07 Wed 22:14]
+- State "DONE"       from "FIXME"      [2026-01-08 Thu 19:29]
+:END:
+- replace with serialize/deserialize
 *** TBD can only open rocksdb column families on OPEN
 :PROPERTIES:
 :CREATED:  <2024-08-25 Sun 20:23>
@@ -897,7 +907,16 @@ instance, possibly by closing an existing one.
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:39]
 :END:
-RDB::CURSOR-GET-BOTH-BUFFERED RDB::CURSOR-MOVE-BUFFERED RDB::CURSOR-SET-BUFFERED RDB::DB-CURSOR RDB::DB-CURSOR-DELETE RDB::DB-CURSOR-MOVE-BUFFERED RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED RDB::DB-DELETE-BUFFERED RDB::DB-DELETE-KV-BUFFERED RDB::DB-GET-KEY-BUFFERED RDB::DB-PUT-BUFFERED RDB::DUP-BTREES RDB::INDEX-TABLE-ASSOC RDB::KEY-FN RDB::PRIMARY
+#+begin_example lisp
+  RDB::CURSOR-GET-BOTH-BUFFERED RDB::CURSOR-MOVE-BUFFERED
+  RDB::CURSOR-SET-BUFFERED RDB::DB-CURSOR RDB::DB-CURSOR-DELETE
+  RDB::DB-CURSOR-MOVE-BUFFERED RDB::DB-CURSOR-PGET-BOTH-BUFFERED
+  RDB::DB-CURSOR-PMOVE-BUFFERED RDB::DB-CURSOR-PSET-BUFFERED
+  RDB::DB-CURSOR-SET-BUFFERED RDB::DB-DELETE-BUFFERED
+  RDB::DB-DELETE-KV-BUFFERED RDB::DB-GET-KEY-BUFFERED
+  RDB::DB-PUT-BUFFERED RDB::DUP-BTREES RDB::INDEX-TABLE-ASSOC
+  RDB::KEY-FN RDB::PRIMARY
+#+end_example
 ** PROJECT vc [0/2]                                                      :vc:
 :PROPERTIES:
 :ID:       c14dc79d-eeed-42bf-aba2-35ef5aa7e45d
@@ -1129,7 +1148,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOCATION+: stream.lisp
 :END:
 
-** PROJECT obj [2/6]                                                    :obj:
+** PROJECT obj [2/7]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1321,6 +1340,17 @@ array optimizations
 - learn how all the deftransforms work, how to define a type-class, etc
 - use similar macro structuring
 
+*** FIXME obj/cache
+:PROPERTIES:
+:ID:       1ac87c66-1050-4679-b972-e6ffa744a36b
+:CREATED:  <2026-01-08 Thu 21:50>
+:END:
+:LOGBOOK:
+- State "FIXME"      from              [2026-01-08 Thu 21:50]
+:END:
+- entry-weights are sorta broken
+- need to re-evaluate based on CACLE and probably add some missing
+  slots - policy can't be abused the way we're doin it.
 *** TODO color/theme
 :PROPERTIES:
 :ID:       9dfe3f93-b0d0-4d9c-bdb6-1bd045037853
@@ -1571,7 +1601,7 @@ from within suite
 :END:
 IS macros aren't reporting their failures correctly - should be
 returning conditions which bubble up to the caller.
-** PROJECT io [2/5]                                                      :io:
+** PROJECT io [2/7]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1623,6 +1653,25 @@ SCHEDULED: <2025-06-17 Tue>
 - keep getting segfaults when using the streaming api (which is much
   faster and needed for serious use)
 - need to debug and fix, test in dat/tar on tar.zst files
+*** TODO wm:kbd -> io/kbd:kbd
+:PROPERTIES:
+:ID:       bcfbc0ca-4d19-45b5-9256-a350aca2026f
+:CREATED:  <2026-01-06 Tue 21:57>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-06 Tue 21:57]
+:END:
+- parse keyboard definitions from simple strings
+*** TODO wm:kmap -> io/kbd:keymap
+:PROPERTIES:
+:ID:       e8732ce7-7c47-46c6-9146-faaef8cf93b5
+:CREATED:  <2026-01-06 Tue 21:58>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-06 Tue 21:58]
+:END:
+- make-sparse-keymap
+- probably just using hash-tables, same as color palettes, etc.
 *** TODO virtual streams
 :PROPERTIES:
 :ID:       a1522a85-f8d7-4341-b22c-32fc09bd07a3
@@ -1736,7 +1785,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 :PROPERTIES:
 :ID:       0c6d3580-78e8-42d4-8472-1d336c31aa73
 :CREATED:  <2026-01-05 Mon 21:27>
-:LOCATION+: print.lisp
+:LOCATION+: string.lisp
 :Effort:   8h
 :END:
 :LOGBOOK:
@@ -2791,16 +2840,3 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - Refiled on [2025-09-06 Sat 17:47]
 :END:
-* PROJECT bench [0/0]                                         :test:bench:lisp:
-:PROPERTIES:
-:CREATED:  <2024-08-28 Wed 21:59>
-:ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
-:VERSION:  0.1
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2024-08-28 Wed 21:59]
-:END:
-- [[https://github.com/miloyip/nativejson-benchmark][GitHub - miloyip/nativejson-benchmark: C/C++ JSON parser/generator benchmark]]
-- tbd: dat generic benchmarking with fixtures
-- TPC-H
-- taobench

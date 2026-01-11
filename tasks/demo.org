@@ -65,3 +65,17 @@ simple uefi lisp terminal
 :LOGBOOK:
 - State "TODO"       from              [2024-08-12 Mon 18:04]
 :END:
+
+* PROJECT bench [0/0]                                         :test:bench:lisp:
+:PROPERTIES:
+:CREATED:  <2024-08-28 Wed 21:59>
+:ID:       a3e85640-60e5-44d1-bbf3-5a287e0feb4c
+:VERSION:  0.1
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2024-08-28 Wed 21:59]
+:END:
+- [[https://github.com/miloyip/nativejson-benchmark][GitHub - miloyip/nativejson-benchmark: C/C++ JSON parser/generator benchmark]]
+- tbd: dat generic benchmarking with fixtures
+- TPC-H
+- taobench

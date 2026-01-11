@@ -7,7 +7,7 @@
 #+ARCHIVE: ../../archive/plan.org::** shed
 #+LOCATION: ~/comp/shed/
 #+filetags: shed
-* PROJECT tenex
+* PROJECT tenex [0/0]
 :PROPERTIES:
 :ID:       5e5a0352-1e4c-45cb-85e7-3d54f894aa04
 :CREATED:  <2025-08-30 Sat 18:35>
@@ -44,7 +44,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2025-12-30 Tue 20:47]
 :END:
-* PROJECT xlib
+* PROJECT xlib [0/0]
 :PROPERTIES:
 :ID:       1d75bafe-e79a-4a32-ae78-0bfb98c368b2
 :CREATED:  <2026-01-01 Thu 19:24>
@@ -84,6 +84,7 @@
 :END:
 - failure when calling ENTRY-WEIGHT method on NIL
 - from obj/val:get-val <- text-line-pixarray <- draw-text-align <- wm:render-string
+
 ** TODO integrated keymaps
 :PROPERTIES:
 :ID:       33b99b81-3e2d-4b7b-b1a4-fc3e07afebd7
@@ -125,6 +126,7 @@
   - gps
   - weather (tenex)
 - (advanced debugging) strace? pdumps?
+- skel/homer/packy/krypt
 ** RESEARCH tray
 :PROPERTIES:
 :ID:       c2c7dc0d-dad8-49f7-b356-b21d704fcc7f
@@ -282,7 +284,7 @@ means the value should be set to default.
 - State "TODO"       from              [2024-09-02 Mon 16:14]
 :END:
 - SaaS toolkit
-* PROJECT BBDB
+* PROJECT BBDB [0/0]
 :PROPERTIES:
 :ID:       37844b01-6e4c-4037-a9da-defa487e81ce
 :CREATED:  <2025-12-30 Tue 20:49>

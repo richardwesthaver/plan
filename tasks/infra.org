@@ -66,18 +66,6 @@ no branches - repo for each build system (archiso, qemu/kvm, etc)
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-24 Tue 21:58]
 :END:
-* TBD [#C] demo
-SCHEDULED: <2024-08-01 Thu>
-:PROPERTIES:
-:ID:       15304b4e-c388-45d3-b7b5-a7fbb642e3f9
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-30 Sat 19:22]
-- State "TBD"        from "TODO"       [2024-06-21 Fri 15:04]
-:END:
-The demo will eventually need to be integrated with and deployed by
-=infra=.
-
 * TODO ci
 :PROPERTIES:
 :ID:       c50e8042-dbc2-4bfd-ab85-cef860673351
