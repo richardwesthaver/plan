@@ -64,7 +64,7 @@
   - accessors are macros (card32-put, card32-get)
 - read-card32/write-card32 are also macros..
 - aref-card32/aset-card32 are functions (dependent.lisp)
-* PROJECT wm [1/11]
+* PROJECT wm [4/13]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
 :CREATED:  <2025-08-30 Sat 18:35>
@@ -74,13 +74,14 @@
 :END:
 - ioloop.. would uring be useful?
   - otherwise develop better optimization strat
-** TODO fix TTF rendering
+** DONE fix TTF rendering
 :PROPERTIES:
 :ID:       6edc01c8-1732-4dc3-9493-bb6e289f80e0
 :CREATED:  <2025-12-30 Tue 20:40>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-12-30 Tue 20:40]
+- State "DONE"       from "TODO"       [2026-01-13 Tue 20:40]
 :END:
 - failure when calling ENTRY-WEIGHT method on NIL
 - from obj/val:get-val <- text-line-pixarray <- draw-text-align <- wm:render-string
@@ -204,24 +205,49 @@ means the value should be set to default.
 - State "TODO"       from              [2026-01-01 Thu 01:26]
 :END:
 - bridge the gap
-** TODO integrate log
+** DONE integrate log
 :PROPERTIES:
 :ID:       d5147703-7f12-4646-b342-6ec4b723e173
 :CREATED:  <2026-01-01 Thu 01:34>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-01 Thu 01:34]
+- State "DONE"       from "TODO"       [2026-01-12 Mon 15:17]
 :END:
 - use logger, grab utils
 - debug.lisp
   - likely will delete this file, refactor into var.lisp
-** TODO refactor wm/module
+** TODO single-rotation file-logger
+:PROPERTIES:
+:ID:       11ba993a-ded5-4db6-ae55-7c1a794e45ef
+:CREATED:  <2026-01-12 Mon 15:17>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-12 Mon 15:17]
+:END:
+- =wm.log= -> =wm.log.1=
+- system logger?
+- part of WM-CONFIG
+** TODO WM-CONFIG?
+:PROPERTIES:
+:ID:       f342f571-f1a9-47c3-9bfa-8cf670e7797d
+:CREATED:  <2026-01-12 Mon 15:18>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-12 Mon 15:18]
+:END:
+- cfg.lisp
+- default values - respect system then user
+- /etc/wmrc -> ~/.config/wmrc
+- logger, mode-line, paths, theme, swank, keys
+** DONE refactor wm/module
 :PROPERTIES:
 :ID:       47d63cba-e49f-4853-b17a-01be94585515
 :CREATED:  <2026-01-01 Thu 01:36>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-01 Thu 01:36]
+- State "DONE"       from "TODO"       [2026-01-12 Mon 15:16]
 :END:
 - integrate with SYS:MODULE system?
 - otherwise just delete and load files instead

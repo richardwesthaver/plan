@@ -37,92 +37,19 @@
 - State "TODO"       from              [2025-02-14 Fri 15:28]
 - State "FIXME"      from "TODO"       [2025-02-14 Fri 15:30]
 :END:
-- [2025-05-24 Sat]
-  #+begin_example
-; compilation unit finished
-;   Undefined functions:
-
-; DSP/AV:AV-ERROR NET/SRV/HTTP::CONTENT-TYPE
-      RDB::CURSOR-GET-BOTH-BUFFERED RDB::CURSOR-MOVE-BUFFERED
-      RDB::CURSOR-SET-BUFFERED RDB::DB-CURSOR RDB::DB-CURSOR-DELETE
-      RDB::DB-CURSOR-MOVE-BUFFERED RDB::DB-CURSOR-PGET-BOTH-BUFFERED
-      RDB::DB-CURSOR-PMOVE-BUFFERED RDB::DB-CURSOR-PSET-BUFFERED
-      RDB::DB-CURSOR-SET-BUFFERED RDB::DB-DELETE-BUFFERED
-      RDB::DB-DELETE-KV-BUFFERED RDB::DB-GET-KEY-BUFFERED
-      RDB::DB-PUT-BUFFERED RDB::DUP-BTREES RDB::ENSURE-TRANSACTION
-      Q::EXECUTE NET/SRV/HTTP::HANDLE-STATIC-FILE
-      RDB::INDEX-TABLE-ASSOC RDB/CLI::INIT-RDB-USER-CONFIG RDB::KEY-FN
-      POD::LOAD-POD-CONFIG
-      NET/SRV/HTTP::MAYBE-REWRITE-URLS-FOR-SESSION
-      RDB/CLI::PARSE-FILE-OPT RDB::PRIMARY
-      NET/SRV/HTTP::READ-HTTP-HEADERS NET/SRV/HTTP::REASON-PHRASE
-      RDB::RESET-STATIC-STREAM CLI/TOOLS/VIRT:RUN-BUILDAH
-      CLI/TOOLS/VIRT:RUN-PODMAN :STORE NET/SRV/HTTP::WRITE-HEADER-LINE
-
-;   Undefined variables:
-
-; SYN/CLI:*GEN-CLI* DAT/QRCODE::*MASK-PATTERN-NUM*
-      ORGAN/GRAPH::*ORG-GRAPH-DB* ORGAN/CLI:*ORGAN-CLI* POD::*POD-CLI*
-      RDB/CLI:*RDB-CLI* VC/CLI:*VC-CLI*
-      NET/SRV/HTTP::+HTTP-BAD-REQUEST+
-      NET/SRV/HTTP::+HTTP-VERSION-NOT-SUPPORTED+
-      SKEL/CORE/INT:SKEL-CACHE SKEL/CORE/INT:SKEL-DATA
-      SKEL/CORE/INT:SKEL-PATH SKEL/CORE/UTIL::SKEL-REGISTRY
-      SKEL/CORE/INT:SKEL-STASH SKEL/CORE/INT:SKEL-STORE
-
+- [2026-01-13 Tue]
+  #+begin_example lisp
+    ; compilation unit finished
+    ; RDB::CURSOR-GET-BOTH-BUFFERED
+          RDB::CURSOR-MOVE-BUFFERED RDB::CURSOR-SET-BUFFERED
+          RDB::DB-CURSOR RDB::DB-CURSOR-MOVE-BUFFERED
+          RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED
+          RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED
+          RDB::DB-DELETE-BUFFERED RDB::DB-PUT-BUFFERED
+          GETRF! GETRI! GETRS!
+          OBJ/STORE::INSTANCE-CLASS-INDEX OBJ/STORE::INSTANCE-TABLE
   #+end_example
 
-#+begin_example
-  ;   Undefined functions:
-
-  RDB::BUFFER-READ-OID
-   NET/SRV/HTTP::CONTENT-TYPE
-   RDB::DB-CURSOR RDB::DB-CURSOR-CLOSE
-   RDB::DB-CURSOR-DELETE RDB::DB-CURSOR-DUPLICATE
-   RDB::DB-CURSOR-GET-BOTH-BUFFERED RDB::DB-CURSOR-MOVE-BUFFERED
-   RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED
-   RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED
-   RDB::DB-DELETE-BUFFERED RDB::DB-DELETE-KV-BUFFERED
-   RDB::DB-GET-KEY-BUFFERED RDB::DB-PUT-BUFFERED OBJ/QUERY:DF-PLAN
-   RDB::DUP-BTREES RDB::ENSURE-TRANSACTION
-   OBJ/TREE/BTREE::ENSURE-TRANSACTION
-   NET/SRV/HTTP::HANDLE-STATIC-FILE RDB::INDEX-TABLE-ASSOC
-   RDB/CLI::INIT-RDB-USER-CONFIG RDB::KEY-FN POD::LOAD-POD-CONFIG
-   NET/SRV/HTTP::MAYBE-REWRITE-URLS-FOR-SESSION
-   RDB/CLI::PARSE-FILE-OPT RDB::PRIMARY
-   NET/SRV/HTTP::READ-HTTP-HEADERS NET/SRV/HTTP::REASON-PHRASE
-   RDB::RESET-STATIC-STREAM :STORE NET/SRV/HTTP::WRITE-HEADER-LINE)
-
-  ;   Undefined variables:
-
-  (
-  ;; STD/THREAD:*DEFAULT-SPECIAL-BINDINGS* 
-   JACK:*JACK-CLIENT* JACK::*JACK-DEFAULT-AUDIO-TYPE*
-   JACK::*JACK-DEFAULT-MIDI-TYPE* ORGAN/GRAPH::*ORG-GRAPH-DB*
-   ORGAN/CLI:*ORGAN-CLI* POD::*POD-CLI* RDB/CLI:*RDB-CLI*
-   VC/CLI:*VC-CLI*
-   NET/SRV/HTTP::+HTTP-BAD-REQUEST+
-   NET/SRV/HTTP::+HTTP-VERSION-NOT-SUPPORTED+ SKEL/CORE/INT:SKEL-CACHE
-   SKEL/CORE/INT:SKEL-DATA SKEL/CORE/INT:SKEL-PATH
-   SKEL/CORE/UTIL::SKEL-REGISTRY SKEL/CORE/INT:SKEL-STASH
-   SKEL/CORE/INT:SKEL-STORE)
-
-  ;   caught 44 WARNING conditions
-  ;   caught 449 STYLE-WARNING conditions
-  ;   printed 3401 notes
-
-#+end_example
-
-- [2025-12-13 Sat]
-#+begin_example
-; compilation unit finished
-;   Undefined functions:
-;     RDB::CURSOR-GET-BOTH-BUFFERED RDB::CURSOR-MOVE-BUFFERED RDB::CURSOR-SET-BUFFERED RDB::DB-CURSOR RDB::DB-CURSOR-MOVE-BUFFERED RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED RDB::DB-DELETE-BUFFERED RDB::DB-DELETE-KV-BUFFERED RDB::DB-GET-KEY-BUFFERED RDB::DB-PUT-BUFFERED RDB::DUP-BTREES RDB::INDEX-TABLE-ASSOC CRY/TLS::SSL-CHECK-VERIFY-P NET/SRV/HTTP::SSL-STREAM-X509-CERTIFICATE CRY/TLS::VERIFY-HOSTNAME
-;   Undefined variables:
-;     CRY/TLS::*DEFAULT-BUFFER-SIZE* CRY/TLS::*DEFAULT-CIPHER-LIST* SYN/CLI:*GEN-CLI* CRY/TLS::*MAKE-SSL-CLIENT-STREAM-VERIFY-DEFAULT* ORGAN/GRAPH:*ORG-GRAPH-FILES* ORGAN/CLI:*ORGAN-CLI* POD::*POD-CLI* RDB/CLI:*RDB-CLI* VC/CLI:*VC-CLI*
-;   caught 4 fatal ERROR conditions
-;   caught 5 ERROR conditions
-#+end_example
 * PROJECT ffi [2/6]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
@@ -367,6 +294,15 @@ implement bindings to the Fortran BLAS functions
 - find purpose for this
 - now that cli/clap is integrated with apps we may want to use bin
   just to ship separate cores - no asd just scripts
+* TODO prune internal packages
+:PROPERTIES:
+:ID:       ee9ced99-1dec-4457-99f6-1ddbbc08461a
+:CREATED:  <2026-01-13 Tue 21:43>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-13 Tue 21:43]
+:END:
+- can shake internal packages like CLI-INT/STD-INT on build
 * PROJECT lib [1/17]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
@@ -1148,7 +1084,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOCATION+: stream.lisp
 :END:
 
-** PROJECT obj [2/7]                                                    :obj:
+** PROJECT obj [3/8]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1169,6 +1105,22 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 - get this working and tested, implement for org-graph
 - keep working our way up the chain to stored-object-schemas
+*** TODO CMD
+:PROPERTIES:
+:ID:       d6e24fc6-f236-4905-944f-8e9eb7f0616f
+:CREATED:  <2026-01-13 Tue 21:34>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-13 Tue 21:34]
+:END:
+- commands are a more generalized concept than we initially planned
+  - CLI is most used case (depth), WM contains most commands (breadth)
+- cli-cmd -> cli-command
+- =obj:defcommand= (obj:defcmd?)
+- =obj:*command-table*=
+- our preference is to store them as funcallable objects (kernels)
+- do we need a package? probably want to access via symbol-table ->
+  compile functions
 *** TODO equiv
 :PROPERTIES:
 :ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
@@ -1215,7 +1167,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 - State "TODO"       from              [2025-06-12 Thu 21:25]
 - State "DONE"       from "TODO"       [2025-06-13 Fri 13:39]
 :END:
-*** WIP tensor [2/7]
+*** WIP tensor [3/7]
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
 :ID:       b515faef-e1dc-4b30-bf50-599b7394e797
@@ -1295,13 +1247,14 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 - State "TODO"       from              [2025-12-02 Tue 20:52]
 :END:
 
-**** FIXME define-tensor-method
+**** DONE define-tensor-method
 :PROPERTIES:
 :ID:       3efa7637-6eec-4d3c-8a4f-9be7c0db440d
 :CREATED:  <2025-12-02 Tue 20:55>
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2025-12-02 Tue 20:55]
+- State "DONE"       from "FIXME"      [2026-01-13 Tue 21:40]
 :END:
 - still something suspicious going on, computed method isn't being
   dispatched correctly
@@ -1340,13 +1293,14 @@ array optimizations
 - learn how all the deftransforms work, how to define a type-class, etc
 - use similar macro structuring
 
-*** FIXME obj/cache
+*** DONE obj/cache
 :PROPERTIES:
 :ID:       1ac87c66-1050-4679-b972-e6ffa744a36b
 :CREATED:  <2026-01-08 Thu 21:50>
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2026-01-08 Thu 21:50]
+- State "DONE"       from "FIXME"      [2026-01-13 Tue 20:40]
 :END:
 - entry-weights are sorta broken
 - need to re-evaluate based on CACLE and probably add some missing
@@ -1653,6 +1607,18 @@ SCHEDULED: <2025-06-17 Tue>
 - keep getting segfaults when using the streaming api (which is much
   faster and needed for serious use)
 - need to debug and fix, test in dat/tar on tar.zst files
+- KEY
+- KEYMAP
+- IO
+  - READ-KEY
+  - WRITE-KEY
+  - READ-KEY-SEQ
+  - WRITE-KEY-SEQ
+- PRINT-KEY
+- KBD
+- SERDE :XLIB
+- DEFINE-KEY
+- DEFINE-KEYMAP
 *** TODO wm:kbd -> io/kbd:kbd
 :PROPERTIES:
 :ID:       bcfbc0ca-4d19-45b5-9256-a350aca2026f
@@ -1661,7 +1627,8 @@ SCHEDULED: <2025-06-17 Tue>
 :LOGBOOK:
 - State "TODO"       from              [2026-01-06 Tue 21:57]
 :END:
-- parse keyboard definitions from simple strings
+- [ ] parse keyboard definitions from simple strings
+- [ ] parse keyboard definitions from lists
 *** TODO wm:kmap -> io/kbd:keymap
 :PROPERTIES:
 :ID:       e8732ce7-7c47-46c6-9146-faaef8cf93b5
@@ -1672,6 +1639,11 @@ SCHEDULED: <2025-06-17 Tue>
 :END:
 - make-sparse-keymap
 - probably just using hash-tables, same as color palettes, etc.
+- how should we handle transients?
+- what is the relation with commands?
+  - wm already binds the last keyseq for each command
+  - would want to bind a =*KEYMAP*= variable with a =STATE= slot being
+    the active parent key
 *** TODO virtual streams
 :PROPERTIES:
 :ID:       a1522a85-f8d7-4341-b22c-32fc09bd07a3
@@ -1683,6 +1655,8 @@ SCHEDULED: <2025-06-17 Tue>
 - we probably do want something similar to flexi-streams after all
 - need condition handling for external-formats and list/vector streams
 - hook them in to io/fast and io/static
+- tensor streams
+- columns
 ** PROJECT math                                                        :math:
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:27>
