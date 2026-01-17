@@ -18,7 +18,7 @@
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; TODO" "*.*" "~/comp/core/")
 #+end_src
-*223*
+*221*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; FIXME" "*.*" "~/comp/core/")
 #+end_src
@@ -294,7 +294,7 @@ implement bindings to the Fortran BLAS functions
 - find purpose for this
 - now that cli/clap is integrated with apps we may want to use bin
   just to ship separate cores - no asd just scripts
-* TODO prune internal packages
+** TODO prune internal packages
 :PROPERTIES:
 :ID:       ee9ced99-1dec-4457-99f6-1ddbbc08461a
 :CREATED:  <2026-01-13 Tue 21:43>
@@ -336,7 +336,7 @@ SCHEDULED: <2025-06-11 Wed>
 :END:
 [[file:~/comp/core/skelfile::;; FIX 2025-06-10: why can't we find compile-system even when specifying the package?][loc]]
 std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
-*** PROJECT cli/clap [0/5]                                         :lisp:cli:
+*** PROJECT cli/clap [0/4]                                         :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -348,33 +348,6 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 :END:
 - clap is quite unstable right now and has some obvious bugs which
   need remedying
-**** TODO conditions implementation
-:PROPERTIES:
-:ID:       c17dae0b-93b8-467a-bc96-6dddfb7a6e53
-:END:
-**** TODO minimal documentation                                         :doc:
-:PROPERTIES:
-:ID:       aef56337-8adf-4f69-823f-4380ae0c468b
-:LOCATION+: ~/comp/org/docs/core/lib/cli.org
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-27 Sat 02:39]
-:END:
-**** TODO keyword selectors                                   :lisp:cli:skel:
-:PROPERTIES:
-:ID:       ca205f3d-d84d-4629-9d7a-189203c11441
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-07-27 Sat 02:31]
-:END:
-#+begin_src shell
-  skel :include 0 :components 1 # => <sk-component PRELUDE>
-
-  skel :include emacs :components babel # => <sk-component BABEL>
-#+end_src
-- how to apply operators?
-- pipe results?
-+forth+
 **** TODO hooks
 :PROPERTIES:
 :CREATED:  <2025-10-28 Tue 21:07>
@@ -384,7 +357,72 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 - State "TODO"       from              [2025-10-28 Tue 21:07]
 :END:
 cli should have relevant hooks
-**** TODO clap fixtures                                                :test:
+**** TODO cli-command
+:PROPERTIES:
+:ID:       2f393500-4689-4cfe-afdb-e667bfabedcf
+:CREATED:  <2026-01-16 Fri 22:29>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-16 Fri 22:29]
+:END:
+#+begin_src lisp :package cli/clap :eval no-export
+  (documentation (find-class 'cli-command) t)
+#+end_src
+
+#+RESULTS:
+: CLI command class inherited by both the 'main' command which is executed when
+: a CLI is called without arguments, and all subcommands.
+
+**** TODO cli
+:PROPERTIES:
+:ID:       85354f89-b17d-4e0e-95ac-4a6c8269ef99
+:CREATED:  <2026-01-16 Fri 22:29>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-16 Fri 22:29]
+:END:
+
+#+begin_src lisp :package cli/clap :eval no-export
+  (documentation 'define-cli 'function)
+#+end_src
+
+#+RESULTS:
+: Define a new CLI object.
+: 
+: NAME is assigned to the CLI and assumed to be the default binary name which
+: uses this object.
+: 
+: VERSION, DESCRIPTION, KERNEL, and PACKAGE are assigned to the associated slot
+: value of the CLI.
+
+**** TODO package CLIs
+:PROPERTIES:
+:ID:       19fe8343-7739-4cff-949f-c3c1b943f1a1
+:CREATED:  <2026-01-16 Fri 22:37>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-16 Fri 22:37]
+:END:
+#+begin_src emacs-lisp :results list
+  (directory-files-recursively "~/comp/core/" ".*cli[.]lisp$")
+#+end_src
+
+#+RESULTS:
+- ~/comp/core/app/mpk/cli.lisp
+- ~/comp/core/app/skel/homer/cli.lisp
+- ~/comp/core/app/skel/krypt/cli.lisp
+- ~/comp/core/app/skel/packy/cli.lisp
+- ~/comp/core/app/skel/cli.lisp
+- ~/comp/core/lib/cli/clap/cli.lisp
+- ~/comp/core/lib/cli/cli.lisp
+- ~/comp/core/lib/organ/cli.lisp
+- ~/comp/core/lib/pod/cli.lisp
+- ~/comp/core/lib/rdb/cli.lisp
+- ~/comp/core/lib/syn/gen/cli.lisp
+- ~/comp/core/lib/syn/cli.lisp
+- ~/comp/core/lib/vc/cli.lisp
+
+*** TODO cli fixtures                                                  :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
 :ID:       f910ffdb-1adc-44b3-bac0-de641e1e17a7
@@ -1064,7 +1102,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:30]
 :END:
-*** WIP tls
+*** DONE tls
 :PROPERTIES:
 :ID:       53e803e1-40fc-4da5-925e-7909154a590b
 :CREATED:  <2025-06-06 Fri 15:06>
@@ -1075,13 +1113,17 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - State "WIP"        from              [2025-06-06 Fri 15:06]
 - Note taken on [2025-11-14 Fri 19:37] \\
   rename to tls
+- State "DONE"       from "WIP"        [2026-01-14 Wed 20:05]
 :END:
-**** WIP ssl streams
+**** DONE ssl streams
 :PROPERTIES:
 :ID:       aea7eefe-6823-4924-8248-d74923f68c0b
 :CREATED:  <2025-11-14 Fri 19:38>
 :Effort:   8h
 :LOCATION+: stream.lisp
+:END:
+:LOGBOOK:
+- State "DONE"       from "WIP"        [2026-01-14 Wed 20:05]
 :END:
 
 ** PROJECT obj [3/8]                                                    :obj:
@@ -1105,22 +1147,25 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 - get this working and tested, implement for org-graph
 - keep working our way up the chain to stored-object-schemas
-*** TODO CMD
+*** WIP CMD
 :PROPERTIES:
 :ID:       d6e24fc6-f236-4905-944f-8e9eb7f0616f
 :CREATED:  <2026-01-13 Tue 21:34>
+:Effort:   32h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-13 Tue 21:34]
+CLOCK: [2026-01-16 Fri 22:27]--[2026-01-16 Fri 22:28] =>  0:01
 :END:
 - commands are a more generalized concept than we initially planned
   - CLI is most used case (depth), WM contains most commands (breadth)
 - cli-cmd -> cli-command
-- =obj:defcommand= (obj:defcmd?)
+- =obj:defcommand= +(obj:defcmd?)+
 - =obj:*command-table*=
 - our preference is to store them as funcallable objects (kernels)
-- do we need a package? probably want to access via symbol-table ->
-  compile functions
+- NOPE: do we need a package? probably want to access via symbol-table
+  -> compile functions
+
 *** TODO equiv
 :PROPERTIES:
 :ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
@@ -1459,6 +1504,17 @@ prevelant tho.. only one way to find out :)
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
 :END:
+- MTU discovery handled via cli
+- don't care too much about multicast discovery
+- set via variables
+- multicast range: 224.0.0.0:239.255.255.255
+  - base address: 224.0.0.0
+  - all hosts: 224.0.0.1
+  - all routers: 224.0.0.2
+  - OSPF: 224.0.0.5
+  - IGMP: 224.0.0.22
+  - RIP: ..9
+  - PTP: ..107
 *** WAIT net/srv                                                       :lisp:
 :PROPERTIES:
 :ID:       f812f4e7-03c0-4e7a-a602-8947c39eb4ed
@@ -1471,6 +1527,7 @@ prevelant tho.. only one way to find out :)
   task-pools
 :END:
 - needs a solid task-pool impl completed first
+  - pending std/defsys
 ** DONE gui [2/2]                                                       :gui:
 :PROPERTIES:
 :ID:       73aea563-3df7-4611-a27d-874772806f18

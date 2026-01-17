@@ -10,17 +10,17 @@
 #+CALL: project-details(vc='nil) :dir ~/comp/org/plan/
 
 #+RESULTS:
-|-------------+---------------------------------------------------|
-| name        | plan                                              |
-| version     | 0.1.0                                             |
-| description | CC Org Files                                      |
-| skel-id     | 1784914079056115652                               |
-| root        | ~/comp/org/plan/                                  |
-| tags        | ORG DOCS NOTES BLOG META PLAN ARCHIVE NOTES GRAPH |
-| updated     | Sun Jan 11 17:27:44 2026 -0500                    |
-| langs       | org                                               |
-| lines       | 4263 :code 4146 :comment 0 :blank 117             |
-|-------------+---------------------------------------------------|
+|-------------+----------------------------------------|
+| name        | plan                                   |
+| version     | 0.1.0                                  |
+| description | CC Org Files                           |
+| skel-id     | 1784914079056115652                    |
+| root        | ~/comp/org/plan/                       |
+| tags        | ORG DOCS NOTES META PLAN ARCHIVE GRAPH |
+| updated     | Wed Jan 14 19:40:51 2026 -0500         |
+| langs       | org                                    |
+| lines       | 4215 :code 4108 :comment 0 :blank 107  |
+|-------------+----------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
 
@@ -44,7 +44,7 @@
 2025-10    223 ****
 2025-11    440 ********
 2025-12    204 ****
-2026-01    637 ************
+2026-01    839 ****************
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -52,14 +52,14 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2026-01-13 21:40:22 |
-| [[https://otom8.dev/plan/tasks/shed.html][tasks/shed]]    | 2026-01-13 20:41:17 |
+| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2026-01-14 20:24:03 |
 | [[https://otom8.dev/plan/product.html][product]]       | 2025-11-01 02:17:57 |
-| [[https://otom8.dev/plan/index.html][index]]         | 2026-01-05 21:00:23 |
+| [[https://otom8.dev/plan/index.html][index]]         | 2026-01-13 21:42:11 |
 | [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
 | [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
 | [[https://otom8.dev/plan/tasks/demo.html][tasks/demo]]    | 2026-01-08 21:47:33 |
 | [[https://otom8.dev/plan/tasks/infra.html][tasks/infra]]   | 2026-01-08 14:18:19 |
 | [[https://otom8.dev/plan/tasks/rnd.html][tasks/rnd]]     | 2026-01-05 19:26:03 |
+| [[https://otom8.dev/plan/tasks/shed.html][tasks/shed]]    | 2026-01-13 20:41:17 |
 
 #+END:

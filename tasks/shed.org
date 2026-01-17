@@ -271,15 +271,17 @@ means the value should be set to default.
 - State "DONE"       from "TODO"       [2026-01-01 Thu 16:13]
 :END:
 - verify correctness, develop better testing pattern
-** TODO integrate cmd
+** WIP integrate cmd
 :PROPERTIES:
 :ID:       22c59cc6-7aa7-4d28-a1db-88d2726dee79
 :CREATED:  <2026-01-01 Thu 16:12>
+:Effort:   24h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-01 Thu 16:12]
+CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 :END:
-- merge with cli/clap/cmd if possible
+- merge with cli/clap/cmd if possible - even better.. obj/cmd
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
