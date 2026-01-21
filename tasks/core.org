@@ -336,7 +336,7 @@ SCHEDULED: <2025-06-11 Wed>
 :END:
 [[file:~/comp/core/skelfile::;; FIX 2025-06-10: why can't we find compile-system even when specifying the package?][loc]]
 std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
-*** PROJECT cli/clap [0/4]                                         :lisp:cli:
+*** PROJECT cli/clap [3/4]                                         :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -348,38 +348,41 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 :END:
 - clap is quite unstable right now and has some obvious bugs which
   need remedying
-**** TODO hooks
+**** WIP hooks
 :PROPERTIES:
 :CREATED:  <2025-10-28 Tue 21:07>
 :ID:       971196cb-be16-45b2-8715-d395527edd4c
+:Effort:   2h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-10-28 Tue 21:07]
+CLOCK: [2026-01-20 Tue 22:11]--[2026-01-20 Tue 22:11] =>  0:00
 :END:
 cli should have relevant hooks
-**** TODO cli-command
+**** DONE cli-command
 :PROPERTIES:
 :ID:       2f393500-4689-4cfe-afdb-e667bfabedcf
 :CREATED:  <2026-01-16 Fri 22:29>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-16 Fri 22:29]
+- State "DONE"       from "TODO"       [2026-01-20 Tue 22:11]
 :END:
 #+begin_src lisp :package cli/clap :eval no-export
   (documentation (find-class 'cli-command) t)
 #+end_src
 
 #+RESULTS:
-: CLI command class inherited by both the 'main' command which is executed when
-: a CLI is called without arguments, and all subcommands.
+: Class of COMMANDs which may be executed directly from the command line.
 
-**** TODO cli
+**** DONE cli
 :PROPERTIES:
 :ID:       85354f89-b17d-4e0e-95ac-4a6c8269ef99
 :CREATED:  <2026-01-16 Fri 22:29>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-16 Fri 22:29]
+- State "DONE"       from "TODO"       [2026-01-20 Tue 22:09]
 :END:
 
 #+begin_src lisp :package cli/clap :eval no-export
@@ -392,16 +395,17 @@ cli should have relevant hooks
 : NAME is assigned to the CLI and assumed to be the default binary name which
 : uses this object.
 : 
-: VERSION, DESCRIPTION, KERNEL, and PACKAGE are assigned to the associated slot
+: VERSION, DESCRIPTION, HOOK, CD, and MAIN are assigned to the associated slot
 : value of the CLI.
 
-**** TODO package CLIs
+**** DONE package CLIs
 :PROPERTIES:
 :ID:       19fe8343-7739-4cff-949f-c3c1b943f1a1
 :CREATED:  <2026-01-16 Fri 22:37>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-16 Fri 22:37]
+- State "DONE"       from "TODO"       [2026-01-20 Tue 22:12]
 :END:
 #+begin_src emacs-lisp :results list
   (directory-files-recursively "~/comp/core/" ".*cli[.]lisp$")
@@ -413,12 +417,10 @@ cli should have relevant hooks
 - ~/comp/core/app/skel/krypt/cli.lisp
 - ~/comp/core/app/skel/packy/cli.lisp
 - ~/comp/core/app/skel/cli.lisp
-- ~/comp/core/lib/cli/clap/cli.lisp
 - ~/comp/core/lib/cli/cli.lisp
 - ~/comp/core/lib/organ/cli.lisp
 - ~/comp/core/lib/pod/cli.lisp
 - ~/comp/core/lib/rdb/cli.lisp
-- ~/comp/core/lib/syn/gen/cli.lisp
 - ~/comp/core/lib/syn/cli.lisp
 - ~/comp/core/lib/vc/cli.lisp
 
@@ -1126,7 +1128,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - State "DONE"       from "WIP"        [2026-01-14 Wed 20:05]
 :END:
 
-** PROJECT obj [3/8]                                                    :obj:
+** PROJECT obj [4/8]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1147,7 +1149,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 - get this working and tested, implement for org-graph
 - keep working our way up the chain to stored-object-schemas
-*** WIP CMD
+*** DONE CMD
 :PROPERTIES:
 :ID:       d6e24fc6-f236-4905-944f-8e9eb7f0616f
 :CREATED:  <2026-01-13 Tue 21:34>
@@ -1156,6 +1158,7 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :LOGBOOK:
 - State "TODO"       from              [2026-01-13 Tue 21:34]
 CLOCK: [2026-01-16 Fri 22:27]--[2026-01-16 Fri 22:28] =>  0:01
+- State "DONE"       from "WIP"        [2026-01-20 Tue 22:06]
 :END:
 - commands are a more generalized concept than we initially planned
   - CLI is most used case (depth), WM contains most commands (breadth)
@@ -1564,7 +1567,7 @@ prevelant tho.. only one way to find out :)
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-** PROJECT rt [0/4]                                                 :rt:test:
+** PROJECT rt [0/5]                                                 :rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION:  0.1
@@ -1602,6 +1605,16 @@ it somehow for review.
 :END:
 root test directory /tmp/rt with subdir for each suite, initialize
 from within suite
+*** TODO fixtures v2
+:PROPERTIES:
+:ID:       a3ffa1af-975a-44e5-a38d-b3f1ab2ceeff
+:CREATED:  <2026-01-20 Tue 22:27>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-20 Tue 22:27]
+:END:
+- likely to be kernel-objects
+- use DEFAPI (pending [[id:d4fa48f0-04a5-473c-abef-195b3f7bb3f3][DEFAPI]])
 *** FIXME test-result false-positives
 :PROPERTIES:
 :ID:       8250a385-cd25-4f63-a95f-75e04bcbb8a5
@@ -1802,7 +1815,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [10/22]                                              :lisp:std:
+* PROJECT std [12/23]                                              :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1812,7 +1825,26 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** WIP annotations
+** TODO DEFAPI
+:PROPERTIES:
+:ID:       d4fa48f0-04a5-473c-abef-195b3f7bb3f3
+:CREATED:  <2026-01-20 Tue 22:18>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-20 Tue 22:18]
+:END:
+- in prim.lisp
+- shared macro for defining the follow interfaces:
+  - readtables (would need additional refactoring to depend on prim.lisp)
+  - print tables
+  - annotations
+  - commands
+  - thread-pools
+  - colors
+  - keybinds
+  - loop universes?
+  - io-table?
+** DONE annotations
 :PROPERTIES:
 :ID:       0c6d3580-78e8-42d4-8472-1d336c31aa73
 :CREATED:  <2026-01-05 Mon 21:27>
@@ -1822,15 +1854,17 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 :LOGBOOK:
 - State "TODO"       from              [2026-01-05 Mon 21:27]
 CLOCK: [2026-01-05 Mon 21:29]--[2026-01-05 Mon 21:29] =>  0:00
+- State "DONE"       from "WIP"        [2026-01-20 Tue 22:21]
 :END:
 
-** TODO missing symbols
+** DONE missing symbols
 :PROPERTIES:
 :ID:       6dc49cf7-f024-4b9b-a149-6e60934a6918
 :CREATED:  <2025-11-21 Fri 20:52>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-11-21 Fri 20:52]
+- State "DONE"       from "TODO"       [2026-01-20 Tue 22:26]
 :END:
 #+begin_example
 ; compilation unit finished
@@ -1966,6 +2000,8 @@ CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
 - State "TODO"       from              [2025-07-30 Wed 22:37]
 :END:
 VERBS will need more work
+- eventually want to seal these with optimizations
+- dynamically open for user intervention
 ** WIP defsys                                                      :lisp:std:
 :PROPERTIES:
 :ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
@@ -1983,9 +2019,8 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 - maybe Norvig was right and we don't need asdf/uiop, maybe not
 - the truth is somewhere in between
 - [X] defsys macro
-- [ ] use macro
-- [ ] using macro
-- [ ] requires macro
+- [X] use macro
+- [X] using macro
 *** IO
 :PROPERTIES:
 :ID:       22be6e84-6690-47c4-acd9-274ad81ef058
@@ -2051,7 +2086,8 @@ CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
 - State "TBD"        from              [2025-07-05 Sat 23:44]
 - State "RESEARCH"   from "TBD"        [2025-07-30 Wed 22:38]
 :END:
-
+- algebraic? in math
+- pythonic, use define-fmt
 ** TODO test sweep                                                     :test:
 :PROPERTIES:
 :CREATED:  <2025-04-27 Sun 18:02>
