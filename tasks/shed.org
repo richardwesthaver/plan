@@ -64,7 +64,7 @@
   - accessors are macros (card32-put, card32-get)
 - read-card32/write-card32 are also macros..
 - aref-card32/aset-card32 are functions (dependent.lisp)
-* PROJECT wm [4/13]
+* PROJECT wm [4/14]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
 :CREATED:  <2025-08-30 Sat 18:35>
@@ -96,6 +96,18 @@
 :END:
 - refactor xlib/translations, io/kbd, and wm/key*
 - see also xlib:grab-keyboard, xlib:ungrab-keyboard
+** WIP SBCL timers
+:PROPERTIES:
+:ID:       a1232f70-9769-4f7c-85f8-40179785612e
+:CREATED:  <2026-01-21 Wed 21:30>
+:Effort:   5h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-21 Wed 21:30]
+CLOCK: [2026-01-21 Wed 21:30]--[2026-01-21 Wed 21:30] =>  0:00
+:END:
+- replace the ioloop machinery applied to WM-TIMER-CHANNEL?
+- trivial to replace wm-timer with sb-ext:timer
 ** TODO modeline features
 :PROPERTIES:
 :ID:       9f4b6c8c-ee3d-40e7-af99-47d9fc481e9f
