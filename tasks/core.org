@@ -7,6 +7,17 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/comp/core/
 #+filetags: core
+* DONE remove asdf/quicklisp from skelfiles
+:PROPERTIES:
+:ID:       6f8591f3-fc46-4130-ac90-52f458fae89d
+:CREATED:  <2026-02-09 Mon 23:06>
+:Effort:   2h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-09 Mon 23:06]
+- State "DONE"       from "TODO"       [2026-02-22 Sun 21:47]
+:END:
+
 * FIXME inline TODOs
 :PROPERTIES:
 :ID:       d5aaf952-bb93-4b66-a7e0-1f0f827c0925
@@ -50,6 +61,27 @@
           OBJ/STORE::INSTANCE-CLASS-INDEX OBJ/STORE::INSTANCE-TABLE
   #+end_example
 
+* TODO lorem ipsum generator
+:PROPERTIES:
+:ID:       1aada73a-52ac-4b8e-a6d4-5c1894e51927
+:CREATED:  <2026-02-07 Sat 21:57>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-07 Sat 21:57]
+:END:
+- useful for fonts, see [[help:customize-face]]
+- RT or DOC?
+- maybe NLP..
+
+* TODO component require total ordering
+:PROPERTIES:
+:ID:       bde9b746-3b00-413c-9cf9-193dd3110348
+:CREATED:  <2026-02-11 Wed 17:03>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-11 Wed 17:03]
+:END:
+need to be able to sort REQUIRE slots in components (specifically systems)
 * PROJECT ffi [2/6]                                                :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
@@ -283,17 +315,16 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* PROJECT bin [0/0]
+* TODO convert bin to bin.lisp
 :PROPERTIES:
 :ID:       94f244f1-7175-45af-b511-a4177ff78097
 :CREATED:  <2025-07-08 Tue 22:27>
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-07-08 Tue 22:27]
+- State "TODO"       from "PROJECT"    [2026-02-22 Sun 21:52]
 :END:
-- find purpose for this
-- now that cli/clap is integrated with apps we may want to use bin
-  just to ship separate cores - no asd just scripts
+- move scripts to top-level
 ** TODO prune internal packages
 :PROPERTIES:
 :ID:       ee9ced99-1dec-4457-99f6-1ddbbc08461a
@@ -473,6 +504,11 @@ table.
 - Refiled on [2025-05-02 Fri 13:54]
 :END:
 
+*** TODO test SET-TTY-MODE :echo nil vs WITHOUT-ECHO
+:LOGBOOK:
+- Refiled on [2026-01-26 Mon 21:13]
+:END:
+- should have same result, define WITHOUT-TTY-ECHO
 ** PROJECT q [0/4]                                                        :q:
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
@@ -1128,7 +1164,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - State "DONE"       from "WIP"        [2026-01-14 Wed 20:05]
 :END:
 
-** PROJECT obj [4/8]                                                    :obj:
+** PROJECT obj [5/11]                                                   :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1138,7 +1174,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - State "TODO"       from              [2023-12-17 Sun 00:59]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-*** TODO object schema
+*** TODO object schema                                               :schema:
 DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :PROPERTIES:
 :CREATED:  <2025-11-03 Mon 19:14>
@@ -1149,7 +1185,19 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :END:
 - get this working and tested, implement for org-graph
 - keep working our way up the chain to stored-object-schemas
-*** DONE CMD
+*** TODO command parents
+:PROPERTIES:
+:ID:       3e6dea77-0cb0-4349-ac65-4e0a4992cfb9
+:CREATED:  <2026-01-31 Sat 23:40>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-31 Sat 23:40]
+:END:
+- may want to ditch the init protocol and use DEFINE-COMMAND-TABLE
+- consider PARENT:CMD protocol (modify parse/read)
+- if command not found in primary check parent
+- we now may need more than hash-tables..
+*** DONE CMD                                                            :cmd:
 :PROPERTIES:
 :ID:       d6e24fc6-f236-4905-944f-8e9eb7f0616f
 :CREATED:  <2026-01-13 Tue 21:34>
@@ -1168,7 +1216,24 @@ CLOCK: [2026-01-16 Fri 22:27]--[2026-01-16 Fri 22:28] =>  0:01
 - our preference is to store them as funcallable objects (kernels)
 - NOPE: do we need a package? probably want to access via symbol-table
   -> compile functions
-
+*** DONE Command Itypes                                                 :cmd:
+:PROPERTIES:
+:ID:       974217fd-cb3c-44d0-ac97-65a4da7e5192
+:CREATED:  <2026-01-22 Thu 12:09>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-22 Thu 12:09]
+- State "DONE"       from "TODO"       [2026-01-28 Wed 18:18]
+:END:
+we need to ignore lambda-list-keywords, apply interactive spec
+- do we want a 'skip' interactive designator? probably not
+#+begin_src lisp
+  (defcommand foo (&optional bar) (declare (interactive string))) ; FIXED
+#+end_src
+- [X] CHECK-ITYPE should only be called in DEFCOMMAND
+- [X] after =parse-command= we need to compare the arglist to ITYPE
+  - skip all provided args
+  - call the remaining interactive-types with INPUT
 *** TODO equiv
 :PROPERTIES:
 :ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
@@ -1399,6 +1464,15 @@ names and variables. In order to create a dark theme, colors base00 to
 base07 should span from dark to light. For a light theme, these
 colours should span from light to dark.
 #+end_quote
+*** RESEARCH major-modes
+:PROPERTIES:
+:CREATED:  <2026-01-25 Sun 21:22>
+:ID:       6c07d53d-b5fe-4dc3-86bc-03743ee2c6bc
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from "TODO"       [2026-01-25 Sun 21:22]
+- Refiled on [2026-01-26 Mon 21:12]
+:END:
 ** PROJECT net [1/6]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
@@ -1567,7 +1641,7 @@ prevelant tho.. only one way to find out :)
 :PROPERTIES:
 :ID: e18a90d7-10bc-44d3-8508-56483d29d385
 :END:
-** PROJECT rt [0/5]                                                 :rt:test:
+** PROJECT rt [0/6]                                                 :rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION:  0.1
@@ -1615,6 +1689,15 @@ from within suite
 :END:
 - likely to be kernel-objects
 - use DEFAPI (pending [[id:d4fa48f0-04a5-473c-abef-195b3f7bb3f3][DEFAPI]])
+*** TODO TEST-FUNCTION v2
+:PROPERTIES:
+:ID:       8813fea8-99c2-4c0d-8cd5-259e80b7c765
+:CREATED:  <2026-01-22 Thu 21:47>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-22 Thu 21:47]
+:END:
+- kernel-objects
 *** FIXME test-result false-positives
 :PROPERTIES:
 :ID:       8250a385-cd25-4f63-a95f-75e04bcbb8a5
@@ -1625,7 +1708,7 @@ from within suite
 :END:
 IS macros aren't reporting their failures correctly - should be
 returning conditions which bubble up to the caller.
-** PROJECT io [2/7]                                                      :io:
+** PROJECT io [3/8]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1665,6 +1748,15 @@ SCHEDULED: <2025-06-17 Tue>
 - State "FIXME"      from              [2025-06-16 Mon 22:44]
 :END:
 - use compress and decompress instead - no direct stream support
+*** FIXME flate/deflate
+:PROPERTIES:
+:ID:       3ad8ce2d-9463-4c0a-a0ed-0d564182d4b3
+:CREATED:  <2026-02-05 Thu 17:30>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-05 Thu 17:30]
+- State "FIXME"      from              [2026-02-05 Thu 17:30]
+:END:
 *** FIXME zstd streams
 SCHEDULED: <2025-06-17 Tue>
 :PROPERTIES:
@@ -1677,6 +1769,16 @@ SCHEDULED: <2025-06-17 Tue>
 - keep getting segfaults when using the streaming api (which is much
   faster and needed for serious use)
 - need to debug and fix, test in dat/tar on tar.zst files
+*** TODO wm:kbd -> io/kbd:kbd
+:PROPERTIES:
+:ID:       bcfbc0ca-4d19-45b5-9256-a350aca2026f
+:CREATED:  <2026-01-06 Tue 21:57>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-06 Tue 21:57]
+:END:
+- [X] parse keyboard definitions from simple strings
+- [ ] parse keyboard definitions from lists
 - KEY
 - KEYMAP
 - IO
@@ -1689,23 +1791,14 @@ SCHEDULED: <2025-06-17 Tue>
 - SERDE :XLIB
 - DEFINE-KEY
 - DEFINE-KEYMAP
-*** TODO wm:kbd -> io/kbd:kbd
-:PROPERTIES:
-:ID:       bcfbc0ca-4d19-45b5-9256-a350aca2026f
-:CREATED:  <2026-01-06 Tue 21:57>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-06 Tue 21:57]
-:END:
-- [ ] parse keyboard definitions from simple strings
-- [ ] parse keyboard definitions from lists
-*** TODO wm:kmap -> io/kbd:keymap
+*** DONE wm:kmap -> io/kbd:keymap
 :PROPERTIES:
 :ID:       e8732ce7-7c47-46c6-9146-faaef8cf93b5
 :CREATED:  <2026-01-06 Tue 21:58>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-06 Tue 21:58]
+- State "DONE"       from "TODO"       [2026-02-05 Thu 17:31]
 :END:
 - make-sparse-keymap
 - probably just using hash-tables, same as color palettes, etc.

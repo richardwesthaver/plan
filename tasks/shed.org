@@ -7,7 +7,7 @@
 #+ARCHIVE: ../../archive/plan.org::** shed
 #+LOCATION: ~/comp/shed/
 #+filetags: shed
-* PROJECT tenex [0/0]
+* PROJECT tenex [0/4]
 :PROPERTIES:
 :ID:       5e5a0352-1e4c-45cb-85e7-3d54f894aa04
 :CREATED:  <2025-08-30 Sat 18:35>
@@ -36,6 +36,15 @@
   - auth
   - upload to R2
   - upload and deploy pages
+** TBD NYTimes
+:PROPERTIES:
+:ID:       a8f8a32c-4552-459c-9109-6b062f8c6629
+:CREATED:  <2026-02-07 Sat 22:46>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-07 Sat 22:46]
+- State "TBD"        from "TODO"       [2026-02-07 Sat 22:46]
+:END:
 ** TODO Transmission
 :PROPERTIES:
 :ID:       464861a5-0adb-4174-950e-524a45b5606d
@@ -44,7 +53,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2025-12-30 Tue 20:47]
 :END:
-* PROJECT xlib [0/0]
+* PROJECT xlib [0/2]
 :PROPERTIES:
 :ID:       1d75bafe-e79a-4a32-ae78-0bfb98c368b2
 :CREATED:  <2026-01-01 Thu 19:24>
@@ -64,7 +73,16 @@
   - accessors are macros (card32-put, card32-get)
 - read-card32/write-card32 are also macros..
 - aref-card32/aset-card32 are functions (dependent.lisp)
-* PROJECT wm [4/14]
+** TBD remove xintern
+:PROPERTIES:
+:ID:       8ca69770-2d88-42e7-b048-73840a04e445
+:CREATED:  <2026-02-03 Tue 21:28>
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2026-02-03 Tue 21:28]
+:END:
+[[file:~/comp/shed/xlib/extensions/glx.lisp::;;; FIXME: I'm just not sure we need a seperate accessors for what][fixes issue in glx]]
+* PROJECT wm [11/20]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
 :CREATED:  <2025-08-30 Sat 18:35>
@@ -74,6 +92,29 @@
 :END:
 - ioloop.. would uring be useful?
   - otherwise develop better optimization strat
+* TODO fix errors when updating modifier map
+:PROPERTIES:
+:ID:       a699b009-6389-4ed6-afc6-a9d1255a6eeb
+:CREATED:  <2026-02-15 Sun 15:20>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-15 Sun 15:20]
+:END:
+- do we need to sync keys?
+- NIL val type-error in XLIB:KEYCODES-FROM-KEYSYM
+** DONE X server debugging/testing
+:PROPERTIES:
+:ID:       b3a4c060-d0c6-4d44-aaf8-cb0c55aa5ce1
+:CREATED:  <2026-01-28 Wed 22:30>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-01-28 Wed 22:31]
+- State "DONE"       from "RESEARCH"   [2026-02-04 Wed 20:00]
+:END:
+- we need to create a dummy server that we can connect to remotely and
+  debug. having issues with xkbcomp?
+- =xvfb-run -a wm=
+bb- =-a= is deprecated use =-d= also see =Xvfb=
 ** DONE fix TTF rendering
 :PROPERTIES:
 :ID:       6edc01c8-1732-4dc3-9493-bb6e289f80e0
@@ -86,17 +127,20 @@
 - failure when calling ENTRY-WEIGHT method on NIL
 - from obj/val:get-val <- text-line-pixarray <- draw-text-align <- wm:render-string
 
-** TODO integrated keymaps
+** DONE integrated keymaps
 :PROPERTIES:
 :ID:       33b99b81-3e2d-4b7b-b1a4-fc3e07afebd7
 :CREATED:  <2026-01-01 Thu 01:06>
+:Effort:   24h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-01 Thu 01:06]
+CLOCK: [2026-01-26 Mon 21:14]--[2026-01-26 Mon 21:14] =>  0:00
+- State "DONE"       from "WIP"        [2026-02-04 Wed 20:03]
 :END:
 - refactor xlib/translations, io/kbd, and wm/key*
 - see also xlib:grab-keyboard, xlib:ungrab-keyboard
-** WIP SBCL timers
+** DONE SBCL timers
 :PROPERTIES:
 :ID:       a1232f70-9769-4f7c-85f8-40179785612e
 :CREATED:  <2026-01-21 Wed 21:30>
@@ -105,6 +149,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2026-01-21 Wed 21:30]
 CLOCK: [2026-01-21 Wed 21:30]--[2026-01-21 Wed 21:30] =>  0:00
+- State "DONE"       from "WIP"        [2026-01-26 Mon 21:15]
 :END:
 - replace the ioloop machinery applied to WM-TIMER-CHANNEL?
 - trivial to replace wm-timer with sb-ext:timer
@@ -159,6 +204,17 @@ CLOCK: [2026-01-21 Wed 21:30]--[2026-01-21 Wed 21:30] =>  0:00
 :END:
 - may be able to grab utils (time-format), deffmt's from wm/time.lisp
 - eventually should be able to delete this file
+** DONE parse-args for wm-command
+:PROPERTIES:
+:ID:       9c0dd908-ea9e-464c-a8f3-25225c325694
+:CREATED:  <2026-01-22 Thu 20:52>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-01-22 Thu 20:52]
+- State "DONE"       from "TODO"       [2026-01-26 Mon 21:15]
+:END:
+define PARSE-ARGS method for WM-COMMAND
+- getting close!
 ** TODO integrate colors
 :PROPERTIES:
 :ID:       821fb277-898a-4bf1-841e-5465d3153243
@@ -229,21 +285,26 @@ means the value should be set to default.
 - use logger, grab utils
 - debug.lisp
   - likely will delete this file, refactor into var.lisp
-** TODO single-rotation file-logger
+** DONE single-rotation file-logger
 :PROPERTIES:
 :ID:       11ba993a-ded5-4db6-ae55-7c1a794e45ef
 :CREATED:  <2026-01-12 Mon 15:17>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-12 Mon 15:17]
+- State "DONE"       from "TODO"       [2026-01-29 Thu 15:21]
 :END:
 - =wm.log= -> =wm.log.1=
 - system logger?
 - part of WM-CONFIG
-** TODO WM-CONFIG?
+- can just use rotating-file-logger with a single rotation, for now
+  happy with current config.
+** WIP WM-CONFIG?
 :PROPERTIES:
 :ID:       f342f571-f1a9-47c3-9bfa-8cf670e7797d
 :CREATED:  <2026-01-12 Mon 15:18>
+:Effort:   4h
+:ORDERED:  t
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-12 Mon 15:18]
@@ -272,6 +333,7 @@ means the value should be set to default.
 - State "TODO"       from              [2026-01-01 Thu 01:38]
 :END:
 - which-key-mode should prob be a module
+  - or should it?
 - integrate with DOC, maybe some ORGAN
 ** DONE test-wm
 :PROPERTIES:
@@ -283,7 +345,7 @@ means the value should be set to default.
 - State "DONE"       from "TODO"       [2026-01-01 Thu 16:13]
 :END:
 - verify correctness, develop better testing pattern
-** WIP integrate cmd
+** DONE integrate cmd
 :PROPERTIES:
 :ID:       22c59cc6-7aa7-4d28-a1db-88d2726dee79
 :CREATED:  <2026-01-01 Thu 16:12>
@@ -292,8 +354,44 @@ means the value should be set to default.
 :LOGBOOK:
 - State "TODO"       from              [2026-01-01 Thu 16:12]
 CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
+- State "DONE"       from "WIP"        [2026-01-22 Thu 20:55]
 :END:
 - merge with cli/clap/cmd if possible - even better.. obj/cmd
+** TODO define default-keysym, change key-eq to key=
+:PROPERTIES:
+:ID:       1c5ff9a4-2149-4000-a38b-869e588ca3f6
+:CREATED:  <2026-02-07 Sat 16:55>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-07 Sat 22:00]
+:END:
+** TODO defmain
+:PROPERTIES:
+:ID:       12294c89-d756-4283-ad93-88571dca6609
+:CREATED:  <2026-02-07 Sat 22:36>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-07 Sat 22:36]
+:END:
+- consider adding a test path for xvfb sanity checks
+** TODO test shim
+:PROPERTIES:
+:ID:       ccb14d31-98fd-4d22-9655-b4585f463d1f
+:CREATED:  <2026-02-07 Sat 22:00>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-07 Sat 22:01]
+:END:
+- allow tests to run via xvfb
+** DONE define-keysym
+:PROPERTIES:
+:CREATED:  <2026-01-26 Mon 21:11>
+:ID:       ea786aa2-7cc6-4c45-975a-d95c03669faa
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-01-26 Mon 21:11]
+- Refiled on [2026-01-26 Mon 21:11]
+:END:
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
@@ -324,7 +422,7 @@ CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 - State "TODO"       from              [2024-09-02 Mon 16:14]
 :END:
 - SaaS toolkit
-* PROJECT BBDB [0/0]
+* PROJECT bbdb [0/0]
 :PROPERTIES:
 :ID:       37844b01-6e4c-4037-a9da-defa487e81ce
 :CREATED:  <2025-12-30 Tue 20:49>
@@ -344,3 +442,20 @@ CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 :END:
 - needs to be as generic as possible
 - serialize schema info directly into DEFAULT cf
+* PROJECT slime
+:PROPERTIES:
+:ID:       bc386786-3a76-4467-9cb2-f2021847feb3
+:CREATED:  <2026-02-04 Wed 19:58>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-04 Wed 19:58]
+- State "PROJECT"    from "TODO"       [2026-02-15 Sun 18:53]
+:END:
+** TODO consolide SLIME annotations with CORE annotations        :core:print:
+:PROPERTIES:
+:ID:       b729ea49-1f44-4631-9a8f-9b605158bd60
+:CREATED:  <2026-02-15 Sun 18:53>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-15 Sun 18:53]
+:END:
