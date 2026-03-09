@@ -29,17 +29,20 @@
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; TODO" "*.*" "~/comp/core/")
 #+end_src
-*221*
+*234*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; FIXME" "*.*" "~/comp/core/")
 #+end_src
-*34*
+*114*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; REVIEW" "*.*" "~/comp/core/")
 #+end_src
-*15*
-
-* FIXME undefined symbols
+*16*
+#+begin_src emacs-lisp :results silent
+  (rgrep ".*; RESEARCH" "*.*" "~/comp/core/")
+#+end_src
+*3*
+* DONE undefined symbols
 :PROPERTIES:
 :CREATED:  <2025-02-14 Fri 15:28>
 :ID:       4249f111-d4d1-47a3-bf30-43f178f7a66d
@@ -47,6 +50,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2025-02-14 Fri 15:28]
 - State "FIXME"      from "TODO"       [2025-02-14 Fri 15:30]
+- State "DONE"       from "FIXME"      [2026-03-05 Thu 17:09]
 :END:
 - [2026-01-13 Tue]
   #+begin_example lisp
@@ -81,8 +85,9 @@
 :LOGBOOK:
 - State "TODO"       from              [2026-02-11 Wed 17:03]
 :END:
-need to be able to sort REQUIRE slots in components (specifically systems)
-* PROJECT ffi [2/6]                                                :lisp:ffi:
+need to be able to sort REQUIRE slots in components (specifically
+systems) - btree would be nice
+* PROJECT alien [2/6]                                              :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION:  0.1
@@ -315,7 +320,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* TODO convert bin to bin.lisp
+* DONE convert bin to bin.lisp
 :PROPERTIES:
 :ID:       94f244f1-7175-45af-b511-a4177ff78097
 :CREATED:  <2025-07-08 Tue 22:27>
@@ -323,6 +328,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2025-07-08 Tue 22:27]
 - State "TODO"       from "PROJECT"    [2026-02-22 Sun 21:52]
+- State "DONE"       from "TODO"       [2026-03-05 Thu 17:09]
 :END:
 - move scripts to top-level
 ** TODO prune internal packages
@@ -947,17 +953,20 @@ instance, possibly by closing an existing one.
 - State "TODO"       from              [2025-06-02 Mon 22:22]
 :END:
 see graph node [[id:c90cebbe-e91a-4438-a21d-eefb707a6194][github.com]]
-*** TODO vc-mirrors-update replacement
+*** WIP vc-mirrors-update replacement
 :PROPERTIES:
 :ID:       36c19881-72c6-4cf5-aaba-2b4ced302b97
 :LOCATION: ~/.config/nushell/scripts/vc.nu
 :Effort:   3:00
 :CREATED:  <2024-08-22 Thu 22:15>
+:ORDERED:  t
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 01:33]
 CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 - State "TODO"       from "TODO"       [2024-08-22 Thu 22:15]
+CLOCK: [2026-03-03 Tue 22:07]--[2026-03-03 Tue 22:08] =>  0:01
+- State "WIP"        from "TODO"       [2026-03-03 Tue 22:07]
 :END:
 ** PROJECT dat [0/3]                                                    :dat:
 :PROPERTIES:
@@ -1688,7 +1697,7 @@ from within suite
 - State "TODO"       from              [2026-01-20 Tue 22:27]
 :END:
 - likely to be kernel-objects
-- use DEFAPI (pending [[id:d4fa48f0-04a5-473c-abef-195b3f7bb3f3][DEFAPI]])
+- +use DEFAPI (pending [[id:d4fa48f0-04a5-473c-abef-195b3f7bb3f3][DEFAPI]])+
 *** TODO TEST-FUNCTION v2
 :PROPERTIES:
 :ID:       8813fea8-99c2-4c0d-8cd5-259e80b7c765
@@ -1908,7 +1917,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [12/23]                                              :lisp:std:
+* PROJECT std [14/23]                                              :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1918,7 +1927,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** TODO DEFAPI
+** NOPE DEFAPI
 :PROPERTIES:
 :ID:       d4fa48f0-04a5-473c-abef-195b3f7bb3f3
 :CREATED:  <2026-01-20 Tue 22:18>
@@ -1950,401 +1959,6 @@ CLOCK: [2026-01-05 Mon 21:29]--[2026-01-05 Mon 21:29] =>  0:00
 - State "DONE"       from "WIP"        [2026-01-20 Tue 22:21]
 :END:
 
-** DONE missing symbols
-:PROPERTIES:
-:ID:       6dc49cf7-f024-4b9b-a149-6e60934a6918
-:CREATED:  <2025-11-21 Fri 20:52>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-11-21 Fri 20:52]
-- State "DONE"       from "TODO"       [2026-01-20 Tue 22:26]
-:END:
-#+begin_example
-; compilation unit finished
-;   Undefined functions:
-;     STD/ASYNC::BODY STD/MACS:DEFUNITS STD/PRINT::FMT-MUMBLE STD/PRINT::FMT-TIME STD/ASYNC::WITH-PARSED-BODY
-;   Undefined variables:
-;     STD/DEFSYS:*MODULE-TABLE* STD/MACS::CABLE STD/MACS::CM STD/ASYNC::DECLARES STD/MACS::DISTANCE STD/MACS::FATHOM STD/MACS::FOOT STD/MACS::FURLONG STD/MACS::INCH STD/MACS::KM STD/MACS::LIGHT-YEAR STD/MACS::M STD/MACS::MILE STD/MACS::MM STD/MACS::NAUTICAL-MILE STD/MACS::NM STD/MACS::YARD
-#+end_example
-** WIP documentation sweep
-:PROPERTIES:
-:ID:       b7f48103-4fa3-48c0-93ba-8efc23848931
-:CREATED:  <2025-04-26 Sat 20:48>
-:Effort:   10:00
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 16:09]
-- State "WIP"        from "TODO"       [2025-04-26 Sat 20:48]
-CLOCK: [2025-04-27 Sun 15:35]--[2025-04-27 Sun 17:59] =>  2:24
-CLOCK: [2025-04-27 Sun 19:56]--[2025-04-27 Sun 21:51] =>  1:55
-CLOCK: [2025-06-11 Wed 20:00]--[2025-06-11 Wed 20:39] =>  0:39
-CLOCK: [2025-06-17 Tue 18:12]--[2025-06-17 Tue 19:31] =>  1:19
-:END:
-- document functions and variables..
-#+begin_src lisp
-  (let ((ret))
-    (do-external-symbols (s :std)
-      (when (and (or (boundp s) (fboundp s) (cadr (multiple-value-list (typexpand s))) (find-class s nil))
-                 (not (or (documentation s 'variable) (documentation s 'function)
-                          (documentation s 'structure) (documentation s 'type)
-  			(documentation s 'setf) (documentation s 't))))
-        (push s ret)))
-    (list :missing (length ret) '/ (length (list-package-symbols :std))))
-#+end_src
-
-#+RESULTS:
-| :MISSING | 529 | / | 1420 |
-
-- [X] alien.lisp              
-- [X] array.lisp              
-- [X] async.lisp              
-- [X] bit.lisp                
-- [X] condition.lisp          
-- [X] curry.lisp              
-- [X] defpkg.lisp             
-- [X] early.lisp              
-- [X] file.lisp               
-- [X] fmt.lisp                
-- [X] hash-table.lisp         
-- [X] list.lisp               
-- [X] macs                    
-- [X] meta.lisp               
-- [X] named-readtables.lisp   
-- [X] num                     
-- [X] os.lisp                 
-- [X] par.lisp                
-- [X] path.lisp               
-- [X] pipe.lisp               
-- [-] pkg.lisp                
-- [X] rand.lisp               
-- [X] readtable.lisp          
-- [X] seq.lisp                
-- [X] serde.lisp              
-- [X] spin.lisp               
-- [X] std.asd                 
-- [X] stream.lisp             
-- [X] string.lisp             
-- [X] sym.lisp                
-- [X] sys.lisp                
-- [X] task.lisp               
-- [X] type.lisp               
-- [X] tests                   
-- [ ] thread.lisp             
-
-** DONE standard package sets
-:PROPERTIES:
-:ID:       e24f525a-5564-4489-91de-041cfbd8c7af
-:CREATED:  <2025-06-06 Fri 21:46>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-11 Wed 20:39]
-- State "DONE"       from "TODO"       [2025-07-28 Mon 19:34]
-- Note taken on [2025-07-28 Mon 19:34] \\
-  :prelude defpkg option
-:END:
-** DONE user-add
-:PROPERTIES:
-:ID:       cddd0d4a-1d28-415a-8605-136347b1e1be
-:CREATED:  <2025-06-10 Tue 18:14>
-:LOCATION+: os.lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-10 Tue 18:15]
-- State "DONE"       from "TODO"       [2025-06-12 Thu 13:19]
-:END:
-** DONE group-add
-:PROPERTIES:
-:ID:       b80304b3-7f27-4374-af33-6a81b7382216
-:CREATED:  <2025-06-10 Tue 18:14>
-:LOCATION+: os.lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-10 Tue 18:14]
-- State "DONE"       from "TODO"       [2025-06-12 Thu 13:19]
-:END:
-** TODO more (useful) bit tricks
-:PROPERTIES:
-:ID:       36d3040f-c899-4941-affb-30e1641d1b01
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-02-29 Thu 16:09]
-:END:
-** DONE external-formats
-:PROPERTIES:
-:ID:       4c786bf4-9750-466b-86b3-d2a579a9b4ab
-:CREATED:  <2025-06-11 Wed 18:17>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-11 Wed 20:39]
-- State "DONE"       from "TODO"       [2025-06-17 Tue 18:09]
-:END:
-- wrap internal sbcl implementation
-  - SB-IMPL, SB-INT
-  - external-format (ef-)
-- conditions
-- 'preferred' formats
-- check/translate fns
-** TODO defclass*
-:PROPERTIES:
-:ID:       b3b8fbbb-543a-4914-a4dd-0635677c35ee
-:CREATED:  <2025-07-30 Wed 22:37>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-07-30 Wed 22:37]
-:END:
-VERBS will need more work
-- eventually want to seal these with optimizations
-- dynamically open for user intervention
-** WIP defsys                                                      :lisp:std:
-:PROPERTIES:
-:ID:       ea69bedd-6a17-44b4-9f2c-3f9195873404
-:CREATED:  <2025-04-26 Sat 22:47>
-:Effort:   40h
-:END:
-:LOGBOOK:
-- State "HACK"       from              [2024-08-03 Sat 01:06]
-- Refiled on [2024-08-22 Thu 19:03]
-- State "HOLD"       from "HACK"       [2025-04-26 Sat 22:47] \\
-  hold for version 0.3
-- State "TODO"       from "HOLD"       [2025-08-30 Sat 23:08]
-CLOCK: [2025-08-30 Sat 23:08]--[2025-08-31 Sun 00:08] =>  1:00
-:END:
-- maybe Norvig was right and we don't need asdf/uiop, maybe not
-- the truth is somewhere in between
-- [X] defsys macro
-- [X] use macro
-- [X] using macro
-*** IO
-:PROPERTIES:
-:ID:       22be6e84-6690-47c4-acd9-274ad81ef058
-:CREATED:  <2025-12-30 Tue 22:26>
-:END:
-- touch files as little as possible (cache)
-- may require file-level locks..
-- [ ] look into sbcl hooks and internals to capture datetimes on compile/load
-- batch and auto-dispatch bulk IO tasks on collections
-- timers? file watchers?
-*** Caching
-:PROPERTIES:
-:ID:       21961225-6451-4cd6-8b03-012fa390793e
-:CREATED:  <2025-12-30 Tue 22:30>
-:END:
-- priority is memoization of load-system and compile-system calls,
-  with ability to force re-evaluation (without clearing entire cache)
-  - store caches in session
-  - separate from task cache?
-*** System Methods
-:PROPERTIES:
-:ID:       588236c6-b97a-4960-aa57-8802229932a2
-:CREATED:  <2025-12-30 Tue 22:33>
-:END:
-- multi-threaded by default (dynamic)
-- similar to =define-tensor-method= but for parallel ops
-- may want to start with something like =async-method=
-  - compatible with =defmethod=?
-  - can do something fancy in the defgeneric maybe (build up the task/job prototypes)
-- without async, _execute immediately_ do not create tasks/jobs, but respect the cache
-- maybe /always/ return STATUS?
-**** System Ops
-:PROPERTIES:
-:ID:       18861e3c-3ef7-4ed8-a88b-8b463c9ef35a
-:CREATED:  <2025-12-30 Tue 22:40>
-:END:
-- always operates on a single task, fed by the session scheduler
-- guaranteed to be called when a system method is called with =:async
-  t= (default)
-- updates and returns the STATUS slot of the received task
-- result values captured and returned to session result queue
-*** Modules
-:PROPERTIES:
-:ID:       bf2c2465-c6ef-4e6a-ac26-87ed26f2b07e
-:CREATED:  <2025-06-03 Tue 20:19>
-:END:
-- [[https://www.lispworks.com/documentation/HyperSpec/Body/f_provid.htm][CLHS: Function PROVIDE, REQUIRE]]
-  - will only take string designators - can't be used for sys:module
-- have a MODULE class but not actually using it - only serves as a
-  module root (systems)
-  - this might be ok - keep going without it.
-  - when we fully commit, delete the class and factor into system class
-- module methods?
-  - unsure if we want to include them in the system session or have
-    them implicitly memoized.
-- more important to have good hooks api
-** RESEARCH array index fmt                                             :fmt:
-:PROPERTIES:
-:CREATED:  <2025-07-05 Sat 23:44>
-:ID:       bd7e248e-e6d1-42e1-9ae6-0c820fa581dd
-:END:
-:LOGBOOK:
-- State "TBD"        from              [2025-07-05 Sat 23:44]
-- State "RESEARCH"   from "TBD"        [2025-07-30 Wed 22:38]
-:END:
-- algebraic? in math
-- pythonic, use define-fmt
-** TODO test sweep                                                     :test:
-:PROPERTIES:
-:CREATED:  <2025-04-27 Sun 18:02>
-:ID:       ec17d811-1573-4208-ab46-edfe9ae23d02
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-27 Sun 18:02]
-:END:
-** DONE thread-pool impl                                             :thread:
-:PROPERTIES:
-:CREATED:  <2025-04-27 Sun 18:02>
-:ID:       5bb9865d-e6c1-40ca-8a53-155c417de018
-:LOCATION+: thread.lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-27 Sun 18:02]
-- State "DONE"       from "TODO"       [2025-07-28 Mon 19:31]
-- Note taken on [2025-07-28 Mon 19:31] \\
-  work submission finally works
-:END:
-*** TODO specify kernel function prototypes
-:PROPERTIES:
-:CREATED:  <2025-05-06 Tue 21:57>
-:ID:       8738d5a0-0555-425d-addc-38e132503fbe
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-06 Tue 21:57]
-:END:
-- should be easy to:
-  - register kernel prototypes
-  - define new kernel functions
-  - modify kernels in running threads
-  - communicate with kerneled objects
-    - via oracle, supervisor, simple state machines
-
-:notes:
-- kernel ops :: internal VM operations performed by kernel functions
-- kernel commands :: external commands which modify the state of the kerneled object
-- ideally provides closure with captured variables able to be
-  dynamically rebound across threads.
-- oracle thread when designated should have solo write access to kernel ops
-:end:
-** TODO save-core                                                       :sys:
-:PROPERTIES:
-:ID:       594cdcc2-5de7-4efe-bec5-cf5fbf5fe4ad
-:CREATED:  <2025-05-08 Thu 20:50>
-:LOCATION+: sys.lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-08 Thu 20:50]
-:END:
-** NOPE task-pool impl                                               :thread:
-:PROPERTIES:
-:CREATED:  <2025-04-27 Sun 18:02>
-:ID:       8326a4a5-31dc-4030-a3da-196f58b69202
-:LOCATION+: task.lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-27 Sun 18:02]
-- Note taken on [2025-07-28 Mon 19:32] \\
-  thread-pool will suffice - tasks subject to change
-:END:
-** NOPE castable
-:PROPERTIES:
-:CREATED:  <2025-05-29 Thu 22:37>
-:ID:       b7bd09e1-e268-4bbb-9ff5-da2c070c8112
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-29 Thu 22:37]
-:END:
-*** NOPE assertion failures in multi-threaded context
-:PROPERTIES:
-:ID:       1168ebb1-ed20-4e90-aa4c-498e3bc2b1a9
-:CREATED:  <2025-05-29 Thu 22:37>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-05-29 Thu 22:38]
-:END:
-copy-check-and-promote <- copy-slot-and-check
-** DONE compiler-macro utils
-:PROPERTIES:
-:ID:       877d4467-35d6-44c3-9d4f-3608bfb16011
-:CREATED:  <2025-11-20 Thu 22:53>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-11-20 Thu 22:53]
-- Note taken on [2025-12-02 Tue 21:00] \\
-  may not be as necessary as I thought, letv* and lety get us a long
-  way. we should come back to this for transforms and other sorts of
-  optimizations. maybe hash-cache too.
-- State "HOLD"       from "TODO"       [2025-12-02 Tue 21:01]
-- State "DONE"       from "HOLD"       [2025-12-30 Tue 22:54]
-:END:
-- probably going in prim
-- NOTE: destructuring-case actually helps quite a lot with this, but
-  requires a significant amount of nesting to accomplish something
-  much more terse in MATCH syntax. should also be able to leverage
-  switch
-- pattern matching engine isn't something that I want to explicitly
-  build into std
-  - [2025-12-30 Tue] but kinda did anyway.. see std/macs:match
-    - next step should be to make this extendable
-** HOLD incorporate sb-cltl2 generators/iterators into STD/PIPE
-:PROPERTIES:
-:ID:       04fdde4f-427c-47b5-8394-5b5365ede249
-:CREATED:  <2025-01-17 Fri 15:54>
-:END:
-:LOGBOOK:
-- Refiled on [2025-05-02 Fri 14:03]
-- State "TODO"       from              [2025-05-08 Thu 20:51]
-- State "TBD"        from "TODO"       [2025-05-08 Thu 20:51]
-- State "TODO"       from "TBD"        [2025-08-30 Sat 23:09]
-- State "HOLD"       from "TODO"       [2025-12-02 Tue 20:59] \\
-  low prio
-:END:
-** DONE with-memoization
-:PROPERTIES:
-:ID:       eebb1d8d-3784-4d9d-8ab8-083c72dca881
-:CREATED:  <2025-11-29 Sat 16:17>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-11-29 Sat 16:17]
-- State "DONE"       from "FIXME"      [2025-11-29 Sat 18:26]
-- Note taken on [2025-11-29 Sat 18:26] \\
-  using CDR where we wanted CADR, rebound an existing GENSYM (ARG)
-:END:
-- definitely not working as intended, see =OBJ/TENSOR::*SPECIALIZER-TABLE*=
-** DONE sap-ref
-:PROPERTIES:
-:ID:       c6fb6eea-351e-43d2-ac1c-9a772acf9360
-:CREATED:  <2025-12-02 Tue 20:56>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-12-02 Tue 20:56]
-- State "DONE"       from "TODO"       [2025-12-30 Tue 22:54]
-:END:
-- some errors being uncovered with dispatch
-  - check SAP-REF-DOUBLE vs SAP-REF as well as SETF expansions
-** TBD ignorable-gensyms
-:PROPERTIES:
-:ID:       80763d08-e3fc-47e7-b5d8-4414f6d82ac9
-:CREATED:  <2026-01-01 Thu 18:29>
-:END:
-:LOGBOOK:
-- State "TBD"        from              [2026-01-01 Thu 18:29]
-:END:
-- only a handful of usecases to work acround letv and friends. may
-  want to elect to just PARSE-BODY correctly or otherwise apply
-  declarations (ignorable being ignored in deeply nested macros, see
-  MATH/GRAPH:GRAPHFIB)
-** TODO Standard Loop Paths
-:PROPERTIES:
-:ID:       0eeee1a4-84cf-4e40-9ab9-50a8c0f810c6
-:CREATED:  <2025-11-29 Sat 16:00>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-11-29 Sat 16:00]
-:END:
-- index
-- elt
-- queues..
-- probably want to register and manage these somehow.. maybe
-  separate/backup lisp universe
-- [[id:04fdde4f-427c-47b5-8394-5b5365ede249][incorporate sb-cltl2 generators/iterators into STD/PIPE]]
 * PROJECT emacs [2/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
@@ -2794,16 +2408,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 :END:
-* PROJECT app [0/2]                                                :app:lisp:
-:PROPERTIES:
-:CREATED:  <2025-05-02 Fri 14:05>
-:ID:       80b3830d-f1c6-47cd-ae3e-3c661ffb0238
-:LOCATION: app/
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2025-05-02 Fri 14:05]
-:END:
-** PROJECT skel [3/11]                                                 :skel:
+* PROJECT skel [3/11]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -2812,7 +2417,7 @@ SCHEDULED: <2025-03-01 Sat>
 - State "TODO"       from              [2023-12-16 Sat 00:55]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-*** TODO rule source
+** TODO rule source
 :PROPERTIES:
 :ID:       5fd2c3b4-19bf-42b0-8cb5-fd23dc206756
 :CREATED:  <2025-06-10 Tue 13:36>
@@ -2830,7 +2435,7 @@ SCHEDULED: <2025-03-01 Sat>
 :END:
 - check the hash of sources against a cache, skip if found
 - need a way of managing cache invalidation - timeouts and manual purges
-*** TODO implement task-pool                                         :thread:
+** TODO implement task-pool                                          :thread:
 :PROPERTIES:
 :ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
 :END:
@@ -2838,7 +2443,7 @@ SCHEDULED: <2025-03-01 Sat>
 - State "TODO"       from              [2024-08-11 Sun 00:10]
 :END:
 - thread-pool
-*** NOPE implement vm
+** NOPE implement vm
 SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
 :PROPERTIES:
 :ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
@@ -2879,7 +2484,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - main thread should show progress in parallel
   - capture conditions/debugger
   - figure out how to retrieve stacktrace from worker threads
-*** TODO handle missing method errors or define default method when none defined :skel:bin:cli:
+** TODO handle missing method errors or define default method when none defined :skel:bin:cli:
 :PROPERTIES:
 :ID:       4289c4ef-a766-472e-a2cb-afddb9d080e0
 :CREATED:  <2025-01-17 Fri 15:54>
@@ -2889,7 +2494,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - Note taken on [2025-05-16 Fri 22:46] \\
   likely need to refactor our sk-VERB mess
 :END:
-*** TODO skel tasks/runner/timer
+** TODO skel tasks/runner/timer
 :PROPERTIES:
 :ID:       bb53321b-fab0-4b6f-9677-3fe789ed44d3
 :CREATED:  <2025-01-17 Fri 15:54>
@@ -2898,7 +2503,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
 - will be first feature of skel server
-*** DONE skel rule compilation environment
+** DONE skel rule compilation environment
 :PROPERTIES:
 :ID:       eb00ee5b-8ae8-4d38-8b89-b83cd20e1e2a
 :CREATED:  <2025-06-09 Mon 23:19>
@@ -2909,7 +2514,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - State "DONE"       from "FIXME"      [2025-06-10 Tue 13:36]
 :END:
 
-*** OUTLINE skel template objects
+** OUTLINE skel template objects
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:45>
 :ID:       25984cac-4667-44bb-86e0-bc4e57740eeb
@@ -2924,7 +2529,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   - cl-emb
   - https://github.com/alpha123/cl-template
 - see also [[id:25c20927-7ba3-4821-91b9-ad05a1a4b7f7][tempo]]
-*** NEXT homer [1/1]                                             :lisp:homer:
+** NEXT homer [1/1]                                              :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION:  0.1
@@ -2937,7 +2542,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
   waiting on thread pools
 - State "NEXT"       from "WAIT"       [2025-08-30 Sat 18:34]
 :END:
-*** TODO project desktop config
+** TODO project desktop config
 :PROPERTIES:
 :CREATED:  <2025-10-30 Thu 22:51>
 :ID:       c4ead324-31bc-46a9-af3c-d5bde43ac5e2
@@ -2945,7 +2550,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "TODO"       from              [2025-10-30 Thu 22:51]
 :END:
-*** PROJECT krypt
+** PROJECT krypt
 :PROPERTIES:
 :ID:       0508b176-bee9-4c35-8081-18df55ea27c6
 :CREATED:  <2025-06-15 Sun 21:46>
@@ -2953,7 +2558,7 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-15 Sun 21:46]
 :END:
-*** DONE infra :lisp module
+** DONE infra :lisp module
 :PROPERTIES:
 :CREATED:  <2025-09-07 Sun 21:11>
 :ID:       51b5db8e-7d6a-4f7f-b8e9-ba683d834715
