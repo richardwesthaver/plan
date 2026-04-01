@@ -109,3 +109,12 @@ Space-Filling Curves
 - State "RESEARCH"   from              [2025-07-08 Tue 22:40]
 :END:
 [[https://crategus.com/books/cl-cffi-gtk/][cl-cffi-gtk API documentation]]
+* TBD fobs
+:PROPERTIES:
+:ID:       f612c2b3-9ebd-413a-a938-1084ce88e473
+:CREATED:  <2026-03-08 Sun 21:45>
+:END:
+:LOGBOOK:
+- State "TBD"        from              [2026-03-08 Sun 21:45]
+:END:
+federated objects - stored-objects shared with DHT peers

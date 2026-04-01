@@ -17,9 +17,9 @@
 | id          | 1784914079056115652                    |
 | root        | ~/comp/org/plan/                       |
 | tags        | ORG DOCS NOTES META PLAN ARCHIVE GRAPH |
-| updated     | Tue Mar 03 22:03:26 2026 -0500         |
+| updated     | Sun Mar 08 21:26:59 2026 -0400         |
 | langs       | org                                    |
-| lines       | 4518 :code 4405 :comment 0 :blank 113  |
+| lines       | 4318 :code 4198 :comment 0 :blank 120  |
 |-------------+----------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -46,7 +46,7 @@
 2025-12    204 ****
 2026-01   1112 **********************
 2026-02    311 ******
-2026-03     11 
+2026-03    482 *********
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -54,14 +54,14 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://otom8.dev/plan/tasks/core.html][tasks/core]]    | 2026-03-05 17:10:53 |
-| [[https://otom8.dev/plan/product.html][product]]       | 2025-11-01 02:17:57 |
-| [[https://otom8.dev/plan/index.html][index]]         | 2026-03-01 22:07:26 |
-| [[https://otom8.dev/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
-| [[https://otom8.dev/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[https://otom8.dev/plan/tasks/demo.html][tasks/demo]]    | 2026-01-08 21:47:33 |
-| [[https://otom8.dev/plan/tasks/infra.html][tasks/infra]]   | 2026-01-08 14:18:19 |
-| [[https://otom8.dev/plan/tasks/rnd.html][tasks/rnd]]     | 2026-01-05 19:26:03 |
-| [[https://otom8.dev/plan/tasks/shed.html][tasks/shed]]    | 2026-02-15 18:54:19 |
+| [[https://compiler.company/plan/index.html][index]]         | 2026-03-14 23:52:41 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2026-03-22 22:18:13 |
+| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2026-03-08 21:45:32 |
+| [[https://compiler.company/plan/product.html][product]]       | 2025-11-01 02:17:57 |
+| [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
+| [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
+| [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2026-01-08 21:47:33 |
+| [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2026-01-08 14:18:19 |
+| [[https://compiler.company/plan/tasks/shed.html][tasks/shed]]    | 2026-02-15 18:54:19 |
 
 #+END:
