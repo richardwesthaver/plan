@@ -2111,6 +2111,8 @@ SCHEDULED: <2026-03-14 Sat>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-01-20 Tue 22:18]
+- Note taken on [2026-03-31 Tue 22:49] \\
+  how bout deftable? hmm?
 :END:
 - in prim.lisp
 - shared macro for defining the follow interfaces:
