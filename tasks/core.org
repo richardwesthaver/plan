@@ -2074,7 +2074,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [3/4]                                                :lisp:std:
+* PROJECT std [3/5]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -2093,7 +2093,20 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - State "TODO"       from              [2026-03-09 Mon 19:37]
 :END:
 - translate between simple-strings and cstrings (special case of =string=)
-** TODO return* proto
+** WIP fix register-module append
+:PROPERTIES:
+:ID:       05210028-832a-42cb-a0a6-fd7d4ef22e97
+:CREATED:  <2026-04-08 Wed 20:02>
+:Effort:   4h
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-04-08 Wed 20:03]
+CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
+- Note taken on [2026-04-08 Wed 20:05] \\
+  may have just fixed.. testing
+:END:
+
+** TBD return* proto
 SCHEDULED: <2026-03-14 Sat>
 :PROPERTIES:
 :ID:       72ab1ec3-1550-43de-8b6f-0f69c4e7383b
@@ -2101,6 +2114,7 @@ SCHEDULED: <2026-03-14 Sat>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-03-13 Fri 22:59]
+- State "TBD"        from "TODO"       [2026-04-08 Wed 20:03]
 :END:
 - iolib/src/base/return-start.lisp
 - nested block returns
