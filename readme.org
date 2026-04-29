@@ -17,9 +17,9 @@
 | id          | 1784914079056115652                    |
 | root        | ~/comp/org/plan/                       |
 | tags        | ORG DOCS NOTES META PLAN ARCHIVE GRAPH |
-| updated     | Sun Apr 19 20:46:50 2026 -0400         |
+| updated     | Fri Apr 24 20:58:23 2026 -0400         |
 | langs       | org                                    |
-| lines       | 4335 :code 4214 :comment 0 :blank 121  |
+| lines       | 4338 :code 4217 :comment 0 :blank 121  |
 |-------------+----------------------------------------|
 
 #+CALL: hg-churn() :dir ~/comp/org/plan/
@@ -47,7 +47,7 @@
 2026-01   1112 **********************
 2026-02    311 ******
 2026-03    717 **************
-2026-04     69 *
+2026-04     75 *
 #+end_example
 
 #+CALL: project-html-files() :dir ~/comp/org/plan/
@@ -55,11 +55,11 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://compiler.company/plan/index.html][index]]         | 2026-04-24 20:48:39 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2026-04-25 22:55:49 |
 | [[https://compiler.company/plan/product.html][product]]       | 2025-11-01 02:17:57 |
+| [[https://compiler.company/plan/index.html][index]]         | 2026-04-24 20:49:00 |
 | [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2025-11-01 02:18:58 |
 | [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2025-05-09 19:55:46 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2026-04-08 21:32:28 |
 | [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2026-01-08 21:47:33 |
 | [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2026-01-08 14:18:19 |
 | [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2026-03-08 21:45:32 |

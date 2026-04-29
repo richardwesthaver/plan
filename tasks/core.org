@@ -87,7 +87,7 @@
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
-* PROJECT alien [2/7]                                              :lisp:ffi:
+* PROJECT alien [3/7]                                              :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION:  0.1
@@ -219,23 +219,25 @@ CLOCK: [2025-11-14 Fri 19:34]--[2025-11-14 Fri 19:34] =>  0:00
   - file descriptor approach is still faster and used by default
 - cross-platform (windows)
 - can define custom BIOs
-** TODO syslog -> sys
+** DONE syslog -> sys
 :PROPERTIES:
 :ID:       b9f0f2a9-f448-432d-a500-4fcd883c0745
 :CREATED:  <2026-03-09 Mon 20:58>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-03-09 Mon 20:58]
+- State "DONE"       from "TODO"       [2026-04-25 Sat 22:55]
 :END:
 generalize to all linux includes
 - prob keep uring separate
-*** TODO ICMP
+*** DONE ICMP
 :PROPERTIES:
 :ID:       f8b5291f-e6a0-4804-8a09-bef14f546441
 :CREATED:  <2026-03-09 Mon 20:59>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-03-09 Mon 20:59]
+- State "DONE"       from "TODO"       [2026-04-25 Sat 22:55]
 :END:
 #+begin_src lisp
   (constant (icmp-filter "ICMP_FILTER"))
@@ -1797,7 +1799,7 @@ from within suite
 :END:
 IS macros aren't reporting their failures correctly - should be
 returning conditions which bubble up to the caller.
-** PROJECT io [3/9]                                                      :io:
+** PROJECT io [4/9]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1920,7 +1922,7 @@ SCHEDULED: <2025-06-17 Tue>
 - State "TODO"       from              [2026-02-05 Thu 17:30]
 - State "FIXME"      from              [2026-02-05 Thu 17:30]
 :END:
-*** FIXME zstd streams
+*** DONE zstd streams
 SCHEDULED: <2025-06-17 Tue>
 :PROPERTIES:
 :ID:       bd3434ea-a900-45b4-8890-9dff8403c020
@@ -1928,6 +1930,7 @@ SCHEDULED: <2025-06-17 Tue>
 :END:
 :LOGBOOK:
 - State "FIXME"      from              [2025-06-16 Mon 22:16]
+- State "DONE"       from "FIXME"      [2026-04-25 Sat 22:54]
 :END:
 - keep getting segfaults when using the streaming api (which is much
   faster and needed for serious use)
