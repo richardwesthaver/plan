@@ -92,7 +92,7 @@
 :END:
 - ioloop.. would uring be useful?
   - otherwise develop better optimization strat
-* TODO fix errors when updating modifier map
+** TODO fix errors when updating modifier map
 :PROPERTIES:
 :ID:       a699b009-6389-4ed6-afc6-a9d1255a6eeb
 :CREATED:  <2026-02-15 Sun 15:20>

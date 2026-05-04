@@ -1034,7 +1034,7 @@ CLOCK: [2024-08-22 Thu 20:46]--[2024-08-22 Thu 22:12] =>  1:26
 CLOCK: [2026-03-03 Tue 22:07]--[2026-03-03 Tue 22:08] =>  0:01
 - State "WIP"        from "TODO"       [2026-03-03 Tue 22:07]
 :END:
-** PROJECT dat [0/3]                                                    :dat:
+** PROJECT dat [0/4]                                                    :dat:
 :PROPERTIES:
 :ID:       31fa3e61-b586-4023-be94-5195a26596ce
 :VERSION:  0.1
@@ -1083,6 +1083,16 @@ CLOCK: [2026-03-03 Tue 22:07]--[2026-03-03 Tue 22:08] =>  0:01
 
 - index-based-selection
 - selection-by-name
+*** TODO dat/zip
+:PROPERTIES:
+:ID:       7b11c92e-ea93-4e79-af22-a6445f9447f3
+:CREATED:  <2026-04-30 Thu 21:54>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-04-30 Thu 21:54]
+:END:
+- [[https://github.com/bluelisp/zip][bluelisp/zip]]
+- leverages deflate, similar structure to tar (can we share API?)
 *** TODO dat/sxp
 :PROPERTIES:
 :ID:       1005b8fa-a850-4674-bd6c-fabecdcc5639
