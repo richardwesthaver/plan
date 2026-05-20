@@ -7,17 +7,6 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/comp/core/
 #+filetags: core
-* DONE remove asdf/quicklisp from skelfiles
-:PROPERTIES:
-:ID:       6f8591f3-fc46-4130-ac90-52f458fae89d
-:CREATED:  <2026-02-09 Mon 23:06>
-:Effort:   2h
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-02-09 Mon 23:06]
-- State "DONE"       from "TODO"       [2026-02-22 Sun 21:47]
-:END:
-
 * FIXME inline TODOs
 :PROPERTIES:
 :ID:       d5aaf952-bb93-4b66-a7e0-1f0f827c0925
@@ -42,29 +31,6 @@
   (rgrep ".*; RESEARCH" "*.*" "~/comp/core/")
 #+end_src
 *3*
-* DONE undefined symbols
-:PROPERTIES:
-:CREATED:  <2025-02-14 Fri 15:28>
-:ID:       4249f111-d4d1-47a3-bf30-43f178f7a66d
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-02-14 Fri 15:28]
-- State "FIXME"      from "TODO"       [2025-02-14 Fri 15:30]
-- State "DONE"       from "FIXME"      [2026-03-05 Thu 17:09]
-:END:
-- [2026-01-13 Tue]
-  #+begin_example lisp
-    ; compilation unit finished
-    ; RDB::CURSOR-GET-BOTH-BUFFERED
-          RDB::CURSOR-MOVE-BUFFERED RDB::CURSOR-SET-BUFFERED
-          RDB::DB-CURSOR RDB::DB-CURSOR-MOVE-BUFFERED
-          RDB::DB-CURSOR-PGET-BOTH-BUFFERED RDB::DB-CURSOR-PMOVE-BUFFERED
-          RDB::DB-CURSOR-PSET-BUFFERED RDB::DB-CURSOR-SET-BUFFERED
-          RDB::DB-DELETE-BUFFERED RDB::DB-PUT-BUFFERED
-          GETRF! GETRI! GETRS!
-          OBJ/STORE::INSTANCE-CLASS-INDEX OBJ/STORE::INSTANCE-TABLE
-  #+end_example
-
 * TODO lorem ipsum generator
 :PROPERTIES:
 :ID:       1aada73a-52ac-4b8e-a6d4-5c1894e51927
@@ -87,7 +53,7 @@
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
-* PROJECT alien [3/7]                                              :lisp:ffi:
+* PROJECT alien [0/4]                                              :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION:  0.1
@@ -96,26 +62,6 @@ systems) - btree would be nice
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:20]
 - State "PROJECT"    from "TODO"       [2024-08-16 Fri 22:57]
-:END:
-** DONE rocksdb [1/1]                                               :rocksdb:
-:PROPERTIES:
-:ID:       6a4e51f0-f1d7-40df-aa7f-04c6d179393b
-:LOCATION+: ffi/rocksdb
-:VERSION:  0.1.0
-:CREATED:  <2025-08-23 Sat 22:00>
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2024-08-16 Fri 22:57]
-- State "DONE"       from "PROJECT"    [2025-08-23 Sat 22:00]
-:END:
-*** DONE final cleanup
-:PROPERTIES:
-:CREATED:  <2025-04-26 Sat 20:24>
-:ID:       3dd20586-fc84-461a-bc59-a3d14c6fde0a
-:END:
-:LOGBOOK:
-- State "TBD"        from              [2025-04-26 Sat 20:24]
-- State "DONE"       from "TBD"        [2025-08-23 Sat 22:00]
 :END:
 ** PROJECT tree-sitter [0/1]                                            :syn:
 :PROPERTIES:
@@ -145,146 +91,6 @@ systems) - btree would be nice
 - State "PROJECT"    from              [2025-06-06 Fri 13:29]
 :END:
 - mvp and testing
-** DONE openssl
-:PROPERTIES:
-:ID:       7d0469e9-b40a-48bb-aa43-807ef9a19fff
-:CREATED:  <2025-06-06 Fri 13:28>
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2025-06-06 Fri 13:29]
-- Note taken on [2025-11-14 Fri 19:34] \\
-  rustls moved to basement, renamed to openssl
-- State "DONE"       from "PROJECT"    [2025-12-25 Thu 22:22]
-:END:
-- no AWS_LC
-- vanilla openssl (vendored)
-#+begin_example
-STYLE-WARNING:
-   Couldn't grovel for SSL_OP_IGNORE_UNEXPECTED_EOF (unknown to the C compiler).
-STYLE-WARNING: Couldn't grovel for SSL_OP_NO_SSLv1 (unknown to the C compiler).
-STYLE-WARNING:
-   Couldn't grovel for SSL_OP_NO_SSLv1_1 (unknown to the C compiler).
-STYLE-WARNING:
-   Couldn't grovel for SSL_OP_NO_SSLv1_2 (unknown to the C compiler).
-STYLE-WARNING:
-   Couldn't grovel for SSL_CTRL_SET_MIN_PROTO_VERSION (unknown to the C compiler).
-STYLE-WARNING:
-   Couldn't grovel for SSL_CTRL_SET_MAX_PROTO_VERSION (unknown to the C compiler).
-#+end_example
-*** DONE complete ffi
-:PROPERTIES:
-:ID:       f99d13c1-fd8e-4ac3-989a-230dc8397389
-:CREATED:  <2025-11-14 Fri 19:35>
-:Effort:   5h
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-11-14 Fri 19:35]
-- State "DONE"       from "TODO"       [2025-12-25 Thu 22:59]
-:END:
-- finish the routines, define default callbacks
-- may depend on a =std/alien:defcallback= macro
-**** NOPE cl+ssl -> rustls
-:PROPERTIES:
-:ID:       1841fd20-35b0-444f-a610-67dc4291ee18
-:CREATED:  <2025-06-06 Fri 13:30>
-:Effort:   40h
-:LOCATION+: ssl/
-:END:
-:LOGBOOK:
-CLOCK: [2025-06-06 Fri 13:30]--[2025-06-06 Fri 15:06] =>  1:36
-- Refiled on [2025-11-14 Fri 19:37]
-:END:
-- [[https://github.com/cl-plus-ssl/cl-plus-ssl][cl+ssl src]]
-- ffi-buffer -> static-vector
-- openssl has differences in symbol-names between versions - cl+ssl
-  makes efforts to accomodate this
-- rustls doesn't suffer from this - if we ever end up implementing
-  openssl too we won't bother with portability here either. Use Linux
-  or gtfo.
-  - but rustls depends on aws-lc which is a fork of openssl/libcrypto..
-*** DONE cl+ssl low-level API
-:PROPERTIES:
-:ID:       be17b0b4-c840-4cc9-a8f2-9cf4fc482d17
-:CREATED:  <2025-06-06 Fri 13:29>
-:Effort:   2h
-:END:
-:LOGBOOK:
-- State "RESEARCH"   from              [2025-06-06 Fri 13:29]
-CLOCK: [2025-11-14 Fri 19:34]--[2025-11-14 Fri 19:34] =>  0:00
-- State "DONE"       from "WIP"        [2025-11-14 Fri 19:34]
-- State "DONE"       from "DONE"       [2025-12-25 Thu 22:59]
-:END:
-- based on CFFI and gray streams
-- defines libssl BIO_METHOD for lisp streams
-  - file descriptor approach is still faster and used by default
-- cross-platform (windows)
-- can define custom BIOs
-** DONE syslog -> sys
-:PROPERTIES:
-:ID:       b9f0f2a9-f448-432d-a500-4fcd883c0745
-:CREATED:  <2026-03-09 Mon 20:58>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-03-09 Mon 20:58]
-- State "DONE"       from "TODO"       [2026-04-25 Sat 22:55]
-:END:
-generalize to all linux includes
-- prob keep uring separate
-*** DONE ICMP
-:PROPERTIES:
-:ID:       f8b5291f-e6a0-4804-8a09-bef14f546441
-:CREATED:  <2026-03-09 Mon 20:59>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-03-09 Mon 20:59]
-- State "DONE"       from "TODO"       [2026-04-25 Sat 22:55]
-:END:
-#+begin_src lisp
-  (constant (icmp-filter "ICMP_FILTER"))
-
-  (constantenum (icmp-types :define-constants t)
-                ((:icmp-echo-request "ICMP_ECHO"))
-                ((:icmp-echo-reply "ICMP_ECHOREPLY"))
-                ((:icmp-dest-unreach "ICMP_DEST_UNREACH"))
-                ((:icmp-source-quench "ICMP_SOURCE_QUENCH"))
-                ((:icmp-redirect "ICMP_REDIRECT"))
-                ((:icmp-time-exceeded "ICMP_TIME_EXCEEDED"))
-                ((:icmp-parameter-prob "ICMP_PARAMETERPROB"))
-                ((:icmp-timestamp-request "ICMP_TIMESTAMP"))
-                ((:icmp-timestamp-reply "ICMP_TIMESTAMPREPLY"))
-                ((:icmp-info-request "ICMP_INFO_REQUEST"))
-                ((:icmp-info-reply "ICMP_INFO_REPLY"))
-                ((:icmp-address-request "ICMP_ADDRESS"))
-                ((:icmp-address-reply "ICMP_ADDRESSREPLY")))
-
-  (constantenum (icmp-unreach :define-constants t)
-                ((:icmp-net-unreach "ICMP_NET_UNREACH"))
-                ((:icmp-host-unreach "ICMP_HOST_UNREACH"))
-                ((:icmp-prot-unreach "ICMP_PROT_UNREACH"))
-                ((:icmp-port-unreach "ICMP_PORT_UNREACH"))
-                ((:icmp-frag-needed "ICMP_FRAG_NEEDED"))
-                ((:icmp-sr-failed "ICMP_SR_FAILED"))
-                ((:icmp-net-unknown "ICMP_NET_UNKNOWN"))
-                ((:icmp-host-unknown "ICMP_HOST_UNKNOWN"))
-                ((:icmp-host-isolated "ICMP_HOST_ISOLATED"))
-                ((:icmp-net-ano "ICMP_NET_ANO"))
-                ((:icmp-host-ano "ICMP_HOST_ANO"))
-                ((:icmp-net-unr-tos "ICMP_NET_UNR_TOS"))
-                ((:icmp-host-unr-tos "ICMP_HOST_UNR_TOS"))
-                ((:icmp-pkt-filtered "ICMP_PKT_FILTERED"))
-                ((:icmp-prec-violation "ICMP_PREC_VIOLATION"))
-                ((:icmp-prec-cutoff "ICMP_PREC_CUTOFF")))
-
-  (constantenum (icmp-redirect :define-constants t)
-                ((:icmp-redir-net "ICMP_REDIR_NET"))
-                ((:icmp-redir-host "ICMP_REDIR_HOST"))
-                ((:icmp-redir-nettos "ICMP_REDIR_NETTOS"))
-                ((:icmp-redir-hosttos "ICMP_REDIR_HOSTTOS")))
-
-  (constantenum (icmp-time-exceeded :define-constants t)
-                ((:icmp-exc-ttl "ICMP_EXC_TTL"))
-                ((:icmp-exc-fragtime "ICMP_EXC_FRAGTIME"))))
-#+end_src
 ** PROJECT blas
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
@@ -294,16 +100,6 @@ generalize to all linux includes
 - State "PROJECT"    from              [2025-05-10 Sat 22:34]
 :END:
 implement bindings to the Fortran BLAS functions
-*** DONE BLAS Extensions
-:PROPERTIES:
-:CREATED:  <2025-05-18 Sun 21:07>
-:ID:       6f99cfe0-3c9b-4d3b-b9eb-b41bf6fb4473
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-18 Sun 21:07]
-- State "DONE"       from "TODO"       [2025-12-25 Thu 23:14]
-:END:
-
 *** TODO Tests
 :PROPERTIES:
 :CREATED:  <2025-05-10 Sat 22:34>
@@ -386,27 +182,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* DONE convert bin to bin.lisp
-:PROPERTIES:
-:ID:       94f244f1-7175-45af-b511-a4177ff78097
-:CREATED:  <2025-07-08 Tue 22:27>
-:END:
-:LOGBOOK:
-- State "PROJECT"    from              [2025-07-08 Tue 22:27]
-- State "TODO"       from "PROJECT"    [2026-02-22 Sun 21:52]
-- State "DONE"       from "TODO"       [2026-03-05 Thu 17:09]
-:END:
-- move scripts to top-level
-** TODO prune internal packages
-:PROPERTIES:
-:ID:       ee9ced99-1dec-4457-99f6-1ddbbc08461a
-:CREATED:  <2026-01-13 Tue 21:43>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-13 Tue 21:43]
-:END:
-- can shake internal packages like CLI-INT/STD-INT on build
-* PROJECT lib [1/17]                                                   :lisp:
+* PROJECT lib [0/16]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
 :ID:       cbe46830-8363-4e11-897c-9779e1997e2b
@@ -415,7 +191,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT cli [2/6]
+** PROJECT cli [0/6]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
 :ID:       4f1d8c1e-23ea-4d17-80d0-feafc367f65f
@@ -425,21 +201,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-12 Thu 13:38]
 :END:
-*** DONE with-sbcl                                                    :macro:
-SCHEDULED: <2025-06-11 Wed>
-:PROPERTIES:
-:ID:       fa7302b5-b7ea-400c-b159-ec522eb858b4
-:CREATED:  <2025-06-10 Tue 22:43>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-06-10 Tue 22:43]
-- State "DONE"       from "FIXME"      [2025-06-11 Wed 18:19]
-- Note taken on [2025-06-11 Wed 18:19] \\
-  good enough for now - package re-export issues in std
-:END:
-[[file:~/comp/core/skelfile::;; FIX 2025-06-10: why can't we find compile-system even when specifying the package?][loc]]
-std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
-*** PROJECT cli/clap [3/4]                                         :lisp:cli:
+*** PROJECT cli/clap [1/2]                                         :lisp:cli:
 :PROPERTIES:
 :ID:       217cd955-5575-4953-bf36-4d2d4c1fd616
 :VERSION:  0.2
@@ -462,71 +224,6 @@ std/defpkg:symbol-call :asdf "COMPILE-SYSTEM"
 CLOCK: [2026-01-20 Tue 22:11]--[2026-01-20 Tue 22:11] =>  0:00
 :END:
 cli should have relevant hooks
-**** DONE cli-command
-:PROPERTIES:
-:ID:       2f393500-4689-4cfe-afdb-e667bfabedcf
-:CREATED:  <2026-01-16 Fri 22:29>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-16 Fri 22:29]
-- State "DONE"       from "TODO"       [2026-01-20 Tue 22:11]
-:END:
-#+begin_src lisp :package cli/clap :eval no-export
-  (documentation (find-class 'cli-command) t)
-#+end_src
-
-#+RESULTS:
-: Class of COMMANDs which may be executed directly from the command line.
-
-**** DONE cli
-:PROPERTIES:
-:ID:       85354f89-b17d-4e0e-95ac-4a6c8269ef99
-:CREATED:  <2026-01-16 Fri 22:29>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-16 Fri 22:29]
-- State "DONE"       from "TODO"       [2026-01-20 Tue 22:09]
-:END:
-
-#+begin_src lisp :package cli/clap :eval no-export
-  (documentation 'define-cli 'function)
-#+end_src
-
-#+RESULTS:
-: Define a new CLI object.
-: 
-: NAME is assigned to the CLI and assumed to be the default binary name which
-: uses this object.
-: 
-: VERSION, DESCRIPTION, HOOK, CD, and MAIN are assigned to the associated slot
-: value of the CLI.
-
-**** DONE package CLIs
-:PROPERTIES:
-:ID:       19fe8343-7739-4cff-949f-c3c1b943f1a1
-:CREATED:  <2026-01-16 Fri 22:37>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-16 Fri 22:37]
-- State "DONE"       from "TODO"       [2026-01-20 Tue 22:12]
-:END:
-#+begin_src emacs-lisp :results list
-  (directory-files-recursively "~/comp/core/" ".*cli[.]lisp$")
-#+end_src
-
-#+RESULTS:
-- ~/comp/core/app/mpk/cli.lisp
-- ~/comp/core/app/skel/homer/cli.lisp
-- ~/comp/core/app/skel/krypt/cli.lisp
-- ~/comp/core/app/skel/packy/cli.lisp
-- ~/comp/core/app/skel/cli.lisp
-- ~/comp/core/lib/cli/cli.lisp
-- ~/comp/core/lib/organ/cli.lisp
-- ~/comp/core/lib/pod/cli.lisp
-- ~/comp/core/lib/rdb/cli.lisp
-- ~/comp/core/lib/syn/cli.lisp
-- ~/comp/core/lib/vc/cli.lisp
-
 *** TODO cli fixtures                                                  :test:
 :PROPERTIES:
 :CREATED:  <2024-09-01 Sun 21:54>
@@ -544,20 +241,6 @@ cli should have relevant hooks
 :LOGBOOK:
 - State "TODO"       from              [2025-06-27 Fri 14:02]
 :END:
-
-*** DONE linedit prefixes
-SCHEDULED: <2025-06-13 Fri>
-:PROPERTIES:
-:CREATED:  <2025-04-26 Sat 23:20>
-:ID:       c5ddfea6-01a3-442f-ab88-9467651dc889
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-04-26 Sat 23:20]
-- State "DONE"       from "TODO"       [2025-06-24 Tue 00:24]
-:END:
-should be pretty simple - bind ~C-x~ to a command which calls
-~read-chord~ and looks up the next funcall in a user-specified command
-table.
 
 *** TODO accept CLI-OPTS from parent CLI-CMD in PROC-ARGS
 :PROPERTIES:
@@ -718,18 +401,6 @@ table.
 :LOGBOOK:
 - State "TODO"       from              [2024-08-02 Fri 15:55]
 :END:
-**** DONE decide if this should be part of lib/q instead
-SCHEDULED: <2025-05-23 Fri>
-:PROPERTIES:
-:CREATED:  <2025-05-20 Tue 18:32>
-:ID:       2d4cd4c1-7596-4816-a764-5210fd369308
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-20 Tue 18:32]
-- State "DONE"       from "TODO"       [2025-06-11 Wed 18:20]
-- Note taken on [2025-06-11 Wed 18:21] \\
-  answer: yes
-:END:
 ** PROJECT parse [1/2]                                                  :lib:
 :PROPERTIES:
 :ID:       50dff527-6778-42d3-934c-2d013d701514
@@ -841,7 +512,7 @@ CLOCK: [2025-10-14 Tue 22:24]--[2025-10-14 Tue 22:25] =>  0:01
 - recursively parse headlines and store them in =AST= slots
 - sections (=ORG-CONTENTS=) contain everything upto the next heading
   or EOF
-** PROJECT rdb [1/13]                                                   :rdb:
+** PROJECT rdb [0/12]                                                   :rdb:
 :PROPERTIES:
 :ID:       e5cd7ab8-f0d1-4b6e-ab68-852741e313cc
 :VERSION:  0.2
@@ -950,16 +621,6 @@ CLOCK: [2025-10-14 Tue 22:24]--[2025-10-14 Tue 22:25] =>  0:01
 :LOGBOOK:
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
-*** DONE SER and DE failures
-:PROPERTIES:
-:ID:       0a7fdd67-7efe-4a04-9327-8e6f9c0a75af
-:CREATED:  <2026-01-07 Wed 22:13>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2026-01-07 Wed 22:14]
-- State "DONE"       from "FIXME"      [2026-01-08 Thu 19:29]
-:END:
-- replace with serialize/deserialize
 *** TBD can only open rocksdb column families on OPEN
 :PROPERTIES:
 :CREATED:  <2024-08-25 Sun 20:23>
@@ -1123,24 +784,6 @@ CLOCK: [2026-03-03 Tue 22:07]--[2026-03-03 Tue 22:08] =>  0:01
 :LOGBOOK:
 CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :END:
-**** DONE C function declaration arguments
-:PROPERTIES:
-:ID:       d91584a1-0e99-461b-9045-b521e9d2fe92
-:CREATED:  <2025-06-03 Tue 21:45>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-03 Tue 21:46]
-- State "WIP"        from "TODO"       [2025-08-30 Sat 23:11]
-- Note taken on [2025-08-30 Sat 23:11] \\
-  need to fix the deref operator - does not seem to be printing correctly
-- State "DONE"       from "WIP"        [2025-08-30 Sat 23:19]
-:END:
-- this should give us enough to remove the remaining C code from the
-  core source tree
-- replace zstd/alien.c and tree-sitter/alien.c with C gen-syntax.
-- next we will target full header files
-  - REW_MODE
-
 **** FIXME deref op
 :PROPERTIES:
 :ID:       6a3eb8d5-4ee6-450e-b3e1-9a19ec5415f2
@@ -1227,31 +870,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:30]
 :END:
-*** DONE tls
-:PROPERTIES:
-:ID:       53e803e1-40fc-4da5-925e-7909154a590b
-:CREATED:  <2025-06-06 Fri 15:06>
-:ORDERED:  t
-:LOCATION+: tls/
-:END:
-:LOGBOOK:
-- State "WIP"        from              [2025-06-06 Fri 15:06]
-- Note taken on [2025-11-14 Fri 19:37] \\
-  rename to tls
-- State "DONE"       from "WIP"        [2026-01-14 Wed 20:05]
-:END:
-**** DONE ssl streams
-:PROPERTIES:
-:ID:       aea7eefe-6823-4924-8248-d74923f68c0b
-:CREATED:  <2025-11-14 Fri 19:38>
-:Effort:   8h
-:LOCATION+: stream.lisp
-:END:
-:LOGBOOK:
-- State "DONE"       from "WIP"        [2026-01-14 Wed 20:05]
-:END:
-
-** PROJECT obj [5/11]                                                   :obj:
+** PROJECT obj [0/6]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1284,43 +903,6 @@ DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 - consider PARENT:CMD protocol (modify parse/read)
 - if command not found in primary check parent
 - we now may need more than hash-tables..
-*** DONE CMD                                                            :cmd:
-:PROPERTIES:
-:ID:       d6e24fc6-f236-4905-944f-8e9eb7f0616f
-:CREATED:  <2026-01-13 Tue 21:34>
-:Effort:   32h
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-13 Tue 21:34]
-CLOCK: [2026-01-16 Fri 22:27]--[2026-01-16 Fri 22:28] =>  0:01
-- State "DONE"       from "WIP"        [2026-01-20 Tue 22:06]
-:END:
-- commands are a more generalized concept than we initially planned
-  - CLI is most used case (depth), WM contains most commands (breadth)
-- cli-cmd -> cli-command
-- =obj:defcommand= +(obj:defcmd?)+
-- =obj:*command-table*=
-- our preference is to store them as funcallable objects (kernels)
-- NOPE: do we need a package? probably want to access via symbol-table
-  -> compile functions
-*** DONE Command Itypes                                                 :cmd:
-:PROPERTIES:
-:ID:       974217fd-cb3c-44d0-ac97-65a4da7e5192
-:CREATED:  <2026-01-22 Thu 12:09>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-22 Thu 12:09]
-- State "DONE"       from "TODO"       [2026-01-28 Wed 18:18]
-:END:
-we need to ignore lambda-list-keywords, apply interactive spec
-- do we want a 'skip' interactive designator? probably not
-#+begin_src lisp
-  (defcommand foo (&optional bar) (declare (interactive string))) ; FIXED
-#+end_src
-- [X] CHECK-ITYPE should only be called in DEFCOMMAND
-- [X] after =parse-command= we need to compare the arglist to ITYPE
-  - skip all provided args
-  - call the remaining interactive-types with INPUT
 *** TODO equiv
 :PROPERTIES:
 :ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
@@ -1349,25 +931,7 @@ we need to ignore lambda-list-keywords, apply interactive spec
 - probably want to hook into sbcl low-level equality mechanics
 - leverage type-classes/primitive-type
 - egraphs, etc
-*** DONE url-encode
-:PROPERTIES:
-:ID:       669dbc13-4bfc-44ba-bd8e-9337809dd1b5
-:CREATED:  <2025-06-12 Thu 21:24>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-12 Thu 21:24]
-- State "DONE"       from "TODO"       [2025-06-13 Fri 13:39]
-:END:
-*** DONE url-decode
-:PROPERTIES:
-:ID:       f1bac2bf-8d36-4929-827e-37bdfd09366a
-:CREATED:  <2025-06-12 Thu 21:25>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-12 Thu 21:25]
-- State "DONE"       from "TODO"       [2025-06-13 Fri 13:39]
-:END:
-*** WIP tensor [3/7]
+*** WIP tensor [0/4]
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
 :ID:       b515faef-e1dc-4b30-bf50-599b7394e797
@@ -1393,51 +957,6 @@ we need to ignore lambda-list-keywords, apply interactive spec
     - [[https://arrow.apache.org/docs/format/CDeviceDataInterface.html#c-device-data-interface][The Arrow C Device data interface — Apache Arrow v20.0.0]]
 - [[https://github.com/dmlc/dlpack][GitHub - dmlc/dlpack: common in-memory tensor structure]]
 
-**** DONE dispatch strategy for tensor methods
-:PROPERTIES:
-:ID:       0521332c-11d2-4ffc-8ada-99690b8b2655
-:CREATED:  <2025-05-26 Mon 00:56>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-26 Mon 00:56]
-- State "DONE"       from "TODO"       [2025-12-02 Tue 20:52]
-:END:
-- MATLISP uses a somewhat janky macro-based template approach
-  - compiles methods in place.. =(defmethod foo () (compile-and-eval `(defmethod %foo ...)) (%foo))=
-  - mention in the comments of using MOP instead
-- instead of macro-based templates let's abuse compiler macros as much as we can
-- [ ] investigate tensor methods
-- instead of compiler macros, let's abuse the compiler :)
-  - deftransform, array specialization stuff (sb-vm, sb-c)
-- sbcl has its own concept of higher-ordered types see define-type-class
-
-- MATLISP main branch uses MOP - tensor-class and
-  tensor-method-generator, in addition to the auto-memoized templates
-  (std/meta for us)
-  - [2025-11-20 Thu] *currently transitioning to this API*
-  - attempting to leverage STD:KERNEL-CLASS for the tensor accessor
-    stuff. Could be a bad idea.. TBD.
-
-**** DONE figure out path forward for obj/tensor/loop
-:PROPERTIES:
-:ID:       ac8dfb86-8592-4e59-8292-19b515e81557
-:CREATED:  <2025-11-21 Fri 21:39>
-:LOCATION+: loop.lisp
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-11-21 Fri 21:39]
-- Note taken on [2025-11-29 Sat 15:59] \\
-  currently stuck in implementation..
-- Note taken on [2025-12-02 Tue 20:51] \\
-  using loop-paths
-- State "DONE"       from "TODO"       [2025-12-02 Tue 20:51]
-:END:
-- FOR-MOD clause
-- [[file:~/.stash/scratch/matlisp-git/src/base/boolean.lisp]] - usage
-- also bool.lisp
-- technically possible with sbcl internals, but likely very difficult
-- to not get stuck in implementation we should have a workaround solution
-
 **** TODO graph-idx loop-path
 :PROPERTIES:
 :ID:       d7fbd40d-510f-485d-9237-fef53d4f9a58
@@ -1447,30 +966,6 @@ we need to ignore lambda-list-keywords, apply interactive spec
 - State "TODO"       from              [2025-12-02 Tue 20:52]
 :END:
 
-**** DONE define-tensor-method
-:PROPERTIES:
-:ID:       3efa7637-6eec-4d3c-8a4f-9be7c0db440d
-:CREATED:  <2025-12-02 Tue 20:55>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-12-02 Tue 20:55]
-- State "DONE"       from "FIXME"      [2026-01-13 Tue 21:40]
-:END:
-- still something suspicious going on, computed method isn't being
-  dispatched correctly
-#+begin_src lisp :results replace output
-  (handler-case (obj/tensor::ref (obj/tensor::zeros 100) 0)
-      (error (c) (print c)))
-#+end_src
-
-#+RESULTS:
-: 
-: #<TYPE-ERROR expected-type: ARRAY
-:              datum:
-:              #<OBJ/TENSOR::|<BLAS-MIXIN SIMPLE-DENSE-TENSOR: DOUBLE-FLOAT>| {120DB56EE3}>> 
-
-- one of the filters isn't doing the right thing in the presence of
-  standard method defs (generic defs)
 **** TODO slice loop-path
 :PROPERTIES:
 :ID:       a2738b46-2321-4b04-8602-2c1c86b9d8b6
@@ -1493,18 +988,6 @@ array optimizations
 - learn how all the deftransforms work, how to define a type-class, etc
 - use similar macro structuring
 
-*** DONE obj/cache
-:PROPERTIES:
-:ID:       1ac87c66-1050-4679-b972-e6ffa744a36b
-:CREATED:  <2026-01-08 Thu 21:50>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2026-01-08 Thu 21:50]
-- State "DONE"       from "FIXME"      [2026-01-13 Tue 20:40]
-:END:
-- entry-weights are sorta broken
-- need to re-evaluate based on CACLE and probably add some missing
-  slots - policy can't be abused the way we're doin it.
 *** TODO color/theme
 :PROPERTIES:
 :ID:       9dfe3f93-b0d0-4d9c-bdb6-1bd045037853
@@ -1516,41 +999,6 @@ array optimizations
 - Note taken on [2025-12-02 Tue 20:53] \\
   need easy way to demo/cycle through palettes - use std draw functions and print-color
 :END:
-**** DONE base16 palettes
-:PROPERTIES:
-:ID:       3d467376-0ada-4bcf-9330-80bbdbb34769
-:CREATED:  <2025-08-30 Sat 21:32>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-08-30 Sat 21:32]
-- Note taken on [2025-08-30 Sat 23:19] \\
-  just need to add some default palettes to *COLOR-PALETTES* and good to go
-- State "DONE"       from "TODO"       [2025-11-20 Thu 21:21]
-:END:
-- [[https://alex-courtis.github.io/base16-site/][base16]]
-#+begin_quote
-Base16 aims to group similar language constructs with a single
-color. For example, floats, ints, and doubles would belong to the same
-colour group. The colors for the default theme were chosen to be
-easily separable, but scheme designers should pick whichever colours
-they desire, e.g. base0B (green by default) could be replaced with
-red. There are, however, some general guidelines below that stipulate
-which base0B should be used to highlight each construct when designing
-templates for editors.
-
-Since describing syntax highlighting can be tricky, please see
-base16-vim and base16-textmate for reference. Though it should be
-noted that each editor will have some discrepancies due the fact that
-editors generally have different syntax highlighting engines.
-
-Colors base00 to base07 are typically variations of a shade and run
-from darkest to lightest. These colors are used for foreground and
-background, status bars, line highlighting and such. Colors base08 to
-base0F are typically individual colors used for types, operators,
-names and variables. In order to create a dark theme, colors base00 to
-base07 should span from dark to light. For a light theme, these
-colours should span from light to dark.
-#+end_quote
 *** RESEARCH major-modes
 :PROPERTIES:
 :CREATED:  <2026-01-25 Sun 21:22>
@@ -1560,7 +1008,7 @@ colours should span from light to dark.
 - State "RESEARCH"   from "TODO"       [2026-01-25 Sun 21:22]
 - Refiled on [2026-01-26 Mon 21:12]
 :END:
-** PROJECT net [2/7]                                                    :net:
+** PROJECT net [0/5]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION:  0.1
@@ -1583,81 +1031,6 @@ CLOCK: [2026-03-20 Fri 18:14]--[2026-03-20 Fri 18:14] =>  0:00
 - use xmlrep as much as possible
   - should cover xspam
   - publishing might need a macro or two
-*** DONE remove cl+ssl dependency
-:PROPERTIES:
-:ID:       036a7995-be25-4b9f-92b2-d5efd8955667
-:CREATED:  <2025-06-13 Fri 16:12>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-13 Fri 16:12]
-- State "DONE"       from "TODO"       [2026-03-20 Fri 18:13]
-:END:
-#+begin_src emacs-lisp :dir :eval no-export :results silent
-  (rgrep "ssl" "*.*" "~/comp/core/lib/net/")
-#+end_src
-
-*** DONE remove babel dependency
-:PROPERTIES:
-:ID:       ebffdecc-af18-4fdf-b068-6a95d68e59c8
-:CREATED:  <2025-06-13 Fri 16:11>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-13 Fri 16:11]
-- State "DONE"       from "TODO"       [2025-06-16 Mon 16:47]
-:END:
-we want to resuse the internal sbcl machinery as much as possible to
-avoid making copies of string coders.
-
-babel provides a flexible charset coding library similar to
-libiconv. The semantics are somewhat different from SBCL but they
-share basically the same goal.
-
-It appears that babel ENCODINGs are used in many places where a simple
-sbcl EXTERNAL-FORMAT would do. The difference is that EXTERNAL-FORMATs
-are not supposed to be extensible (AFAIK). Babel seems to make the
-assumption that we aren't supposed to mess with sb-impl and other
-internals much - which is where all the useful stuff is.
-
-I have a hunch there is some reason other than portability that its so
-prevelant tho.. only one way to find out :)
-
-#+begin_src emacs-lisp :dir :eval no-export :results silent
-  (rgrep "babel" "*.*" "~/comp/core/lib/net/")
-#+end_src
-- babel-encodings
-  - enc-max-units-per-char
-  - lookup-mapping
-  - *string-vector-mappings*
-  - code-point-counter
-  - decoder
-
-#+begin_src lisp
-  ;; defined in sb external format def macros
-  (defun ,(make-od-name ',octets-to-string-name/cr accessor) (array astart aend replacement)
-    (declare (optimize speed)
-             (type ,type array)
-             (type array-range astart aend)
-             (ignorable replacement))
-    (let ((string (make-array 0 :element-type 'character :fill-pointer 0 :adjustable t)))
-      (loop for apos from astart below aend
-            do (let* ((byte (,accessor array apos))
-                      (code (,',->code-name byte))
-                      (string-content
-                        (cond
-                          ((null code)
-                           (decoding-error array apos (1+ apos)
-                                           '(,',external-format :newline :cr)
-                                           replacement
-                                           ',',decoding-condition-name
-                                           apos))
-                          ((= code 13) (code-char 10))
-                          (t (code-char code)))))
-                 (if (characterp string-content)
-                     (vector-push-extend string-content string)
-                     (loop for c across string-content
-                           do (vector-push-extend c string))))
-            finally (return (coerce string 'simple-string))))))
-#+end_src
 *** TODO fixtures                                                        :rt:
 :PROPERTIES:
 :ID:       fe592b6f-cde1-43e9-ac5a-81addc124582
@@ -1706,42 +1079,6 @@ prevelant tho.. only one way to find out :)
 :END:
 - needs a solid task-pool impl completed first
   - pending std/defsys
-** DONE gui [2/2]                                                       :gui:
-:PROPERTIES:
-:ID:       73aea563-3df7-4611-a27d-874772806f18
-:LOCATION+: gui/
-:VERSION:  0.1
-:CREATED:  <2025-07-28 Mon 21:54>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 03:40]
-- State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:20]
-- Note taken on [2025-07-28 Mon 21:54] \\
-  moved to shed
-- State "DONE"       from "PROJECT"    [2025-07-28 Mon 21:54]
-:END:
-*** NOPE wayland protocol bindings
-:PROPERTIES:
-:ID:       534fe8cb-9056-4ac4-84ca-d98f09f78214
-:CREATED:  <2025-01-18 Sat 20:08>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-12-17 Sun 03:40]
-- State "WAIT"       from "TODO"       [2025-01-18 Sat 20:08] \\
-  Wait until we actually have a usecase for Wayland
-- State "NOPE"       from "WAIT"       [2025-07-28 Mon 21:54]
-:END:
-*** NOPE wayland compositor                                       :rust:lisp:
-:PROPERTIES:
-:ID:       ca3d0bff-0ff7-4947-835a-b7c7e74c8679
-:CREATED:  <2025-07-28 Mon 21:54>
-:END:
-:LOGBOOK:
-- State "TBD"        from "TODO"       [2023-11-29 Wed 21:25]
-:END:
-:PROPERTIES:
-:ID: e18a90d7-10bc-44d3-8508-56483d29d385
-:END:
 ** PROJECT rt [0/6]                                                 :rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
@@ -1809,7 +1146,7 @@ from within suite
 :END:
 IS macros aren't reporting their failures correctly - should be
 returning conditions which bubble up to the caller.
-** PROJECT io [4/9]                                                      :io:
+** PROJECT io [0/5]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
 :ID:       39c15417-5078-403f-b716-3b48b9d3929d
@@ -1900,29 +1237,6 @@ CLOCK: [2026-03-20 Fri 18:13]--[2026-03-20 Fri 18:13] =>  0:00
 :LOGBOOK:
 - State "TODO"       from              [2025-01-18 Sat 20:49]
 :END:
-*** DONE zlib compression
-:PROPERTIES:
-:CREATED:  <2025-05-12 Mon 23:22>
-:ID:       41241d38-f0f9-4b96-97e5-d8a11622396d
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-05-12 Mon 23:22]
-- State "WIP"        from "TODO"       [2025-06-11 Wed 23:13]
-- State "DONE"       from "WIP"        [2025-06-13 Fri 13:41]
-:END:
-- uses deflate
-- refactor salza2 to use io protos
-- replace salza2 and remove dependency
-*** NOPE stream-write-sequence for deflate
-SCHEDULED: <2025-06-17 Tue>
-:PROPERTIES:
-:ID:       e306decd-5e38-4cb4-b43e-c49d3606f6ba
-:CREATED:  <2025-06-16 Mon 22:44>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-06-16 Mon 22:44]
-:END:
-- use compress and decompress instead - no direct stream support
 *** FIXME flate/deflate
 :PROPERTIES:
 :ID:       3ad8ce2d-9463-4c0a-a0ed-0d564182d4b3
@@ -1932,19 +1246,6 @@ SCHEDULED: <2025-06-17 Tue>
 - State "TODO"       from              [2026-02-05 Thu 17:30]
 - State "FIXME"      from              [2026-02-05 Thu 17:30]
 :END:
-*** DONE zstd streams
-SCHEDULED: <2025-06-17 Tue>
-:PROPERTIES:
-:ID:       bd3434ea-a900-45b4-8890-9dff8403c020
-:CREATED:  <2025-06-16 Mon 22:16>
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2025-06-16 Mon 22:16]
-- State "DONE"       from "FIXME"      [2026-04-25 Sat 22:54]
-:END:
-- keep getting segfaults when using the streaming api (which is much
-  faster and needed for serious use)
-- need to debug and fix, test in dat/tar on tar.zst files
 *** TODO wm:kbd -> io/kbd:kbd
 :PROPERTIES:
 :ID:       bcfbc0ca-4d19-45b5-9256-a350aca2026f
@@ -1967,22 +1268,6 @@ SCHEDULED: <2025-06-17 Tue>
 - SERDE :XLIB
 - DEFINE-KEY
 - DEFINE-KEYMAP
-*** DONE wm:kmap -> io/kbd:keymap
-:PROPERTIES:
-:ID:       e8732ce7-7c47-46c6-9146-faaef8cf93b5
-:CREATED:  <2026-01-06 Tue 21:58>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-06 Tue 21:58]
-- State "DONE"       from "TODO"       [2026-02-05 Thu 17:31]
-:END:
-- make-sparse-keymap
-- probably just using hash-tables, same as color palettes, etc.
-- how should we handle transients?
-- what is the relation with commands?
-  - wm already binds the last keyseq for each command
-  - would want to bind a =*KEYMAP*= variable with a =STATE= slot being
-    the active parent key
 *** WIP virtual streams
 :PROPERTIES:
 :ID:       a1522a85-f8d7-4341-b22c-32fc09bd07a3
@@ -2031,31 +1316,6 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 :LOGBOOK:
 - State "PROJECT"    from              [2025-11-13 Thu 20:10]
 :END:
-*** DONE type keyword for box configs
-:PROPERTIES:
-:ID:       b51a0a08-9e05-4485-864c-b9b4661d95d3
-:CREATED:  <2025-11-13 Thu 20:09>
-:Effort:   2:00
-:END:
-:LOGBOOK:
-CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
-- Note taken on [2025-11-13 Thu 21:29] \\
-  pretty easy, just gotta finesse safe-io-syntax
-- State "WIP"        from              [2025-11-13 Thu 21:30]
-- State "DONE"       from "WIP"        [2025-11-13 Thu 21:49]
-:END:
-- erased on read
-- might want to indicate working-dir, output
-**** DONE from keyword
-:PROPERTIES:
-:ID:       58aa8a9d-2b92-4a4a-87a9-c3086907fb91
-:CREATED:  <2025-11-13 Thu 21:30>
-:END:
-:LOGBOOK:
-- State "WIP"        from              [2025-11-13 Thu 21:30]
-- State "DONE"       from "WIP"        [2025-11-13 Thu 21:48]
-:END:
-
 ** PROJECT log [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:44>
@@ -2087,7 +1347,7 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [3/5]                                                :lisp:std:
+* PROJECT std [1/3]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -2097,15 +1357,6 @@ CLOCK: [2025-11-13 Thu 20:26]--[2025-11-13 Thu 21:48] =>  1:22
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** NOPE sstring<->cstring
-:PROPERTIES:
-:ID:       d2cfb84d-0b10-4194-94cc-7ea1e9cbc875
-:CREATED:  <2026-03-09 Mon 19:37>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-03-09 Mon 19:37]
-:END:
-- translate between simple-strings and cstrings (special case of =string=)
 ** WIP fix register-module append
 :PROPERTIES:
 :ID:       05210028-832a-42cb-a0a6-fd7d4ef22e97
@@ -2131,41 +1382,7 @@ SCHEDULED: <2026-03-14 Sat>
 :END:
 - iolib/src/base/return-start.lisp
 - nested block returns
-** NOPE DEFAPI
-:PROPERTIES:
-:ID:       d4fa48f0-04a5-473c-abef-195b3f7bb3f3
-:CREATED:  <2026-01-20 Tue 22:18>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-20 Tue 22:18]
-- Note taken on [2026-03-31 Tue 22:49] \\
-  how bout deftable? hmm?
-:END:
-- in prim.lisp
-- shared macro for defining the follow interfaces:
-  - readtables (would need additional refactoring to depend on prim.lisp)
-  - print tables
-  - annotations
-  - commands
-  - thread-pools
-  - colors
-  - keybinds
-  - loop universes?
-  - io-table?
-** DONE annotations
-:PROPERTIES:
-:ID:       0c6d3580-78e8-42d4-8472-1d336c31aa73
-:CREATED:  <2026-01-05 Mon 21:27>
-:LOCATION+: string.lisp
-:Effort:   8h
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-01-05 Mon 21:27]
-CLOCK: [2026-01-05 Mon 21:29]--[2026-01-05 Mon 21:29] =>  0:00
-- State "DONE"       from "WIP"        [2026-01-20 Tue 22:21]
-:END:
-
-* PROJECT emacs [2/17]                                                :emacs:
+* PROJECT emacs [0/15]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -2576,29 +1793,6 @@ SCHEDULED: <2025-03-01 Sat>
 - keywordicate symbols
 - indentation
 - make a tbd task for refactoring imports/sorting
-** DONE slime-goto-pkg-source-definition                              :slime:
-:PROPERTIES:
-:ID:       0e118bb9-3104-419b-b6d6-ddcced19f494
-:CREATED:  <2025-09-17 Wed 17:26>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-09-17 Wed 17:26]
-- State "DONE"       from "TODO"       [2025-09-17 Wed 17:35]
-- Note taken on [2025-09-17 Wed 17:35] \\
-  instead we can just modify =slime-defpackage-regexp= :)
-:END:
-
-** DONE project-info better vc info
-:PROPERTIES:
-:ID:       2fe42dc8-002d-4daf-b183-82811b4da1be
-:CREATED:  <2025-06-08 Sun 13:20>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-08 Sun 13:20]
-- State "DONE"       from "TODO"       [2025-06-08 Sun 15:30]
-:END:
-- at least have option of disabling - it isn't always correct about the location
-
 ** TODO speedbar-obj-alist for cl
 :PROPERTIES:
 :ID:       351e0b8a-3608-4f35-9201-9921cdf8968b
@@ -2614,7 +1808,7 @@ SCHEDULED: <2025-03-01 Sat>
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 :END:
-* PROJECT skel [3/13]                                                  :skel:
+* PROJECT skel [0/10]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -2660,47 +1854,6 @@ SCHEDULED: <2025-03-01 Sat>
   event-loop?
 :END:
 - thread-pool
-** NOPE implement vm
-SCHEDULED: <2025-02-27 Thu> DEADLINE: <2025-03-03 Mon>
-:PROPERTIES:
-:ID:       15d506e3-b46a-4064-9054-0fe6c01205fb
-:CREATED:  <2024-08-18 Sun 22:03>
-:Effort:   8:00
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2024-08-11 Sun 00:11]
-- New deadline from "[2024-08-18 Sun]" on [2024-08-18 Sun 22:03]
-CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
-- State "WIP"        from "TODO"       [2024-08-28 Wed 21:43]
-- New deadline from "[2024-08-25 Sun]" on [2024-08-28 Wed 21:43]
-- Note taken on [2024-08-30 Fri 21:27] \\
-  not liking our current impl.. rewrite and document
-- State "NEXT"       from "WIP"        [2024-08-31 Sat 12:39]
-- New deadline from "[2024-09-01 Sun]" on [2024-09-01 Sun 21:40]
-- State "HOLD"       from "NEXT"       [2025-01-18 Sat 20:06] \\
-  Too early for this
-- State "WIP"        from "HOLD"       [2025-02-26 Wed 18:55]
-- Note taken on [2025-02-26 Wed 18:57] \\
-  Skel needs a strong multi-threaded runtime in order to do its job
-  efficiently on most devices. Our async APIs are still very young which
-  presents a blocker to this line of work, but there is additional work
-  which needs to be done in =skel/core= which we can make progress on in
-  preparation.
-- New deadline from "[2024-09-02 Mon]" on [2025-02-26 Wed 19:14]
-- State "WAIT"       from "WIP"        [2025-05-11 Sun 01:00] \\
-  waiting on completion of std/task and friends
-- State "TODO"       from "WAIT"       [2025-07-28 Mon 22:15]
-:END:
-- core/vm.lisp
-- how will rules, commands, and components interact?
-  - what sort of configuration is needed and where?
-- requires load, building of logical plan, execution of physical
-  plan (in async runtime) with results (+cache)
-- analysis pre/post-load, pre/post execution
-- execution strategies?
-- main thread should show progress in parallel
-  - capture conditions/debugger
-  - figure out how to retrieve stacktrace from worker threads
 ** TODO handle missing method errors or define default method when none defined :skel:bin:cli:
 :PROPERTIES:
 :ID:       4289c4ef-a766-472e-a2cb-afddb9d080e0
@@ -2720,17 +1873,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
 - will be first feature of skel server
-** DONE skel rule compilation environment
-:PROPERTIES:
-:ID:       eb00ee5b-8ae8-4d38-8b89-b83cd20e1e2a
-:CREATED:  <2025-06-09 Mon 23:19>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-06-09 Mon 23:19]
-- State "FIXME"      from              [2025-06-09 Mon 23:19]
-- State "DONE"       from "FIXME"      [2025-06-10 Tue 13:36]
-:END:
-
 ** OUTLINE skel template objects
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:45>
@@ -2775,17 +1917,6 @@ CLOCK: [2024-08-28 Wed 18:52]--[2024-08-28 Wed 21:33] =>  2:41
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-15 Sun 21:46]
 :END:
-** DONE infra :lisp module
-:PROPERTIES:
-:CREATED:  <2025-09-07 Sun 21:11>
-:ID:       51b5db8e-7d6a-4f7f-b8e9-ba683d834715
-:END:
-:LOGBOOK:
-- State "FIXME"      from "TODO"       [2025-09-07 Sun 21:11]
-- Refiled on [2025-09-07 Sun 21:13]
-- State "DONE"       from "FIXME"      [2025-09-08 Mon 18:48]
-:END:
-- we broke sk-file-component, need to repair
 ** WIP mpk [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:06>
