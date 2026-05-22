@@ -881,7 +881,6 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
 *** TODO object schema                                               :schema:
-DEADLINE: <2025-11-08 Sat> SCHEDULED: <2025-11-10 Mon>
 :PROPERTIES:
 :CREATED:  <2025-11-03 Mon 19:14>
 :ID:       01351f90-e599-41a8-96b2-0138ff3112eb
@@ -1371,7 +1370,6 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 :END:
 
 ** TBD return* proto
-SCHEDULED: <2026-03-14 Sat>
 :PROPERTIES:
 :ID:       72ab1ec3-1550-43de-8b6f-0f69c4e7383b
 :CREATED:  <2026-03-13 Fri 22:59>
@@ -1382,7 +1380,7 @@ SCHEDULED: <2026-03-14 Sat>
 :END:
 - iolib/src/base/return-start.lisp
 - nested block returns
-* PROJECT emacs [0/15]                                                :emacs:
+* PROJECT emacs [0/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1394,6 +1392,43 @@ SCHEDULED: <2026-03-14 Sat>
 :END:
 - don't really care about versioning the core/emacs configs much
 - may come in use later so just a general milestone when these tasks are done
+** TODO eglot
+:PROPERTIES:
+:ID:       d4a10019-e56e-4c44-9497-fae89585ee0d
+:CREATED:  <2026-05-21 Thu 22:37>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-05-21 Thu 22:37]
+:END:
+*** TODO eglot-lisp init
+:PROPERTIES:
+:ID:       e4f9a26e-ac7a-4b74-ab56-a3190650943d
+:CREATED:  <2026-05-21 Thu 22:37>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-05-21 Thu 22:37]
+:END:
+*** RESEARCH
+SCHEDULED: <2026-05-22 Fri>
+:PROPERTIES:
+:ID:       85e8cf23-ba48-49ed-ab45-0cad8a08f71a
+:CREATED:  <2026-05-21 Thu 22:37>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-05-21 Thu 22:37]
+:END:
+- [[info:eglot#Top][eglot#Top]]
+- eglot-format
+- integrates with flymake
+- integrates with yasnippet (prob need to impl for abbrevs/tempo/skel)
+** TODO rewrite #1
+:PROPERTIES:
+:ID:       ecb4fc04-55f7-4550-8b11-19c4c213f7f3
+:CREATED:  <2026-05-21 Thu 22:36>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-05-21 Thu 22:36]
+:END:
 ** WIP comp/org capture templates                                    
 :PROPERTIES:
 :ID:       3d303736-7b79-4c5c-ba43-9ea5aa05f722
@@ -1760,7 +1795,6 @@ should extensively support throughout our code
 :END:
 [[info:emacs#Directory Variables][emacs#Directory Variables]]
 ** WIP skel.el indentation rules
-SCHEDULED: <2025-03-01 Sat>
 :PROPERTIES:
 :ID:       9b2d1c95-e724-47b8-a78c-a81805194731
 :CREATED:  <2025-02-26 Wed 21:31>
