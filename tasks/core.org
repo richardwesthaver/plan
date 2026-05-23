@@ -1402,7 +1402,7 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 :LOGBOOK:
 - State "TODO"       from              [2026-05-21 Thu 22:37]
 :END:
-*** TODO eglot-lisp init
+*** TODO [#B] eglot-lisp init
 :PROPERTIES:
 :ID:       e4f9a26e-ac7a-4b74-ab56-a3190650943d
 :CREATED:  <2026-05-21 Thu 22:37>
@@ -1428,7 +1428,7 @@ CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
 - eglot-format
 - integrates with flymake
 - integrates with yasnippet (prob need to impl for abbrevs/tempo/skel)
-** WIP rewrite #1
+** WIP [#A] rewrite #1
 :PROPERTIES:
 :ID:       ecb4fc04-55f7-4550-8b11-19c4c213f7f3
 :CREATED:  <2026-05-21 Thu 22:36>
@@ -1436,12 +1436,15 @@ CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-05-21 Thu 22:36]
-CLOCK: [2026-05-22 Fri 23:06]
+CLOCK: [2026-05-22 Fri 23:06]--[2026-05-23 Sat 00:06] =>  1:00
 - State "WIP"        from "TODO"       [2026-05-22 Fri 23:07]
+CLOCK: [2026-05-23 Sat 17:08]--[2026-05-23 Sat 18:17] =>  1:09
 :END:
 - in desperate need of cleanup, simplification, and documentation.
 - what can we learn from [[https://github.com/doomemacs/doomemacs][doom]]?
 - make outline: [[id:6c87dbd0-0a4b-4395-bc70-fff94b680787][core:man#Emacs]]
+- [[info:use-package#Top][use-package#Top]]
+- later: eglot-tempel
 
 ** WIP comp/org capture templates                                    
 :PROPERTIES:
