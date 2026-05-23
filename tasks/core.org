@@ -1407,15 +1407,21 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-05-21 Thu 22:37]
+- Note taken on [2026-05-22 Fri 22:15] \\
+  which impl should we use as a starting point?
 :END:
-*** RESEARCH
+
+*** DONE eglot discovery
 SCHEDULED: <2026-05-22 Fri>
 :PROPERTIES:
 :ID:       85e8cf23-ba48-49ed-ab45-0cad8a08f71a
 :CREATED:  <2026-05-21 Thu 22:37>
+:Effort:   2h
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2026-05-21 Thu 22:37]
+CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
+- State "DONE"       from "RESEARCH"   [2026-05-22 Fri 22:14]
 :END:
 - [[info:eglot#Top][eglot#Top]]
 - eglot-format
