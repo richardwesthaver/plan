@@ -754,6 +754,8 @@ CLOCK: [2026-03-03 Tue 22:07]--[2026-03-03 Tue 22:08] =>  0:01
 :END:
 - [[https://github.com/bluelisp/zip][bluelisp/zip]]
 - leverages deflate, similar structure to tar (can we share API?)
+- generator for ~with~ macro - should use same protocol - define in
+  obj somewhere
 *** TODO dat/sxp
 :PROPERTIES:
 :ID:       1005b8fa-a850-4674-bd6c-fabecdcc5639
@@ -1410,7 +1412,6 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 - Note taken on [2026-05-22 Fri 22:15] \\
   which impl should we use as a starting point?
 :END:
-
 *** DONE eglot discovery
 SCHEDULED: <2026-05-22 Fri>
 :PROPERTIES:
@@ -1427,14 +1428,21 @@ CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
 - eglot-format
 - integrates with flymake
 - integrates with yasnippet (prob need to impl for abbrevs/tempo/skel)
-** TODO rewrite #1
+** WIP rewrite #1
 :PROPERTIES:
 :ID:       ecb4fc04-55f7-4550-8b11-19c4c213f7f3
 :CREATED:  <2026-05-21 Thu 22:36>
+:Effort:   8h
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-05-21 Thu 22:36]
+CLOCK: [2026-05-22 Fri 23:06]
+- State "WIP"        from "TODO"       [2026-05-22 Fri 23:07]
 :END:
+- in desperate need of cleanup, simplification, and documentation.
+- what can we learn from [[https://github.com/doomemacs/doomemacs][doom]]?
+- make outline: [[id:6c87dbd0-0a4b-4395-bc70-fff94b680787][core:man#Emacs]]
+
 ** WIP comp/org capture templates                                    
 :PROPERTIES:
 :ID:       3d303736-7b79-4c5c-ba43-9ea5aa05f722
@@ -1883,7 +1891,7 @@ should extensively support throughout our code
 - State "TODO"       from              [2025-06-06 Fri 17:53]
 :END:
 - check the hash of sources against a cache, skip if found
-- need a way of managing cache invalidation - timeouts and manual purges
+- need a way of managing cache invalidation - timeouts and manual purges, locks?
 ** TODO implement task-pool                                          :thread:
 :PROPERTIES:
 :ID:       5e0c7baf-9b18-441a-a46c-2274f478d4a5
