@@ -1385,7 +1385,7 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 :END:
 - iolib/src/base/return-start.lisp
 - nested block returns
-* PROJECT emacs [1/17]                                                :emacs:
+* PROJECT emacs [1/15]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1407,6 +1407,7 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 - State "TODO"       from              [2026-05-21 Thu 22:37]
 :END:
 *** TODO [#B] eglot-lisp init
+SCHEDULED: <2026-05-28 Thu>
 :PROPERTIES:
 :ID:       e4f9a26e-ac7a-4b74-ab56-a3190650943d
 :CREATED:  <2026-05-21 Thu 22:37>
@@ -1432,7 +1433,7 @@ CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
 - eglot-format
 - integrates with flymake
 - integrates with yasnippet (prob need to impl for abbrevs/tempo/skel)
-** WIP [#A] rewrite #1
+** DONE [#A] rewrite #1
 :PROPERTIES:
 :ID:       ecb4fc04-55f7-4550-8b11-19c4c213f7f3
 :CREATED:  <2026-05-21 Thu 22:36>
@@ -1444,7 +1445,8 @@ CLOCK: [2026-05-22 Fri 23:06]--[2026-05-23 Sat 00:06] =>  1:00
 - State "WIP"        from "TODO"       [2026-05-22 Fri 23:07]
 CLOCK: [2026-05-23 Sat 17:08]--[2026-05-23 Sat 18:17] =>  1:09
 CLOCK: [2026-05-24 Sun 19:30]--[2026-05-24 Sun 22:30] =>  3:00
-CLOCK: [2026-05-25 Mon 19:33]
+CLOCK: [2026-05-25 Mon 19:33]--[2026-05-25 Mon 20:33] =>  1:00
+- State "DONE"       from "WIP"        [2026-05-25 Mon 21:37]
 :END:
 - in desperate need of cleanup, simplification, and documentation.
 - what can we learn from [[https://github.com/doomemacs/doomemacs][doom]]?
@@ -1472,8 +1474,10 @@ CLOCK: [2026-05-25 Mon 19:33]
 - habit capture
 - log capture
 ** TODO comp/org agenda views, export, dblock
+SCHEDULED: <2026-05-27 Wed>
 :PROPERTIES:
 :ID:       952fe286-9fd8-478f-bafc-a0a25ae3d17a
+:CREATED:  <2026-05-25 Mon 21:44>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
@@ -1489,198 +1493,6 @@ CLOCK: [2026-05-25 Mon 19:33]
 - a few defined in ellis.el
 - define some starter ones for inbox.el
 - define views for scrum.el
-** FIXME compiler warnings
-:PROPERTIES:
-:ID:       dd4cf91d-4b45-4b5f-adee-0e248ebed0e1
-:END:
-:LOGBOOK:
-- State "FIXME"      from              [2024-08-16 Fri 22:42]
-:END:
-#+begin_example
-  default.el:176:7: Warning: assignment to free variable ‘multisession-storage’
-  default.el:184:11: Warning: assignment to free variable ‘hg-binary’
-  default.el:240:6: Warning: docstring has wrong usage of unescaped single
-      quotes (use \=' or different quoting such as `...')
-  default.el:259:30: Warning: ‘:inherit’ called as a function
-  default.el:260:30: Warning: ‘:indentation’ called as a function
-  default.el:261:42: Warning: reference to free variable ‘defpackage’
-  default.el:262:31: Warning: ‘define-package’ called with 1 argument, but
-      requires 2 or more
-  default.el:262:31: Warning: ‘define-package’ is an obsolete function (as of
-      29.1).
-  default.el:286:9: Warning: assignment to free variable
-      ‘common-lisp-style-default’
-  default.el:305:19: Warning: reference to free variable ‘eglot-server-programs’
-  default.el:305:19: Warning: assignment to free variable
-      ‘eglot-server-programs’
-  default.el:313:7: Warning: assignment to free variable ‘rust-rustfmt-switches’
-  default.el:314:7: Warning: assignment to free variable ‘rust-indent-offset’
-  default.el:317:7: Warning: assignment to free variable ‘python-indent-offset’
-  default.el:321:7: Warning: assignment to free variable ‘js-indent-level’
-  default.el:324:7: Warning: assignment to free variable ‘sh-basic-offset’
-  default.el:331:12: Warning: in defcustom for ‘prog-comment-keywords’: missing
-      :type keyword parameter
-  default.el:336:12: Warning: in defcustom for
-      ‘prog-comment-timestamp-format-concise’: missing :type keyword parameter
-  default.el:342:12: Warning: in defcustom for
-      ‘prog-comment-timestamp-format-verbose’: missing :type keyword parameter
-
-  In prog-comment-timestamp-keyword:
-  default.el:386:2: Warning: docstring has wrong usage of unescaped single
-      quotes (use \=' or different quoting such as `...')
-  default.el:414:20: Warning: reference to free variable
-      ‘comment-timestamp-format-verbose’
-  default.el:443:7: Warning: assignment to free variable ‘hexl-bits’
-
-  In buffer-to-register:
-  default.el:474:47: Warning: Unused lexical argument ‘delete’
-
-  In file-to-register:
-  default.el:481:45: Warning: Unused lexical argument ‘delete’
-
-  In file-query-to-register:
-  default.el:487:51: Warning: Unused lexical argument ‘delete’
-  default.el:529:12: Warning: in defcustom for ‘default-scratch-buffer-mode’:
-      missing :type keyword parameter
-  default.el:625:7: Warning: assignment to free variable
-      ‘eshell-highlight-prompt’
-  default.el:626:7: Warning: assignment to free variable
-      ‘eshell-hist-ignoredups’
-  default.el:627:7: Warning: assignment to free variable
-      ‘eshell-save-history-on-exit’
-  default.el:629:7: Warning: assignment to free variable
-      ‘eshell-destroy-buffer-when-process-dies’
-
-  In eshell-quit-or-delete-char:
-  default.el:645:20: Warning: ‘looking-back’ called with 1 argument, but
-      requires 2 or 3
-  default.el:645:33: Warning: reference to free variable ‘eshell-prompt-regexp’
-  default.el:650:6: Warning: ‘delete-forward-char’ is for interactive use only;
-      use ‘delete-char’ instead.
-  default.el:654:29: Warning: reference to free variable ‘eshell-mode-map’
-
-  In eshell-next-prompt:
-  default.el:660:22: Warning: reference to free variable ‘eshell-prompt-regexp’
-  default.el:661:9: Warning: reference to free variable
-      ‘eshell-highlight-prompt’
-
-  In eshell-insert-history:
-  default.el:677:48: Warning: reference to free variable ‘eshell-history-ring’
-  default.el:736:49: Warning: reference to free variable ‘eww-mode-map’
-  default.el:747:7: Warning: assignment to free variable
-      ‘org-id-link-to-org-use-id’
-  default.el:749:7: Warning: assignment to free variable ‘org-capture-templates’
-  default.el:761:7: Warning: assignment to free variable
-      ‘org-html-htmlize-output-type’
-  default.el:762:7: Warning: assignment to free variable
-      ‘org-html-head-include-default-style’
-  default.el:764:7: Warning: assignment to free variable ‘org-ascii-text-width’
-  default.el:768:7: Warning: assignment to free variable
-      ‘org-structure-template-alist’
-  default.el:805:7: Warning: assignment to free variable ‘org-archive-location’
-
-  In org-ask-location:
-  default.el:853:11: Warning: Unused lexical variable ‘org-refile-targets’
-  default.el:856:28: Warning: reference to free variable ‘org-refile-history’
-  default.el:860:18: Warning: reference to free variable
-      ‘org-complex-heading-regexp-format’
-
-  In org-capture-fileref-snippet:
-  default.el:868:37: Warning: Unused lexical argument ‘f’
-  default.el:906:7: Warning: assignment to free variable ‘org-global-properties’
-
-  In org-adjust-tags-column-reset-tags:
-  default.el:936:39: Warning: Unused lexical argument ‘ignored’
-
-  In column-display-value-transformer:
-  default.el:942:55: Warning: Unused lexical argument ‘value’
-  default.el:954:7: Warning: assignment to free variable
-      ‘org-columns-modify-value-for-display-function’
-
-  In org-remove-redundant-tags:
-  default.el:974:32: Warning: Unused lexical variable ‘tag’
-  default.el:984:69: Warning: ‘memql’ called with literal list that may never
-      match (arg 1)
-
-  In org-agenda-reschedule-to-today:
-  default.el:995:35: Warning: Unused lexical argument ‘rest’
-  default.el:999:2: Warning: ‘defadvice’ is an obsolete macro (as of 30.1); use
-      ‘advice-add’ or ‘define-advice’
-
-  In org-export-translate-to-lang:
-  default.el:1079:35: Warning: reference to free variable
-      ‘org-export-dictionary’
-
-  In end of data:
-  default.el:979:42: Warning: the function ‘org-toggle-tag’ might not be defined
-      at runtime.
-  default.el:971:8: Warning: the function ‘org-map-entries’ might not be defined
-      at runtime.
-  default.el:961:4: Warning: the function ‘org-table-map-tables’ might not be
-      defined at runtime.
-  default.el:949:9: Warning: the function ‘org-entry-end-position’ might not be
-      defined at runtime.
-  default.el:946:8: Warning: the function ‘org-back-to-heading’ might not be
-      defined at runtime.
-  default.el:937:20: Warning: the function ‘org-set-tags’ might not be defined
-      at runtime.
-  default.el:918:10: Warning: the function ‘org-set-property’ might not be
-      defined at runtime.
-  default.el:916:14: Warning: the function ‘org-entry-get-multivalued-property’
-      might not be defined at runtime.
-  default.el:912:12: Warning: the function ‘org-entry-get’ might not be defined
-      at runtime.
-  default.el:898:23: Warning: the function ‘which-function’ is not known to be
-      defined.
-  default.el:858:6: Warning: the function ‘outline-next-heading’ might not be
-      defined at runtime.
-  default.el:855:24: Warning: the function ‘org-refile-get-location’ might not
-      be defined at runtime.
-  default.el:846:39: Warning: the function ‘org-todo’ might not be defined at
-      runtime.
-  default.el:843:48: Warning: the function ‘org-read-date’ might not be defined
-      at runtime.
-  default.el:843:23: Warning: the function ‘org-time-string-to-time’ might not
-      be defined at runtime.
-  default.el:664:4: Warning: the function ‘eshell-skip-prompt’ is not known to
-      be defined.
-  default.el:647:10: Warning: the function ‘eshell-life-is-too-much’ is not
-      known to be defined.
-  default.el:641:6: Warning: the function ‘eshell-send-input’ is not known to be
-      defined.
-  default.el:633:14: Warning: the function ‘eshell/alias’ is not known to be
-      defined.
-  default.el:308:6: Warning: the function ‘eglot-x-setup’ is not known to be
-      defined.
-  default.el:261:39: Warning: the function ‘as’ is not known to be defined.
-  default.el:261:31: Warning: the function ‘defpkg’ is not known to be defined.
-  default.el:260:30: Warning: the function ‘:indentation’ is not known to be
-      defined.
-  default.el:259:30: Warning: the function ‘:inherit’ is not known to be
-      defined.
-  default.el:258:4: Warning: the function ‘define-common-lisp-style’ is not
-      known to be defined.
-  default.el:245:8: Warning: the function ‘slime-eval-async’ might not be
-      defined at runtime.
-  default.el:243:14: Warning: the function ‘slime-sexp-at-point’ might not be
-      defined at runtime.
-  default.el:241:13: Warning: the function ‘slime-read-from-minibuffer’ might
-      not be defined at runtime.
-  default.el:233:10: Warning: the function ‘slime-repl’ is not known to be
-      defined.
-  default.el:228:14: Warning: the function ‘slime-connected-p’ might not be
-      defined at runtime.
-  Loading which-key (native compiled elisp)...done
-  All your packages are already installed
-  Waiting for git... [2 times]
-  Loading /home/ellis/.emacs.d/ellis.el (source)...
-  Local variables list is not properly terminated
-  Source file ‘/home/ellis/.emacs.d/lib/ulang.el’ newer than byte-compiled file; using older file
-  Initialized ULANG.
-  Repeat mode is enabled for 38 commands and 13 keymaps; see ‘describe-repeat-maps’
-  Loading /home/ellis/.emacs.d/ellis.el (source)...done
-  Starting Emacs daemon.
-#+end_example
 ** WIP graph                                                            :org:
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
@@ -1725,7 +1537,7 @@ CLOCK: [2026-05-25 Mon 19:33]
 - index based? inherit from parent only for now
   - how to implement for complete tree?
   - custom_id for edges? like @ref bibtex
-** TBD org-timeline upgrades [0/3]                                      :org:
+** HOLD org-timeline upgrades [0/3]                                     :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
 :ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
@@ -1733,6 +1545,8 @@ CLOCK: [2026-05-25 Mon 19:33]
 :LOGBOOK:
 - Refiled on [2024-08-30 Fri 19:03]
 - State "TBD"        from "TODO"       [2025-06-08 Sun 18:07]
+- State "HOLD"       from "TBD"        [2026-05-25 Mon 21:43] \\
+  unsure if we still want org-timeline.el.. off by default
 :END:
 [[https://github.com/deopurkar/org-timeline][GitHub - deopurkar/org-timeline: Add graphical view of agenda to agenda buffer]]
 - now lives in lib/org-timeline.el
@@ -1780,15 +1594,6 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-** NOPE allout-mode support
-:PROPERTIES:
-:ID:       a4f2ff53-87cb-4d7e-95e9-9dab485fedc2
-:CREATED:  <2025-10-31 Fri 00:52>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2025-10-31 Fri 00:52]
-:END:
-should extensively support throughout our code
 ** TODO skel widgets                                                   :skel:
 :PROPERTIES:
 :ID:       a80df9ee-e772-499b-b996-78962bd13cd4
@@ -1801,6 +1606,7 @@ should extensively support throughout our code
   customization interface
 - need to maintain mapping between buffer forms and widgets
 ** TODO desktop save functions
+SCHEDULED: <2026-05-28 Thu>
 :PROPERTIES:
 :ID:       6fcda66a-3a65-4e82-91b5-cf996efff1b2
 :CREATED:  <2025-10-30 Thu 23:47>
