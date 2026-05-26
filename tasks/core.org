@@ -57,7 +57,8 @@ systems) - btree would be nice
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
 :VERSION:  0.1
-:LOCATION: ffi/
+:LOCATION: alien/
+:CATEGORY: alien
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:20]
@@ -187,6 +188,7 @@ implement bindings to the Fortran BLAS functions
 :CREATED:  <2025-05-02 Fri 14:04>
 :ID:       cbe46830-8363-4e11-897c-9779e1997e2b
 :LOCATION: lib/
+:CATEGORY: lib
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
@@ -1353,6 +1355,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
 :LOCATION: std/
+:CATEGORY: std
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-12-12 Tue 19:49]
@@ -1382,11 +1385,12 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 :END:
 - iolib/src/base/return-start.lisp
 - nested block returns
-* PROJECT emacs [0/17]                                                :emacs:
+* PROJECT emacs [1/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
 :LOCATION: emacs/
+:CATEGORY: emacs
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-16 Fri 22:39]
@@ -1439,6 +1443,8 @@ CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
 CLOCK: [2026-05-22 Fri 23:06]--[2026-05-23 Sat 00:06] =>  1:00
 - State "WIP"        from "TODO"       [2026-05-22 Fri 23:07]
 CLOCK: [2026-05-23 Sat 17:08]--[2026-05-23 Sat 18:17] =>  1:09
+CLOCK: [2026-05-24 Sun 19:30]--[2026-05-24 Sun 22:30] =>  3:00
+CLOCK: [2026-05-25 Mon 19:33]
 :END:
 - in desperate need of cleanup, simplification, and documentation.
 - what can we learn from [[https://github.com/doomemacs/doomemacs][doom]]?
@@ -1679,6 +1685,7 @@ CLOCK: [2026-05-23 Sat 17:08]--[2026-05-23 Sat 18:17] =>  1:09
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
 :CREATED:  <2025-01-18 Sat 20:48>
+:CATEGORY: graph
 :END:
 :LOGBOOK:
 - State "OUTLINE"    from              [2024-08-21 Wed 20:40]
@@ -1773,7 +1780,7 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-** TODO allout-mode support
+** NOPE allout-mode support
 :PROPERTIES:
 :ID:       a4f2ff53-87cb-4d7e-95e9-9dab485fedc2
 :CREATED:  <2025-10-31 Fri 00:52>
