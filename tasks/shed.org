@@ -5,7 +5,7 @@
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** shed
-#+LOCATION: ~/comp/shed/
+#+LOCATION: ~/src/shed/
 #+filetags: shed
 * PROJECT tenex [0/4]
 :PROPERTIES:
@@ -81,7 +81,7 @@
 :LOGBOOK:
 - State "TBD"        from              [2026-02-03 Tue 21:28]
 :END:
-[[file:~/comp/shed/xlib/extensions/glx.lisp::;;; FIXME: I'm just not sure we need a seperate accessors for what][fixes issue in glx]]
+[[file:~/src/shed/xlib/extensions/glx.lisp::;;; FIXME: I'm just not sure we need a seperate accessors for what][fixes issue in glx]]
 * PROJECT wm [11/20]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef

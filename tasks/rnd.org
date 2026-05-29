@@ -5,7 +5,7 @@
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** core
-#+LOCATION: ~/comp/
+#+LOCATION: ~/src/
 #+filetags: rnd
 * OUTLINE pot of greed
 :PROPERTIES:

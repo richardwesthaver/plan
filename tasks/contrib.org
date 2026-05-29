@@ -4,7 +4,7 @@
 #+setupfile: ../../clean.theme
 #+filetags: contrib
 #+ARCHIVE: ../../archive/plan.org::** demo
-#+location: ~/comp/contrib/
+#+location: ~/src/contrib/
 #+category: project
 * OUTLINE Logical Pathnames Proposal
 :PROPERTIES:

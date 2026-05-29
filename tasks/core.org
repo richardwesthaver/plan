@@ -5,7 +5,7 @@
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** core
-#+LOCATION: ~/comp/core/
+#+LOCATION: ~/src/core
 #+filetags: core
 * FIXME inline TODOs
 :PROPERTIES:
@@ -16,19 +16,19 @@
 - State "FIXME"      from              [2025-05-31 Sat 00:53]
 :END:
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*; TODO" "*.*" "~/comp/core/")
+  (rgrep ".*; TODO" "*.*" "~/src/core/")
 #+end_src
 *234*
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*; FIXME" "*.*" "~/comp/core/")
+  (rgrep ".*; FIXME" "*.*" "~/src/core/")
 #+end_src
 *114*
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*; REVIEW" "*.*" "~/comp/core/")
+  (rgrep ".*; REVIEW" "*.*" "~/src/core/")
 #+end_src
 *16*
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*; RESEARCH" "*.*" "~/comp/core/")
+  (rgrep ".*; RESEARCH" "*.*" "~/src/core/")
 #+end_src
 *3*
 * TODO lorem ipsum generator
@@ -1183,7 +1183,7 @@ CLOCK: [2026-03-20 Fri 18:13]--[2026-03-20 Fri 18:13] =>  0:00
 - State "TODO"       from              [2026-03-09 Mon 17:49]
 - State "RESEARCH"   from "TODO"       [2026-03-09 Mon 17:49]
 :END:
-- [[file:~/comp/shed/wm/ioloop.lisp][ioloop.lisp]]
+- [[file:~/src/shed/wm/ioloop.lisp][ioloop.lisp]]
 #+begin_src lisp
   ;; This file implements a generic multiplexing I/O loop for listening
   ;; to I/O events from multiple sources. The model is as follows:
@@ -1311,7 +1311,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 #+end_example
 - expand into LOOP OR
 - maybe we should do VIDX loop-path after all
-** PROJECT box
+** PROJECT box [0/1]
 :PROPERTIES:
 :ID:       3329b301-f396-48f8-b097-dca46fbfd74d
 :CREATED:  <2025-11-13 Thu 20:10>
@@ -1319,6 +1319,23 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 :LOGBOOK:
 - State "PROJECT"    from              [2025-11-13 Thu 20:10]
 :END:
+- archiso is in a decent state, small impact since only useful for linux installers
+- for CI we need better QEMU/vbox support
+- wrap up with a ~demobox~ e2e configuration
+*** RESEARCH qemu/vbox
+SCHEDULED: <2026-05-31 Sun>
+:PROPERTIES:
+:ID:       fb5c7fd6-c02d-4c54-9797-edd8b96f6684
+:CREATED:  <2026-05-27 Wed 22:21>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-05-27 Wed 22:21]
+:END:
+- catch up on current state, qemu may be enough but we need single-click dispatch to interactive login
+- interested in VNC
+- use NET for network configs
+- patch into ~skel/comp/box~
+  - consider separate classes and removing the :type requirement.. .box or .qemu vs .archiso, meh
 ** PROJECT log [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:44>
@@ -1350,7 +1367,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [1/3]                                                :lisp:std:
+* PROJECT std [1/2]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1361,7 +1378,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
-** WIP fix register-module append
+** DONE fix register-module append
 :PROPERTIES:
 :ID:       05210028-832a-42cb-a0a6-fd7d4ef22e97
 :CREATED:  <2026-04-08 Wed 20:02>
@@ -1372,9 +1389,11 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 - Note taken on [2026-04-08 Wed 20:05] \\
   may have just fixed.. testing
+- State "DONE"       from "WIP"        [2026-05-27 Wed 22:18]
 :END:
 
 ** TBD return* proto
+SCHEDULED: <2026-05-29 Fri>
 :PROPERTIES:
 :ID:       72ab1ec3-1550-43de-8b6f-0f69c4e7383b
 :CREATED:  <2026-03-13 Fri 22:59>
@@ -1385,7 +1404,7 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
 :END:
 - iolib/src/base/return-start.lisp
 - nested block returns
-* PROJECT emacs [1/15]                                                :emacs:
+* PROJECT emacs [1/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1433,6 +1452,19 @@ CLOCK: [2026-05-22 Fri 21:38]--[2026-05-22 Fri 22:14] =>  0:36
 - eglot-format
 - integrates with flymake
 - integrates with yasnippet (prob need to impl for abbrevs/tempo/skel)
+
+#+begin_quote
+Most Eglot facilities are integrated into Emacs features, such as
+ElDoc, Flymake, Xref, and Imenu.  However, Eglot also provides
+commands of its own, mainly to perform tasks by the language
+server, such as ‘M-x eglot-rename’ (to rename an identifier across
+the entire project), ‘M-x eglot-format’ (to reformat and reindent
+code), and some others.  *Note Eglot Commands::, for the detailed
+list of Eglot commands.
+#+end_quote
+
+- eglot-semantic-faces - presentations?
+
 ** DONE [#A] rewrite #1
 :PROPERTIES:
 :ID:       ecb4fc04-55f7-4550-8b11-19c4c213f7f3
@@ -1455,8 +1487,10 @@ CLOCK: [2026-05-25 Mon 19:33]--[2026-05-25 Mon 20:33] =>  1:00
 - later: eglot-tempel
 
 ** WIP comp/org capture templates                                    
+SCHEDULED: <2026-05-30 Sat>
 :PROPERTIES:
 :ID:       3d303736-7b79-4c5c-ba43-9ea5aa05f722
+:CREATED:  <2026-05-27 Wed 22:17>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:14]
@@ -1474,7 +1508,7 @@ CLOCK: [2026-05-25 Mon 19:33]--[2026-05-25 Mon 20:33] =>  1:00
 - habit capture
 - log capture
 ** TODO comp/org agenda views, export, dblock
-SCHEDULED: <2026-05-27 Wed>
+SCHEDULED: <2026-05-30 Sat>
 :PROPERTIES:
 :ID:       952fe286-9fd8-478f-bafc-a0a25ae3d17a
 :CREATED:  <2026-05-25 Mon 21:44>
@@ -1610,12 +1644,37 @@ SCHEDULED: <2026-05-28 Thu>
 :PROPERTIES:
 :ID:       6fcda66a-3a65-4e82-91b5-cf996efff1b2
 :CREATED:  <2025-10-30 Thu 23:47>
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-10-30 Thu 23:47]
+CLOCK: [2026-05-28 Thu 17:19]--[2026-05-28 Thu 17:56] =>  0:37
+CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 :END:
-- need to set the =desktop-save-buffer= value for the following buffers:
+- +need to set the =desktop-save-buffer= value for the following buffers:+
 - slime,ielm,eshell,org-agenda,notmuch,elfeed
+- see ~desktop-buffer-mode-handlers~ and ~desktop-minor-mode-handlers~
+  - ~dired-restore-desktop-buffer~
+#+begin_src emacs-lisp
+(add-to-list 'desktop-buffer-mode-handlers '(skel-mode . skel-restore-desktop-buffer))
+(add-to-list 'desktop-minor-mode-handlers '(skel-minor-mode . skel-restore-desktop-buffer))
+#+end_src
+** RESEARCH etags
+:PROPERTIES:
+:ID:       0c9a7c89-6c36-410b-8822-8f8d82ca4f7f
+:CREATED:  <2026-05-28 Thu 19:49>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-05-28 Thu 19:49]
+:END:
+** RESEARCH ispell
+:PROPERTIES:
+:ID:       4109ca00-7b80-4e40-a29c-4bd8c569d22d
+:CREATED:  <2026-05-28 Thu 19:49>
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-05-28 Thu 19:49]
+:END:
 ** TODO skel.el hack-dir-local-variables                              :emacs:
 :PROPERTIES:
 :ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
