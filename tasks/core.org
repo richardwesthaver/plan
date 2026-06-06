@@ -7,6 +7,7 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/src/core
 #+filetags: core
+
 * FIXME inline TODOs
 :PROPERTIES:
 :ID:       d5aaf952-bb93-4b66-a7e0-1f0f827c0925
@@ -18,41 +19,19 @@
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; TODO" "*.*" "~/src/core/")
 #+end_src
-*234*
+*248*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; FIXME" "*.*" "~/src/core/")
 #+end_src
-*114*
+*109*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; REVIEW" "*.*" "~/src/core/")
 #+end_src
-*16*
+*24*
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; RESEARCH" "*.*" "~/src/core/")
 #+end_src
 *3*
-* TODO lorem ipsum generator
-:PROPERTIES:
-:ID:       1aada73a-52ac-4b8e-a6d4-5c1894e51927
-:CREATED:  <2026-02-07 Sat 21:57>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-02-07 Sat 21:57]
-:END:
-- useful for fonts, see [[help:customize-face]]
-- RT or DOC?
-- maybe NLP..
-
-* TODO component require total ordering
-:PROPERTIES:
-:ID:       bde9b746-3b00-413c-9cf9-193dd3110348
-:CREATED:  <2026-02-11 Wed 17:03>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-02-11 Wed 17:03]
-:END:
-need to be able to sort REQUIRE slots in components (specifically
-systems) - btree would be nice
 * PROJECT alien [0/4]                                              :lisp:ffi:
 :PROPERTIES:
 :ID:       4de17a09-48fb-4640-b30a-e40cc1f8c330
@@ -874,7 +853,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:30]
 :END:
-** PROJECT obj [0/6]                                                    :obj:
+** PROJECT obj [0/7]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -894,7 +873,8 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :END:
 - get this working and tested, implement for org-graph
 - keep working our way up the chain to stored-object-schemas
-*** TODO command parents
+*** TODO command parents                                                :cmd:
+SCHEDULED: <2026-06-07 Sun>
 :PROPERTIES:
 :ID:       3e6dea77-0cb0-4349-ac65-4e0a4992cfb9
 :CREATED:  <2026-01-31 Sat 23:40>
@@ -906,6 +886,19 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - consider PARENT:CMD protocol (modify parse/read)
 - if command not found in primary check parent
 - we now may need more than hash-tables..
+*** TODO Custom Vars                                         :cmd:val:config:
+SCHEDULED: <2026-06-10 Wed>
+:PROPERTIES:
+:ID:       b4879c5f-6557-4213-8b49-aaa5d8893344
+:CREATED:  <2026-06-01 Mon 20:29>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-01 Mon 20:29]
+:END:
+- mix of config/val/cmd protocols
+- _first use of color output_
+- ~defcustom~
+- ~customize~, ~customize-group~, etc
 *** TODO equiv
 :PROPERTIES:
 :ID:       6d8b3bb5-2c82-408a-b77f-d43fd53cebe1
@@ -934,7 +927,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 - probably want to hook into sbcl low-level equality mechanics
 - leverage type-classes/primitive-type
 - egraphs, etc
-*** WIP tensor [0/4]
+*** WIP tensor [0/4]                                                 :tensor:
 :PROPERTIES:
 :CREATED:  <2025-05-20 Tue 18:37>
 :ID:       b515faef-e1dc-4b30-bf50-599b7394e797
@@ -1002,7 +995,7 @@ array optimizations
 - Note taken on [2025-12-02 Tue 20:53] \\
   need easy way to demo/cycle through palettes - use std draw functions and print-color
 :END:
-*** RESEARCH major-modes
+*** RESEARCH major-modes                                                :cmd:
 :PROPERTIES:
 :CREATED:  <2026-01-25 Sun 21:22>
 :ID:       6c07d53d-b5fe-4dc3-86bc-03743ee2c6bc
@@ -1011,7 +1004,7 @@ array optimizations
 - State "RESEARCH"   from "TODO"       [2026-01-25 Sun 21:22]
 - Refiled on [2026-01-26 Mon 21:12]
 :END:
-** PROJECT net [0/5]                                                    :net:
+** PROJECT net [0/6]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION:  0.1
@@ -1051,6 +1044,16 @@ CLOCK: [2026-03-20 Fri 18:14]--[2026-03-20 Fri 18:14] =>  0:00
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
 :END:
+*** TODO proto/lsp                                                      :syn:
+:PROPERTIES:
+:ID:       b86d21fb-edc6-41a6-bed5-deb71b94cb1a
+:CREATED:  <2026-05-30 Sat 17:26>
+:BLOCKS: 
+:Effort:   12:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-05-30 Sat 17:26]
+:END:
 *** TODO udp                                                           :core:
 :PROPERTIES:
 :ID:       d238fc1f-24be-447b-a96b-ec35958470fc
@@ -1082,7 +1085,7 @@ CLOCK: [2026-03-20 Fri 18:14]--[2026-03-20 Fri 18:14] =>  0:00
 :END:
 - needs a solid task-pool impl completed first
   - pending std/defsys
-** PROJECT rt [0/6]                                                 :rt:test:
+** PROJECT rt [1/7]                                                 :rt:test:
 :PROPERTIES:
 :ID:       7a14c529-8609-4638-b101-7304a1605fcc
 :VERSION:  0.1
@@ -1149,6 +1152,28 @@ from within suite
 :END:
 IS macros aren't reporting their failures correctly - should be
 returning conditions which bubble up to the caller.
+*** DONE lorem ipsum generator
+SCHEDULED: <2026-05-30 Sat>
+:PROPERTIES:
+:ID:       1aada73a-52ac-4b8e-a6d4-5c1894e51927
+:CREATED:  <2026-02-07 Sat 21:57>
+:Effort:   2:00
+:LOCATION: lib/rt/lipsum.lisp
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-07 Sat 21:57]
+CLOCK: [2026-05-30 Sat 15:21]--[2026-05-30 Sat 16:16] =>  0:55
+- Refiled on [2026-05-30 Sat 14:37]
+- State "WIP"        from "TODO"       [2026-05-30 Sat 15:21]
+- State "TEST"       from "WIP"        [2026-05-30 Sat 16:17]
+CLOCK: [2026-05-30 Sat 16:25]--[2026-05-30 Sat 16:28] =>  0:03
+- State "DONE"       from "TEST"       [2026-05-30 Sat 16:28]
+:END:
+- useful for fonts, see [[help:customize-face]]
+- RT or DOC?
+- +maybe NLP..+ - refactored to syn
+- see [[gh:jschaf/emacs-lorem-ipsum][emacs-lorem-ipsum]]
+- https://loremipsum.io/
 ** PROJECT io [0/5]                                                      :io:
 :PROPERTIES:
 :CREATED:  <2024-09-19 Thu 21:54>
@@ -1232,6 +1257,10 @@ CLOCK: [2026-03-20 Fri 18:13]--[2026-03-20 Fri 18:13] =>  0:00
   ;; IO-LOOP-UPDATE (as described above). Call IO-LOOP on the
   ;; multiplexer to actually run it.
 #+end_src
+**** TODO convert with-foreign-object to with-alien in io/mux, test
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:25]
+:END:
 *** TODO uring
 :PROPERTIES:
 :CREATED:  <2025-01-18 Sat 20:49>
@@ -1287,7 +1316,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 - hook them in to io/fast and io/static
 - tensor streams
 - columns
-** PROJECT math                                                        :math:
+** PROJECT math [0/1]                                                  :math:
 :PROPERTIES:
 :CREATED:  <2025-05-08 Thu 18:27>
 :ID:       1b08ca47-cace-4ce5-a0f2-cd74dcf8c547
@@ -1323,15 +1352,17 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 - for CI we need better QEMU/vbox support
 - wrap up with a ~demobox~ e2e configuration
 *** RESEARCH qemu/vbox
-SCHEDULED: <2026-05-31 Sun>
+SCHEDULED: <2026-06-05 Fri>
 :PROPERTIES:
 :ID:       fb5c7fd6-c02d-4c54-9797-edd8b96f6684
 :CREATED:  <2026-05-27 Wed 22:21>
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2026-05-27 Wed 22:21]
 :END:
-- catch up on current state, qemu may be enough but we need single-click dispatch to interactive login
+- catch up on current state, qemu may be enough but we need
+  single-click dispatch to interactive login
 - interested in VNC
 - use NET for network configs
 - patch into ~skel/comp/box~
@@ -1353,6 +1384,8 @@ SCHEDULED: <2026-05-31 Sun>
 :LOGBOOK:
 - State "TODO"       from              [2025-06-28 Sat 23:19]
 :END:
+- [[https://www.lispworks.com/documentation/HyperSpec/Body/t_broadc.htm][CLHS: System Class BROADCAST-STREAM]]
+
 *** TODO async-db-log-file
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:45>
@@ -1367,7 +1400,17 @@ SCHEDULED: <2026-05-31 Sun>
 - also nice to have blobdb logs
   - individual log files living in same directory, only one write needed
   - still doesn't necessarily prevent deadlocks, just much harder to trigger
-* PROJECT std [1/2]                                                :lisp:std:
+*** set LOG_LEVEL as global env var
+:PROPERTIES:
+:ID:       3a64957a-bd76-4dac-831f-fde16faecd09
+:END:
+:LOGBOOK:
+- State "NOTE"       from              [2024-01-18 Thu 22:36]
+- Refiled on [2026-06-05 Fri 16:11]
+:END:
+use on lisp and rust side, makefiles, etc.
+- nushell uses NU_LOG_LEVEL - can we override?
+* PROJECT std [3/5]                                                :lisp:std:
 :PROPERTIES:
 :ID:       e43489ff-4ca9-45e4-83f2-ee9b0967af3a
 :VERSION:  0.2
@@ -1378,6 +1421,37 @@ SCHEDULED: <2026-05-31 Sun>
 - State "TODO"       from              [2023-12-12 Tue 19:49]
 - State "PROJECT"    from "TODO"       [2024-08-18 Sun 16:19]
 :END:
+** DONE plist-split
+SCHEDULED: <2026-06-03 Wed>
+:PROPERTIES:
+:ID:       79d563f8-7be7-405b-93d8-8788b68ef6ac
+:CREATED:  <2026-06-03 Wed 19:27>
+:LOCATION+: list.lisp
+:Effort:   2:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-03 Wed 19:27]
+CLOCK: [2026-06-03 Wed 20:25]--[2026-06-03 Wed 21:07] =>  0:42
+- State "DONE"       from "TODO"       [2026-06-04 Thu 22:08]
+:END:
+** TODO plistify
+:PROPERTIES:
+:ID:       fba035a1-ea55-4442-9580-0b7c7014103d
+:CREATED:  <2026-06-03 Wed 19:27>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-03 Wed 19:27]
+:END:
+** TODO component require total ordering
+:PROPERTIES:
+:ID:       bde9b746-3b00-413c-9cf9-193dd3110348
+:CREATED:  <2026-02-11 Wed 17:03>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-02-11 Wed 17:03]
+:END:
+need to be able to sort REQUIRE slots in components (specifically
+systems) - btree would be nice
 ** DONE fix register-module append
 :PROPERTIES:
 :ID:       05210028-832a-42cb-a0a6-fd7d4ef22e97
@@ -1391,24 +1465,61 @@ CLOCK: [2026-04-08 Wed 20:05]--[2026-04-08 Wed 21:32] =>  1:27
   may have just fixed.. testing
 - State "DONE"       from "WIP"        [2026-05-27 Wed 22:18]
 :END:
-
-** TBD return* proto
+** NOPE return* proto
 SCHEDULED: <2026-05-29 Fri>
 :PROPERTIES:
 :ID:       72ab1ec3-1550-43de-8b6f-0f69c4e7383b
 :CREATED:  <2026-03-13 Fri 22:59>
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-03-13 Fri 22:59]
 - State "TBD"        from "TODO"       [2026-04-08 Wed 20:03]
+CLOCK: [2026-05-30 Sat 00:00]--[2026-05-30 Sat 00:15] =>  0:15
 :END:
-- iolib/src/base/return-start.lisp
+- iolib/src/base/return-star.lisp
 - nested block returns
-* PROJECT emacs [1/17]                                                :emacs:
+- following macros are redefined in iolib/base:
+  - defun
+  - defmethod
+  - lambda*
+  - defmacro
+  - define-compiler-macro
+- all wrap ~body~ in ~wrap-body-for-return-star~
+- macrolets ~return*~:
+  #+begin_src lisp :eval no
+  (cl:defun wrap-body-for-return-star (body &optional block-name)
+    (flet ((block-name (block)
+             (etypecase block
+               (cons (destructuring-bind (kind block-name) block
+                       (assert (eql 'setf kind))
+                       (check-type block-name symbol)
+                       block-name))
+               (symbol block))))
+      (multiple-value-bind (body declarations docstring)
+          (parse-body body :documentation t)
+        (with-gensyms (value)
+          (remove-if
+           #'null
+           `(,docstring
+             ,@declarations
+             ,(if block-name
+                  `(macrolet ((return* (,value) `(return-from ,',(block-name block-name) ,,value)))
+                     ,@body)
+                  (with-gensyms (block)
+                    `(block ,block
+                       (macrolet ((return* (value) `(return-from ,',block ,value)))
+                         ,@body))))))))))
+  #+end_src
+- idk do we really need this anywhere? let's see..
+- determination: NOPE 
+- effectively this just shortens a ~return-from~ statement, just worth keeping in mind while reading iolib code - ~return*~ != ~return~.
+
+* PROJECT emacs [6/19]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
-:LOCATION: emacs/
+:LOCATION: etc/emacs/
 :CATEGORY: emacs
 :END:
 :LOGBOOK:
@@ -1417,7 +1528,23 @@ SCHEDULED: <2026-05-29 Fri>
 :END:
 - don't really care about versioning the core/emacs configs much
 - may come in use later so just a general milestone when these tasks are done
-** TODO eglot
+** NOPE [#A] changelog
+SCHEDULED: <2026-06-01 Mon>
+:PROPERTIES:
+:ID:       d7271ce8-8cd4-4c82-aac2-d5e065fe9563
+:CREATED:  <2026-05-31 Sun 22:47>
+:Effort:   4:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-05-31 Sun 22:47]
+CLOCK: [2026-06-01 Mon 13:45]--[2026-06-01 Mon 14:12] =>  0:27
+CLOCK: [2026-06-03 Wed 19:28]--[2026-06-03 Wed 19:55] =>  0:27
+:END:
+- ulang?
+- [[info:emacs#Change Log][emacs#Change Log]]
+- [[file:/usr/local/share/emacs/32.0.50/lisp/vc/add-log.el.gz][add-log.el]]
+- HG vc backend does not support ChangeLog 😢
+** TODO eglot [2/2]
 :PROPERTIES:
 :ID:       d4a10019-e56e-4c44-9497-fae89585ee0d
 :CREATED:  <2026-05-21 Thu 22:37>
@@ -1425,7 +1552,7 @@ SCHEDULED: <2026-05-29 Fri>
 :LOGBOOK:
 - State "TODO"       from              [2026-05-21 Thu 22:37]
 :END:
-*** TODO [#B] eglot-lisp init
+*** DONE [#B] eglot-lisp init
 SCHEDULED: <2026-05-28 Thu>
 :PROPERTIES:
 :ID:       e4f9a26e-ac7a-4b74-ab56-a3190650943d
@@ -1435,7 +1562,15 @@ SCHEDULED: <2026-05-28 Thu>
 - State "TODO"       from              [2026-05-21 Thu 22:37]
 - Note taken on [2026-05-22 Fri 22:15] \\
   which impl should we use as a starting point?
+- State "DONE"       from "TODO"       [2026-05-29 Fri 23:21]
 :END:
+- the emacs client part is relatively simple
+#+begin_src emacs-lisp :eval no
+  (add-to-list 'eglot-server-programs '(lisp-mode "skel" "lsp"))
+#+end_src
+- hard part is JSON-RPC + LSP on top of swank
+- eglot has a soft dependency of markdown-mode, yasnippet and company
+- intention is to replace ~eglot--snippet-expansion-fn~ ~eglot--format-markup~
 *** DONE eglot discovery
 SCHEDULED: <2026-05-22 Fri>
 :PROPERTIES:
@@ -1465,36 +1600,17 @@ list of Eglot commands.
 
 - eglot-semantic-faces - presentations?
 
-** DONE [#A] rewrite #1
-:PROPERTIES:
-:ID:       ecb4fc04-55f7-4550-8b11-19c4c213f7f3
-:CREATED:  <2026-05-21 Thu 22:36>
-:Effort:   8h
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-05-21 Thu 22:36]
-CLOCK: [2026-05-22 Fri 23:06]--[2026-05-23 Sat 00:06] =>  1:00
-- State "WIP"        from "TODO"       [2026-05-22 Fri 23:07]
-CLOCK: [2026-05-23 Sat 17:08]--[2026-05-23 Sat 18:17] =>  1:09
-CLOCK: [2026-05-24 Sun 19:30]--[2026-05-24 Sun 22:30] =>  3:00
-CLOCK: [2026-05-25 Mon 19:33]--[2026-05-25 Mon 20:33] =>  1:00
-- State "DONE"       from "WIP"        [2026-05-25 Mon 21:37]
-:END:
-- in desperate need of cleanup, simplification, and documentation.
-- what can we learn from [[https://github.com/doomemacs/doomemacs][doom]]?
-- make outline: [[id:6c87dbd0-0a4b-4395-bc70-fff94b680787][core:man#Emacs]]
-- [[info:use-package#Top][use-package#Top]]
-- later: eglot-tempel
-
-** WIP comp/org capture templates                                    
+** DONE src/org capture templates                                    
 SCHEDULED: <2026-05-30 Sat>
 :PROPERTIES:
 :ID:       3d303736-7b79-4c5c-ba43-9ea5aa05f722
 :CREATED:  <2026-05-27 Wed 22:17>
+:Effort:   2:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:14]
 - State "WIP"        from "TODO"       [2024-08-18 Sun 16:22]
+CLOCK: [2026-05-31 Sun 17:56]--[2026-05-31 Sun 18:30] =>  0:34
 :END:
 - [[https://blog.jethro.dev/posts/capturing_inbox/][Org-mode Workflow Part 1: Capturing in the Inbox · Jethro Kuan]]
 - [[https://blog.jethro.dev/posts/processing_inbox/][Org-mode Workflow Part 2: Processing the Inbox · Jethro Kuan]]
@@ -1502,13 +1618,11 @@ SCHEDULED: <2026-05-30 Sat>
   #+begin_src emacs-lisp :results silent
     `("i" "inbox" entry (file ,org-inbox-file) :prepend t)
   #+end_src
-
 - project capture
 - task capture
 - habit capture
 - log capture
-** TODO comp/org agenda views, export, dblock
-SCHEDULED: <2026-05-30 Sat>
+** TODO src/org agenda views, export, dblock
 :PROPERTIES:
 :ID:       952fe286-9fd8-478f-bafc-a0a25ae3d17a
 :CREATED:  <2026-05-25 Mon 21:44>
@@ -1516,17 +1630,19 @@ SCHEDULED: <2026-05-30 Sat>
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
 :END:
-*** TODO agenda views
+*** DONE agenda views
+SCHEDULED: <2026-06-01 Mon>
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 18:23>
 :ID:       4f704120-1553-46bc-ac31-5d65aaf340d3
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-27 Tue 18:23]
+- State "DONE"       from "TODO"       [2026-06-05 Fri 18:50]
 :END:
 - a few defined in ellis.el
 - define some starter ones for inbox.el
-- define views for scrum.el
+- define views for plan.el
 ** WIP graph                                                            :org:
 :PROPERTIES:
 :ID:       27d6936b-3e2f-4d28-af11-85c8276389db
@@ -1547,7 +1663,6 @@ SCHEDULED: <2026-05-30 Sat>
 - updating
 - emacs caching
 - KV model
-
 *** TODO default values for link commands
 :PROPERTIES:
 :ID:       9c3970e8-dccd-4d28-8960-6dba639ab4a9
@@ -1571,7 +1686,24 @@ SCHEDULED: <2026-05-30 Sat>
 - index based? inherit from parent only for now
   - how to implement for complete tree?
   - custom_id for edges? like @ref bibtex
-** HOLD org-timeline upgrades [0/3]                                     :org:
+*** TODO org-graph-find
+:PROPERTIES:
+:ID:       7f04f3c5-1858-4c05-b187-b1c924ab036f
+:CREATED:  <2026-06-03 Wed 20:20>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-03 Wed 20:20]
+:END:
+
+*** TODO tag nodes                                                :org:graph:
+:PROPERTIES:
+:ID:       a1a642d8-975c-4d90-b6b0-c135d7ad8457
+:CREATED:  <2025-11-04 Tue 14:57>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:28]
+:END:
+** HOLD [#C] org-timeline upgrades [0/3]                                :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
 :ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
@@ -1620,7 +1752,7 @@ for keyboard-based navigation too.
 - TIMELINE_TEXT = SUMMARY
 - TIMELINE_GROUP = GROUP or CATEGORY
 - TIMELINE_DO_NOT_OVERLAP
-** TODO skel.el project integration                                    :skel:
+** TODO [#B] skel.el project integration                               :skel:
 :PROPERTIES:
 :CREATED:  <2024-09-03 Tue 22:14>
 :ID:       c9e157da-50e9-4dc3-96fd-bb9bc9175ee5
@@ -1628,7 +1760,44 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-** TODO skel widgets                                                   :skel:
+** TODO [#A] skel-shell-mode
+SCHEDULED: <2026-06-05 Fri>
+:PROPERTIES:
+:ID:       f6d84359-79ed-4b64-888e-dfb44f0bff14
+:CREATED:  <2026-06-01 Mon 22:12>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-01 Mon 22:12]
+:END:
+- project-local =skel shell=
+- features based on skelfile/cli (swank, lsp)
+** TODO [#B] project-desktops
+:PROPERTIES:
+:ID:       e863be3c-a868-467d-bfab-6e50277fccd9
+:CREATED:  <2026-06-01 Mon 22:17>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-01 Mon 22:17]
+:END:
+- sorta already works.. probably just need to add a hook for updating
+  list of dirs with project dirs.
+*** DONE [#A] desktop-maybe-enable
+:PROPERTIES:
+:ID:       8fbf408f-eab9-423d-91af-c3568ff1397d
+:CREATED:  <2026-06-02 Tue 16:53>
+:Effort:   1:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-02 Tue 16:53]
+CLOCK: [2026-06-02 Tue 18:45]--[2026-06-02 Tue 19:50] =>  1:05
+- State "DONE"       from "TODO"       [2026-06-02 Tue 21:55]
+:END:
+- don't open desktop when any args are passed
+- ~emacs~ OK
+- ~emacs foo~ NO
+- later.. ~emacs skelfile~ should be dynamic - enable desktop based on project
+  config
+** TODO [#C] skel widgets                                              :skel:
 :PROPERTIES:
 :ID:       a80df9ee-e772-499b-b996-78962bd13cd4
 :CREATED:  <2025-10-12 Sun 00:33>
@@ -1639,7 +1808,7 @@ for keyboard-based navigation too.
 - ideally have a function that overlays a skelfile/sxp buffer with a
   customization interface
 - need to maintain mapping between buffer forms and widgets
-** TODO desktop save functions
+** NOPE desktop save functions
 SCHEDULED: <2026-05-28 Thu>
 :PROPERTIES:
 :ID:       6fcda66a-3a65-4e82-91b5-cf996efff1b2
@@ -1659,22 +1828,49 @@ CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 (add-to-list 'desktop-buffer-mode-handlers '(skel-mode . skel-restore-desktop-buffer))
 (add-to-list 'desktop-minor-mode-handlers '(skel-minor-mode . skel-restore-desktop-buffer))
 #+end_src
-** RESEARCH etags
+- also requires setting up misc-data..
+- better off leaving as is for now.
+- eventually we may want to store a checksum which gets passed to the server on project start/desktop open and determines if reparse is needed
+- better example: eww-desktop-misc-data
+- =(setq-local desktop-save-buffer #'eww-desktop-misc-data)=
+#+begin_quote
+Only the properties listed in ‘eww-desktop-data-save’ are included.
+Generally, the list should not include the (usually overly large)
+:dom, :source and :text properties.
+#+end_quote
+
+(:url :title :point)
+
+** DONE etags
 :PROPERTIES:
 :ID:       0c9a7c89-6c36-410b-8822-8f8d82ca4f7f
 :CREATED:  <2026-05-28 Thu 19:49>
+:Effort:   0:20
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2026-05-28 Thu 19:49]
+CLOCK: [2026-06-04 Thu 22:11]--[2026-06-04 Thu 22:13] =>  0:02
+- State "DONE"       from "RESEARCH"   [2026-06-04 Thu 22:13]
 :END:
-** RESEARCH ispell
+- tags are a synonym for ~identifier reference~
+- see https://www.gnu.org/software/emacs/manual/html_node/emacs/Tags-Tables.html
+- maybe useful as a 'catchall' term capture thing, use in skel shell,
+  etc. otherwise not too concerned with it.
+** DONE ispell
+SCHEDULED: <2026-05-30 Sat>
 :PROPERTIES:
 :ID:       4109ca00-7b80-4e40-a29c-4bd8c569d22d
 :CREATED:  <2026-05-28 Thu 19:49>
+:Effort:   2:00
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2026-05-28 Thu 19:49]
+CLOCK: [2026-06-04 Thu 22:13]--[2026-06-04 Thu 23:01] =>  0:48
+- State "DONE"       from "RESEARCH"   [2026-06-04 Thu 23:01]
 :END:
+- hunspell dictionary defaults to $HOME - figure out how to remap,
+  pre-populate, and import into public dictionary
+  (dict.compiler.company)
 ** TODO skel.el hack-dir-local-variables                              :emacs:
 :PROPERTIES:
 :ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
@@ -1716,12 +1912,17 @@ CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 - keywordicate symbols
 - indentation
 - make a tbd task for refactoring imports/sorting
-** TODO speedbar-obj-alist for cl
+** DONE speedbar-obj-alist for cl
+SCHEDULED: <2026-05-30 Sat>
 :PROPERTIES:
 :ID:       351e0b8a-3608-4f35-9201-9921cdf8968b
+:CREATED:  <2026-05-30 Sat 17:19>
+:Effort:   1
 :END:
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:39]
+CLOCK: [2026-05-30 Sat 17:19]--[2026-05-30 Sat 17:22] =>  0:03
+- State "DONE"       from "WIP"        [2026-05-30 Sat 17:22]
 :END:
 (fasls)
 ** TODO new graph property: pronunciation
@@ -1731,7 +1932,7 @@ CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 :END:
-* PROJECT skel [0/10]                                                  :skel:
+* PROJECT skel [0/12]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :VERSION:  0.2
@@ -1787,6 +1988,7 @@ CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 - Note taken on [2025-05-16 Fri 22:46] \\
   likely need to refactor our sk-VERB mess
 :END:
+- macro
 ** TODO skel tasks/runner/timer
 :PROPERTIES:
 :ID:       bb53321b-fab0-4b6f-9677-3fe789ed44d3
@@ -1796,6 +1998,22 @@ CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 - Refiled on [2025-05-02 Fri 13:55]
 :END:
 - will be first feature of skel server
+** TODO packy [0/1]
+:PROPERTIES:
+:ID:       20be7140-63f2-4c2a-b375-867fbb8ad9f3
+:CREATED:  <2026-06-01 Mon 19:54>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-01 Mon 19:54]
+:END:
+*** TODO pkgfile component
+:PROPERTIES:
+:ID:       a51a36ed-7b1c-4749-b23b-0fe263f607ee
+:CREATED:  <2026-06-01 Mon 19:55>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-01 Mon 19:55]
+:END:
 ** OUTLINE skel template objects
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 13:45>
@@ -1875,4 +2093,29 @@ CLOCK: [2026-05-28 Thu 17:56]--[2026-05-28 Thu 18:15] =>  0:19
 :END:
 :LOGBOOK:
 - Refiled on [2025-09-06 Sat 17:47]
+:END:
+** TODO factor out sk prefix classes
+SCHEDULED: <2026-06-02 Tue>
+:PROPERTIES:
+:ID:       c25e3eaa-624d-4171-94c4-dfc1c5992934
+:CREATED:  <2026-06-01 Mon 20:53>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-01 Mon 20:53]
+:END:
+skel is high-level enough that we don't need the =sk-= prefix - where
+possible we should take advantage of the ~STD/SYS~ protocol too - in
+particular components, which might need to be added to the ~PROJECT~
+protocol.
+* TODO xkeyboard extension refactor to use io/kbd
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:27]
+:END:
+* TODO dribble in core config
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:27]
+:END:
+* TODO don't execute babel in archives
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:30]
 :END:

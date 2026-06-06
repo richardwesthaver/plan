@@ -459,3 +459,24 @@ CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 :LOGBOOK:
 - State "TODO"       from              [2026-02-15 Sun 18:53]
 :END:
+* TODO [#C] create NAN api client                                     :tenex:
+:PROPERTIES:
+:CREATED: <2021-09-11 Sat 23:19>
+:CUSTOM_ID: create-nan-api-client
+:ID:       20211123T051620.798545
+:END:
+:LOGBOOK:
+- noted [2021-09-12 Sun 03:39] \\
+  https://hwurls.com/api/search - send post request with following form params:
+  q=linux&exclude-sites=
+  - same applies for all URLs, so just multiplex it
+- Refiled on [2026-06-05 Fri 16:00]
+:END:
+HTTP Client for News Aggregator Network
+TuxURLs – Linux news aggregator.
+MathURLs – mathematics news aggregator.
+FinURLs – financial news aggregator.
+SciURLs – science news aggregator.
+DevURLs – developer news aggregator.
+TechURLs – technology news aggregator.
+

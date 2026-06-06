@@ -118,3 +118,337 @@ Space-Filling Curves
 - State "TBD"        from              [2026-03-08 Sun 21:45]
 :END:
 federated objects - stored-objects shared with DHT peers
+* TODO linux firmware investigation
+:PROPERTIES:
+:ID:       b2043211-a69c-4d0d-b7a1-87822d5628ec
+:CREATED:  <2024-08-30 Fri 19:47>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2023-12-03 Sun 00:11]
+- Refiled on [2026-06-05 Fri 16:00]
+:END:
+NVMe char/block devices, initrd,initramfs (ramdisk)
+https://yuhei1-horibe.medium.com/booting-linux-with-ramdisk-f6f2d59780dc
+https://www.gibbard.me/linux_initramfs_initrd/
+https://docs.kernel.org/admin-guide/blockdev/ramdisk.html
+https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch15.html
+https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch16.html
+https://www.oreilly.com/library/view/linux-device-drivers/0596000081/ch12s06.html
+https://lpc.events/event/11/contributions/989/attachments/747/1723/lpc-2021-building-a-fast-passthru.pdf
+https://github.com/espoal/uring_examples/blob/main/examples/nvme/src/main.rs
+https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a
+https://docs.rs/glommio/latest/glommio/index.html
+* pipelines vs runstreams
+:PROPERTIES:
+:ID:       dcdaa8e6-aa19-4bca-8841-d667796f8c3f
+:CREATED:  <2026-04-19 Sun 17:33>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:08]
+:END:
+- steal the artemis term
+- against UNIX pipelines (proc | pipe | proc)
+* graphviz stuff
+:PROPERTIES:
+:ID:       90b4eaa4-4dfe-43f9-aae2-5196343c5922
+:END:
+:LOGBOOK:
+- State "NOTE"       from              [2024-04-06 Sat 14:35]
+- Refiled on [2026-06-05 Fri 16:10]
+:END:
+- check out [[file:~/.emacs.d/elpa/graphviz-dot-mode-20230325.1050/graphviz-dot-mode.el::;;; graphviz-dot-mode.el --- Mode for the dot-language used by graphviz (att). -*- lexical-binding: t; -*-][graphviz-dot-mode.el]]
+https://graphviz.org/doc/info/lang.html
+https://graphs.grevian.org/
+* mailman
+:PROPERTIES:
+:ID:       cf47e740-33d4-44b5-aef5-fddaa83dc9d4
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:12]
+:END:
+- State "NOTE"       from              [2023-12-02 Sat 23:35]
+#+begin_src rust
+  let client = Client::new()
+  //    .credentials(Credentials::bearer("hackme")
+    .connect("https://mail.compiler.company:8080")
+    .await
+    .unwrap();
+  println!(
+    "{:?}",
+    client
+      .email_query(
+        Filter::and([email::query::Filter::has_keyword("$draft")]).into(),
+        [email::query::Comparator::from()].into()
+      )
+      .await
+      .unwrap()
+      .take_ids()
+  );
+  // Query mailboxes to obtain Inbox and Trash folder id
+  let inbox_id = client
+    .mailbox_query(
+      mailbox::query::Filter::role(mailbox::Role::Inbox).into(),
+      None::<Vec<_>>,
+    )
+    .await
+    .unwrap()
+    .take_ids()
+    .pop()
+    .unwrap();
+  let trash_id = client
+    .mailbox_query(
+      mailbox::query::Filter::role(mailbox::Role::Trash).into(),
+      None::<Vec<_>>,
+    )
+    .await
+    .unwrap()
+    .take_ids()
+    .pop()
+    .unwrap();
+
+  println!("Inbox: {:?}", inbox_id);
+  println!("Trash: {:?}", trash_id);
+
+#+end_src
+
+* mail init
+:PROPERTIES:
+:ID:       bc132221-c0de-4e1e-a801-2b63537ef56e
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:22]
+:END:
+- State "NOTE"       from              [2023-11-30 Thu 14:35]
+#+begin_src lisp
+  (list
+   (ql:quickload :sxql)
+   (ql:quickload :std)
+   (ql:quickload :dbi))
+#+end_src
+
+#+RESULTS:
+| :sxql |
+| :std  |
+| :dbi  |
+
+#+begin_src lisp :tangle stalwart.lisp :results silent
+  ;;; stalwart.lisp --- stalwart-mail utils
+
+  ;;; Code:
+  (defpackage :stalwart
+    (:use :cl :std :sxql :dbi)
+    (:export 
+     :init-db :delete-db :init-tables :*db-path*
+     :create-accounts-table :create-group-members-table :create-emails-table
+     :create-user :create-group :add-alias :add-to-mailing-list :add-to-group))
+
+  (in-package :stalwart)
+
+  ;; #P"/opt/stalwart-mail/data/accounts.sqlite3"
+  (defparameter *db-path* #P"accounts.sqlite3")
+  (defvar *connection* (init-db))
+
+  ;; FIXME: set defaults correctly, active = 1, quota = 0
+  (defun create-accounts-table ()
+    (create-table :accounts
+          ((name :type 'text
+                 :primary-key t)
+           (secret :type 'text)
+           (description :type 'text)
+           (type :type 'text)
+           (quota :type 'integer)
+           (active :type 'boolean))))
+
+  (defun create-group-members-table ()
+    (create-table :group_members
+        ((name :type 'text
+               :not-null t)
+         (member_of :type 'text
+                    :not-null t))
+      (primary-key '(:name :member_of))))
+
+  (defun create-emails-table ()
+    (create-table :emails
+        ((name :type 'text
+               :not-null t)
+         (address :type 'text
+                  :not-null t)
+         (type :type 'text))
+      (primary-key '(:name :address))))
+
+  ;; (insert-user "ellis" "hackme" "r w")
+  (defun insert-user (name secret full-name)
+    (do-sql *connection*
+      "INSERT INTO accounts (name, secret, description, type, quota, active) VALUES (?,?,?,'individual',0,1)"
+      (list name secret full-name)))
+
+  ;; (insert-group "mlist" "desc")
+  (defun insert-group (name description)
+    (do-sql *connection*
+      "INSERT INTO accounts (name, description, type) VALUES (?,?,'group')"
+      (list name description)))
+
+  ;; (insert-email "ellis" "ellis@c.c")
+  (defun insert-email (name address &optional (type "primary"))
+    (do-sql *connection*
+      "INSERT INTO emails (name, address, type) VALUES (?,?,?)"
+      (list name address type)))
+
+  ;; (insert-group-member "ellis" "superusers")
+  (defun insert-group-member (name group)
+    (do-sql
+      ,*connection*
+      "INSERT INTO group_members (name, member_of) VALUES (?,?)"
+      (list name group)))
+
+  ;; (create-user "ellis" "ellis@c.c" "hackme" "r w" t)
+  (defun create-user (name address secret full-name admin)
+    (list
+     (insert-user name secret full-name)
+     (insert-email name address)
+     (when admin (insert-group-member name "superusers"))))
+
+  ;; (defun delete-user (name))
+
+  ;; (add-alias "ellis" "el@c.c")
+  (defun add-alias (name alias)
+    (insert-email name alias "alias"))
+
+  ;; (add-to-mailing-list "ellis@c.c" "list@c.c")
+  (defun add-to-mailing-list (name mlist)
+    (insert-email name mlist "list"))
+
+  ;; (add-to-group "ellis" "groupies")
+  (defun add-to-group (name group)
+    (insert-group-member name group))
+
+  ;; (create-group "list@c.c" "foobar")
+  (defun create-group (name description)
+    (insert-group name description))
+
+  ;; (init-db)
+  (defun init-db () (setq *connection* (dbi:connect :sqlite3 :database-name *db-path*)))
+
+  (defun init-tables ()
+    (do-sql *connection* (yield (create-accounts-table)))
+    (do-sql *connection* (yield (create-emails-table)))
+    (do-sql *connection* (yield (create-group-members-table))))
+
+  (defun delete-db () (delete-file *db-path*))
+#+end_src
+
+#+name init-accounts-db
+#+begin_src lisp
+  (use-package :stalwart)
+  (init-db)
+  (init-tables)
+  (create-user "ellis" "ellis@compiler.company" "hackme" "rw" t)
+  (create-group "homies" "all da homies")
+  (add-alias "ellis" "other@compiler.company")
+  (add-to-mailing-list "ellis" "info@compiler.company")
+  (add-to-group "ellis" "homies")
+  (delete-db)
+#+end_src
+
+#+RESULTS:
+: t
+
+#+name run-live
+#+begin_src lisp
+  ;; (require :stalwart)
+  ;; (use-package :stalwart)
+  ;; (setq *db-path* #P"/opt/stalwart-mail/data/accounts.sqlite3")
+  (init-db)
+  (init-tables)
+  (create-user "ellis" "ellis@compiler.company" "hackme" "Richard Westhaver" t)
+  (create-group "dev" "developer group")
+  (create-group "q" "query group")
+  (add-alias "ellis" "richard@compiler.company")
+  (add-to-mailing-list "ellis" "q@compiler.company")
+  (add-to-mailing-list "ellis" "dev@compiler.company")
+  (add-to-group "ellis" "dev")
+  (add-to-group "ellis" "q")
+  (delete-db)
+#+end_src
+
+#+RESULTS:
+: t
+
+* lisp makefiles
+:PROPERTIES:
+:ID:       5a2584a0-2c7c-42f3-8d2e-acecd99a5071
+:END:
+:LOGBOOK:
+- State "NOTE"       from              [2023-08-12 Sat 18:30]
+- Refiled on [2026-06-05 Fri 16:25]
+:END:
+#+begin_src makefile
+  cover:$(src);$(LISP) --eval '(require :sb-cover)' \
+          --eval '(declaim (optimize sb-cover:store-coverage-data))' \
+          $(load)
+#+end_src
+* big data for small business
+:PROPERTIES:
+:ID:       39337cc2-770d-4977-b87c-990eecc5b20a
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:31]
+:END:
+* WGPU infinite canvas                                        :web:rust:wasm:
+:PROPERTIES:
+:ID:       1140bed7-7e99-4e27-b8e0-8fea2ba934a3
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:31]
+:END:
+[[https://github.com/gfx-rs/wgpu/tree/trunk/naga][wgpu/naga at trunk · gfx-rs/wgpu · GitHub]]
+#+begin_src shell
+  cargo install naga-cli
+#+end_src
+
+#+RESULTS:
+
+[[https://wgpu.rs/][wgpu: portable graphics library for Rust]]
+* apply constraint-based programming to planning ethos
+:PROPERTIES:
+:ID:       ec575bdd-9516-40d5-8d50-8a1769db0748
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:32]
+:END:
+https://en.wikipedia.org/wiki/Constraint_programming
+* RDF, knowledge representations and relations
+:PROPERTIES:
+:ID:       228af016-57ee-4df9-a0dd-4edf6b11d9a6
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:32]
+:END:
+MADS/RDF - LoC
+[[https://en.wikipedia.org/wiki/Metadata_Authority_Description_Schema#:~:text=MADS%20was%20originally%20formulated%20as,objects%20(RWOs)%20they%20describe.][Metadata Authority Description Schema - Wikipedia]]
+[[https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System][Simple Knowledge Organization System - Wikipedia]]
+[[https://en.wikipedia.org/wiki/RDF_Schema][RDF Schema - Wikipedia]]
+[[https://www.w3.org/TR/swbp-skos-core-guide/][SKOS Core Guide]]
+[[https://www.w3.org/TR/swbp-skos-core-spec/][SKOS Core Vocabulary Specification]]
+[[https://www.w3.org/TR/swbp-thesaurus-pubguide/][Quick Guide to Publishing a Thesaurus on the Semantic Web]]
+[[https://www.w3.org/2001/sw/BestPractices/][W3C Semantic Web Best Practices and Deployment Working Group]]
+[[https://www.w3.org/2001/sw/][W3C Semantic Web Activity Homepage]]
+[[https://www.dublincore.org/][DCMI: Home]]
+* other types of dblocks
+:PROPERTIES:
+:LOCATION: ~/comp/core
+:ID:       0ea1fe76-e4fa-4174-b582-5e2d681e1922
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:32]
+:END:
+org-invoice
+propview
+clocktable
+columnview
+[[https://github.com/org-roam/org-roam/issues/2251][Adding dynamic blocks to org-roam · Issue #2251 · org-roam/org-roam · GitHub]]

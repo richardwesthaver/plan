@@ -20,7 +20,7 @@
 :LOGBOOK:
 - State "TODO"       from              [2024-06-21 Fri 15:20]
 :END:
-- [ ] from source or pack?
+- [ ] from packfile or pack?
 - [ ] which features?
 - [ ] set INSTALL_PREFIX
 - [ ] check host target, install pack or clone src
@@ -66,6 +66,31 @@ no branches - repo for each build system (archiso, qemu/kvm, etc)
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-24 Tue 21:58]
 :END:
+* PROJECT packy [0/1]
+:PROPERTIES:
+:ID:       4ab85e51-d96b-4d3d-9004-2f1e9e63d908
+:CREATED:  <2026-06-01 Mon 19:29>
+:END:
+:LOGBOOK:
+- State "PROJECT"    from              [2026-06-01 Mon 19:29]
+:END:
+
+** OUTLINE design
+SCHEDULED: <2026-06-02 Tue>
+:PROPERTIES:
+:ID:       45136470-b913-45b0-a10e-8e6183d53820
+:CREATED:  <2026-06-01 Mon 19:29>
+:Effort:   1:00
+:END:
+:LOGBOOK:
+- State "OUTLINE"    from              [2026-06-01 Mon 19:30]
+CLOCK: [2026-06-05 Fri 20:32]
+:END:
+- based on single-file PKGBUILDs
+- use =packy= cli on ~pkgfiles~ 
+  - compile pkg-rules (named commands or functions) into fasls -
+    inject into output PKGBUILD files
+
 * TODO ci
 :PROPERTIES:
 :ID:       c50e8042-dbc2-4bfd-ab85-cef860673351
@@ -86,4 +111,62 @@ no branches - repo for each build system (archiso, qemu/kvm, etc)
 - Refiled on [2026-01-05 Mon 19:24]
 :END:
 - skelfile rules for bootstrapping
-- do we need to fork cl+ssl? probably not
+
+
+* HomeVPN
+:PROPERTIES:
+:ID:       37f34f39-5d8e-4c09-890d-f6d76e15fc34
+:END:
+:LOGBOOK:
+- State "NOTE"       from              [2024-02-24 Sat 17:01]
+- Refiled on [2026-06-05 Fri 16:11]
+:END:
+Today we are going to set up a VPN.
+
+The initial POC will be done using Podman in a virtual network. The
+final solution will be implemented on the following devices:
+- Zor :: 88.44.2.4/24:50001 allows: 88.44.2.0/24
+- Jekyll :: 88.44.2.3/24:50001
+- Hyde :: 88.44.2.2/24:50001
+- Alik :: 88.44.2.1/24:50001
+- Boris :: 88.44.2.8/24:50001
+- Rurik :: 88.44.2.32:50001
+
++ requires :: wireguard-tools
+- - using 10.* instead - dedicated to vpn
+#+begin_src shell
+  sudo pacman -S wireguard-tools
+#+end_src
+
+- etc/wireguard/wg0.conf
+#+begin_src conf
+  [Interface]
+  Address = 88.4.2.1/24
+  SaveConfig = true
+  ListenPort = 50001
+  PrivateKey = $VPN_PRIVATE_KEY
+  [Peer]
+  PublicKey = $VPN_PUBLIC_KEY
+#+end_src
+
+=ip link add dev wg0 type wireguard=
+=ip addr add dev wg0 88.4.2.1/24=
+=wg setconf wg0 /etc/wireguard/wg0.conf=
+=ip link set up dev wg0=
+
+* global env vars
+:PROPERTIES:
+:ID:       67524611-f86d-4713-87c3-cdd5a216527d
+:END:
+:LOGBOOK:
+- State "NOTE"       from              [2024-02-12 Mon 22:08]
+- Refiled on [2026-06-05 Fri 16:11]
+:END:
+- packages:
+  - DATADIR
+  - BINDIR
+  - LIBDIR
+  - SRCDIR
+  - PREFIX
+  - STASHDIR
+  - STOREDIR
