@@ -156,7 +156,7 @@ https://docs.rs/glommio/latest/glommio/index.html
 - State "NOTE"       from              [2024-04-06 Sat 14:35]
 - Refiled on [2026-06-05 Fri 16:10]
 :END:
-- check out [[file:~/.emacs.d/elpa/graphviz-dot-mode-20230325.1050/graphviz-dot-mode.el::;;; graphviz-dot-mode.el --- Mode for the dot-language used by graphviz (att). -*- lexical-binding: t; -*-][graphviz-dot-mode.el]]
+- check out graphviz-dot-mode.el
 https://graphviz.org/doc/info/lang.html
 https://graphs.grevian.org/
 * mailman

@@ -241,6 +241,9 @@ cli should have relevant hooks
 :END:
 
 *** TODO test SET-TTY-MODE :echo nil vs WITHOUT-ECHO
+:PROPERTIES:
+:ID:       7a1b4c16-98bb-4db7-8ceb-f3e066bd0a41
+:END:
 :LOGBOOK:
 - Refiled on [2026-01-26 Mon 21:13]
 :END:
@@ -1258,6 +1261,9 @@ CLOCK: [2026-03-20 Fri 18:13]--[2026-03-20 Fri 18:13] =>  0:00
   ;; multiplexer to actually run it.
 #+end_src
 **** TODO convert with-foreign-object to with-alien in io/mux, test
+:PROPERTIES:
+:ID:       d3cbcd20-5ef1-4267-875f-c934bf9a3fc0
+:END:
 :LOGBOOK:
 - Refiled on [2026-06-05 Fri 16:25]
 :END:
@@ -1360,13 +1366,16 @@ SCHEDULED: <2026-06-05 Fri>
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2026-05-27 Wed 22:21]
+CLOCK: [2026-06-06 Sat 18:06]--[2026-06-06 Sat 18:41] =>  0:35
 :END:
 - catch up on current state, qemu may be enough but we need
   single-click dispatch to interactive login
 - interested in VNC
 - use NET for network configs
 - patch into ~skel/comp/box~
-  - consider separate classes and removing the :type requirement.. .box or .qemu vs .archiso, meh
+  - consider separate classes and removing the :type
+    requirement.. .box or .qemu vs .archiso, meh
+
 ** PROJECT log [0/2]
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:44>
@@ -1515,7 +1524,7 @@ CLOCK: [2026-05-30 Sat 00:00]--[2026-05-30 Sat 00:15] =>  0:15
 - determination: NOPE 
 - effectively this just shortens a ~return-from~ statement, just worth keeping in mind while reading iolib code - ~return*~ != ~return~.
 
-* PROJECT emacs [6/19]                                                :emacs:
+* PROJECT emacs [8/21]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1528,6 +1537,20 @@ CLOCK: [2026-05-30 Sat 00:00]--[2026-05-30 Sat 00:15] =>  0:15
 :END:
 - don't really care about versioning the core/emacs configs much
 - may come in use later so just a general milestone when these tasks are done
+** DONE skel-agenda init
+:PROPERTIES:
+:ID:       85c13e9b-84b5-4047-8894-73b76100f6da
+:CREATED:  <2026-06-06 Sat 18:41>
+:Effort:   2:00
+:LOCATION+: skel.el
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-06 Sat 18:41]
+CLOCK: [2026-06-06 Sat 18:44]--[2026-06-06 Sat 19:14] =>  0:30
+CLOCK: [2026-06-06 Sat 19:55]--[2026-06-06 Sat 20:20] =>  0:25
+- State "DONE"       from "WIP"        [2026-06-06 Sat 20:20]
+:END:
+
 ** NOPE [#A] changelog
 SCHEDULED: <2026-06-01 Mon>
 :PROPERTIES:
@@ -1760,17 +1783,25 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-** TODO [#A] skel-shell-mode
+** DONE [#A] skel-shell-mode
 SCHEDULED: <2026-06-05 Fri>
 :PROPERTIES:
 :ID:       f6d84359-79ed-4b64-888e-dfb44f0bff14
 :CREATED:  <2026-06-01 Mon 22:12>
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-06-01 Mon 22:12]
+CLOCK: [2026-06-06 Sat 16:18]--[2026-06-06 Sat 16:39] =>  0:21
+CLOCK: [2026-06-06 Sat 16:49]--[2026-06-06 Sat 17:30] =>  0:41
+- Note taken on [2026-06-06 Sat 17:32] \\
+  we will want some upgrades, pending LSP/DAP support, will be
+  project-focused, not using code injection like python-mode.
+- State "DONE"       from "TODO"       [2026-06-06 Sat 17:32]
 :END:
 - project-local =skel shell=
-- features based on skelfile/cli (swank, lsp)
+- features based on skelfile/cli? (swank, lsp)
+
 ** TODO [#B] project-desktops
 :PROPERTIES:
 :ID:       e863be3c-a868-467d-bfab-6e50277fccd9
@@ -1932,6 +1963,15 @@ CLOCK: [2026-05-30 Sat 17:19]--[2026-05-30 Sat 17:22] =>  0:03
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 :END:
+** TODO investigate ox.el
+:PROPERTIES:
+:ID:       0a93232a-7751-4536-aa45-b9a4da27b534
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 22:10]
+:END:
+- need better control over org exports
 * PROJECT skel [0/12]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
@@ -2108,14 +2148,23 @@ possible we should take advantage of the ~STD/SYS~ protocol too - in
 particular components, which might need to be added to the ~PROJECT~
 protocol.
 * TODO xkeyboard extension refactor to use io/kbd
+:PROPERTIES:
+:ID:       4f8d6085-0357-4d83-991d-aaedbcdd7afe
+:END:
 :LOGBOOK:
 - Refiled on [2026-06-05 Fri 16:27]
 :END:
 * TODO dribble in core config
+:PROPERTIES:
+:ID:       7147d618-77a5-4aeb-a4e8-5734b51d77ba
+:END:
 :LOGBOOK:
 - Refiled on [2026-06-05 Fri 16:27]
 :END:
 * TODO don't execute babel in archives
+:PROPERTIES:
+:ID:       7f9f02db-4953-480a-a7ad-f8009974c1a0
+:END:
 :LOGBOOK:
 - Refiled on [2026-06-05 Fri 16:30]
 :END:
