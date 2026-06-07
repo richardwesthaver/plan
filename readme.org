@@ -17,7 +17,7 @@
 | id          | 1784914079056115652                    |
 | root        | ~/src/org/plan/                        |
 | tags        | ORG DOCS NOTES META PLAN ARCHIVE GRAPH |
-| updated     | Sat Jun 06 20:54:14 2026 -0400         |
+| updated     | Sat Jun 06 21:42:08 2026 -0400         |
 | langs       | org                                    |
 | lines       | 3965 :code 3851 :comment 0 :blank 114  |
 |-------------+----------------------------------------|
@@ -49,7 +49,7 @@
 2026-03    717 **************
 2026-04     98 *
 2026-05   1369 ***************************
-2026-06   1160 ***********************
+2026-06   1174 ***********************
 #+end_example
 
 #+CALL: project-html-files() :dir ~/src/org/plan/
@@ -58,7 +58,7 @@
 | file          | modified            |
 |---------------+---------------------|
 | [[https://compiler.company/plan/product.html][product]]       | 2026-06-06 00:03:27 |
-| [[https://compiler.company/plan/index.html][index]]         | 2026-06-06 00:31:49 |
+| [[https://compiler.company/plan/index.html][index]]         | 2026-06-06 21:07:07 |
 | [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2026-06-06 00:03:22 |
 | [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2026-05-27 21:43:04 |
 | [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2026-06-06 20:53:42 |
