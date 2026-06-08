@@ -856,7 +856,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:30]
 :END:
-** PROJECT obj [0/7]                                                    :obj:
+** PROJECT obj [0/8]                                                    :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -998,6 +998,18 @@ array optimizations
 - Note taken on [2025-12-02 Tue 20:53] \\
   need easy way to demo/cycle through palettes - use std draw functions and print-color
 :END:
+*** TODO capf
+:PROPERTIES:
+:ID:       454dd3be-c9b7-4671-927d-a1b6e795b846
+:CREATED:  <2026-06-07 Sun 21:25>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-07 Sun 21:25]
+:END:
+- completion-at-point functions for lisp types
+- insert arbitrary objects and get a list of completions to be used by
+  input
+- metadata/marginalia extensions?
 *** RESEARCH major-modes                                                :cmd:
 :PROPERTIES:
 :CREATED:  <2026-01-25 Sun 21:22>
@@ -1007,7 +1019,7 @@ array optimizations
 - State "RESEARCH"   from "TODO"       [2026-01-25 Sun 21:22]
 - Refiled on [2026-01-26 Mon 21:12]
 :END:
-** PROJECT net [0/6]                                                    :net:
+** PROJECT net [0/7]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
 :VERSION:  0.1
@@ -1047,11 +1059,18 @@ CLOCK: [2026-03-20 Fri 18:14]--[2026-03-20 Fri 18:14] =>  0:00
 :LOGBOOK:
 - State "TODO"       from              [2023-12-17 Sun 01:01]
 :END:
+*** TODO codec/rpc
+:PROPERTIES:
+:ID:       f46c3c69-f91a-479a-82a2-d16ba9c090ef
+:CREATED:  <2026-06-07 Sun 17:53>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-07 Sun 17:53]
+:END:
 *** TODO proto/lsp                                                      :syn:
 :PROPERTIES:
 :ID:       b86d21fb-edc6-41a6-bed5-deb71b94cb1a
 :CREATED:  <2026-05-30 Sat 17:26>
-:BLOCKS: 
 :Effort:   12:00
 :END:
 :LOGBOOK:
@@ -1346,7 +1365,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 #+end_example
 - expand into LOOP OR
 - maybe we should do VIDX loop-path after all
-** PROJECT box [0/1]
+** PROJECT box [1/1]
 :PROPERTIES:
 :ID:       3329b301-f396-48f8-b097-dca46fbfd74d
 :CREATED:  <2025-11-13 Thu 20:10>
@@ -1357,7 +1376,7 @@ CLOCK: [2026-03-08 Sun 22:33]--[2026-03-08 Sun 22:33] =>  0:00
 - archiso is in a decent state, small impact since only useful for linux installers
 - for CI we need better QEMU/vbox support
 - wrap up with a ~demobox~ e2e configuration
-*** RESEARCH qemu/vbox
+*** DONE qemu/vbox
 SCHEDULED: <2026-06-05 Fri>
 :PROPERTIES:
 :ID:       fb5c7fd6-c02d-4c54-9797-edd8b96f6684
@@ -1367,6 +1386,10 @@ SCHEDULED: <2026-06-05 Fri>
 :LOGBOOK:
 - State "RESEARCH"   from              [2026-05-27 Wed 22:21]
 CLOCK: [2026-06-06 Sat 18:06]--[2026-06-06 Sat 18:41] =>  0:35
+CLOCK: [2026-06-07 Sun 18:40]--[2026-06-07 Sun 21:28] =>  2:48
+- Note taken on [2026-06-07 Sun 21:27] \\
+  no need for vbox integration - proprietary. prefer qcow2/x-remote when in multi-instance mode, for displays we will use VNC as our default RDP.
+- State "DONE"       from "RESEARCH"   [2026-06-07 Sun 21:28]
 :END:
 - catch up on current state, qemu may be enough but we need
   single-click dispatch to interactive login
