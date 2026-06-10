@@ -1,6 +1,6 @@
 #+title: R&D
 #+author: Richard Westhaver
-#+email: richard.westhaver@gmail.com
+#+email: ellis@compiler.company
 #+description: Research tasks
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
@@ -101,6 +101,7 @@ Space-Filling Curves
 - persistence?
   - maybe 'generation' is a dimension, Ln is on disk files
 * RESEARCH good lisp API docgen
+SCHEDULED: <2026-06-10 Wed>
 :PROPERTIES:
 :ID:       66cbdde4-b73f-4c8b-a023-1b280c227658
 :CREATED:  <2025-07-08 Tue 22:40>
@@ -452,3 +453,31 @@ propview
 clocktable
 columnview
 [[https://github.com/org-roam/org-roam/issues/2251][Adding dynamic blocks to org-roam · Issue #2251 · org-roam/org-roam · GitHub]]
+* RESEARCH message codec implementations
+SCHEDULED: <2026-06-14 Sun>
+:PROPERTIES:
+:Effort:   8:00
+:ID:       1f12485f-24eb-4267-ab6f-cbc56abd5191
+:CREATED:  <2024-08-30 Fri 19:47>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-08 Mon 20:21]
+:END:
+- [[https://github.com/klingtnet/rosc/blob/master/src/lib.rs][rosc/lib.rs at master · klingtnet/rosc · GitHub]]
+  OSC 1.0 protocol
+- [[https://docs.rs/tokio-util/0.6.9/tokio_util/codec/index.html][tokio_util::codec - Rust]]
+- check out tokio_stream
+  - [[https://docs.rs/tokio-stream/0.1.8/tokio_stream/struct.StreamMap.html][StreamMap in tokio_stream - Rust]]
+- [[https://tokio.rs/tokio/tutorial/shared-state][Shared state | Tokio - An asynchronous Rust runtime]] - for registry
+- [[https://tokio.rs/tokio/tutorial/channels][Channels | Tokio - An asynchronous Rust runtime]] - for daemons
+- [[https://docs.rs/bytes/1.1.0/bytes/struct.Bytes.html][Bytes in bytes - Rust]]
+- [[https://docs.rs/tokio-util/0.6.9/tokio_util/udp/index.html][tokio_util::udp - Rust]]
+- TLV = Type Length Value
+  used in meterpreter client protocol
+  [[https://github.com/VakhoQ/tlv-encoder/][GitHub - VakhoQ/tlv-encoder: TLV (tag-length-value) communication protocol implementation in Java]]
+  [[https://github.com/commiebstrd/rusterpreter][GitHub - commiebstrd/rusterpreter: Meterpreter compatible Rust binary and library]]
+- [[https://github.com/rapid7/mettle][GitHub - rapid7/mettle: This is an implementation of a native-code Meterpreter, designed for portability, embeddability, and low resource utilization.]]
+- QMP (QEMU)
+- Podman API
+- smalltalk
+

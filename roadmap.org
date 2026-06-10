@@ -1,5 +1,6 @@
 #+title: roadmap
-#+author: Richard Westhaver <ellis@rwest.io>
+#+author: Richard Westhaver
+#+email: ellis@compiler.company
 #+description: The Compiler Company Roadmap
 #+setupfile: ../clean.theme
 #+filetags: roadmap

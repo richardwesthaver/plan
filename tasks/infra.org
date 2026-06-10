@@ -31,6 +31,7 @@
 :PROPERTIES:
 :CREATED:  <2024-09-24 Tue 21:58>
 :ID:       db6b4f9a-e9b8-4e67-ab10-044f96cbc7d8
+:CUSTOM_ID: box
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-24 Tue 21:58]
@@ -69,6 +70,7 @@ a multi-user environment without it.
 :PROPERTIES:
 :CREATED:  <2024-09-24 Tue 21:58>
 :ID:       6a574322-c89e-41a0-8a9d-02102155042e
+:CUSTOM_ID: pod
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-24 Tue 21:58]
@@ -86,6 +88,7 @@ a multi-user environment without it.
 :PROPERTIES:
 :CREATED:  <2024-09-24 Tue 21:58>
 :ID:       e30a4418-e86f-4597-aeca-0e5d468cd2e5
+:CUSTOM_ID: home
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2024-09-24 Tue 21:58]
@@ -93,6 +96,7 @@ a multi-user environment without it.
 * PROJECT packy [1/3]
 :PROPERTIES:
 :ID:       4ab85e51-d96b-4d3d-9004-2f1e9e63d908
+:CUSTOM_ID: packy
 :CREATED:  <2026-06-01 Mon 19:29>
 :END:
 :LOGBOOK:

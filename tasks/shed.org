@@ -1,6 +1,6 @@
 #+title: Shed Tasks
 #+author: Richard Westhaver
-#+email: richard.westhaver@gmail.com
+#+email: ellis@compiler.company
 #+description: shed task list
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
@@ -10,12 +10,33 @@
 * PROJECT tenex [0/4]
 :PROPERTIES:
 :ID:       5e5a0352-1e4c-45cb-85e7-3d54f894aa04
+:CUSTOM_ID: tenex
 :CREATED:  <2025-08-30 Sat 18:35>
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-08-30 Sat 18:35]
 :END:
 - use NET protocols (connection, client, route, request, response)
+** TODO [#C] create NAN api client                                    :tenex:
+:PROPERTIES:
+:CREATED: <2021-09-11 Sat 23:19>
+:CUSTOM_ID: create-nan-api-client
+:ID:       20211123T051620.798545
+:END:
+:LOGBOOK:
+- noted [2021-09-12 Sun 03:39] \\
+  https://hwurls.com/api/search - send post request with following form params:
+  q=linux&exclude-sites=
+  - same applies for all URLs, so just multiplex it
+- Refiled on [2026-06-05 Fri 16:00]
+:END:
+HTTP Client for News Aggregator Network
+TuxURLs – Linux news aggregator.
+MathURLs – mathematics news aggregator.
+FinURLs – financial news aggregator.
+SciURLs – science news aggregator.
+DevURLs – developer news aggregator.
+TechURLs – technology news aggregator.
 ** TODO NWS
 :PROPERTIES:
 :ID:       fb0e1533-ee5a-40de-9b95-e4e385f6eb48
@@ -56,6 +77,7 @@
 * PROJECT xlib [0/2]
 :PROPERTIES:
 :ID:       1d75bafe-e79a-4a32-ae78-0bfb98c368b2
+:CUSTOM_ID: xlib
 :CREATED:  <2026-01-01 Thu 19:24>
 :END:
 :LOGBOOK:
@@ -82,9 +104,18 @@
 - State "TBD"        from              [2026-02-03 Tue 21:28]
 :END:
 [[file:~/src/shed/xlib/extensions/glx.lisp::;;; FIXME: I'm just not sure we need a seperate accessors for what][fixes issue in glx]]
+** TODO xkeyboard extension refactor to use io/kbd
+:PROPERTIES:
+:ID:       4f8d6085-0357-4d83-991d-aaedbcdd7afe
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-05 Fri 16:27]
+- Refiled on [2026-06-08 Mon 21:13]
+:END:
 * PROJECT wm [11/20]
 :PROPERTIES:
 :ID:       9328a28e-c496-4b88-b91e-0c4054287aef
+:CUSTOM_ID: wm
 :CREATED:  <2025-08-30 Sat 18:35>
 :END:
 :LOGBOOK:
@@ -395,6 +426,7 @@ CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 * PROJECT pwn [0/2]                                                :lisp:pwn:
 :PROPERTIES:
 :ID:       6fef0787-9d0b-473a-b2de-f0969320fea7
+:CUSTOM_ID: pwn
 :VERSION:  0.1
 :END:
 :LOGBOOK:
@@ -425,6 +457,7 @@ CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 * PROJECT bbdb [0/0]
 :PROPERTIES:
 :ID:       37844b01-6e4c-4037-a9da-defa487e81ce
+:CUSTOM_ID: bbdb
 :CREATED:  <2025-12-30 Tue 20:49>
 :END:
 :LOGBOOK:
@@ -442,41 +475,4 @@ CLOCK: [2026-01-16 Fri 22:35]--[2026-01-16 Fri 22:35] =>  0:00
 :END:
 - needs to be as generic as possible
 - serialize schema info directly into DEFAULT cf
-* PROJECT slime
-:PROPERTIES:
-:ID:       bc386786-3a76-4467-9cb2-f2021847feb3
-:CREATED:  <2026-02-04 Wed 19:58>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-02-04 Wed 19:58]
-- State "PROJECT"    from "TODO"       [2026-02-15 Sun 18:53]
-:END:
-** TODO consolide SLIME annotations with CORE annotations        :core:print:
-:PROPERTIES:
-:ID:       b729ea49-1f44-4631-9a8f-9b605158bd60
-:CREATED:  <2026-02-15 Sun 18:53>
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2026-02-15 Sun 18:53]
-:END:
-* TODO [#C] create NAN api client                                     :tenex:
-:PROPERTIES:
-:CREATED: <2021-09-11 Sat 23:19>
-:CUSTOM_ID: create-nan-api-client
-:ID:       20211123T051620.798545
-:END:
-:LOGBOOK:
-- noted [2021-09-12 Sun 03:39] \\
-  https://hwurls.com/api/search - send post request with following form params:
-  q=linux&exclude-sites=
-  - same applies for all URLs, so just multiplex it
-- Refiled on [2026-06-05 Fri 16:00]
-:END:
-HTTP Client for News Aggregator Network
-TuxURLs – Linux news aggregator.
-MathURLs – mathematics news aggregator.
-FinURLs – financial news aggregator.
-SciURLs – science news aggregator.
-DevURLs – developer news aggregator.
-TechURLs – technology news aggregator.
 
