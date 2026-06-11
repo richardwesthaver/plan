@@ -1436,7 +1436,7 @@ use on lisp and rust side, makefiles, etc.
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
-* PROJECT emacs [0/14]                                                :emacs:
+* PROJECT emacs [2/17]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1449,6 +1449,15 @@ systems) - btree would be nice
 :END:
 - don't really care about versioning the core/emacs configs much
 - may come in use later so just a general milestone when these tasks are done
+** TODO outline button-overlays
+:PROPERTIES:
+:ID:       e99ac1cb-f9b3-45e5-b75b-e4e0df5ac094
+:CREATED:  <2026-06-10 Wed 17:57>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-10 Wed 17:57]
+:END:
+
 ** TODO eglot [1/1]
 :PROPERTIES:
 :ID:       d4a10019-e56e-4c44-9497-fae89585ee0d
@@ -1677,6 +1686,53 @@ CLOCK: [2026-06-09 Tue 20:19]--[2026-06-09 Tue 21:17] =>  0:58
 - skel-project-capture-templates
 - ~(setq-local project-capture-templates)~?
 
+** DONE [#A] save-registers                                            :skel:
+:PROPERTIES:
+:CREATED:  <2026-06-10 Wed 16:40>
+:ID:       b0beaa3b-1f33-44d9-8eb1-525610f9494a
+:Effort:   1:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-10 Wed 16:40]
+- Refiled on [2026-06-10 Wed 16:43]
+- State "DONE"       from "TODO"       [2026-06-10 Wed 17:55]
+:END:
+- global registers first
+- register-save-exclude-types
+  - list of register types to be excluded - window/frame configs - based on car of contents
+    - if cons frame-configuration (or project, etc)
+    - if symbol one of file,file-query,buffer (kmacro,skeleton template..)
+    - window-configurations are C objects: =#<window-configuration>=
+#+begin_quote
+A list of strings represents a rectangle.
+A list of the form (file . FILE-NAME) represents the file named FILE-NAME.
+A list of the form (file-query FILE-NAME POSITION) represents
+ position POSITION in the file named FILE-NAME, but query before
+ visiting it.
+A list of the form (buffer . BUFFER) represents the named BUFFER.
+A list of the form (WINDOW-CONFIGURATION POSITION)
+ represents a saved window configuration plus a saved value of point.
+A list of the form (FRAME-CONFIGURATION POSITION)
+ represents a saved frame configuration (a.k.a. \"frameset\") plus
+ a saved value of point.
+#+end_quote
+
+- register-val API (start with kmacros)
+  - register-val-jump-to
+  - register-val-describe
+  - register-val-insert
+** DONE project-save-registers
+:PROPERTIES:
+:ID:       4d17e832-809a-440b-b1a0-dfcd542d70ef
+:CREATED:  <2026-06-10 Wed 16:43>
+:Effort:   1:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-10 Wed 16:43]
+- State "NEXT"       from "TODO"       [2026-06-10 Wed 16:44]
+- State "DONE"       from "NEXT"       [2026-06-10 Wed 17:55]
+:END:
+(and project-load-registers)
 * PROJECT skel [1/13]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
@@ -1788,7 +1844,7 @@ SCHEDULED: <2026-06-10 Wed>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-06-01 Mon 19:55]
-CLOCK: [2026-06-09 Tue 21:55]
+CLOCK: [2026-06-09 Tue 21:55]--[2026-06-09 Tue 22:55] =>  1:00
 :END:
 ** OUTLINE skel template objects
 :PROPERTIES:
