@@ -79,3 +79,13 @@ simple uefi lisp terminal
 - tbd: dat generic benchmarking with fixtures
 - TPC-H
 - taobench
+* TODO orion
+:PROPERTIES:
+:ID:       acc5610b-5cc1-4dac-802c-29e5ec6c4ff8
+:CREATED:  <2026-06-11 Thu 22:31>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-11 Thu 22:31]
+- Refiled on [2026-06-11 Thu 22:33]
+:END:
+- ART-based network of nodes/resources/constraints

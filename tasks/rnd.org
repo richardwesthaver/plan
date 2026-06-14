@@ -105,11 +105,27 @@ SCHEDULED: <2026-06-10 Wed>
 :PROPERTIES:
 :ID:       66cbdde4-b73f-4c8b-a023-1b280c227658
 :CREATED:  <2025-07-08 Tue 22:40>
+:Effort:   5:00
 :END:
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-07-08 Tue 22:40]
+CLOCK: [2026-06-11 Thu 22:28]--[2026-06-11 Thu 23:28] =>  1:00
 :END:
 [[https://crategus.com/books/cl-cffi-gtk/][cl-cffi-gtk API documentation]]
+- [[http://www.crategus.com/books/atdoc/pages/atdoc.html][atdoc]]
+- [[https://github.com/cl-doc-systems][cl-doc-systems]]
+- see [[info:emacs#Enriched text][enriched]]
+- [[info:elisp#Display Property][elisp#Display Property]]
+:outline:
+- templates (one file each):
+  - symbol (most primitive)
+  - package
+  - components
+    - file-component
+    - mod-component
+  - system
+  - project
+:end:
 * TBD fobs
 :PROPERTIES:
 :ID:       f612c2b3-9ebd-413a-a938-1084ce88e473
@@ -480,4 +496,3 @@ SCHEDULED: <2026-06-14 Sun>
 - QMP (QEMU)
 - Podman API
 - smalltalk
-

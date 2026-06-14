@@ -7,20 +7,20 @@
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/src/core
 #+filetags: core
-* FIXME inline TODOs
+* FIX inline TODOs
 :PROPERTIES:
 :ID:       d5aaf952-bb93-4b66-a7e0-1f0f827c0925
 :CREATED:  <2025-05-31 Sat 00:48>
 :END:
 :LOGBOOK:
-- State "FIXME"      from              [2025-05-31 Sat 00:53]
+- State "FIX"      from              [2025-05-31 Sat 00:53]
 :END:
 #+begin_src emacs-lisp :results silent
   (rgrep ".*; TODO" "*.*" "~/src/core/")
 #+end_src
 *252*
 #+begin_src emacs-lisp :results silent
-  (rgrep ".*; FIXME" "*.*" "~/src/core/")
+  (rgrep ".*; FIX" "*.*" "~/src/core/")
 #+end_src
 *109*
 #+begin_src emacs-lisp :results silent
@@ -50,14 +50,14 @@
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-23 Fri 20:17]
 :END:
-*** FIXME ts-query-cursor-next-match
+*** FIX ts-query-cursor-next-match
 :PROPERTIES:
 :ID:       d0693c94-0763-4cf2-99cd-2c904b5040d1
 :CREATED:  <2025-05-23 Fri 20:17>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2025-05-23 Fri 20:17]
-- State "FIXME"      from "TODO"       [2025-05-23 Fri 20:18]
+- State "FIX"      from "TODO"       [2025-05-23 Fri 20:18]
 :END:
 - may need to do a C wrapper, do some research first to make sure we
   didn't miss something in impl.
@@ -778,13 +778,13 @@ CLOCK: [2026-03-03 Tue 22:07]--[2026-03-03 Tue 22:08] =>  0:01
 :LOGBOOK:
 CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :END:
-**** FIXME deref op
+**** FIX deref op
 :PROPERTIES:
 :ID:       6a3eb8d5-4ee6-450e-b3e1-9a19ec5415f2
 :CREATED:  <2025-08-30 Sat 23:11>
 :END:
 :LOGBOOK:
-- State "FIXME"      from              [2025-08-30 Sat 23:11]
+- State "FIX"      from              [2025-08-30 Sat 23:11]
 :END:
 #+begin_src lisp :results replace output
   (in-package :c)
@@ -799,6 +799,16 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :   OP                             = COMMON-LISP:*
 :   OBJECT                         = #<SYN/GEN:IDENT {122A132F23}>
 
+**** TODO syn/gen/cpp
+:PROPERTIES:
+:CREATED:  <2026-06-13 Sat 01:06>
+:ID:       a169768f-0721-4596-b2aa-0b929ce1cbf4
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-13 Sat 01:06]
+- Refiled on [2026-06-13 Sat 11:18]
+:END:
+- fix use of curry
 *** TODO tempo
 :PROPERTIES:
 :CREATED:  <2025-05-16 Fri 23:19>
@@ -899,14 +909,15 @@ SCHEDULED: <2026-06-09 Tue>
 - consider PARENT:CMD protocol (modify parse/read)
 - if command not found in primary check parent
 - we now may need more than hash-tables..
-*** TODO Custom Vars                                         :cmd:val:config:
-SCHEDULED: <2026-06-10 Wed>
+*** HOLD Custom Vars                                         :cmd:val:config:
 :PROPERTIES:
 :ID:       b4879c5f-6557-4213-8b49-aaa5d8893344
 :CREATED:  <2026-06-01 Mon 20:29>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-06-01 Mon 20:29]
+- State "HOLD"       from "TODO"       [2026-06-11 Thu 21:01] \\
+  too soon, wait on interactive rules
 :END:
 - mix of config/val/cmd protocols
 - _first use of color output_
@@ -1174,13 +1185,13 @@ from within suite
 - State "TODO"       from              [2026-01-22 Thu 21:47]
 :END:
 - kernel-objects
-*** FIXME test-result false-positives
+*** FIX test-result false-positives
 :PROPERTIES:
 :ID:       8250a385-cd25-4f63-a95f-75e04bcbb8a5
 :CREATED:  <2025-09-17 Wed 20:12>
 :END:
 :LOGBOOK:
-- State "FIXME"      from              [2025-09-17 Wed 20:12]
+- State "FIX"      from              [2025-09-17 Wed 20:12]
 :END:
 IS macros aren't reporting their failures correctly - should be
 returning conditions which bubble up to the caller.
@@ -1282,14 +1293,14 @@ CLOCK: [2026-03-20 Fri 18:13]--[2026-03-20 Fri 18:13] =>  0:00
 :LOGBOOK:
 - State "TODO"       from              [2025-01-18 Sat 20:49]
 :END:
-*** FIXME flate/deflate
+*** FIX flate/deflate
 :PROPERTIES:
 :ID:       3ad8ce2d-9463-4c0a-a0ed-0d564182d4b3
 :CREATED:  <2026-02-05 Thu 17:30>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-02-05 Thu 17:30]
-- State "FIXME"      from              [2026-02-05 Thu 17:30]
+- State "FIX"      from              [2026-02-05 Thu 17:30]
 :END:
 *** TODO wm:kbd -> io/kbd:kbd
 :PROPERTIES:
@@ -1436,7 +1447,7 @@ use on lisp and rust side, makefiles, etc.
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
-* PROJECT emacs [2/17]                                                :emacs:
+* PROJECT emacs [4/16]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1449,16 +1460,39 @@ systems) - btree would be nice
 :END:
 - don't really care about versioning the core/emacs configs much
 - may come in use later so just a general milestone when these tasks are done
-** TODO outline button-overlays
+** TODO newsticker init
+:PROPERTIES:
+:ID:       f6c02c47-4ab6-44a9-b506-68bf48b39d8e
+:CREATED:  <2026-06-11 Thu 21:04>
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-11 Thu 21:04]
+:END:
+- take notes to apply to ~feeder~.
+** DONE outline button-overlays
 :PROPERTIES:
 :ID:       e99ac1cb-f9b3-45e5-b75b-e4e0df5ac094
 :CREATED:  <2026-06-10 Wed 17:57>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-06-10 Wed 17:57]
+- State "DONE"       from "TODO"       [2026-06-11 Thu 13:06]
 :END:
-
-** TODO eglot [1/1]
+** DONE link button overlays
+SCHEDULED: <2026-06-11 Thu>
+:PROPERTIES:
+:ID:       6fd0c8f1-a550-4f60-8d06-150ba07813f8
+:CREATED:  <2026-06-11 Thu 13:06>
+:Effort:   3:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-11 Thu 13:06]
+CLOCK: [2026-06-11 Thu 19:09]--[2026-06-11 Thu 20:53] =>  1:44
+- State "DONE"       from "WIP"        [2026-06-11 Thu 20:54]
+:END:
+- org-minor-mode-use-buttons
+- org-minor-mode-use-readtable
+** TODO eglot
 :PROPERTIES:
 :ID:       d4a10019-e56e-4c44-9497-fae89585ee0d
 :CREATED:  <2026-05-21 Thu 22:37>
@@ -1591,7 +1625,7 @@ for keyboard-based navigation too.
 :LOGBOOK:
 - State "TODO"       from              [2024-09-03 Tue 22:14]
 :END:
-** TODO [#B] project-desktops
+*** TODO [#B] project-desktops
 :PROPERTIES:
 :ID:       e863be3c-a868-467d-bfab-6e50277fccd9
 :CREATED:  <2026-06-01 Mon 22:17>
@@ -1601,7 +1635,7 @@ for keyboard-based navigation too.
 :END:
 - sorta already works.. probably just need to add a hook for updating
   list of dirs with project dirs.
-** TODO [#C] skel widgets                                              :skel:
+*** TODO [#C] skel widgets                                             :skel:
 :PROPERTIES:
 :ID:       a80df9ee-e772-499b-b996-78962bd13cd4
 :CREATED:  <2025-10-12 Sun 00:33>
@@ -1612,7 +1646,7 @@ for keyboard-based navigation too.
 - ideally have a function that overlays a skelfile/sxp buffer with a
   customization interface
 - need to maintain mapping between buffer forms and widgets
-** TODO skel.el hack-dir-local-variables                              :emacs:
+*** TODO skel.el hack-dir-local-variables                             :emacs:
 :PROPERTIES:
 :ID:       e488041c-045b-47b3-92bb-5f7c4d65b712
 :END:
@@ -1620,7 +1654,7 @@ for keyboard-based navigation too.
 - Refiled on [2025-02-16 Sun 19:23]
 :END:
 [[info:emacs#Directory Variables][emacs#Directory Variables]]
-** WIP skel.el indentation rules
+*** WIP skel.el indentation rules
 :PROPERTIES:
 :ID:       9b2d1c95-e724-47b8-a78c-a81805194731
 :CREATED:  <2025-02-26 Wed 21:31>
@@ -1632,7 +1666,6 @@ for keyboard-based navigation too.
 :END:
 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Indent.html][Lisp Indent (GNU Emacs Manual)]]
 [[https://www.n16f.net/blog/custom-common-lisp-indentation-in-emacs/][Brain dump – Custom Common Lisp indentation in Emacs]]
-
 ** TODO project-tasks timestamp -> date when no h/m info
 :PROPERTIES:
 :ID:       ef8f7f82-9a0e-490a-aad3-e96185ad89ef
@@ -1653,13 +1686,18 @@ for keyboard-based navigation too.
 - keywordicate symbols
 - indentation
 - make a tbd task for refactoring imports/sorting
-** TODO new graph property: pronunciation
+** WIP new ulang property: pronunciation
+SCHEDULED: <2026-06-13 Sat>
 :PROPERTIES:
 :ID:       5cd73df3-1409-4bb3-95c2-695514f16b44
+:CREATED:  <2026-06-13 Sat 11:29>
+:Effort:   2:00
 :END:
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
+CLOCK: [2026-06-13 Sat 11:29]--[2026-06-13 Sat 12:29] =>  1:00
 :END:
+- ~PRONOUNCE~
 ** TODO investigate ox.el
 :PROPERTIES:
 :ID:       0a93232a-7751-4536-aa45-b9a4da27b534
@@ -1733,6 +1771,17 @@ A list of the form (FRAME-CONFIGURATION POSITION)
 - State "DONE"       from "NEXT"       [2026-06-10 Wed 17:55]
 :END:
 (and project-load-registers)
+** WIP prog-comment-keyword-faces
+:PROPERTIES:
+:CREATED:  <2026-06-12 Fri 20:08>
+:ID:       f98893dd-6c15-4353-8840-99f0fd9ec356
+:Effort:   3:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-12 Fri 20:08]
+CLOCK: [2026-06-12 Fri 20:34]--[2026-06-12 Fri 22:46] =>  2:12
+- Refiled on [2026-06-13 Sat 11:18]
+:END:
 * PROJECT skel [1/13]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
