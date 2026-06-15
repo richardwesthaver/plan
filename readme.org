@@ -17,9 +17,9 @@
 | id          | 1784914079056115652                    |
 | root        | ~/src/org/plan/                        |
 | tags        | ORG DOCS NOTES META PLAN ARCHIVE GRAPH |
-| updated     | Tue Jun 09 21:56:47 2026 -0400         |
+| updated     | Sun Jun 14 00:42:42 2026 -0400         |
 | langs       | org                                    |
-| lines       | 3773 :code 3665 :comment 0 :blank 108  |
+| lines       | 3847 :code 3742 :comment 0 :blank 105  |
 |-------------+----------------------------------------|
 
 #+CALL: hg-churn() :dir ~/src/org/plan/
@@ -49,7 +49,7 @@
 2026-03    717 **************
 2026-04     98 *
 2026-05   1369 ***************************
-2026-06   1806 ***********************************
+2026-06   2006 ***************************************
 #+end_example
 
 #+CALL: project-html-files() :dir ~/src/org/plan/
@@ -57,14 +57,14 @@
 #+RESULTS:
 | file          | modified            |
 |---------------+---------------------|
-| [[https://compiler.company/plan/index.html][index]]         | 2026-06-10 18:31:45 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2026-06-10 17:58:05 |
+| [[https://compiler.company/plan/index.html][index]]         | 2026-06-14 00:49:08 |
 | [[https://compiler.company/plan/product.html][product]]       | 2026-06-06 00:03:27 |
 | [[https://compiler.company/plan/roadmap.html][roadmap]]       | 2026-06-08 21:42:46 |
 | [[https://compiler.company/plan/tasks/contrib.html][tasks/contrib]] | 2026-05-27 21:43:04 |
-| [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2026-01-08 21:47:33 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]    | 2026-06-13 15:40:39 |
+| [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]    | 2026-06-12 19:03:38 |
 | [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]   | 2026-06-09 21:50:14 |
-| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2026-06-08 21:42:57 |
+| [[https://compiler.company/plan/tasks/rnd.html][tasks/rnd]]     | 2026-06-13 23:30:08 |
 | [[https://compiler.company/plan/tasks/shed.html][tasks/shed]]    | 2026-06-09 21:49:36 |
 
 #+END:

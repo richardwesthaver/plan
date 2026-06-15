@@ -118,7 +118,7 @@ CLOCK: [2026-06-11 Thu 22:28]--[2026-06-11 Thu 23:28] =>  1:00
 - [[info:elisp#Display Property][elisp#Display Property]]
 :outline:
 - templates (one file each):
-  - symbol (most primitive)
+  - symbol (most primitive) - heading
   - package
   - components
     - file-component
