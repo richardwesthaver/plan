@@ -184,7 +184,7 @@ https://graphs.grevian.org/
 - Refiled on [2026-06-05 Fri 16:12]
 :END:
 - State "NOTE"       from              [2023-12-02 Sat 23:35]
-#+begin_src rust
+#+begin_src rust :eval no
   let client = Client::new()
   //    .credentials(Credentials::bearer("hackme")
     .connect("https://mail.compiler.company:8080")
@@ -231,6 +231,7 @@ https://graphs.grevian.org/
 * mail init
 :PROPERTIES:
 :ID:       bc132221-c0de-4e1e-a801-2b63537ef56e
+:HEADER-ARGS: :eval no
 :END:
 :LOGBOOK:
 - Refiled on [2026-06-05 Fri 16:22]
@@ -394,6 +395,7 @@ https://graphs.grevian.org/
 * lisp makefiles
 :PROPERTIES:
 :ID:       5a2584a0-2c7c-42f3-8d2e-acecd99a5071
+:HEADER-ARGS: :eval no
 :END:
 :LOGBOOK:
 - State "NOTE"       from              [2023-08-12 Sat 18:30]
@@ -421,7 +423,7 @@ https://graphs.grevian.org/
 - Refiled on [2026-06-05 Fri 16:31]
 :END:
 [[https://github.com/gfx-rs/wgpu/tree/trunk/naga][wgpu/naga at trunk · gfx-rs/wgpu · GitHub]]
-#+begin_src shell
+#+begin_src shell :eval no
   cargo install naga-cli
 #+end_src
 

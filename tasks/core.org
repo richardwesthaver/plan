@@ -11,6 +11,7 @@
 :PROPERTIES:
 :ID:       d5aaf952-bb93-4b66-a7e0-1f0f827c0925
 :CREATED:  <2025-05-31 Sat 00:48>
+:HEADER-ARGS: :eval no
 :END:
 :LOGBOOK:
 - State "FIX"      from              [2025-05-31 Sat 00:53]
@@ -457,20 +458,13 @@ need to fill.
 *** TBD parse org-elements as sxp                                       :sxp:
 :PROPERTIES:
 :ID:       232b7b58-2e66-479a-a978-b33f1cdda13f
+:HEADER-ARGS: :eval no
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2023-09-25 Mon 15:23]
 - State "TBD"        from "TODO"       [2023-12-13 Wed 18:10]
 :END:
 #+name: oe-init
-#+begin_src emacs-lisp :results silent
-  (slime-start)
-#+end_src
-
-#+begin_src lisp :results silent
-  (ql:quickload :organ)
-#+end_src
-
 #+name: oe-form
 #+begin_src emacs-lisp :results replace
   (org-element-parse-buffer)
@@ -792,12 +786,12 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 #+end_src
 
 #+RESULTS:
-: #<SYN/GEN/C:PREFIX-EXPRESSION {122A137C53}>
+: #<SYN/GEN/C:PREFIX-EXPRESSION {12053CDD03}>
 :   [standard-object]
 : 
 : Slots with :INSTANCE allocation:
 :   OP                             = COMMON-LISP:*
-:   OBJECT                         = #<SYN/GEN:IDENT {122A132F23}>
+:   OBJECT                         = #<SYN/GEN:IDENT {12053CD623}>
 
 **** TODO syn/gen/cpp
 :PROPERTIES:
@@ -1278,6 +1272,10 @@ CLOCK: [2026-03-20 Fri 18:13]--[2026-03-20 Fri 18:13] =>  0:00
   ;; IO-LOOP-UPDATE (as described above). Call IO-LOOP on the
   ;; multiplexer to actually run it.
 #+end_src
+
+#+RESULTS:
+: NIL
+
 **** TODO convert with-foreign-object to with-alien in io/mux, test
 :PROPERTIES:
 :ID:       d3cbcd20-5ef1-4267-875f-c934bf9a3fc0
@@ -1658,7 +1656,7 @@ for keyboard-based navigation too.
 :PROPERTIES:
 :ID:       9b2d1c95-e724-47b8-a78c-a81805194731
 :CREATED:  <2025-02-26 Wed 21:31>
-:LOCATION: emacs/lib/skel.el
+:LOCATION: emacs/skel.el
 :END:
 :LOGBOOK:
 - Refiled on [2025-02-16 Sun 19:23]
