@@ -1445,7 +1445,7 @@ use on lisp and rust side, makefiles, etc.
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
-* PROJECT emacs [4/16]                                                :emacs:
+* PROJECT emacs [5/16]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1684,7 +1684,7 @@ for keyboard-based navigation too.
 - keywordicate symbols
 - indentation
 - make a tbd task for refactoring imports/sorting
-** WIP new ulang property: pronunciation
+** DONE new ulang property: pronounce
 SCHEDULED: <2026-06-13 Sat>
 :PROPERTIES:
 :ID:       5cd73df3-1409-4bb3-95c2-695514f16b44
@@ -1694,8 +1694,12 @@ SCHEDULED: <2026-06-13 Sat>
 :LOGBOOK:
 - Refiled on [2025-10-11 Sat 21:40]
 CLOCK: [2026-06-13 Sat 11:29]--[2026-06-13 Sat 12:29] =>  1:00
+- Note taken on [2026-06-15 Mon 22:01] \\
+  [[https://en.wikipedia.org/wiki/International_Phonetic_Alphabet][International Phonetic Alphabet - Wikipedia]]
+- State "DONE"       from "WIP"        [2026-06-15 Mon 22:40]
 :END:
 - ~PRONOUNCE~
+- syntax :: sĭn′tăks″
 ** TODO investigate ox.el
 :PROPERTIES:
 :ID:       0a93232a-7751-4536-aa45-b9a4da27b534
