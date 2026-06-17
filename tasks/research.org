@@ -1,12 +1,12 @@
-#+title: R&D
+#+title: Research Tasks
 #+author: Richard Westhaver
 #+email: ellis@compiler.company
-#+description: Research tasks
+#+description: Research task list
 #+setupfile: ../../clean.theme
 #+OPTIONS: num:nil d:t prop:t toc:t
 #+ARCHIVE: ../../archive/plan.org::** core
 #+LOCATION: ~/src/
-#+filetags: rnd
+#+filetags: research
 * OUTLINE pot of greed
 :PROPERTIES:
 :ID:       020f0ea3-9584-4d4a-9976-adb8f790ce29
@@ -100,7 +100,7 @@ Space-Filling Curves
     - speed?
 - persistence?
   - maybe 'generation' is a dimension, Ln is on disk files
-* RESEARCH good lisp API docgen
+* DONE good lisp API docgen
 SCHEDULED: <2026-06-10 Wed>
 :PROPERTIES:
 :ID:       66cbdde4-b73f-4c8b-a023-1b280c227658
@@ -110,6 +110,7 @@ SCHEDULED: <2026-06-10 Wed>
 :LOGBOOK:
 - State "RESEARCH"   from              [2025-07-08 Tue 22:40]
 CLOCK: [2026-06-11 Thu 22:28]--[2026-06-11 Thu 23:28] =>  1:00
+- State "DONE"       from "RESEARCH"   [2026-06-16 Tue 21:44]
 :END:
 [[https://crategus.com/books/cl-cffi-gtk/][cl-cffi-gtk API documentation]]
 - [[http://www.crategus.com/books/atdoc/pages/atdoc.html][atdoc]]
@@ -126,6 +127,7 @@ CLOCK: [2026-06-11 Thu 22:28]--[2026-06-11 Thu 23:28] =>  1:00
   - system
   - project
 :end:
+- not much out there, start from scratch with emacs info-mode..
 * TBD fobs
 :PROPERTIES:
 :ID:       f612c2b3-9ebd-413a-a938-1084ce88e473

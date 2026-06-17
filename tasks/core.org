@@ -162,7 +162,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
-* PROJECT lib [0/16]                                                   :lisp:
+* PROJECT lib [0/17]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
 :ID:       cbe46830-8363-4e11-897c-9779e1997e2b
@@ -171,6 +171,20 @@ implement bindings to the Fortran BLAS functions
 :END:
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
+:END:
+** PROJECT doc
+:LOGBOOK:
+- State "PROJECT"    from              [2026-06-16 Tue 22:28]
+:END:
+*** TODO api                                                          :proto:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-16 Tue 22:29]
+:END:
+- sub-proto of doc
+- generate api documentation for project X in Y format
+*** TODO org templates
+:LOGBOOK:
+- State "TODO"       from              [2026-06-16 Tue 22:29]
 :END:
 ** PROJECT cli [0/6]
 :PROPERTIES:
@@ -1445,7 +1459,7 @@ use on lisp and rust side, makefiles, etc.
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
-* PROJECT emacs [5/16]                                                :emacs:
+* PROJECT emacs [6/16]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1724,7 +1738,7 @@ CLOCK: [2026-06-09 Tue 20:19]--[2026-06-09 Tue 21:17] =>  0:58
 :END:
 - project-capture
 - skel-project-capture-templates
-- ~(setq-local project-capture-templates)~?
+- ~(setq-local project-capture-templates)~? nah
 
 ** DONE [#A] save-registers                                            :skel:
 :PROPERTIES:
@@ -1773,7 +1787,7 @@ A list of the form (FRAME-CONFIGURATION POSITION)
 - State "DONE"       from "NEXT"       [2026-06-10 Wed 17:55]
 :END:
 (and project-load-registers)
-** WIP prog-comment-keyword-faces
+** DONE prog-comment-keyword-faces
 :PROPERTIES:
 :CREATED:  <2026-06-12 Fri 20:08>
 :ID:       f98893dd-6c15-4353-8840-99f0fd9ec356
@@ -1783,6 +1797,9 @@ A list of the form (FRAME-CONFIGURATION POSITION)
 - State "TODO"       from              [2026-06-12 Fri 20:08]
 CLOCK: [2026-06-12 Fri 20:34]--[2026-06-12 Fri 22:46] =>  2:12
 - Refiled on [2026-06-13 Sat 11:18]
+- State "WIP"        from "WIP"        [2026-06-16 Tue 18:13]
+CLOCK: [2026-06-16 Tue 18:13]--[2026-06-16 Tue 19:51] =>  1:38
+- State "DONE"       from "WIP"        [2026-06-16 Tue 19:51]
 :END:
 * PROJECT skel [1/13]                                                  :skel:
 :PROPERTIES:
@@ -1837,14 +1854,17 @@ CLOCK: [2026-06-09 Tue 19:21]--[2026-06-09 Tue 20:10] =>  0:49
 :END:
 - check the hash of sources against a cache, skip if found
 - need a way of managing cache invalidation - timeouts and manual purges, locks?
-** TODO remove sk-print
+** WIP remove sk-print
 SCHEDULED: <2026-06-10 Wed>
 :PROPERTIES:
 :ID:       0cc42a6f-2b58-42c4-be58-f23280855c84
 :CREATED:  <2026-06-08 Mon 21:53>
+:Effort:   4:00
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2026-06-08 Mon 21:53]
+- State "WIP"        from "TODO"       [2026-06-16 Tue 21:49]
+CLOCK: [2026-06-16 Tue 21:49]--[2026-06-16 Tue 22:21] =>  0:32
 :END:
 - keep the show machinery for now - display use only
 ** TODO implement task-pool                                          :thread:
