@@ -500,3 +500,21 @@ SCHEDULED: <2026-06-14 Sun>
 - QMP (QEMU)
 - Podman API
 - smalltalk
+* HACK Duck paddling beneath the surface
+:PROPERTIES:
+:CREATED:  <2026-06-20 Sat 18:38>
+:ID:       a2796332-f7a4-42b1-867c-72c2fbba2800
+:END:
+:LOGBOOK:
+- State "HACK"       from              [2026-06-20 Sat 18:38]
+- Refiled on [2026-06-20 Sat 18:39]
+:END:
+- use as marketing resource/mascot?
+* TODO gallery.org
+:PROPERTIES:
+:ID:       595299ec-1df6-4a02-9196-3a83a0aaff4a
+:CREATED:  <2025-01-17 Fri 15:54>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-20 Sat 18:39]
+:END:
