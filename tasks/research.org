@@ -518,3 +518,12 @@ SCHEDULED: <2026-06-14 Sun>
 :LOGBOOK:
 - Refiled on [2026-06-20 Sat 18:39]
 :END:
+* RESEARCH dialog protocol                                              :doc:
+:PROPERTIES:
+:CREATED:  <2026-06-24 Wed 22:33>
+:ID:       4546618f-dd36-4b1c-bfc8-653c82806e44
+:END:
+:LOGBOOK:
+- State "RESEARCH"   from              [2026-06-24 Wed 22:33]
+- Refiled on [2026-06-26 Fri 16:17]
+:END:

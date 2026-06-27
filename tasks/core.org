@@ -211,6 +211,39 @@ CLOCK: [2026-06-20 Sat 21:21]--[2026-06-20 Sat 23:21] =>  2:00
     - method
 
 - (readtable alien-callable optimize type structure variable method-combination compiler-macro setf function)
+*** [[file:~/src/core/lib/syn/tempo.lisp::"\\s*@genloop\\s+(\\S+)\\s*" . " (let ((env]]
+:PROPERTIES:
+:ID:       8234678c-7366-4c3d-afbd-b101be49ad2b
+:CREATED:  <2026-06-24 Wed 22:30>
+:END:
+:LOGBOOK:
+- Refiled on [2026-06-26 Fri 16:17]
+:END:
+use generator here
+
+*** TODO component documentation
+:PROPERTIES:
+:CREATED:  <2026-06-21 Sun 20:09>
+:ID:       6d96062b-d0ae-4559-8461-4d7512955e02
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-21 Sun 20:09]
+- Refiled on [2026-06-26 Fri 16:17]
+:END:
+- packages need summaries+location
+
+*** TODO cascading file-sets for doc publishing
+:PROPERTIES:
+:CREATED:  <2026-06-23 Tue 20:53>
+:ID:       7f1f296d-82d4-4148-83e6-bc68b9498095
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-23 Tue 20:53]
+- Refiled on [2026-06-26 Fri 16:17]
+:END:
+- start with set of project/system files (components)
+  - filter definition-sources via keyword arg FILES
+
 ** PROJECT cli [0/7]
 :PROPERTIES:
 :CREATED:  <2024-09-12 Thu 13:38>
@@ -1493,6 +1526,16 @@ use on lisp and rust side, makefiles, etc.
 :END:
 need to be able to sort REQUIRE slots in components (specifically
 systems) - btree would be nice
+** TODO do-modules
+:PROPERTIES:
+:CREATED:  <2026-06-22 Mon 21:29>
+:ID:       87b0b282-58c1-4792-9400-1f4230d926b1
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-22 Mon 21:29]
+- Refiled on [2026-06-26 Fri 16:17]
+:END:
+
 * PROJECT emacs [6/16]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
