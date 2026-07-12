@@ -172,7 +172,7 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "PROJECT"    from              [2025-05-02 Fri 14:04]
 :END:
-** PROJECT doc [0/2]
+** PROJECT doc [1/4]
 :LOGBOOK:
 - State "PROJECT"    from              [2026-06-16 Tue 22:28]
 :END:
@@ -183,7 +183,7 @@ implement bindings to the Fortran BLAS functions
 - sub-proto of doc
 - generate api documentation for project X in Y format
 - maybe just =publish=?
-*** WIP org templates
+*** DONE org templates
 SCHEDULED: <2026-06-20 Sat>
 :PROPERTIES:
 :Effort:   6:00
@@ -194,6 +194,22 @@ SCHEDULED: <2026-06-20 Sat>
 - State "TODO"       from              [2026-06-16 Tue 22:29]
 CLOCK: [2026-06-20 Sat 21:21]--[2026-06-20 Sat 23:21] =>  2:00
 - State "WIP"        from "TODO"       [2026-06-20 Sat 21:21]
+- Note taken on [2026-07-11 Sat 19:22] \\
+  some additional things we could do here, but good enough for now.
+
+  in the future we would prefer to generate ORGAN objects, avoid
+  templates being strings and publish documents directly. this would
+  have the advantage of transparently supporting export to headings or
+  files, nesting, etc.
+
+  we currently support a bunch of export options which are passed to
+  PUBLISH but don't have much value. For example the SETUPFILE and
+  EXPORT_FILE_NAME handling.
+
+  The next thing to focus on is the general UI and xref
+  functionality. When looking up/referencing a symbol the minimal amount
+  of data should be loaded. potentially through a DB
+- State "DONE"       from "WIP"        [2026-07-11 Sat 19:27]
 :END:
 - starting with tempo files
 - keep in lib/doc
@@ -211,16 +227,6 @@ CLOCK: [2026-06-20 Sat 21:21]--[2026-06-20 Sat 23:21] =>  2:00
     - method
 
 - (readtable alien-callable optimize type structure variable method-combination compiler-macro setf function)
-*** [[file:~/src/core/lib/syn/tempo.lisp::"\\s*@genloop\\s+(\\S+)\\s*" . " (let ((env]]
-:PROPERTIES:
-:ID:       8234678c-7366-4c3d-afbd-b101be49ad2b
-:CREATED:  <2026-06-24 Wed 22:30>
-:END:
-:LOGBOOK:
-- Refiled on [2026-06-26 Fri 16:17]
-:END:
-use generator here
-
 *** TODO component documentation
 :PROPERTIES:
 :CREATED:  <2026-06-21 Sun 20:09>
@@ -1536,7 +1542,7 @@ systems) - btree would be nice
 - Refiled on [2026-06-26 Fri 16:17]
 :END:
 
-* PROJECT emacs [6/16]                                                :emacs:
+* PROJECT emacs [9/18]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
 :VERSION:  0.1
@@ -1589,13 +1595,14 @@ CLOCK: [2026-06-11 Thu 19:09]--[2026-06-11 Thu 20:53] =>  1:44
 :LOGBOOK:
 - State "TODO"       from              [2026-05-21 Thu 22:37]
 :END:
-** TODO src/org agenda views, export, dblock
+** DONE src/org agenda views, export, dblock
 :PROPERTIES:
 :ID:       952fe286-9fd8-478f-bafc-a0a25ae3d17a
 :CREATED:  <2026-05-25 Mon 21:44>
 :END:
 :LOGBOOK:
 - State "TODO"       from              [2024-08-15 Thu 23:15]
+- State "DONE"       from "TODO"       [2026-07-11 Sat 19:37]
 :END:
 ** WIP graph                                                            :org:
 :PROPERTIES:
@@ -1657,7 +1664,7 @@ CLOCK: [2026-06-11 Thu 19:09]--[2026-06-11 Thu 20:53] =>  1:44
 :LOGBOOK:
 - Refiled on [2026-06-05 Fri 16:28]
 :END:
-** HOLD [#C] org-timeline upgrades [0/3]                                :org:
+** NOPE [#C] org-timeline upgrades [0/3]                                :org:
 :PROPERTIES:
 :CREATED:  <2024-08-27 Tue 14:19>
 :ID:       1a283ac6-13cc-4316-b9fd-350d1766174a
@@ -1667,6 +1674,7 @@ CLOCK: [2026-06-11 Thu 19:09]--[2026-06-11 Thu 20:53] =>  1:44
 - State "TBD"        from "TODO"       [2025-06-08 Sun 18:07]
 - State "HOLD"       from "TBD"        [2026-05-25 Mon 21:43] \\
   unsure if we still want org-timeline.el.. off by default
+- State "NOPE"       from "HOLD"       [2026-07-11 Sat 19:37]
 :END:
 [[https://github.com/deopurkar/org-timeline][GitHub - deopurkar/org-timeline: Add graphical view of agenda to agenda buffer]]
 - now lives in lib/org-timeline.el

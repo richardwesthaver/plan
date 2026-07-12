@@ -17,9 +17,9 @@
 | id          | 1784914079056115652                    |
 | root        | ~/src/org/plan/                        |
 | tags        | ORG DOCS NOTES META PLAN ARCHIVE GRAPH |
-| updated     | Thu Jul 09 16:36:19 2026 -0400         |
+| updated     | Fri Jul 10 22:41:12 2026 -0400         |
 | langs       | org                                    |
-| lines       | 3656 :code 3559 :comment 0 :blank 97   |
+| lines       | 3664 :code 3565 :comment 0 :blank 99   |
 |-------------+----------------------------------------|
 
 #+CALL: project-html-files() :dir ~/src/org/plan/
@@ -27,9 +27,9 @@
 #+RESULTS:
 | file           | modified            |
 |----------------+---------------------|
-| [[https://compiler.company/plan/index.html][index]]          | 2026-07-10 16:36:54 |
+| [[https://compiler.company/plan/index.html][index]]          | 2026-07-10 22:41:44 |
+| [[https://compiler.company/plan/tasks/core.html][tasks/core]]     | 2026-07-11 19:37:31 |
 | [[https://compiler.company/plan/product.html][product]]        | 2026-06-16 22:24:43 |
-| [[https://compiler.company/plan/tasks/core.html][tasks/core]]     | 2026-06-26 19:11:27 |
 | [[https://compiler.company/plan/tasks/demo.html][tasks/demo]]     | 2026-06-12 19:03:38 |
 | [[https://compiler.company/plan/tasks/infra.html][tasks/infra]]    | 2026-06-09 21:50:14 |
 | [[https://compiler.company/plan/tasks/research.html][tasks/research]] | 2026-06-26 19:16:32 |
@@ -63,7 +63,7 @@
 2026-04     98 *
 2026-05   1369 **********************
 2026-06   3771 *************************************************************
-2026-07     33 
+2026-07     39 
 #+end_example
 
 #+END:
