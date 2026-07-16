@@ -1922,7 +1922,7 @@ CLOCK: [2026-06-16 Tue 18:13]--[2026-06-16 Tue 19:51] =>  1:38
 - State "DONE"       from "TODO"       [2026-06-20 Sat 18:41]
 - Refiled on [2026-06-20 Sat 18:41]
 :END:
-* PROJECT skel [2/13]                                                  :skel:
+* PROJECT skel [2/14]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
 :CUSTOM_ID: skel
@@ -2055,7 +2055,7 @@ CLOCK: [2026-06-09 Tue 21:55]--[2026-06-09 Tue 22:55] =>  1:00
   - cl-emb
   - https://github.com/alpha123/cl-template
 - see also [[id:25c20927-7ba3-4821-91b9-ad05a1a4b7f7][tempo]]
-** PROJECT homer [1/1]                                           :lisp:homer:
+** PROJECT homer [0/2]                                           :lisp:homer:
 :PROPERTIES:
 :ID:       ef204ce0-7a99-45a6-942e-6d8f549f94f9
 :VERSION:  0.1
@@ -2069,7 +2069,16 @@ CLOCK: [2026-06-09 Tue 21:55]--[2026-06-09 Tue 22:55] =>  1:00
 - State "NEXT"       from "WAIT"       [2025-08-30 Sat 18:34]
 - State "PROJECT"    from "NEXT"       [2026-06-09 Tue 21:55]
 :END:
-** TODO project desktop config
+*** TODO homer/org
+:PROPERTIES:
+:CREATED:  <2026-07-14 Tue 21:50>
+:ID:       ffa1bc6d-ded7-4825-bd9d-9797c7b6bfe8
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-14 Tue 21:50]
+:END:
+org home directory
+*** TODO workspace vs desktop config
 :PROPERTIES:
 :CREATED:  <2025-10-30 Thu 22:51>
 :ID:       c4ead324-31bc-46a9-af3c-d5bde43ac5e2
