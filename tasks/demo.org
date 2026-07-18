@@ -89,3 +89,13 @@ simple uefi lisp terminal
 - Refiled on [2026-06-11 Thu 22:33]
 :END:
 - ART-based network of nodes/resources/constraints
+* TODO DEMO APP: Trains                                                :demo:
+:PROPERTIES:
+:CREATED:  <2026-07-12 Sun 14:54>
+:ID:       5f887d37-3b4f-4582-9cdf-1eff27152a4a
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-12 Sun 14:54]
+- Refiled on [2026-07-17 Fri 18:51]
+:END:
+

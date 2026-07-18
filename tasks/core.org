@@ -162,6 +162,15 @@ implement bindings to the Fortran BLAS functions
 :LOGBOOK:
 - State "TODO"       from              [2024-08-10 Sat 22:33]
 :END:
+** TODO fix new errors found via naturalize source-transform
+:PROPERTIES:
+:CREATED:  <2026-07-16 Thu 23:27>
+:ID:       052c660c-ce1e-41f3-9778-a1928846d97b
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-16 Thu 23:27]
+- Refiled on [2026-07-17 Fri 18:51]
+:END:
 * PROJECT lib [0/17]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
@@ -249,6 +258,16 @@ CLOCK: [2026-06-20 Sat 21:21]--[2026-06-20 Sat 23:21] =>  2:00
 :END:
 - start with set of project/system files (components)
   - filter definition-sources via keyword arg FILES
+
+*** TODO api.theme
+:PROPERTIES:
+:CREATED:  <2026-07-01 Wed 16:27>
+:ID:       d262c2cc-b976-4999-aa14-473f46f60028
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-01 Wed 16:27]
+- Refiled on [2026-07-17 Fri 18:53]
+:END:
 
 ** PROJECT cli [0/7]
 :PROPERTIES:
@@ -344,6 +363,16 @@ cli should have relevant hooks
 - State "TODO"       from              [2026-06-20 Sat 18:29]
 - Refiled on [2026-06-20 Sat 18:36]
 :END:
+*** TODO timer progress bar
+:PROPERTIES:
+:CREATED:  <2026-06-27 Sat 01:52>
+:ID:       d0a8ca80-f659-417b-b67e-90212151b4b7
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-06-27 Sat 01:52]
+- Refiled on [2026-07-17 Fri 18:57]
+:END:
+
 ** PROJECT q [0/5]                                                        :q:
 :PROPERTIES:
 :ID:       b19fb0f9-65b2-476c-adb3-b4b77e585f37
@@ -1121,6 +1150,17 @@ array optimizations
 - State "RESEARCH"   from "TODO"       [2026-01-25 Sun 21:22]
 - Refiled on [2026-01-26 Mon 21:12]
 :END:
+*** TODO make-fields CONS -> LISTS
+:PROPERTIES:
+:CREATED:  <2026-07-12 Sun 00:17>
+:ID:       3376a943-c806-4969-a80f-51dda43261e2
+:Effort:   2:00
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-12 Sun 00:17]
+- Refiled on [2026-07-17 Fri 18:51]
+:END:
+
 ** PROJECT net [0/7]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
@@ -1542,6 +1582,29 @@ systems) - btree would be nice
 - Refiled on [2026-06-26 Fri 16:17]
 :END:
 
+** TODO options API
+:PROPERTIES:
+:CREATED:  <2026-07-12 Sun 00:15>
+:ID:       53fed0f0-c1d2-46ab-9540-b56d8b380228
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-12 Sun 00:15]
+- Refiled on [2026-07-17 Fri 18:55]
+:END:
+- based on alists? plists? lists?
+
+** mp
+:PROPERTIES:
+:ID:       5ccf1492-6439-405c-9832-512ea8d66405
+:CREATED:  <2026-07-06 Mon 21:06>
+:END:
+:LOGBOOK:
+- Refiled on [2026-07-17 Fri 18:55]
+:END:
+media-player?
+core library in dsp
+app in shed
+
 * PROJECT emacs [9/18]                                                :emacs:
 :PROPERTIES:
 :ID:       b6a3ffb9-a7aa-4038-8876-fcdb8115dc08
@@ -1922,6 +1985,21 @@ CLOCK: [2026-06-16 Tue 18:13]--[2026-06-16 Tue 19:51] =>  1:38
 - State "DONE"       from "TODO"       [2026-06-20 Sat 18:41]
 - Refiled on [2026-06-20 Sat 18:41]
 :END:
+** TODO api.org export
+:PROPERTIES:
+:CREATED:  <2026-07-08 Wed 21:15>
+:ID:       2fd5f701-4774-4ace-bc0a-e1176d436653
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-08 Wed 21:15]
+- Note taken on [2026-07-12 Sun 15:25] \\
+  could output to directories..
+  package/
+  system/
+- Refiled on [2026-07-17 Fri 18:54]
+:END:
+=(org-map-entries (lambda () (org-org-export-to-org nil t)) "level=2")=
+
 * PROJECT skel [2/14]                                                  :skel:
 :PROPERTIES:
 :ID:       53982b3c-4860-469b-abb5-b279ee669cbd
