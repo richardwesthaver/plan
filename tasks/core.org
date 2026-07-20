@@ -2227,6 +2227,15 @@ org home directory
 :LOGBOOK:
 - State "TODO"       from              [2026-02-15 Sun 18:53]
 :END:
+** TODO fix swank loader
+:PROPERTIES:
+:CREATED:  <2026-07-18 Sat 16:19>
+:ID:       22bdace6-26e4-453f-bb06-2fdd245f66d6
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-18 Sat 16:19]
+- Refiled on [2026-07-18 Sat 17:38]
+:END:
 * OUTLINE stash paths
 :PROPERTIES:
 :CREATED:  <2026-06-14 Sun 00:45>
