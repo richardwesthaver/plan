@@ -984,7 +984,7 @@ CLOCK: [2025-06-03 Tue 21:45]--[2025-06-03 Tue 22:15] =>  0:30
 :LOGBOOK:
 - State "PROJECT"    from              [2025-06-06 Fri 13:30]
 :END:
-** PROJECT obj [0/8]                                                    :obj:
+** PROJECT obj [1/10]                                                   :obj:
 :PROPERTIES:
 :ID:       c1500e3b-1d95-4ba2-96d5-8301b02293e2
 :VERSION:  0.1
@@ -1161,6 +1161,17 @@ array optimizations
 - Refiled on [2026-07-17 Fri 18:51]
 :END:
 
+*** DONE sset
+:PROPERTIES:
+:CREATED:  <2026-07-24 Fri 22:42>
+:ID:       cf4ab38a-f151-43bf-8a88-fbaf8c134550
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-24 Fri 22:42]
+- Refiled on [2026-07-25 Sat 18:34]
+- State "DONE"       from "TODO"       [2026-07-25 Sat 18:34]
+:END:
+'S-et'
 ** PROJECT net [0/7]                                                    :net:
 :PROPERTIES:
 :ID:       5d088bf7-f201-4875-9167-4293bebbcf46
