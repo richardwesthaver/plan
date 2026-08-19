@@ -171,6 +171,16 @@ implement bindings to the Fortran BLAS functions
 - State "TODO"       from              [2026-07-16 Thu 23:27]
 - Refiled on [2026-07-17 Fri 18:51]
 :END:
+** TODO slice-vector
+:PROPERTIES:
+:CREATED:  <2026-07-30 Thu 23:11>
+:ID:       c94addb5-8b14-4b06-9844-8ca4860bb025
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2026-07-30 Thu 23:11]
+- Refiled on [2026-07-30 Thu 23:15]
+:END:
+ROCKSDB-PINNABLESLICE/PINNABLE-HANDLE -> FOREIGN-VECTOR
 * PROJECT lib [0/17]                                                   :lisp:
 :PROPERTIES:
 :CREATED:  <2025-05-02 Fri 14:04>
